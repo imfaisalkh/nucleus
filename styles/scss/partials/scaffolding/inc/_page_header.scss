@@ -1,0 +1,225 @@
+/*========================================================
+ 8.  PAGE HEADER 
+========================================================== */
+
+	#page-header {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+
+		position: relative;
+		text-align: center;
+		padding-bottom: 30px;
+		margin: 120px auto 80px auto;
+		width: 600px;
+		@include breakpoint($mobile)  { width: 100%; margin: 60px auto 80px auto; }
+
+		.single & {
+			width: 700px;
+
+			@include breakpoint($mobile)  { width: 100%; }
+			@include breakpoint($full-hd)  { width: 750px; }
+		}
+
+		&.compact {
+
+			&:after {
+				content:''; 
+				width: 6px; 
+				height: 6px; 
+				border-radius: 100%;
+				background: var(--text-color, #2D2D2D);
+				position: absolute; 
+				bottom: -3px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.inner-wrap {
+				&:before {
+					content:''; 
+					width: 35px; 
+					height: 1px;
+					background: var(--text-color, #2D2D2D); opacity: 0.18;
+					position: absolute; 
+					bottom: 0;
+					left: 46%;
+					transform: translateX(-63%);
+				}
+				&:after {
+					content:''; 
+					width: 35px; 
+					height: 1px; 
+					background: var(--text-color, #2D2D2D); opacity: 0.18;
+					position: absolute; 
+					bottom: 0;
+					left: 56%;
+					transform: translateX(-70%);
+				}			
+
+			}
+
+		}
+
+		.single-portfolio & {
+			// padding-bottom: 60px;
+		}
+		.single-post & {
+			padding-bottom: 60px;
+			margin-bottom: 50px;
+		}
+
+		/** Text Content */
+		.inner-wrap {
+			max-width: 100%;
+
+			.title {
+				font-family: $primary-font-stack;
+				// font-style: italic;
+				font-weight: 400;
+				font-size: 38px;
+				margin-bottom: 11px;
+
+				@include breakpoint($mobile)  { font-size: 30px; }
+				@include breakpoint($laptop)  { font-size: 38px; margin-bottom: 10px; }
+
+				.single-post & {
+					font-style: normal;
+					font-size: 40px;
+					letter-spacing: -0.5px;
+					margin: 30px 0 15px 0;
+
+					@include breakpoint($mobile)  { font-size: 26px; }
+					@include breakpoint($laptop)  { font-size: 40px; }
+				}
+				.single-portfolio & {
+					margin-bottom: 5px;
+				}		
+			}
+			.subtitle, .meta-info
+			{
+				font-family: $secondary-font-stack;
+				font-size: 18px;
+				color: var(--text-color, #FFF); opacity: 0.7;
+				
+				@include breakpoint($mobile)  { font-size: 16px; padding: 0 15px; }
+			}
+			.button {
+				width: auto;
+				height: 57px;
+				line-height: 57px;
+				background: #fff;
+				color: #000;
+				font-family: $secondary-font-stack;
+				font-size: 16px;
+				font-weight: 500;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+				border-radius: 100px;
+				padding: 0 45px;
+				border: 0;
+				margin: 0;
+				transition: 0.15s all ease;
+				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05), 0 4px 6px 0 rgba(18, 21, 70, 0.05);
+
+				&:hover {
+					box-shadow: 0px 5px 10px 0 rgba(11, 12, 36, 0.2);
+					transform: translateY(-2px);
+				}
+			}
+
+			.meta-info {
+				font-size: 16px;
+			}
+			.category {
+				font-family: $secondary-font-stack;
+				font-size: 15px;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+
+				a {
+					color: #fff;
+					border: 1px solid #414141;
+					border-radius: 30px;
+					padding: 6px 19px;
+					transition: all 400ms ease-in-out;
+
+					&:hover {
+						background: #fff;
+						border-color: #fff;
+						color: #000;
+					}
+				}
+			}
+		}
+
+		&.fullscreen {
+			height: 80vh;
+			margin: 0 auto;
+
+			.inner-wrap {
+				margin-top: -150px;
+
+				.title {
+					@include breakpoint($mobile)  { font-size: 36px; font-size: 11vmin; }
+					@include breakpoint($tablet)  { font-size: 42px; }
+					@include breakpoint($laptop)  { font-size: 42px; font-size: 6.8vmin; }
+					@include breakpoint($full-hd) { font-size: 46px; }
+				}
+
+				.single-portfolio & {
+					.subtitle {
+						font-size: 15px;
+						letter-spacing: 0.7px;
+						text-transform: uppercase;
+					}
+				}		
+
+			}
+			.scroll-indicator { display: block; }
+
+		}		
+
+		/** Color Scheme */
+		&.dark {
+			.inner-wrap {
+				.title {
+					color: #000; // #FFF
+				}
+				.subtitle {
+					color: #5E5E5E; //#95989A					
+				}
+			}
+		}
+		&.light {
+			.inner-wrap {
+				.title {
+					color: #FFF; // #FFF
+				}
+				.subtitle {
+					color: #95989A; //#95989A					
+				}
+			}
+		}
+
+
+		/** Scroll Indicator */
+		.scroll-indicator {
+			display: none;
+			position: absolute;
+			left: 47%;
+			bottom: 45px;
+			transform: translateX(-50%);
+
+			@include animate-this(); // CSS-3 animation is triggered via JS
+
+			a { color: var(--text-color, #FFF); }
+			.icon, .label { display: block; }
+			.icon { font-size: 38px; }
+			.label { font-size: 14px; }
+
+		}
+
+	}

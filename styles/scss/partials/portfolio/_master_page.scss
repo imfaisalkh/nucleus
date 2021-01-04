@@ -1,0 +1,165 @@
+/*========================================================
+  0.  PORTFOLIO 
+========================================================== */
+	
+
+.is-animated {
+  animation: .6s rotate-right;
+}
+
+@keyframes rotate-right {
+  0% {
+	opacity: 0;
+	visibility: hidden;
+	transform: translate3d(0, 15px, 0);
+  }
+  100% {
+	opacity: 1;
+	visibility: visible;
+	transform: translate3d(0, 0, 0);
+  }
+}
+
+
+/** == GRID == */
+/** ================================================== */
+
+	.no-transition {
+		transition: none;
+	}
+
+
+	.grid {
+		.grid-item {
+			overflow: hidden;
+			position: relative;
+			background: #2A2A2A;
+			text-align: center;
+			@include breakpoint($mobile)  { width: 100% !important; height: auto !important; margin-left: 0 !important; margin-right: 0 !important; }
+
+			@include animate-this(); // CSS-3 animation is triggered via JS
+
+			.entry-link {
+
+				.entry-thumbnail {
+					width: 100%;
+					height: 100%;
+					margin: 0;
+
+					img {
+						display:block;
+						width: 100%;
+						height: 100% !important;
+						object-fit: cover; // css3 property
+					}
+
+				}
+
+		    .entry-caption {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+		        @include position(absolute, 0, 0, 0, 0);
+		        @include animate-out($translate3d: '0, 0, 0', $duration: '300ms'); // used in combination with @animate-in() mixin
+
+		        z-index: 2;
+
+		        .inner-wrap {
+		            width: 100%;
+		            padding: 0 70px;
+		            text-align: center;
+		            @include animate-out($duration: '300ms'); // used in combination with @animate-in() mixin
+
+			        .entry-title {
+			            font-family: var(--tertiary-font-stack);
+			            font-weight: 600;
+			            font-size: 24px;
+			            text-transform: uppercase;
+			            line-height: 1.4;
+			            letter-spacing: 1.4px;
+			            margin: 0;
+			            color: #000;
+			        }
+			        .entry-meta {
+			            font-family: $secondary-font-stack;
+			            font-size: 16px;
+			            font-weight: 400 ;
+			            color: rgba(0, 0, 0, 0.4);
+			            letter-spacing: 0;
+			            display: block;
+			            margin-top: 4px;
+			        }
+
+		        }
+		    }
+
+			    &:hover .entry-caption {
+			        @include animate-in(); // CSS-3 animation is triggered via HOVER
+			        background: var(--secondary-accent, #FFF); opacity: 0.9;
+
+			        .inner-wrap {
+			        	@include animate-in(); // CSS-3 animation is triggered via HOVER
+			        }
+			    }
+
+			}
+
+		}
+	}
+
+
+
+/** == SINGLE == */
+/** ================================================== */
+
+	.single-portfolio {
+
+		.navigation {
+			margin-top: 120px;
+			height: 65px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			div {
+
+				&.prev,
+				&.next {
+					a {
+						display: inline-flex;
+						font-size: 18px;
+						text-transform: uppercase;
+						line-height: 34px;
+						letter-spacing: 0.5px;
+						color: var(--text-color, #FFF);
+
+						i {
+							font-size: 26px;
+						}
+					}
+				}
+				&.prev i { margin-left: 10px; } 
+				&.next i { margin-right: 10px; } 
+
+				&.index {
+					width: 100px;
+					text-align: center;
+
+					a {
+						color: var(--text-color, #FFF);
+						i { font-size: 41px; transition: font-size 400ms ease-in-out; }
+						&:hover {
+							// i { font-size: 41px; }
+						}
+					}
+				}
+
+				&.no-more-content {
+					opacity: 0;
+					visibility: hidden;
+				}
+
+			}
+		}
+	}

@@ -1,0 +1,31 @@
+NAME:
+
+Nucleus: Portfolio for Freelancers & Agencies
+
+
+DEMO URL:
+
+http://demo.wpscouts.net/nucleus/
+
+DOCS URL:
+
+https://imfaisalkh.gitbooks.io/nucleus/
+
+
+TAGS:
+
+agency, artist, blog, freelance, masonry, minimal, modern, one page, parallax, photography, portfolio, responsive, seo, showcase, white
+
+
+MESSAGE TO REVIEWER:
+
+Hey, I hope you are fine. I've tested the theme with the themecheck plugin, there is only one "REQUIRED" notice, which is because I've included some premium plugin ZIP files in the theme via TGM framework. I guess it should not be an issue. Regards.
+
+
+----------------------
+
+
+
+SUBMISSION DATE:
+
+29 June, 2017 (7:10 AM)

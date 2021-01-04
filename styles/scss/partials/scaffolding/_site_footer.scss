@@ -1,0 +1,144 @@
+/*========================================================
+ 3.  SCAFFOLDING 
+========================================================== */
+
+
+
+/** == GENERAL == */
+/** ================================================== */
+
+	/** Footer */
+	#site-footer {
+		position: relative;
+
+		@include breakpoint($mobile)  { width: 100%; }
+
+		&:after {
+			content:''; 
+			width: 6px; 
+			height: 6px; 
+			// background: #fff;
+			background: var(--text-color, #2D2D2D);
+			border-color: var(--background-color, #000); 
+			border-radius: 100%;
+			position: absolute; 
+			top: -3px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.inner-wrap {
+			position: relative;
+
+			&:before {
+				content:''; 
+				width: 35px; 
+				height: 1px; 
+				// background: #2D2D2D;
+				background: var(--text-color, #2D2D2D); opacity: 0.18;
+				position: absolute; 
+				top: 0;
+				left: 44%;
+				transform: translateX(-54%);
+			}
+			&:after {
+				content:''; 
+				width: 35px; 
+				height: 1px; 
+				// background: #2D2D2D;
+				background: var(--text-color, #2D2D2D); opacity: 0.18;
+				position: absolute; 
+				top: 0;
+				left: 57%;
+				transform: translateX(-58%);
+			}			
+
+			.title {
+				font-family: $secondary-font-stack;
+				font-size: 18px;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+			.desc {
+				margin-bottom: 20px;
+				opacity: 0.7;
+			}
+
+			.social-profiles {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				li {
+					display: inline-block;
+					margin-left: 8px;
+
+					a {
+						color: inherit;
+						font-size: 19px;
+						opacity: 0.7;
+						
+						&:hover { opacity: 1;}
+					}
+				}
+			}
+
+		}
+
+
+		&[data-footer-style="center"] {
+			margin: 120px auto;
+			width: 420px;
+			text-align: center;
+			@include breakpoint($mobile) { width: 100%; }
+
+
+			.inner-wrap { padding-top: 30px; }
+		}
+
+		&[data-footer-style="full-width"] {
+			&:after { width: 0; height: 0; }
+
+			margin: 120px auto 30px auto;
+
+			.inner-wrap {
+				&:before {
+					width: 60px;
+					left: 0;
+					transform: translateX(0);
+					background: var(--text-color, #FFF); opacity: 0.15;
+				}
+				&:after { width: 0; height: 0; }
+
+				padding-top: 60px;
+				font-size: 1.8rem;
+
+				.column:not(.social-icons) {
+
+					a {
+						color: var(--text-color, #FFF);
+						border-color: var(--primary-accent, #FFF);
+
+						border-bottom-width: 1px;
+						border-bottom-style: solid;
+				    transition: all 300ms linear;
+
+				    &:hover {
+				    	opacity: 1;
+				    }
+					}
+
+				}
+
+				.social-icons {
+					text-align: right;
+					ul {
+						li {
+							margin-left: 12px;
+							a { font-size: 27px; color: #000; opacity: 0.8; }
+						}
+					}
+				}
+			}
+		}		
+
+	}

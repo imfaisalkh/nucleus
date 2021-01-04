@@ -1,0 +1,306 @@
+/*========================================================
+  1.  BASE 
+========================================================== */
+
+	html {
+		font-size: 62.5%;
+	}
+
+	body {
+		background: var(--background-color, #000);
+		color: var(--text-color, #FFF);
+		font-family: $secondary-font-stack;
+		font-size: 1.6rem;
+		font-weight: 400;
+		line-height: 1.6;
+	}
+
+	*, *:before, *:after {
+		box-sizing: border-box;
+	}
+
+	::selection {
+	    color: #000;
+	    background: #FBF285;
+	}
+
+/** == TYPOGRAPHY == */
+/** ================================================== */
+
+	a {
+		text-decoration: none;
+		// color: #000;
+		cursor: pointer;
+
+		&:hover {
+			// color: $link-color-hover;
+		}
+	}
+
+	/** Headings */
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $primary-font-stack;
+		font-weight: 400;
+		color: var(--text-color, #FFF);
+		margin: 2rem 0 2rem 0;
+		line-height: 1.5;
+		letter-spacing: -1px;
+	}
+
+	h1 { font-size: 4.8rem; }
+	h2 { font-size: 3.6rem; }
+	h3 { font-size: 3.0rem; }
+	h4 { font-size: 2.4rem; }
+	h5 { font-size: 2.0rem; }
+	h6 { font-size: 1.8rem; }
+
+	/** Paragraphs */
+	p { margin:  0 0 2em 0; color: inherit; }
+	p:empty{ display: none; }
+	// p:last-child { margin-bottom: 0; }
+
+	/** Blockquotes */
+	blockquote {
+		font-family: $primary-font-stack;
+		font-size: 22px;
+		font-style: italic;
+		letter-spacing: 0.5px;
+
+		p {
+			color: #D2D2D2 !important;
+			line-height: 1.3;
+		}
+	}
+
+
+/** == LISTS == */
+/** ================================================== */
+
+	ul, ol, dl {
+		margin-bottom: 20px;
+		margin-left: 0;
+	}
+
+	ul {
+		list-style: square inside;
+	}
+	ol {
+	    list-style: decimal inside;
+	}
+
+	ul ul,
+	ol ol {
+		margin: 0 0 0 20px;
+	}
+
+	dt {
+		font-weight: bold;
+	}
+	dd {
+		margin: 0 0 20px;
+	}
+
+
+/** == RULES == */
+/** ================================================== */
+
+	hr {
+	  clear: both;
+	  border: 0;
+	  border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+	  height: 1px;
+	  margin: 5rem 0;
+	}
+
+
+/** == PRE == */
+/** ================================================== */
+
+	pre {
+		position: relative;
+		background: rgba(0, 0, 0, 0.05);
+		font-family: "Courier 10 Pitch", Courier, monospace;
+		font-size: 15px;
+		line-height: 1.6;
+		margin-bottom: 1.6em;
+		padding: 3% 5% 3% 10%;
+		overflow: auto;
+		max-width: 100%;
+		tab-size: 4;
+	}
+
+	pre:before {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		font-family: "FontAwesome";
+		content: "\f121";
+		background: #BBC3CC;
+		color: #fff;
+		padding: 0 3px;
+		font-size: 14px;
+		z-index: 5;
+	}
+
+	code, kbd, tt, var { font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace }
+
+	address {
+		margin-bottom: 2em;
+	}
+
+
+/** == TABLE == */
+/** ================================================== */
+
+	table { border-bottom: 1px solid #ededed; border-collapse: collapse; border-spacing: 0; font-size: 87.5%; line-height: 2; margin: 0 0 2em; width: 100%; }
+	caption,
+	th,
+	td { font-weight: normal; text-align: left; }
+	caption { font-size: 16px; margin: 20px 0; }
+	th { font-weight: bold; text-transform: uppercase; }
+	td { border-top: 1px solid #ededed; padding: 6px 10px 6px 0; }
+
+
+/** == MISC == */
+/** ================================================== */
+
+	.clear {
+		clear: both;
+		line-height: 1px;
+		height: 1px;
+	}
+
+
+/** == WP CAPTIONS == */
+/** ================================================== */
+
+	.wp-caption {
+		margin-bottom: 1.6em;
+		max-width: 100%;
+
+		a { border-bottom: 0 !important; }
+
+		img[class*="wp-image-"] {
+			display: block;
+			margin: 0 0 10px 0;
+		}
+
+		.wp-caption-text {
+			font-size: 16px;
+			line-height: 1.5;
+			padding: 1em 0;
+			margin: 0;
+
+			span.caption-title {
+			    color: #000;
+			    text-transform: uppercase;
+			    font-size: 18px;
+			    font-weight: 800;
+			    line-height: 1;
+			    margin: 0 0 0.5em 0;
+			    display: block;
+			}
+
+		}
+
+	}
+
+
+
+/** == WP CLASSES == */
+/** ================================================== */
+
+	.alignleft {
+	  display: inline;
+	  float: left;
+	}
+
+	.alignright {
+	  display: inline;
+	  float: right;
+	}
+
+	.aligncenter {
+	  display: block;
+	  margin-right: auto;
+	  margin-left: auto;
+	}
+
+	.wp-gallery, .gallery {
+		a {
+			border: 0 !important;
+			img { display: block; }
+		}
+	}
+
+	blockquote.alignleft,
+	.wp-caption.alignleft,
+	img.alignleft {
+		margin: 5px 20px 5px 0;
+	}
+
+	blockquote.alignright,
+	.wp-caption.alignright,
+	img.alignright {
+		margin: 5px 0 5px 20px;
+	}
+
+	blockquote.aligncenter,
+	.wp-caption.aligncenter,
+	img.aligncenter {
+	  clear: both;
+	  margin-top: 0.4em;
+	  margin-bottom: 1.6em;
+	}
+
+	.wp-caption.alignleft,
+	.wp-caption.alignright,
+	.wp-caption.aligncenter {
+	  margin-bottom: 1.2em;
+	}
+
+	.screen-reader-text { line-height: inherit; }
+	.gallery-caption { line-height: inherit; }
+	.bypostauthor { line-height: inherit; }
+	.sticky { line-height: inherit; }
+
+	.wp-gallery,
+	.elementor-image
+	{
+
+		.image,
+		.wp-caption
+		{
+			position: relative;
+
+			.wp-caption,
+			.widget-image-caption
+			{
+				position: absolute;
+				left: 22px;
+				bottom: 20px;
+
+				color: #000;
+				background-color: rgba(255, 255, 255, .96);
+				padding: 10px 12px;
+				margin: 0 30px 0 0;
+
+				font-family: $primary-font-stack;
+				font-size: 17px;
+				font-style: italic;
+				line-height: 16px;
+				letter-spacing: 0.3px;
+				text-align: left;
+			}
+
+		}
+	}
+	#main-content.image-gallery
+	{
+		.wp-gallery {
+			.image {
+				img { margin-bottom: 0 !important;}
+			}
+		}
+	}

@@ -1,0 +1,186 @@
+/*========================================================
+ 3.  SCAFFOLDING 
+========================================================== */
+
+
+
+/** == GENERAL == */
+/** ================================================== */
+
+/*---------------------------------------------------------
+ Basic Structure (_scaffolding.scss)
+-------------------------------------------------------- */
+
+	/** Site Header */
+	#site-header {
+		position: relative;
+		margin-top: 75px;
+		@include breakpoint($mobile)  { margin-top: 40px; }
+		@include breakpoint($laptop)  { margin-top: 60px; }
+
+		&:before { content: ''; }
+
+		.inner-wrap {
+			display: flex;
+			justify-content: space-between; /* Align Childs on Main-Axis */
+			align-items: center; /* Align Childs on Cross-Axis */
+		}
+
+		@include make-full-width;
+
+		/** Header Partition */
+		.logo-wrap  {
+			z-index: 90;
+			// width: 25%;
+			// margin-right: auto; /* Makes it align at the start */
+			// @include breakpoint($touch)	  { width: 60%; }
+			img { display: block; max-width: 100%; height: auto; }
+			#site-logo {
+
+				// Text Logo
+				.desktop-logo.text,
+				.mobile-logo.text
+				{
+					display: inline-block;
+					font-family: $tertiary-font-stack;
+					font-size: 3.2rem;
+					text-transform: uppercase;
+					letter-spacing: 0.4px;
+					color: var(--text-color, #FFF);
+
+					@include breakpoint($mobile)	  { font-size: 2.8rem; }
+
+
+					&:active, &:focus { outline:0; border:none; } 
+
+					&:after {
+						display: inline-block;
+						content: '';
+						width: 5px;
+						height: 5px;
+						border-radius: 100%;
+						background: #7DBF2A;
+						margin-left: 3px;
+					}
+				}
+
+				// Image Logo
+				.desktop-logo {
+					@include breakpoint($touch)	  	{ display: none !important; }
+					@include breakpoint($no-touch)	{ display: block !important; }
+				}
+				.mobile-logo {
+					@include breakpoint($touch)	  	{ display: block !important; }
+					@include breakpoint($no-touch)	{ display: none !important; }
+				}
+
+			}
+		}
+		.menu-wrap  {
+			// width: 65%;
+			margin: 0 30px 0 auto;
+			@import 'inc/primary_menu';
+			@include breakpoint($touch)	  { display: none; }
+		}
+		.icons-wrap {
+			body.modern-menu & { margin-left: auto; } // align it right if 'modern-menu'
+
+			flex-shrink: 0; flex-grow: 0; // flexible-width flex child
+			@import 'inc/secondary_menu';
+		}
+
+
+		/** Sticky Header  */
+		&.headroom--not-top {
+		    /* Required styles */
+		    position: sticky;
+		    z-index: 990009;
+		    top: 0;
+		    left: 0;
+
+		    /* Additional styles */
+		    padding: 25px 0;
+		    background: rgba(0,0,0,0.9);
+				background: var(--background-color, #000);
+
+			/* When Scrolling Down - Menu Slides Out */
+			&.headroom--unpinned {
+			    transform: translateY(-100%);
+
+			    &.animate-out {
+			    	transition: all 300ms ease-in-out;
+			    }
+			}
+
+			/* When Scrolling Up - Menu Slides In */
+			&.headroom--pinned {
+				margin-top: 0;
+			    transform: translateY(0);
+			    transition: all 300ms ease-in-out;
+			}
+
+			.bg-wrap {
+				overflow: hidden;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				z-index: 0;
+
+				.media {
+					position: absolute;
+					width: 110%;
+					height: 110%;
+					top: -10px;
+					left: -10px;
+					transition: opacity 400ms cubic-bezier(0.39, 0.575, 0.565, 1), filter 400ms linear;
+
+					background-position: center center;
+					background-size: cover;
+
+					// Replace following with apprpriate variables
+					opacity: var(--background-opacity-scroll, 1);
+					filter: blur(var(--background-blur-scroll, 1));
+				}
+			}		
+
+
+
+		}
+			
+	}
+
+
+	/** Hamburger Menu Icon */
+	.hamburger-icon {
+		display: block;
+		padding: 0 !important;
+
+		.bar {
+			display: block;
+			margin: 7px 0;
+			width: 35px;
+			height: 3px;
+			border-radius: 2px;
+			// background: #000;
+			transition: all 0.5s ease;
+
+			&.bar-1 {
+				margin-top: 3px;
+			}
+			&.bar-2 {
+				width: 90%;
+			}
+			&.bar-3 {
+				width: 75%;
+			}
+		}
+
+		&:hover {
+			.bar {
+				width: 34px;
+			}
+		}
+    
+	}

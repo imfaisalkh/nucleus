@@ -1,0 +1,257 @@
+/*========================================================
+4.  MENU 
+========================================================== */
+
+  ul#main-menu {
+	font-family: $secondary-font-stack;
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	list-style: none;
+
+	> li {
+		margin-right: 40px;
+
+  	&:last-child { margin-right: 0; } 
+
+	> a {
+		position: relative;
+		overflow: hidden;
+		padding-bottom: 4px;
+		font-size: 16px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		color: var(--text-color, #FFF); opacity: 0.7;
+		
+
+		&:hover,
+		&:focus
+		{
+			color: var(--text-color, #FFF); opacity: 1;
+
+			&:before {
+				visibility: visible;
+				transform: scaleX(1);
+			}
+
+		}
+
+		&:before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 1px;
+
+			background-color: var(--primary-accent, #FFF);
+
+			position: absolute;
+			bottom: -1px;
+			left: 0;
+
+			visibility: hidden;
+			transform: scaleX(0);
+			transition: all 0.2s ease-in-out 0s;
+		}
+
+
+	}
+
+	&.current-menu-item, &.current-menu-ancestor, &.current-menu-parent {
+		> a {
+			color: var(--text-color, #FFF); opacity: 1;
+
+			&:before {
+				visibility: visible;
+				transform: scaleX(1);
+			}
+		}
+
+	}
+
+	}
+  }
+
+
+
+/*** ESSENTIAL STYLES ***/
+
+  ul.sf-menu {
+	@include clearfix();
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: $secondary-font-stack;
+	font-size: 1.55rem;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+
+	* {
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+
+	/** First-Level li Only */
+	> li {
+	  float: left;
+	  position: relative;
+	  display: inline-block;
+	  margin-right: 48px;
+
+	  &:last-child { margin-right: 0; }
+
+	  > a {
+		// color: #bcbcbc;
+		padding: 4px 0 1px 0;
+
+		&:hover {
+		  // color: #3b3b3b;
+		}
+	  }
+
+	  &.current-menu-item {
+		> a {
+		  // color: #3b3b3b;
+		}
+	  }
+
+	}
+
+	/** Second-Level and Deeper ul */
+	ul {
+	  min-width: 230px;
+	  position: absolute;
+	  display: none;
+	  top: 260%;
+	  left: 0;
+	  z-index: 99;
+	  padding: 30px 0;
+		background: var(--menu-bg-color, #FFF);
+	  text-align: left;
+	  z-index: 9999;
+	  border-radius: 3px;
+	  float: left;
+	  margin-bottom: 1em;
+	  box-shadow: 0 2px 2px rgba(0,0,0,0.05);
+
+	  li {
+		position: relative;
+		line-height: 1.4;
+		letter-spacing: 0.5px;
+		white-space: nowrap;
+		transition: background .2s;
+
+		a {
+		  font-size: 16px;
+		  display: block;
+		  position: relative;
+		  display: block;
+			color: var(--menu-text-color, #292929);
+		  padding: 12px 17px;
+		  margin: 2px 22px;
+		  text-transform: capitalize;
+		  border-radius: 5px;
+
+		  &:hover {
+				// background: #f8f8f8;
+				color: var(--menu-text-color, #292929);
+		  }
+		}
+
+		/** Deep Child Links */
+		ul {
+		  top: 0 !important;
+		  left: 109%;
+		}
+
+	  }
+
+	}
+
+	/** Hover Trigger */
+	li {
+	  &:hover > ul, &.sfHover > ul {
+		display: block;
+	  }
+	}
+
+  }
+
+
+   /*** sfHover ***/
+  ul.sf-menu {
+		li {
+		  &.sfHover {
+			> a {
+				color: var(--text-color, #FFF); opacity: 1;
+
+				// keeps animated border visible
+				&:before {
+					background-color: var(--primary-accent, #FFF);	
+					visibility: visible !important;
+					transform: scaleX(1) !important;
+				}
+			}
+			li {
+			  &:hover, &.sfHover {
+					> a {
+						color: #000;    
+					}
+			  }
+			}
+			transition: none;
+		  }
+		}
+  }
+
+
+
+  /*** ARROWS ***/
+  ul.sf-menu.sf-arrows {
+	ul {
+	  .sf-with-ul {
+		padding-right: 2.5em;
+
+		&:after {
+		  font-family: "FontAwesome";
+		  content: "\f0da";
+		  font-size: 17px;
+		  position: absolute;
+		  color: #292929;
+		  top: 50%;
+		  right: 13px;
+		  margin-top: -10px;
+		}
+	  }
+	}
+  }
+
+
+
+  /* Arrows */
+  ul.sf-menu {
+	  > li.menu-item-has-children {
+		position: relative;
+
+		> ul:before, > div:before {
+		  content: '';
+		  position: absolute;
+		  left: 22px;
+		  top: -14px;
+		  border-left: 13px solid transparent;
+		  border-right: 13px solid transparent;
+		  border-bottom: 14px solid #ebebeb;
+		}
+		> ul:after, > div:after {
+		  content: '';
+		  position: absolute;
+		  left: 23px;
+		  top: -13px;
+		  border-left: 12px solid transparent;
+		  border-right: 12px solid transparent;
+		  border-bottom: 13px solid var(--menu-bg-color, #FFF);
+		}      
+
+	  }
+  }

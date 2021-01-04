@@ -1,0 +1,226 @@
+/*========================================================
+  2.  GRID 
+========================================================== */
+
+
+	$susy: (
+		container: 1440px,
+		columns: 12,
+		global-box-sizing: border-box,
+	    debug: (
+	        image: hide,
+	        color: rgba(blue, .05),
+	        output: background,
+	    ),	
+	);
+
+	@include border-box-sizing;
+
+
+/** == SCAFFOLDING == */
+/** ================================================== */
+
+	
+	/** Content Area */
+	#site-container,
+	.secondary-carousel .container,
+	.advertisement-panel .container,
+	#site-header .inner-wrap,
+	#search-filter .inner-wrap,
+	#mobile-menu .inner-wrap,
+	#page-content,
+	#site-footer,
+	#site-notification
+	{
+		@include container();
+		@include breakpoint($mobile)  			{ @include container(90%); }
+		@include breakpoint($tablet)  			{ @include container(600px); }
+		@include breakpoint($laptop)    		{ @include container(1170px); }
+		@include breakpoint($full-hd)    		{ @include container(1440px); }
+	}
+
+
+
+/** == PORTFOLIO == */
+/** ================================================== */
+
+
+	// FOR MODERN BROWSERS
+	html.cssgrid {
+
+		// prepare "Grid Container" having different columns
+		@for $i from 1 through 6 {
+
+			.grid[data-col="#{$i}"] {
+				display: grid; // declare the container as "Grid"
+				grid-template-columns: repeat( $i, 1fr ); // define grid "Columns"
+				grid-template-rows: auto; // define grid "Rows"
+				grid-gap: 30px; // define grid "Gutter"
+
+				@include breakpoint($mobile) { grid-template-columns: repeat( 1, 1fr ); }
+				@include breakpoint($tablet) { grid-template-columns: repeat( 2, 1fr ); }
+			}
+
+		}
+
+		// prepare "Grid Item" having different row/column span
+		@for $i from 2 through 6 {
+
+			.grid {
+				.grid-item {
+					&.height-#{$i}x {
+						grid-row: span $i; // define "Row Span" for specific "Grid Item"
+						@include breakpoint($mobile) { grid-row: span 1; }
+					}
+					&.width-#{$i}x {
+						grid-column: span $i; // define "Column Span" for specific "Grid Item"
+						@include breakpoint($mobile) { grid-column: span 1; }
+					}
+				}
+			}
+
+		}		
+
+	}
+
+
+	// FOR OLDER BROWSERS
+	html.no-cssgrid {
+	  
+		$susy-portfolio : (
+			columns: 4, 
+			gutters: 1/8,
+		);
+
+		$cell-unit: 270px;
+		$gutter-unit: 30px;
+
+		.grid {
+			@include layout($susy-portfolio);
+			display: flex; // declare the container as "Flex" container
+			justify-content: flex-start; // alignment along the "Main Axis"
+			align-items: flex-start; // alignment along the "Cross Axis"
+			flex-wrap: wrap; // wrap "Flex Items" to other row(s)
+			margin: calc(#{$gutter-unit} / -2); // define grid "Gutter"
+
+			.grid-item {
+				width: $cell-unit; // define "Grid Item" width
+				height: $cell-unit;
+				margin: calc(#{$gutter-unit} / 2); // define grid "Gutter"
+
+				&.height-2x {
+					height: calc(#{$cell-unit} * 2 + #{$gutter-unit});
+				}
+				&.width-2x {
+					width: calc(#{$cell-unit} * 2 + #{$gutter-unit}); // define "Grid Item" width
+				}
+
+			}
+		}
+
+	}
+
+
+
+
+/** == COLUMNS == */
+/** ================================================== */
+
+
+	/** Row */
+	.row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		/** Alignmnet */
+		&.align-left {
+			justify-content: flex-start;
+		}
+		&.align-right {
+			justify-content: flex-end;
+		}
+		&.align-center {
+			justify-content: center;
+		}
+
+		/** General */
+		.column { margin-bottom: 30px; }
+
+		/** Mutiple Columns */
+		.column[data-span="6"] {
+			width: span(6 of 6 0.35);
+		}
+		.column[data-span="5"] {
+			width: span(5 of 6 0.35);
+		}
+		.column[data-span="4"] {
+			width: span(4 of 6 0.35);
+		}
+		.column[data-span="3"] {
+			width: span(3 of 6 0.35);
+		}
+		.column[data-span="2"] {
+			width: span(2 of 6 0.35);
+		}
+		.column[data-span="1"] {
+			width: span(1 of 6 0.35);
+		}
+
+	}
+
+
+/** == GALLERY == */
+/** ================================================== */
+
+	$gallery-columns: 10;
+
+	$susy2 : (
+		columns: 10, 
+		gutters: 1/8,
+	);
+
+
+
+	/** General */
+	.wp-gallery {
+		@include layout($susy2);
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+	}
+
+	@for $i from 1 through $gallery-columns {
+
+		.wp-gallery {
+			&[data-col="#{$i}"] {
+				.image {
+					@include span(1 of $i);
+					// width: span(1 of $i);
+					// margin-right: gutter();
+					// margin-bottom: gutter();
+
+					&:nth-child(#{$i}n+#{$i}) {
+						@include span(1 of $i last);
+					}
+				}
+			}
+		}
+
+	}
+
+
+	/** WP-Gallery - Columns */
+	.wp-gallery {
+		&[data-col="3"],
+		&[data-col="4"],
+		&[data-col="5"],
+		&[data-col="6"]
+		{
+			.image {
+				@include breakpoint($mobile)  { width: span(1 of 2 0.05); }
+			}
+		}
+	}

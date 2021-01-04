@@ -1,0 +1,138 @@
+/*========================================================
+ 3.  SCAFFOLDING 
+========================================================== */
+
+
+
+/** == GENERAL == */
+/** ================================================== */
+
+/*---------------------------------------------------------
+ Basic Structure (_scaffolding.scss)
+-------------------------------------------------------- */
+
+
+	/** Container */
+	#site-container {
+		position: relative;
+		margin: 0 auto;
+		@include animate-this($translate3d: '0, -30px, 0'); // CSS-3 animation is triggered via JS
+	}
+
+	/** Body */
+	#site-body {
+
+		/** Default Page */
+		#main-content {
+			position: relative;
+			margin-top: 45px;
+			margin-bottom: 45px;
+			word-wrap: break-word;
+
+			@import 'inc/page_header';
+
+			.flexed-area {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			// Page Content
+			#page-content {
+
+				> h3.title {
+					font-family: var(--tertiary-font-stack);
+					font-size: 17px;
+					text-transform: uppercase;
+					font-weight: 400;
+					letter-spacing: 2px;
+					transform-origin: 0;
+					margin-bottom: 60px;
+				}
+
+				.elementor-page &,
+				&.full-width
+				{
+					width: 100%;
+				}
+
+				&.with-sidebar {
+					margin: 0;
+					width: 63%;
+				}
+
+				.page {
+					margin-bottom: 30px;
+					padding-top: 10px;
+					// margin: 0 auto;
+					// width: 900px;
+
+					.entry-content {
+						font-family: $secondary-font-stack;
+						font-size: 1.8rem;
+
+						a:not(.elementor-price-table__button):not(.elementor-button-link) {
+							// color: #fff;
+							// border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+				    	transition: all 300ms linear;
+
+							&:hover {
+								// border-bottom: 1px solid #ffea36;
+							}
+						}
+
+						img {
+							max-width: 100%;
+							height: auto;
+						}
+
+					}
+				}
+
+				img { max-width: 100%; height: auto; }
+			}
+		}
+
+		@import 'inc/sidebar';
+		@import 'inc/forms';
+
+	}
+
+
+	body.is-custom-skin {
+		// position: relative;
+		// background: #FFF;
+
+		// &:before {
+		// 	@include position(absolute, 0, 0, 0, 0);
+		// 	background: #E5E5E3;
+		// 	opacity: 0.8;
+		// }
+	}
+
+
+	.no-content {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		margin: 60px auto -40px 0;
+		padding: 60px 0;
+		border: 2px dashed #1f1f1f;
+		background: rgba(37, 37, 37, 0.44);
+		text-align: center;
+
+		p {
+			max-width: 600px;
+			margin: 0; padding: 0;
+		}
+
+		a {
+			color: #fff;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+	    	transition: all 300ms linear;
+
+			&:hover {
+				border-bottom: 1px solid #ffea36;
+			}
+		}
+		
+	}

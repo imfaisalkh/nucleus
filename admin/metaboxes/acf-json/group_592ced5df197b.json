@@ -1,0 +1,646 @@
+{
+    "key": "group_592ced5df197b",
+    "title": "Page Style",
+    "fields": [
+        {
+            "key": "field_5a401df03c05d",
+            "label": "Color Scheme",
+            "name": "color_scheme",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "dark": "Dark",
+                "light": "Light",
+                "custom": "Custom"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "dark",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_59362b6168bbb",
+            "label": "General",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a401df03c05d",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5977b056496e0",
+            "label": "Accent Colors",
+            "name": "accent_colors",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "ID": 195,
+                    "key": "field_5977b07b496e1",
+                    "label": "Primary Accent",
+                    "name": "primary_accent",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 0,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 194,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "primary_accent",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#ffea36"
+                },
+                {
+                    "ID": 196,
+                    "key": "field_5977b0ac496e2",
+                    "label": "Secondary Accent",
+                    "name": "secondary_accent",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 1,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 194,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "secondary_accent",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#43f3b7"
+                }
+            ]
+        },
+        {
+            "key": "field_5977b10539c88",
+            "label": "Base Colors",
+            "name": "base_colors",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "ID": 333,
+                    "key": "field_597d0d77bb763",
+                    "label": "Background Color",
+                    "name": "background_color",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 0,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 197,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "background_color",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#000"
+                },
+                {
+                    "ID": 199,
+                    "key": "field_5977b13b39c8a",
+                    "label": "Text Color",
+                    "name": "text_color",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 1,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 197,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "text_color",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#FFF"
+                }
+            ]
+        },
+        {
+            "key": "field_5941af4fb6586",
+            "label": "Forms",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a401df03c05d",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_597bf157c364a",
+            "label": "Text Styling",
+            "name": "form_text_styling",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "ID": 308,
+                    "key": "field_597bf170c364b",
+                    "label": "Label Color",
+                    "name": "label_color",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 0,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 307,
+                    "wrapper": {
+                        "width": "33.33333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "label_color",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#838383"
+                },
+                {
+                    "ID": 309,
+                    "key": "field_597bf184c364c",
+                    "label": "Req. Symbol Color",
+                    "name": "req_symbol_color",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 1,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 307,
+                    "wrapper": {
+                        "width": "66.666667",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "req_symbol_color",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#ff0000"
+                }
+            ]
+        },
+        {
+            "key": "field_5977ad0216036",
+            "label": "Field Styling",
+            "name": "form_field_styling",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "ID": 184,
+                    "key": "field_5977ad4716037",
+                    "label": "Background Color",
+                    "name": "background_color",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 0,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 183,
+                    "wrapper": {
+                        "width": "33.33333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "background_color",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#242424"
+                },
+                {
+                    "ID": 185,
+                    "key": "field_5977ad7316038",
+                    "label": "Border Color",
+                    "name": "border_color",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 1,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 183,
+                    "wrapper": {
+                        "width": "33.33333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "border_color",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#393939"
+                },
+                {
+                    "ID": 186,
+                    "key": "field_5977ad9116039",
+                    "label": "Text Color",
+                    "name": "text_color",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 2,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 183,
+                    "wrapper": {
+                        "width": "33.33333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "text_color",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#B7B7B7"
+                },
+                {
+                    "ID": 226,
+                    "key": "field_597aa7f225f07",
+                    "label": "Background Color <small>(Focus)<\/small>",
+                    "name": "background_color_focus",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 3,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 183,
+                    "wrapper": {
+                        "width": "33.33333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "background_color_focus",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#242424"
+                },
+                {
+                    "ID": 228,
+                    "key": "field_597ab8d7097e9",
+                    "label": "Border Color <small>(Focus)<\/small>",
+                    "name": "border_color_focus",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 4,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 183,
+                    "wrapper": {
+                        "width": "33.33333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "border_color_focus",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#555555"
+                },
+                {
+                    "ID": 229,
+                    "key": "field_597ab8ef097ea",
+                    "label": "Text Color  <small>(Focus)<\/small>",
+                    "name": "text_color_focus",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 5,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 183,
+                    "wrapper": {
+                        "width": "33.33333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "text_color_focus",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#B7B7B7"
+                }
+            ]
+        },
+        {
+            "key": "field_5977ae7ede0ec",
+            "label": "Button Styling",
+            "name": "form_button_styling",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "ID": 189,
+                    "key": "field_5977ae9ede0ed",
+                    "label": "Background Color",
+                    "name": "background_color",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 0,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 188,
+                    "wrapper": {
+                        "width": "33.33333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "background_color",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#0FFFBE"
+                },
+                {
+                    "ID": 310,
+                    "key": "field_597bf2afbf767",
+                    "label": "Border Color",
+                    "name": "border_color",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 1,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 188,
+                    "wrapper": {
+                        "width": "33.33333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "border_color",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#0FFFBE"
+                },
+                {
+                    "ID": 190,
+                    "key": "field_5977aec7de0ee",
+                    "label": "Text Color",
+                    "name": "text_color",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 2,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 188,
+                    "wrapper": {
+                        "width": "33.333333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "text_color",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#000"
+                },
+                {
+                    "ID": 230,
+                    "key": "field_597ab93c36576",
+                    "label": "Background Color  <small>(hover)<\/small>",
+                    "name": "background_color_hover",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 3,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 188,
+                    "wrapper": {
+                        "width": "33.33333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "background_color_hover",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#EAEAEA"
+                },
+                {
+                    "ID": 311,
+                    "key": "field_597bf2d7bf768",
+                    "label": "Border Color <small>(hover)<\/small>",
+                    "name": "border_color_hover",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 4,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 188,
+                    "wrapper": {
+                        "width": "33.33333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "border_color_hover",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#EAEAEA"
+                },
+                {
+                    "ID": 231,
+                    "key": "field_597ab93f36577",
+                    "label": "Text Color <small>(hover)<\/small>",
+                    "name": "text_color_hover",
+                    "prefix": "acf",
+                    "type": "color_picker",
+                    "value": null,
+                    "menu_order": 5,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 188,
+                    "wrapper": {
+                        "width": "33.33333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "_name": "text_color_hover",
+                    "_prepare": 0,
+                    "_valid": 1,
+                    "default_value": "#000"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "portfolio"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1514154547
+}
