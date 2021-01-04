@@ -68,8 +68,19 @@ function my_theme_register_required_plugins() {
 		array(
 			'name'      => esc_html__('Advanced Custom Fields Pro', 'nucleus'), // The plugin name.
 			'slug'      => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name).
-			'source'    => 'https://bitbucket.org/wpscouts/advanced-custom-fields-pro/get/1d4fa1f8a1f8.zip', // The plugin source.
+			'source'    => 'https://github.com/imfaisalkh/advanced-custom-fields-pro/archive/master.zip', // The plugin source.
 			'required'  => true, // If false, the plugin is only 'recommended' instead of required.
+		),
+
+		array(
+			'name' 		=> esc_html__('Classic Editor', 'nucleus'),
+			'slug' 		=> 'classic-editor',
+		),
+
+		array(
+			'name' 		=> esc_html__('Safe SVG', 'capstone'),
+			'slug' 		=> 'safe-svg',
+			'required' 	=> false,
 		),
 
 		array(
