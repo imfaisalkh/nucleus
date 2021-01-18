@@ -154,10 +154,6 @@
 
 			global $wp_query;
 
-			// Update jQuery Script
-			wp_deregister_script( 'jquery' );
-			wp_register_script( 'jquery', "https://code.jquery.com/jquery-2.1.3.min.js", array(), '2.1.3' );
-
 			// Enqueue Theme Scripts
 			wp_enqueue_script('modernizr', NUCLEUS_JS_URI . '/lib/modernizr-custom.js', array('jquery'), null, true);
 			wp_enqueue_script('nucleus-js-vendors', NUCLEUS_JS_URI . '/vendors.js', array('jquery'), null, true);
@@ -245,7 +241,7 @@
 	  	
 	  	// Setup font arguments
 		$query_args = array(
-			'family' => 'Open+Sans:300,400,400italic,500,600,700%7CLato:300,400,400italic,500,600,700,900%7CLora:300,400,400italic,500,600,700',
+			'family' => 'Open+Sans:300,400,400italic,500,600,700%7CLato:300,400,400italic,500,600,700,900%7CDM+Serif+Text:400,400italic',
 			'subset' => 'latin,latin-ext',
 		);
 

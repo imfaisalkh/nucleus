@@ -8,7 +8,18 @@
     "url": "https://bitbucket.org/imfaisalkh/nucleus"
   },
   "scripts": {
-    "build": "webpack --progress --watch"
+    "start": "gulp default",
+    "build": "gulp build",
+    "deploy": "gulp deploy",
+    "translate": "gulp translate"
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.1.20",
@@ -26,34 +37,46 @@
     "tendina": "^0.11.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-es2015": "^6.24.1",
-    "browser-sync": "^2.11.1",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babelify": "^10.0.0",
+    "beepbeep": "^1.2.2",
+    "breakpoint-sass": "^2.7.1",
+    "browser-sync": "^2.26.3",
     "browserify": "^14.4.0",
+    "browserify-shim": "^3.8.14",
     "del": "^2.2.2",
     "dotenv": "^4.0.0",
     "eslint": "^4.6.1",
-    "gulp": "^3.9.1",
+    "event-stream": "^4.0.1",
+    "glob": "^7.1.3",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-babel": "^7.0.0",
+    "gulp-bro": "^1.0.3",
+    "gulp-browserify": "^0.5.1",
+    "gulp-cache": "^1.1.0",
     "gulp-concat": "^2.5.2",
     "gulp-debug": "^2.1.2",
     "gulp-filter": "^4.0.0",
-    "gulp-imagemin": "^2.4.0",
-    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-line-ending-corrector": "^1.0.3",
     "gulp-merge-media-queries": "^0.2.1",
     "gulp-notify": "^2.2.0",
-    "gulp-rename": "^1.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
     "gulp-replace": "^0.5.4",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^3.2.1",
     "gulp-sort": "^2.0.0",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-ssh": "^0.6.0",
     "gulp-uglify": "^1.5.3",
-    "gulp-uglifycss": "^1.0.6",
+    "gulp-uglifycss": "^1.1.0",
     "gulp-wp-pot": "^1.2.2",
     "gulp-zip": "^3.2.0",
+    "postcss-preset-env": "^6.5.0",
+    "sass-module-importer": "^1.4.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }

@@ -58,7 +58,7 @@
         $header_title = esc_html__( 'Author.', 'nucleus' );
         $header_subtitle = sprintf( esc_html__( 'Entries published by "%s"', 'nucleus' ), get_the_author() );
     } else if( is_home() ) {
-        $header_title = esc_html__( 'Our Blog.', 'nucleus' );
+        $header_title = esc_html__( 'My Journal.', 'nucleus' );
     }
 
 	// Others
@@ -80,8 +80,16 @@
 						$link 		= get_category_link( $cat_id );
 					?>
 					<span class="category"><a href="<?php echo esc_url( $link ); ?>"><?php echo $name; ?></a></span>
+				<?php } else if (is_home()) { ?>
+					<span class="timestamp">Since 2015</span>
 				<?php } ?>
 				<h3 class="title"><?php echo $header_title; ?></h3>
+				<?php if (is_home()) { ?>
+					<ul class="categories">
+						<li class="active"><a href="<?php echo esc_url( home_url('/') ); ?>">All</a></li>
+						<?php wp_list_categories('title_li='); ?>
+					</ul>
+				<?php } ?>
 				<?php if ( $header_subtitle ) { ?>
 					<p class="subtitle"><?php echo $header_subtitle; ?></p>
 				<?php } ?>
