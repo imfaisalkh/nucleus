@@ -1,6 +1,19 @@
 <!-- BEGIN: SITE CONTROLS -->
 <div id="site-clipboard">
 
+    <!-- Custom Cursor -->
+    <div class="cursor">
+        <div class="cursor-helper cursor-view">
+            <span>VIEW</span>
+        </div>
+
+        <div class="cursor-helper cursor-close">
+            <span>CLOSE</span>
+        </div>
+
+        <div class="cursor-helper cursor-link"></div>
+    </div>
+
     <?php if ( !get_theme_mod('nucleus_notification_disable') ) { ?>
 
         <!-- Seacrh Filter -->

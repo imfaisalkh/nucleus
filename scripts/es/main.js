@@ -261,14 +261,84 @@
 		/** Flickity Carousel */
 		flickityCarousel: function() {
 
-    	var is_flickity = true;
-    	// var is_flickity = $('body').hasClass('is-flickity-enabled');
+			var is_flickity = true;
+			// var is_flickity = $('body').hasClass('is-flickity-enabled');
 
-      if (is_flickity) {
+      		if (is_flickity) {
 
 				// init Flickity instance
-				var $carousel = $('.main-carousel').flickity({
+				var $carousel = $('#featured-slider .main-carousel').flickity({
 					cellAlign: 'left',
+					contain: true,
+					wrapAround: true,
+				});
+
+
+				// configure progress bar
+				var time = 8;
+				var $bar, $slick, isPause, tick, percentTime;
+
+				$bar = $('.progress-bar .progress');
+
+				$('.main-carousel').on({
+					mouseenter: function() {
+						isPause = true;
+					},
+					mouseleave: function() {
+						isPause = false;
+					}
+				})
+
+				function startProgressbar() {
+					resetProgressbar();
+					percentTime = 0;
+					isPause = false;
+					tick = setInterval(interval, 10);
+				}
+
+				function interval() {
+					if(isPause === false) {
+						percentTime += 1 / (time+0.1);
+						$bar.css({
+							width: percentTime+"%"
+						});
+					if(percentTime >= 100) {
+						$carousel.flickity( 'next' )
+							startProgressbar();
+						}
+					}
+				}
+
+				function resetProgressbar() {
+					$bar.css({
+						width: 0+'%' 
+					});
+					clearTimeout(tick);
+				}
+
+				startProgressbar();
+
+
+				/** reset progress on slide scroll event */
+				$carousel.on( 'scroll.flickity', function( event, progress ) {
+					startProgressbar();
+				});
+
+			}
+
+		},
+
+
+		/** Horizon Carousel */
+		horizon_carousel: function() {
+
+			var is_flickity = true;
+			// var is_flickity = $('body').hasClass('is-flickity-enabled');
+
+      		if (is_flickity) {
+
+				// init Flickity instance
+				var $carousel = $('#horizon-slider .main-carousel').flickity({
 					contain: true,
 					wrapAround: true,
 				});
@@ -526,6 +596,24 @@
 
 		},
 
+		/** Custom Cursor */
+		customCursor: function() {
+
+			const cursor = $('.cursor');
+
+			$(document).on("mousemove", function (e) {
+				cursor.css('top',  e.pageY - 10 + "px");
+				cursor.css('left',  e.pageX - 10 + "px");
+			});
+
+			$("a").on("mouseover", function () {
+				cursor.addClass('hover')
+			});
+			$("a").on("mouseout", function () {
+				cursor.removeClass('hover')
+			});
+
+		},		
 
 	}
 
@@ -545,11 +633,13 @@
 		templateFunctions.gridFunctions();
 		templateFunctions.stickyHeader();
 		templateFunctions.pageHeader();
-		templateFunctions.flickityCarousel();
-		templateFunctions.twitterCarousel();
+		// templateFunctions.flickityCarousel();
+		templateFunctions.horizon_carousel();
+		// templateFunctions.twitterCarousel();
 		templateFunctions.infiniteScroll();
 		templateFunctions.siteTransitions();
 		templateFunctions.elementorFix();
+		templateFunctions.customCursor();
 
 	});
 

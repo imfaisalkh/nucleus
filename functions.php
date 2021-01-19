@@ -270,5 +270,8 @@
 	require_once NUCLEUS_ADMIN . '/metaboxes/functions.php';
 	require_once NUCLEUS_ADMIN . '/plugins/functions.php';
 
+	// require CLASSES resources
+	require_once NUCLEUS_CLASSES . '/functions.php';
+
 	// require HELPER theme functions
 	require_once NUCLEUS_HELPERS . '/functions.php';
