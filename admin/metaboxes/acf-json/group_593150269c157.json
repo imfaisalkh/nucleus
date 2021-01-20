@@ -68,7 +68,7 @@
             "label": "Thumbnail Dimension",
             "name": "thumbnail_dimension",
             "type": "group",
-            "instructions": "Where, 'x' means span of entry thumbnail dimension over number of columns or rows. So a value of '2x' for 'Thumbnail Width' means that the thumbnail will span two columns (from available number of columns in the grid). The same concept applies to the 'Thumbnail Height' field.",
+            "instructions": "These dimentsions applies to classic grid layout.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -79,28 +79,18 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "ID": 207,
-                    "key": "field_5977b7efdc24c",
+                    "key": "field_6008332037310",
                     "label": "Width",
                     "name": "width",
-                    "prefix": "acf",
                     "type": "select",
-                    "value": null,
-                    "menu_order": 0,
                     "instructions": "",
                     "required": 1,
-                    "id": "",
-                    "class": "",
                     "conditional_logic": 0,
-                    "parent": 206,
                     "wrapper": {
                         "width": "50",
                         "class": "",
                         "id": ""
                     },
-                    "_name": "width",
-                    "_prepare": 0,
-                    "_valid": 1,
                     "choices": {
                         "width-1x": "1x Width",
                         "width-2x": "2x Width",
@@ -109,39 +99,27 @@
                         "width-5x": "5x Width",
                         "width-6x": "6x Width"
                     },
-                    "default_value": [
-                        "width-1x"
-                    ],
+                    "default_value": [],
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
-                    "ajax": 0,
                     "return_format": "value",
+                    "ajax": 0,
                     "placeholder": ""
                 },
                 {
-                    "ID": 208,
-                    "key": "field_5977b81adc24d",
+                    "key": "field_6008338037311",
                     "label": "Height",
                     "name": "height",
-                    "prefix": "acf",
                     "type": "select",
-                    "value": null,
-                    "menu_order": 1,
                     "instructions": "",
                     "required": 1,
-                    "id": "",
-                    "class": "",
                     "conditional_logic": 0,
-                    "parent": 206,
                     "wrapper": {
                         "width": "50",
                         "class": "",
                         "id": ""
                     },
-                    "_name": "height",
-                    "_prepare": 0,
-                    "_valid": 1,
                     "choices": {
                         "height-1x": "1x Height",
                         "height-2x": "2x Height",
@@ -150,14 +128,12 @@
                         "height-5x": "5x Height",
                         "height-6x": "6x Height"
                     },
-                    "default_value": [
-                        "height-1x"
-                    ],
+                    "default_value": [],
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
-                    "ajax": 0,
                     "return_format": "value",
+                    "ajax": 0,
                     "placeholder": ""
                 }
             ]
@@ -180,5 +156,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1511745965
+    "modified": 1611150523
 }

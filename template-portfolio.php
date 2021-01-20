@@ -7,6 +7,7 @@ Template Name: Portfolio
 <?php
 // Helper Variable(s)
 $portfolio_style = get_field('portfolio_style');
+$footer_version = ($portfolio_style == 'classic') ? '' : 'minimal'
 
 ?>
 
@@ -23,4 +24,4 @@ $portfolio_style = get_field('portfolio_style');
 
     </div>
 
-<?php get_footer(); ?>
+<?php get_footer($footer_version); ?>

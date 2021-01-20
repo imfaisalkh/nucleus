@@ -72,7 +72,7 @@
 		) );
 
     // Custom Image Sizes
-		add_image_size( 'nucleus-site-logo', 200, 200 );
+	add_image_size( 'nucleus-site-logo', 200, 200 );
     add_image_size( 'nucleus-portfolio-index', 281, '', true );
     add_image_size( 'nucleus-blog-carousel-featured', 900, 500, true );
     add_image_size( 'nucleus-blog-carousel-regular-odd', 510, 315, true );
@@ -157,6 +157,7 @@
 			// Enqueue Theme Scripts
 			wp_enqueue_script('modernizr', NUCLEUS_JS_URI . '/lib/modernizr-custom.js', array('jquery'), null, true);
 			wp_enqueue_script('nucleus-js-vendors', NUCLEUS_JS_URI . '/vendors.js', array('jquery'), null, true);
+			wp_enqueue_script('flickity', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', null, null, true);
 			wp_enqueue_script('nucleus-js-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery'), null, true);
 
 			// Enqueue Other Scripts
@@ -200,6 +201,7 @@
 
 			// Plugin Styles
 			wp_enqueue_style('nucleus-css-vendors', NUCLEUS_CSS_URI . '/vendors.min.css');
+			wp_enqueue_style('flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css');
 			wp_enqueue_style('nucleus-css-main', NUCLEUS_CSS_URI . '/main.css');
 			wp_enqueue_style('nucleus-css-editor', get_template_directory_uri() . '/custom-editor-style.css');
 			

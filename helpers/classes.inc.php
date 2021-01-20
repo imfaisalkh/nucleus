@@ -10,24 +10,25 @@
 
 		function nucleus_body_class( $classes ) {
 
-				// Post or Page ID
-				if( is_home() || is_archive() || is_search() ) {
-					$post_ID = get_option('page_for_posts');
-				} else {
-					$post_ID = get_the_ID();
-				}
+			// Post or Page ID
+			if( is_home() || is_archive() || is_search() ) {
+				$post_ID = get_option('page_for_posts');
+			} else {
+				$post_ID = get_the_ID();
+			}
 
-				// get values defined in 'globals.inc.php'
-		    $vendor_classes 		= wp_script_is( 'nucleus-js-vendors', 'enqueued' ) ? ' is-isotope-enabled is-packery-enabled is-infinite-scroll-enabled is-flickity-enabled is-fancybox-enabled' : '';
+			// get values defined in 'globals.inc.php'
+		    $vendor_classes 	= wp_script_is( 'nucleus-js-vendors', 'enqueued' ) ? ' is-isotope-enabled is-packery-enabled is-infinite-scroll-enabled is-flickity-enabled is-fancybox-enabled' : '';
 		    $is_site_preloader  = get_theme_mod('nucleus_site_preloader') ? ' site-preloader-disabled' : '';
-		    $menu_type 					= isset($_GET['nav']) ? $_GET['nav'] : get_theme_mod('nucleus_menu_type', 'traditional');
-		    $color_scheme 			= get_field('color_scheme', $post_ID) . '-color-scheme ';
+		    $menu_type 			= isset($_GET['nav']) ? $_GET['nav'] : get_theme_mod('nucleus_menu_type', 'traditional');
+			$color_scheme 		= get_field('color_scheme', $post_ID) . '-color-scheme ';
+			$portfolio_layout   = get_field('portfolio_style') ? 'portfolio-'. get_field('portfolio_style') : '';
 				
-				// add custom classes to the $classes array
-				$classes[] = $color_scheme . $is_site_preloader .' '. $menu_type . '-menu '.' '. $vendor_classes;
+			// add custom classes to the $classes array
+			$classes[] = $color_scheme . $is_site_preloader .' '. $menu_type . '-menu '.' '. $vendor_classes .' '. $portfolio_layout;
 
-				// return the $classes array
-				return $classes;
+			// return the $classes array
+			return $classes;
 		}
 
 	}

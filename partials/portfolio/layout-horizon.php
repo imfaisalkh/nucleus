@@ -9,7 +9,7 @@
 
 
 	// Portfolio Configuration - Meta Panel
-	$portfolio_slider_posts = [400, 398, 401];
+	$portfolio_slider_posts = [530, 532, 534];
 	
 	// WP_QUERY Arguments
 	$portfolio_slider_args = array(
@@ -31,14 +31,24 @@
 
 			<?php while ( $portfolio_slider_query->have_posts() ) : $portfolio_slider_query->the_post(); ?>
 
-				<?php 
+				<?php
+					// Color Scheme
+					$color_scheme 	= get_field('color_scheme', get_the_ID());
+					$custom_color   = get_field('custom_colors', get_the_ID());
+				
+					// Custom Colors
+					$primary_accent = $custom_color['primary_accent'];
+					$secondary_accent = $custom_color['secondary_accent'];
+					$background_color = $custom_color['background_color'];
+					$text_color = $custom_color['text_color'];
+
+					// Others
 					$folio_terms = implode(', ', nucleus_get_term_fields('portfolio_category', 'name'));
-					$folio_slider_image = get_field('slider_image');
 					$folio_permalink = get_post_meta(get_the_ID(), 'custom_url', true) != false ? esc_url( get_post_meta(get_the_ID(), 'custom_url', true) ) : esc_url( get_permalink() );
 				?>
 
-				<div class="carousel-cell">
-					<img class="carousel-image" src="<?php echo esc_url( $folio_slider_image ); ?>" />
+				<div class="carousel-cell" data-primary-accent-color="<?php echo $primary_accent; ?>" data-secondary-accent-color="<?php echo $secondary_accent; ?>" data-bg-color="<?php echo $background_color; ?>" data-text-color="<?php echo $text_color; ?>">
+					<img class="carousel-image" src="<?php the_post_thumbnail_url(); ?>">
 					<div class="carousel-desc">
 						<a href="<?php echo $folio_permalink; ?>" title="<?php the_title(); ?>" >
 							<h3 class="title"><?php the_title(); ?></h3>

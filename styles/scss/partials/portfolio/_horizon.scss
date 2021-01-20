@@ -1,0 +1,118 @@
+/** == GENERAL == */
+/** ================================================== */
+
+    body.portfolio-horizon {
+        overflow: hidden;
+    }
+
+/** == HORIZON CAROUSEL == */
+/** ================================================== */
+
+    #horizon-slider {
+        position: relative;
+        top: -194px; left: 0; right: 0;
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+        z-index: 10; // make it beneath menu
+        
+        // Progress Bar
+        .progress-bar {
+            @extend .slider-progress-bar;
+            @include make-full-width();
+        }
+        
+        .main-carousel {
+            width: 100%;
+            margin-top: 100px;
+            
+            // Dots
+            .flickity-page-dots {
+                @extend .slider-page-dots;
+                text-align: center;
+                bottom: -50px;
+                padding: 0;
+            }
+
+            // Arrows 
+            .flickity-prev-next-button {
+                width: 55px;
+                height: 55px;
+                background: transparent;
+
+                .arrow {
+                    transform: scale(4, 4);
+                    fill: #fff;
+                }
+                &.previous {
+                    left: 5%;
+                }
+                &.next {
+                    right: 5%;
+                    // transform-origin: 0 0;
+                    svg {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            
+            // Viewport
+            .flickity-viewport {
+                overflow: visible !important;
+
+                .flickity-slider {
+                    // @include make-full-width();
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+
+                    // margin-left: calc(-50vw + 65%);
+
+                    .carousel-cell {
+                        position: relative;
+                        text-align: center;
+                        width: 80%;
+                        height: auto; /* height of carousel */
+                        padding: 0 15%;
+                        // margin: 0 80px;
+
+                        .carousel-image {
+                            border-radius: 5px;
+                        }
+
+                        .carousel-desc {
+                            @include animate-this(); // CSS-3 animation is triggered via addition of '.is-selected' class
+                            position: absolute;
+                            left: 19%;
+                            top: 50%;
+                            transform: translateY(-50%) translateX(-50%);
+                            text-align: left;
+
+                            .title {
+                                font-size: 48px;
+                                // color: #000;
+                                margin: 0;
+                            }
+                            .tags {
+                                font-size: 14px;
+                                text-transform: uppercase;
+                                letter-spacing: 1px;
+                                color: #696969;
+                            }
+                        }
+
+                        /* animate-in carousel description when selected */
+                        &.is-selected {
+                            .carousel-desc {
+                                opacity: 1;
+                                visibility: visible;
+                                // transform: translate3d(0, 0, 0);
+                                transition-delay: 600ms;
+                        
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
