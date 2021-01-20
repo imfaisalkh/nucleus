@@ -29,6 +29,41 @@
 		}
 	}
 
+	// Arrows 
+	.flickity-prev-next-button {
+		width: 73px;
+		height: 40px;
+		background: transparent;
+		border-radius: 0;
+		padding: 0;
+
+		.arrow {
+			transform: scale(3, 3);
+			fill: var(--text-color, #000);
+
+		}
+
+		svg {
+			width: 100%;
+			path {
+				stroke: var(--text-color, #000);
+				stroke-width: 2;
+			}
+		}
+
+		&.previous {
+			left: 0%;
+			svg { left: 0; }
+		}
+		&.next {
+			right: 2%;
+			// transform-origin: 0 0;
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
 	// Slider Dots
 	.slider-page-dots {
 		position: absolute;
@@ -60,6 +95,53 @@
 		}
 	}
 
+	// All Works Link
+	.all-works {
+		position: absolute;
+		left: 0;
+		bottom: 20px;
+		font-family: $secondary-font-stack;
+		font-size: 15px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+
+		a {
+			color: var(--text-color, #000);
+
+			&:before {
+				display: inline-block;
+				content: '+';
+				margin-right: 6px;
+				font-size: 24px;
+				transform: translateY(4px);
+			}
+		}
+	}
+
+	// Slider Counter
+	.counter {
+		position: absolute;
+		right: 0;
+		bottom: 20px;
+		font-family: $secondary-font-stack;
+		font-size: 17px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: var(--text-color, #000);
+
+		.total {
+			&:before {
+				display: inline-block;
+				content: '';
+				width: 40px;
+				height: 1px;
+				background: #000;
+				margin: 0 8px;
+				position: relative;
+				top: -5px;
+			}
+		}
+	}
 
 
 /** == CLASSIC CAROUSEL == */

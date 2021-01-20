@@ -1,14 +1,14 @@
 /** == GENERAL == */
 /** ================================================== */
 
-    body.portfolio-horizon {
+    body.portfolio-forza {
         overflow: hidden;
     }
 
-/** == HORIZON CAROUSEL == */
+/** == FORZA CAROUSEL == */
 /** ================================================== */
 
-    #horizon-slider {
+    #forza-slider {
         position: relative;
         top: -194px; left: 0; right: 0;
         display: flex;
@@ -47,6 +47,19 @@
             // Arrows 
             .flickity-prev-next-button {
                 @extend .flickity-prev-next-button;
+                &.flickity-button {
+                    left: auto;
+                    right: 150px;
+                    transform: rotate(90deg);
+
+                    &.previous {
+                        top: 30%;
+                        right: 155px;
+                    }
+                    &.next {
+                        top: 52%;
+                    }
+                }
             }
             
             // Viewport
