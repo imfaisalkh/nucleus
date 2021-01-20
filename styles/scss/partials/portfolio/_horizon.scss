@@ -21,6 +21,54 @@
             @extend .slider-progress-bar;
             @include make-full-width();
         }
+
+        // All Works
+        .all-works {
+            position: absolute;
+            left: 0;
+            bottom: 20px;
+            font-family: $secondary-font-stack;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            a {
+                color: var(--text-color, #000);
+
+                &:before {
+                    display: inline-block;
+                    content: '+';
+                    margin-right: 6px;
+                    font-size: 24px;
+                    transform: translateY(4px);
+                }
+            }
+        }
+
+         // Counter
+         .counter {
+            position: absolute;
+            right: 0;
+            bottom: 20px;
+            font-family: $secondary-font-stack;
+            font-size: 17px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-color, #000);
+
+            .total {
+                &:before {
+                    display: inline-block;
+                    content: '';
+                    width: 40px;
+                    height: 1px;
+                    background: #000;
+                    margin: 0 8px;
+                    position: relative;
+                    top: -5px;
+                }
+            }
+        }
         
         .main-carousel {
             width: 100%;
@@ -36,19 +84,32 @@
 
             // Arrows 
             .flickity-prev-next-button {
-                width: 55px;
-                height: 55px;
+                width: 73px;
+                height: 40px;
                 background: transparent;
+                border-radius: 0;
+                padding: 0;
 
                 .arrow {
-                    transform: scale(4, 4);
-                    fill: #fff;
+                    transform: scale(3, 3);
+                    fill: var(--text-color, #000);
+
                 }
+
+                svg {
+                    width: 100%;
+                    path {
+                        stroke: var(--text-color, #000);
+                        stroke-width: 2;
+                    }
+                }
+
                 &.previous {
-                    left: 5%;
+                    left: 0%;
+                    svg { left: 0; }
                 }
                 &.next {
-                    right: 5%;
+                    right: 2%;
                     // transform-origin: 0 0;
                     svg {
                         transform: rotate(180deg);
@@ -74,9 +135,12 @@
                         width: 80%;
                         height: auto; /* height of carousel */
                         padding: 0 15%;
+                        overflow: hidden;
+
                         // margin: 0 80px;
 
                         .carousel-image {
+                            display: block;
                             border-radius: 5px;
                         }
 
@@ -92,6 +156,7 @@
                                 font-size: 48px;
                                 // color: #000;
                                 margin: 0;
+                                letter-spacing: 0;
                             }
                             .tags {
                                 font-size: 14px;
@@ -106,7 +171,7 @@
                             .carousel-desc {
                                 opacity: 1;
                                 visibility: visible;
-                                // transform: translate3d(0, 0, 0);
+                                transform: translate3d(-50%, -56%, 0);
                                 transition-delay: 600ms;
                         
                             }

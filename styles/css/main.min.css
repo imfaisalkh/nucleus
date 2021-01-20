@@ -535,22 +535,30 @@ ol.comment-list li.comment .children{list-style:none}
 body.portfolio-horizon{overflow:hidden}
 #horizon-slider{position:relative;top:-194px;left:0;right:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;min-height:100vh;z-index:10}
 #horizon-slider .progress-bar{width:calc(100vw - 10px);margin-left:calc(-50vw + 50%)}
+#horizon-slider .all-works{position:absolute;left:0;bottom:20px;font-family:"Open Sans",sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:1px}
+#horizon-slider .all-works a{color:var(--text-color,#000)}
+#horizon-slider .all-works a:before{display:inline-block;content:'+';margin-right:6px;font-size:24px;-webkit-transform:translateY(4px);transform:translateY(4px)}
+#horizon-slider .counter{position:absolute;right:0;bottom:20px;font-family:"Open Sans",sans-serif;font-size:17px;text-transform:uppercase;letter-spacing:1px;color:var(--text-color,#000)}
+#horizon-slider .counter .total:before{display:inline-block;content:'';width:40px;height:1px;background:#000;margin:0 8px;position:relative;top:-5px}
 #horizon-slider .main-carousel{width:100%;margin-top:100px}
 #horizon-slider .main-carousel .flickity-page-dots{text-align:center;bottom:-50px;padding:0}
-#horizon-slider .main-carousel .flickity-prev-next-button{width:55px;height:55px;background:transparent}
-#horizon-slider .main-carousel .flickity-prev-next-button .arrow{-webkit-transform:scale(4,4);transform:scale(4,4);fill:#fff}
-#horizon-slider .main-carousel .flickity-prev-next-button.previous{left:5%}
-#horizon-slider .main-carousel .flickity-prev-next-button.next{right:5%}
+#horizon-slider .main-carousel .flickity-prev-next-button{width:73px;height:40px;background:transparent;border-radius:0;padding:0}
+#horizon-slider .main-carousel .flickity-prev-next-button .arrow{-webkit-transform:scale(3,3);transform:scale(3,3);fill:var(--text-color,#000)}
+#horizon-slider .main-carousel .flickity-prev-next-button svg{width:100%}
+#horizon-slider .main-carousel .flickity-prev-next-button svg path{stroke:var(--text-color,#000);stroke-width:2}
+#horizon-slider .main-carousel .flickity-prev-next-button.previous{left:0}
+#horizon-slider .main-carousel .flickity-prev-next-button.previous svg{left:0}
+#horizon-slider .main-carousel .flickity-prev-next-button.next{right:2%}
 #horizon-slider .main-carousel .flickity-prev-next-button.next svg{-webkit-transform:rotate(180deg);transform:rotate(180deg)}
 #horizon-slider .main-carousel .flickity-viewport{overflow:visible !important}
 #horizon-slider .main-carousel .flickity-viewport .flickity-slider{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}
-#horizon-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell{position:relative;text-align:center;width:80%;height:auto;padding:0 15%}
-#horizon-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .carousel-image{border-radius:5px}
+#horizon-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell{position:relative;text-align:center;width:80%;height:auto;padding:0 15%;overflow:hidden}
+#horizon-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .carousel-image{display:block;border-radius:5px}
 #horizon-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .carousel-desc{opacity:0;visibility:hidden;-webkit-transform:translate3d(0,15px,0) rotate(0);transform:translate3d(0,15px,0) rotate(0);transition:opacity 400ms cubic-bezier(0.39,0.575,0.565,1),visibility 400ms linear,-webkit-transform 400ms cubic-bezier(0.39,0.575,0.565,1);transition:transform 400ms cubic-bezier(0.39,0.575,0.565,1),opacity 400ms cubic-bezier(0.39,0.575,0.565,1),visibility 400ms linear;transition:transform 400ms cubic-bezier(0.39,0.575,0.565,1),opacity 400ms cubic-bezier(0.39,0.575,0.565,1),visibility 400ms linear,-webkit-transform 400ms cubic-bezier(0.39,0.575,0.565,1);position:absolute;left:19%;top:50%;-webkit-transform:translateY(-50%) translateX(-50%);transform:translateY(-50%) translateX(-50%);text-align:left}
 #horizon-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .carousel-desc.animate-in{opacity:1;visibility:visible;-webkit-transform:translate3d(0,0,0) rotate(0);transform:translate3d(0,0,0) rotate(0)}
-#horizon-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .carousel-desc .title{font-size:48px;margin:0}
+#horizon-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .carousel-desc .title{font-size:48px;margin:0;letter-spacing:0}
 #horizon-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .carousel-desc .tags{font-size:14px;text-transform:uppercase;letter-spacing:1px;color:#696969}
-#horizon-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell.is-selected .carousel-desc{opacity:1;visibility:visible;transition-delay:600ms}
+#horizon-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell.is-selected .carousel-desc{opacity:1;visibility:visible;-webkit-transform:translate3d(-50%,-56%,0);transform:translate3d(-50%,-56%,0);transition-delay:600ms}
 .single-portfolio .navigation{margin-top:120px;height:65px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .single-portfolio .navigation div.prev a,.single-portfolio .navigation div.next a{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;font-size:18px;text-transform:uppercase;line-height:34px;letter-spacing:.5px;color:var(--text-color,#FFF)}
 .single-portfolio .navigation div.prev a i,.single-portfolio .navigation div.next a i{font-size:26px}

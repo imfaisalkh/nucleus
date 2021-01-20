@@ -67,6 +67,11 @@
 			<span class="progress"></span>
 		</div>
 
+		<div class="all-works"><a href="#">All Works</a></div>
+		<div class="counter">
+			<span class="current"></span><span class="total"></span>
+		</div>
+
 	</div>
 
 <?php } ?>

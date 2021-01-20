@@ -2,6 +2,10 @@
 export default jQuery(function($) {
     'use strict';
 
+    // Global Variable(s)
+    const classic_page = $('body').hasClass('portfolio-classic')
+    var $carousel = $('#featured-slider .main-carousel')
+
     // Functions Object
     var portfolio = {
 
@@ -90,7 +94,7 @@ export default jQuery(function($) {
             if (is_flickity) {
 
                 // init Flickity instance
-                var $carousel = $('#featured-slider .main-carousel').flickity({
+                $carousel.flickity({
                     cellAlign: 'left',
                     contain: true,
                     wrapAround: true,
@@ -155,7 +159,9 @@ export default jQuery(function($) {
     }  
 
     $(window).on('load', function() {
-        portfolio.grid();
-        portfolio.carousel();
+        if (classic_page) {
+            portfolio.grid();
+            portfolio.carousel();
+        }
     }); 
 })
