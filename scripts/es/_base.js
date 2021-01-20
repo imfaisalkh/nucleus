@@ -62,9 +62,9 @@ export default jQuery(function($) {
             });
 
             // Modern Menu
-            $('#mobile-menu .tn-menu').tendina({
-            	speed: 200,
-            });
+            // $('#mobile-menu .tn-menu').tendina({
+            // 	speed: 200,
+            // });
 
 		},
 
@@ -192,7 +192,7 @@ export default jQuery(function($) {
         base.site_preloader();
         base.site_menu();
         base.site_overlay();
-        base.sticky_header();
+        // base.sticky_header();
         base.page_header();
         base.custom_cursor();
         base.lightbox();
