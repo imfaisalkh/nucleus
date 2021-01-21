@@ -165,6 +165,7 @@
 			wp_enqueue_script('infinite-scroll', 'https://unpkg.com/infinite-scroll@4.0.1/dist/infinite-scroll.pkgd.min.js', null, null, true);
 			wp_enqueue_script('jquery-smooth-scroll', 'https://cdn.statically.io/gh/kswedberg/jquery-smooth-scroll/3948290d/jquery.smooth-scroll.min.js', null, null, true);
 			wp_enqueue_script('imagesloaded', 'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js', null, null, true);
+			wp_enqueue_script('tinycolor', 'https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js', null, null, true);
 			wp_enqueue_script('nucleus-js-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery'), null, true);
 
 			// Enqueue Other Scripts

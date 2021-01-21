@@ -25,7 +25,7 @@
 
 <?php if ( $portfolio_slider_query->have_posts() ) { ?>
 
-	<div id="forza-slider">
+	<div id="spotlight-slider">
 
 		<div class="main-carousel">
 
@@ -52,12 +52,10 @@
 					<div class="carousel-desc">
 						<a href="<?php echo $folio_permalink; ?>" title="<?php the_title(); ?>" >
 							<h3 class="title"><?php the_title(); ?></h3>
+							<?php if ( $folio_terms ) { ?>
+								<span class="tags"><?php echo esc_html( $folio_terms ); ?></span>
+							<?php } ?>
 						</a>
-						<?php if ( $folio_terms ) { ?>
-							<span class="tags"><?php echo esc_html( $folio_terms ); ?></span>
-						<?php } ?>
-						<p class="caption">Whale was seized and sold, and his Grace the Duke of Wellington.</p>
-						<a href="#explore" class="explore">Open Case Study</a>
 					</div>
 				</div>
 
@@ -65,12 +63,14 @@
 
 		</div>
 
+		<div class="progress-bar">
+			<span class="progress"></span>
+		</div>
+
 		<div class="all-works"><a href="#">All Works</a></div>
 		<div class="counter">
 			<span class="current"></span><span class="total"></span>
 		</div>
-
-		<span class="vertical-line"></span>
 
 	</div>
 

@@ -1,14 +1,14 @@
 /** == GENERAL == */
 /** ================================================== */
 
-    body.portfolio-forza {
+    body.portfolio-spotlight {
         overflow: hidden;
     }
 
-/** == FORZA CAROUSEL == */
+/** == dSPOTLIGHT CAROUSEL == */
 /** ================================================== */
 
-    #forza-slider {
+    #spotlight-slider {
         position: relative;
         top: -194px; left: 0; right: 0;
         display: flex;
@@ -31,16 +31,6 @@
         .counter {
             @extend .counter;
         }
-
-        // Vertical Line
-        .vertical-line {
-            display: inline-block;
-            position: absolute;
-            left: calc(-50vw + 50%); top: 0; bottom: 0;
-            width: 5px; height: 100%;
-            background: var(--primary-accent);
-            z-index: 9999999;
-        }
         
         .main-carousel {
             width: 100%;
@@ -59,12 +49,12 @@
                 @extend .flickity-prev-next-button;
                 &.flickity-button {
                     left: auto;
-                    right: -80px;
+                    right: 150px;
                     transform: rotate(90deg);
 
                     &.previous {
                         top: 30%;
-                        right: -75px;
+                        right: 155px;
                     }
                     &.next {
                         top: 52%;
@@ -85,29 +75,26 @@
                     // margin-left: calc(-50vw + 65%);
 
                     .carousel-cell {
-                        display: flex;
-                        justify-content: space-between;
                         position: relative;
-                        width: 100%;
+                        text-align: center;
+                        width: 80%;
                         height: auto; /* height of carousel */
-                        padding: 0;
-                        // overflow: hidden;
+                        padding: 0 15%;
+                        overflow: hidden;
 
                         // margin: 0 80px;
 
                         .carousel-image {
                             display: block;
                             border-radius: 5px;
-                            margin-left: auto;
-                            margin-right: 0;
                         }
 
                         .carousel-desc {
                             @include animate-this(); // CSS-3 animation is triggered via addition of '.is-selected' class
                             position: absolute;
-                            left: 0 !important;
-                            top: 15%;
-                            transform: translateX(0) translateY(-15%);
+                            left: 19%;
+                            top: 50%;
+                            transform: translateY(-50%) translateX(-50%);
                             text-align: left;
 
                             .title {
@@ -122,27 +109,6 @@
                                 letter-spacing: 1px;
                                 color: #696969;
                             }
-                            .caption {
-                                font-family: $secondary-font-stack;
-                                font-size: 20px;
-                                font-weight: 300;
-                                color: #000;
-                                width: 450px;
-                                margin: 10px 0 0 0;
-                            }
-                            .explore {
-                                display: inline-block;
-                                font-family: $secondary-font-stack;
-                                font-size: 15px;
-                                font-weight: 400;
-                                text-transform: uppercase;
-                                letter-spacing: 1px;
-                                color: var(--text-color);
-                                background: var(--secondary-accent);
-                                border-radius: 5px;
-                                padding: 14px 22px;
-                                margin-top: 20px;
-                            }
                         }
 
                         /* animate-in carousel description when selected */
@@ -150,7 +116,7 @@
                             .carousel-desc {
                                 opacity: 1;
                                 visibility: visible;
-                                transform: translate3d(0, -10%, 0);
+                                transform: translate3d(-50%, -56%, 0);
                                 transition-delay: 600ms;
                         
                             }
