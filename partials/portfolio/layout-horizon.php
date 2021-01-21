@@ -1,13 +1,5 @@
 <?php
 	
-	// Post or Page ID
-	if( is_home() || is_archive() || is_search() ) {
-		$post_ID = get_option('page_for_posts');
-	} else {
-		$post_ID = get_the_ID();
-	}
-
-
 	// Portfolio Configuration - Meta Panel
 	$portfolio_slider_posts = [530, 532, 534];
 	

@@ -1,0 +1,100 @@
+/** == GENERAL == */
+/** ================================================== */
+
+    body.portfolio-textual {
+        overflow: hidden;
+    }
+
+/** == TEXTUAL CAROUSEL == */
+/** ================================================== */
+
+    #textual-slider {
+        position: relative;
+        top: -194px; left: 0; right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        z-index: 10; // make it beneath menu
+
+        &:not(.is-interactive) {
+            background: url(../../images/textual-backdrop.svg) center calc(50% + 10px) no-repeat;
+        }
+        
+        // All Works
+        .all-works {
+            @extend .all-works;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .main-carousel {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 85%;
+            margin-top: 45px;
+        }
+
+        // Entry Cell
+        .entry-cell {
+            display: inline-block;
+            margin: 0 30px;
+
+            &.is-selected {
+                .carousel-image {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translate3d(-50%, -56%, 0);
+                }
+            }
+            &:not(.is-selected) {
+                .carousel-desc {
+                    a {
+                        opacity: 0.2;
+                    }
+                }
+            }
+
+            .carousel-image {
+                @include animate-this(); // CSS-3 animation is triggered via addition of '.is-selected' class
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                z-index: -10;
+                margin-top: 45px;
+            }
+
+            .carousel-desc {
+                text-align: left;
+                
+                a {
+                    display: flex;
+                    align-items: flex-end;
+
+                    .title {
+                        font-size: 48px;
+                        color: var(--text-color, #000);
+                        margin: 0;
+                        // letter-spacing: 0;
+                    }
+                    &:hover {
+                        .title {
+                            // color: var(--primary-accent, #000);
+                        }
+                    }
+                    .tags {
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        color: #696969;
+                        padding: 0 0 15px 10px;
+                    }
+                }
+
+            }
+
+        }
+
+    }
