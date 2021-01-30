@@ -113,11 +113,12 @@
 				font-family: $primary-font-stack;
 				// font-style: italic;
 				font-weight: 400;
-				font-size: 40px;
+				font-size: 44px;
 				margin-bottom: 11px;
+				letter-spacing: 0;
 
 				@include breakpoint($mobile)  { font-size: 30px; }
-				@include breakpoint($laptop)  { font-size: 40px; margin-bottom: 10px; }
+				@include breakpoint($laptop)  { font-size: 44px; margin-bottom: 10px; }
 
 				.single-post & {
 					font-style: normal;
@@ -198,6 +199,8 @@
 				margin-top: -150px;
 
 				.title {
+					line-height: 1.2;
+					
 					@include breakpoint($mobile)  { font-size: 36px; font-size: 11vmin; }
 					@include breakpoint($tablet)  { font-size: 42px; }
 					@include breakpoint($laptop)  { font-size: 42px; font-size: 6.8vmin; }
@@ -213,6 +216,16 @@
 				}		
 
 			}
+
+			&[data-text-size="large"] {
+				.inner-wrap {
+					.title {
+						font-size: 60px;
+						@include breakpoint($laptop)  { font-size: 60px; }
+					}
+				}
+			}
+
 			.scroll-indicator { display: block; }
 
 		}		

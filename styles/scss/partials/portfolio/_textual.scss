@@ -14,12 +14,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
         min-height: 100vh;
         z-index: 10; // make it beneath menu
 
         &:not(.is-interactive) {
             background: url(../../images/textual-backdrop.svg) center calc(50% + 10px) no-repeat;
         }
+
         
         // All Works
         .all-works {

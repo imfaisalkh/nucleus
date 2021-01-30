@@ -59,3 +59,30 @@
 	}
 
 	add_action('nav_menu_css_class', 'nucleus_add_current_nav_class', 10, 2 );
+
+
+#-------------------------------------------------------------------------------#
+#  Replaces items with '---' as title with li class="menu_separator"
+#-------------------------------------------------------------------------------#
+
+add_filter('walker_nav_menu_start_el', 'nucleus_nav_menu_start_el', 10, 4);
+
+function nucleus_nav_menu_start_el($item_output, $item, $depth, $args) {
+
+	if ($item->url === '#divider') {
+		return '<hr>'; // Horizontal line
+	} elseif ($item->url === '#title') {
+		return '<span class="title">'. esc_html($item->post_title) . '</span>'; // Text without link
+	} else {
+		if ($item->xfn) {
+			$xfn_data = explode('-', $item->xfn);
+			if ($xfn_data[0] == 'query') {
+				return $item_output = '<a href="'. esc_url($item->url) .'?'. $xfn_data[1].'='. $xfn_data[2] .'">'. esc_html($item->post_title) . '</a>';
+			} else {
+				return $item_output; // Unmodified output for this link
+			}
+		} else {
+			return $item_output; // Unmodified output for this link
+		}
+	}
+}

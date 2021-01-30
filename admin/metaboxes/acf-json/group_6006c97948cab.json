@@ -20,7 +20,8 @@
                 "horizon": "Horizon",
                 "spotlight": "Spotlight",
                 "textual": "Textual",
-                "forza": "Forza"
+                "forza": "Forza",
+                "tiles": "Tiles"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -51,5 +52,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1611263922
+    "modified": 1611336344
 }

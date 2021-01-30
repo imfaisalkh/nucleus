@@ -26,6 +26,8 @@
 	define('NUCLEUS_HELPERS_URI', get_template_directory_uri() .'/helpers');
 	define('NUCLEUS_CLASSES', get_template_directory() .'/classes');
 	define('NUCLEUS_CLASSES_URI', get_template_directory_uri() .'/classes');
+	define('NUCLEUS_VENDORS', get_template_directory() .'/vendors');
+	define('NUCLEUS_VENDORS_URI', get_template_directory_uri() .'/vendors');
 
 
 #-----------------------------------------------------------------#
@@ -155,18 +157,18 @@
 			global $wp_query;
 
 			// Enqueue Theme Scripts
-			wp_enqueue_script('modernizr', NUCLEUS_JS_URI . '/lib/modernizr-custom.js', array('jquery'), null, true);
-			wp_enqueue_script('superfish', 'https://unpkg.com/superfish@1.7.10/dist/js/superfish.js', null, null, true);
-			wp_enqueue_script('fancybox', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', null, null, true);
-			wp_enqueue_script('headroom.js', 'https://unpkg.com/headroom.js@0.12.0/dist/headroom.js', null, null, true);
-			wp_enqueue_script('flickity', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', null, null, true);
-			wp_enqueue_script('flickity-fade', 'https://unpkg.com/flickity-fade@1/flickity-fade.js', null, null, true);
-			wp_enqueue_script('packery', 'https://unpkg.com/packery@2.1.2/dist/packery.pkgd.min.js', null, null, true);
-			wp_enqueue_script('infinite-scroll', 'https://unpkg.com/infinite-scroll@4.0.1/dist/infinite-scroll.pkgd.min.js', null, null, true);
-			wp_enqueue_script('jquery-smooth-scroll', 'https://cdn.statically.io/gh/kswedberg/jquery-smooth-scroll/3948290d/jquery.smooth-scroll.min.js', null, null, true);
-			wp_enqueue_script('imagesloaded', 'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js', null, null, true);
-			wp_enqueue_script('tinycolor', 'https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js', null, null, true);
-			wp_enqueue_script('nucleus-js-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery'), null, true);
+			wp_register_script('modernizr', NUCLEUS_VENDORS_URI . '/modernizr/modernizr-custom.js', array('jquery'), null, true);
+			wp_register_script('superfish', NUCLEUS_VENDORS_URI . '/superfish/superfish.js', array('jquery'), null, true);
+			wp_register_script('fancybox', NUCLEUS_VENDORS_URI . '/fancybox/jquery.fancybox.min.js', array('jquery'), null, true);
+			wp_register_script('headroom.js', NUCLEUS_VENDORS_URI . '/headroom.js/headroom.js', array('jquery'), null, true);
+			wp_register_script('flickity', NUCLEUS_VENDORS_URI . '/flickity/flickity.pkgd.min.js', array('jquery'), null, true);
+			wp_register_script('flickity-fade', NUCLEUS_VENDORS_URI . '/flickity/flickity-fade.js', array('jquery'), null, true);
+			wp_register_script('packery', NUCLEUS_VENDORS_URI . '/packery/packery.pkgd.min.js', array('jquery'), null, true);
+			wp_register_script('infinite-scroll', NUCLEUS_VENDORS_URI . '/infinite-scroll/infinite-scroll.pkgd.min.js', array('jquery'), null, true);
+			wp_register_script('jquery-smooth-scroll', NUCLEUS_VENDORS_URI . '/jquery-smooth-scroll/jquery.smooth-scroll.min.js', array('jquery'), null, true);
+			wp_register_script('imagesloaded', NUCLEUS_VENDORS_URI . '/imagesloaded/imagesloaded.pkgd.min.js', array('jquery'), null, true);
+			wp_register_script('tinycolor', NUCLEUS_VENDORS_URI . '/tinycolor/tinycolor.min.js', array('jquery'), null, true);
+			wp_enqueue_script('nucleus-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery', 'modernizr', 'superfish', 'fancybox', 'headroom.js', 'flickity', 'flickity-fade', 'packery', 'infinite-scroll', 'jquery-smooth-scroll', 'imagesloaded', 'tinycolor'), null, true);
 
 			// Enqueue Other Scripts
 			wp_localize_script( 'nucleus-js-main', 'theme_ajax', array(
@@ -208,12 +210,12 @@
 		if ( !is_admin() ) {
 
 			// Plugin Styles
-			wp_enqueue_style('normalize.css', 'https://unpkg.com/normalize.css@8.0.1/normalize.css');
-			wp_enqueue_style('balloon.css', 'https://unpkg.com/balloon-css/balloon.min.css');
-			wp_enqueue_style('font-awesome', 'https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css');
-			wp_enqueue_style('fancybox', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css');
-			wp_enqueue_style('flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css');
-			wp_enqueue_style('flickity-fade', 'https://unpkg.com/flickity-fade@1/flickity-fade.css');
+			wp_enqueue_style('normalize.css', NUCLEUS_VENDORS_URI . '/normalize.css/normalize.css');
+			wp_enqueue_style('balloon.css', NUCLEUS_VENDORS_URI . '/balloon.css/balloon.min.css');
+			wp_enqueue_style('font-awesome', NUCLEUS_VENDORS_URI . '/font-awesome/css/all.min.css');
+			wp_enqueue_style('fancybox', NUCLEUS_VENDORS_URI . '/fancybox/jquery.fancybox.min.css');
+			wp_enqueue_style('flickity', NUCLEUS_VENDORS_URI . '/flickity/flickity.min.css');
+			wp_enqueue_style('flickity-fade', NUCLEUS_VENDORS_URI . '/flickity/flickity-fade.css');
 			wp_enqueue_style('nucleus-css-main', NUCLEUS_CSS_URI . '/main.css');
 			wp_enqueue_style('nucleus-css-editor', get_template_directory_uri() . '/custom-editor-style.css');
 			

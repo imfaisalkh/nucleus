@@ -256,3 +256,30 @@
 
 	  }
   }
+
+
+
+	/** == SPECIAL MENU ITEMS == */
+	/** ================================================== */
+	ul.sf-menu {
+		> li {
+			hr {
+				border: 0;
+				width: auto;
+				height: 1px !important;
+				background: #dedede;
+				margin: 12px 37px;
+			}
+			span.title {
+				display: inline-block;
+				font-family: $secondary-font-stack;
+				font-size: 12px;
+				font-weight: 400;
+				text-transform: uppercase;
+				color: #B2B2B2;
+				padding: 11px 14px 3px 14px;
+				margin: 2px 22px 5px 22px;
+				@include breakpoint($mobile) { display: none !important; }
+			}
+		}
+	}

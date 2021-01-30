@@ -83,6 +83,9 @@
                         <span class="count">0</span>
                     </li>
                 <?php } ?>
+                <li class="fullscreen-icon">
+                    <a href="#"><i class="fi fi-fullscreen" aria-hidden="true"></i></a>
+                </li>
                 <?php if( !get_theme_mod('nucleus_menu_search_icon') ) { ?>
                     <li class="search-icon">
                         <a href="#"><i class="fi fi-search" aria-hidden="true"></i></a>

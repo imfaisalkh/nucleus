@@ -8,9 +8,11 @@
 	}
 
 	// Custom Header - Meta Panel - (Original)
-	$header_text	 		= get_field('header_text', $post_ID);
-	$header_title	 		= isset($header_text['title']) ? $header_text['title'] : '';
-	$header_subtitle	 	= isset($header_text['subtitle']) ? $header_text['subtitle'] : '';
+	$header_title	 		= get_field('header_title', $post_ID);
+	$header_subtitle	 	= get_field('header_subtitle', $post_ID);
+	$header_backdrop	 	= get_field('header_backdrop', $post_ID);
+	$header_text_size	 	= get_field('header_text_size', $post_ID);
+	$header_icon 			= get_field('header_icon', $post_ID);
 
 	$header_button	 		= get_field('header_button', $post_ID);
 	$button_title			= isset($header_button['title']) ? $header_button['title'] : '';
@@ -68,7 +70,7 @@
 <?php if ( !is_page_template( 'template-portfolio.php' ) && !$is_disabled_header ) { ?>
 
 	<!-- Page Header -->
-	<header id="page-header" class="<?php echo $page_header_class; ?>">
+	<header id="page-header" class="<?php echo $page_header_class; ?>" data-text-size="<?php echo $header_text_size; ?>">
 		<?php if ( !$is_blank_header ) { ?>
 			<div class="inner-wrap">
 				<?php if ( is_singular('post') ) { ?>
@@ -82,6 +84,9 @@
 					<span class="category"><a href="<?php echo esc_url( $link ); ?>"><?php echo $name; ?></a></span>
 				<?php } else if (is_home()) { ?>
 					<span class="timestamp">Since 2015</span>
+				<?php } ?>
+				<?php if ($header_icon) { ?>
+					<img src="<?php echo esc_url($header_icon); ?>" />
 				<?php } ?>
 				<h3 class="title"><?php echo $header_title; ?></h3>
 				<?php if (is_home()) { ?>

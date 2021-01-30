@@ -36,22 +36,16 @@
 		font-smoothing: antialiased;
 	}
 
-
-	.fi-menu:before { content: "\f100"; }
-	.fi-search:before { content: "\f101"; }
-	.fi-shopping-cart:before { content: "\f102"; }
-	.fi-arrow-up:before { content: "\f103"; }
-	.fi-info:before { content: "\f104"; }
-	.fi-mouse:before { content: "\f105"; }
-	.fi-grid:before { content: "\f106"; }
-	.fi-back:before { content: "\f107"; }
-	.fi-next:before { content: "\f108"; }
-	.fi-close:before { content: "\f109"; }
-	.fi-like:before { content: "\f10a"; }
-	.fi-arrow-right:before { content: "\f10b"; }
-  .fi-thin-arrow:before { content: "\f10c"; }
-  .fi-thin-arrow-2:before { content: "\f10d"; }
-
+  .fi-arrow-up:before { content: "\f100"; }
+  .fi-menu:before { content: "\f101"; }
+  .fi-search:before { content: "\f102"; }
+  .fi-shopping-cart:before { content: "\f103"; }
+  .fi-info:before { content: "\f104"; }
+  .fi-mouse:before { content: "\f105"; }
+  .fi-close:before { content: "\f106"; }
+  .fi-fullscreen:before { content: "\f107"; }
+  .fi-smallscreen:before { content: "\f108"; }
+	  
 
     $font-Flaticon-menu: "\f100";
     $font-Flaticon-search: "\f101";

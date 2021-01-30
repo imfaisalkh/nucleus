@@ -95,6 +95,16 @@ export default jQuery(function($) {
                 init.openModal('search');
             });
 
+             // trigger fullscreen functionality
+             $('ul#icons-menu li.fullscreen-icon a').on( 'click' , function(e) {
+                e.preventDefault();
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                } else {
+                    document.documentElement.requestFullscreen();
+                }
+            });
+
             // open menu modal window
             $('ul#icons-menu li.menu-icon a').on( 'click' , function(e) {
                 e.preventDefault();
