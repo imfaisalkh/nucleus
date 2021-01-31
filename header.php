@@ -36,7 +36,10 @@
             </div>
 
             <!-- HERO HEADER -->
-            <?php $background_video = get_field('background_video') ? get_field('background_video') : false; ?>
+            <?php
+                $background_video = get_field('background_video') ? get_field('background_video') : false;
+                $background_audio = get_field('background_audio') ? get_field('background_audio') : false;
+            ?>
             <div class="hero-header">
                 <?php if ($background_video) { ?>
                     <video class="background-video media" playsinline autoplay muted loop>
@@ -45,6 +48,13 @@
                     </video>
                 <?php } else { ?>
                     <div class="background-image media"></div>
+                <?php } ?>
+
+                <?php if ($background_audio) { ?>
+                    <audio class="background-audio media" autoplay loop>
+                        <source src="<?php echo esc_url($background_audio); ?>" type="audio/mpeg">
+                        Your browser does not support HTML audio.
+                    </audio>
                 <?php } ?>
             </div>
 
