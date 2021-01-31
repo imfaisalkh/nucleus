@@ -91,7 +91,7 @@
 								display: inline-block;
 								height: 2px;
 								width: 32px;
-								background: #000;
+								background: var(--text-color);
 								margin: 4px 0;
 								border-radius: 2px;
 								transition: width 300ms linear;

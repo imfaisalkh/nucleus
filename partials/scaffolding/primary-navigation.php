@@ -1,6 +1,7 @@
 <?php
     // Helper Variable(s)
     $header_style = (get_field('site_header') == 'traditional' || get_field('site_header') == 'modern') ? get_field('site_header') : get_theme_mod('nucleus_menu_type', 'traditional');
+    $site_logo = get_field('custom_logo') ? get_field('custom_logo') : (has_custom_logo() ? the_custom_logo() : false);
 ?>
 
 <div class="bg-wrap">
@@ -12,49 +13,14 @@
     <div class="logo-wrap">
 
         <?php
-            // Post or Page ID
-            if( is_home() || is_archive() || is_search() ) {
-                $post_ID = get_option('page_for_posts');
-            } else {
-                $post_ID = get_the_ID();
-            }
-
-            // Global: Desktop Logo Image URL
-            $custom_logo_id = get_theme_mod( 'custom_logo' );
-            $desktop_logo_image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-
-            // Global: Default Logos
-            $page_logos_default = array(
-                'desktop_logo'  => $desktop_logo_image[0],
-                'mobile_logo'   => !empty(get_theme_mod('nucleus_mobile_logo')) ? get_theme_mod('nucleus_mobile_logo') : $desktop_logo_image[0],
-            );
-
-            // Override: Custom Logos
-            $page_logos = get_field('page_logos', $post_ID);
-
-            // Final Logos
-            $desktop_logo   = $page_logos['desktop_logo'] ? $page_logos['desktop_logo'] : $page_logos_default['desktop_logo'];
-            $mobile_logo    = $page_logos['mobile_logo'] ? $page_logos['mobile_logo'] : $page_logos_default['mobile_logo'];
-
-            // var_dump($mobile_logo);
             ?>
 
             <a id="site-logo" href="<?php echo esc_url( home_url('/') ); ?>" class="custom-logo-link" rel="home" itemprop="url">
-
-                <?php if ( $desktop_logo && empty($mobile_logo) ) { ?>
-                    <img class="desktop-logo" src="<?php echo $desktop_logo; ?>" itemprop="logo" alt="<?php echo get_bloginfo('name'); ?>">
-                    <img class="mobile-logo" src="<?php echo $desktop_logo; ?>" itemprop="logo" alt="<?php echo get_bloginfo('name'); ?>">
-                <?php } else if ( empty($desktop_logo) && $mobile_logo ) { ?>
-                    <img class="desktop-logo" src="<?php echo $mobile_logo; ?>" itemprop="logo" alt="<?php echo get_bloginfo('name'); ?>">
-                    <img class="mobile-logo" src="<?php echo $mobile_logo; ?>" itemprop="logo" alt="<?php echo get_bloginfo('name'); ?>">
-                <?php } else if ( $desktop_logo && $mobile_logo ) { ?>
-                    <img class="desktop-logo" src="<?php echo $desktop_logo; ?>" itemprop="logo" alt="<?php echo get_bloginfo('name'); ?>">
-                    <img class="mobile-logo" src="<?php echo $mobile_logo; ?>" itemprop="logo" alt="<?php echo get_bloginfo('name'); ?>">
+                <?php if ($site_logo) { ?>
+                    <img class="logo image" src="<?php echo esc_url($site_logo); ?>" itemprop="logo" alt="<?php echo get_bloginfo('name'); ?>">
                 <?php } else { ?>
-                    <h3 class="desktop-logo text"><?php echo get_bloginfo('name'); ?></h3>
-                    <h3 class="mobile-logo text"><?php echo get_bloginfo('name'); ?></h3>
+                    <h3 class="logo text"><?php echo get_bloginfo('name'); ?></h3>
                 <?php } ?>
-                
             </a>
 
     </div>

@@ -22,10 +22,10 @@
 	$custom_color   = get_field('custom_colors', $post_ID);
 
 	// Custom Colors
-	$primary_accent   	= $custom_color['primary_accent'];
-	$secondary_accent   = $custom_color['secondary_accent'];
-	$background_color   = $custom_color['background_color'];
-	$text_color   		= $custom_color['text_color'];
+	$primary_accent   	= $custom_color ? $custom_color['primary_accent'] : '';
+	$secondary_accent   = $custom_color ? $custom_color['secondary_accent'] : '';
+	$background_color   = $custom_color ? $custom_color['background_color'] : '';
+	$text_color   		= $custom_color ? $custom_color['text_color'] : '';
 	
 
 #-----------------------------------------------------------------#
@@ -44,9 +44,9 @@
 	/** Global Variables */
 	:root {
 		/** BACKGROUND: Background Media */
-		--background-image								: <?php echo 'url(' . $background_image . ')'; ?>;
-		--background-fit								: <?php echo $background_fit; ?>;
-		--background-opacity-scroll						: <?php echo $background_image_opacity; ?>;
+		--background-image: <?php echo 'url(' . $background_image . ')'; ?>;
+		--background-fit: <?php echo $background_fit; ?>;
+		--background-opacity-scroll: <?php echo $background_image_opacity; ?>;
 
 		/** TYPOGRAPHY: Fonts */
 		--primary-font-stack:    'Lora', sans-serif;
@@ -58,17 +58,11 @@
 	body.light-color-scheme,
 	body.blog, body.archive
 	{
-		/** COLORS: General */
 		--primary-accent: #FF6000;
 		--secondary-accent : #43f3b7;
 		--background-color: #FFF;
 		--text-color: #000;
-
-		/** COLORS: Menu */
-		--menu-bg-color: #292929;
-		--menu-text-color: #FFF;
 	}
-
 
 	/** Dark Color Scheme */
 	body.dark-color-scheme {
@@ -76,18 +70,13 @@
 		--secondary-accent : #43f3b7;
 		--background-color: #000;
 		--text-color: #FFF;
-
-		/** COLORS: Menu */
-		--menu-bg-color: #FFF;
-		--menu-text-color: #292929;
 	}
 
 	/** Custom Color Scheme */
 	body.custom-color-scheme {
-		/** COLORS: General */
-		--primary-accent										: <?php echo $primary_accent; ?>;
-		--secondary-accent										: <?php echo $secondary_accent; ?>;
-		--background-color  									: <?php echo $background_color; ?>;
-		--text-color 											: <?php echo $text_color; ?>;
+		--primary-accent : <?php echo $primary_accent; ?>;
+		--secondary-accent : <?php echo $secondary_accent; ?>;
+		--background-color : <?php echo $background_color; ?>;
+		--text-color : <?php echo $text_color; ?>;
 	}
 	

@@ -44,9 +44,7 @@
 			#site-logo {
 
 				// Text Logo
-				.desktop-logo.text,
-				.mobile-logo.text
-				{
+				.logo.text {
 					display: inline-block;
 					font-family: $tertiary-font-stack;
 					font-size: 3.2rem;
@@ -57,7 +55,7 @@
 					@include breakpoint($mobile)	  { font-size: 2.8rem; }
 
 
-					&:active, &:focus { outline:0; border:none; } 
+					&:active, &:focus { outline: 0; border: none; } 
 
 					&:after {
 						display: inline-block;
@@ -71,15 +69,9 @@
 				}
 
 				// Image Logo
-				.desktop-logo {
-					@include breakpoint($touch)	  	{ display: none !important; }
-					@include breakpoint($no-touch)	{ display: block !important; }
-				}
-				.mobile-logo {
-					@include breakpoint($touch)	  	{ display: block !important; }
-					@include breakpoint($no-touch)	{ display: none !important; }
-				}
+				.logo.image {
 
+				}
 			}
 		}
 		.menu-wrap  {
