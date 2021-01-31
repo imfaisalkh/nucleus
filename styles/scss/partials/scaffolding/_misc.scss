@@ -493,36 +493,27 @@
 		left: 0;
 		z-index: 0;
 
-		.media {
+		.background-image {
 			@extend .hero-header;
 			background-image: var(--background-image);
-
-			&.active {
-				opacity: var(--background-opacity, 1);
-				filter: blur(var(--background-blur, 1));
-			}
-			&.passive {
-				opacity: var(--background-opacity-scroll, 1);
-				filter: blur(var(--background-blur-scroll, 1));
-			}
-
-			&.repeat {
-				background-size: auto;
-				background-repeat: repeat;
-				background-position: left top;
-			}
-			&.cover {
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-position: center center;
-			}
-			// temporary fix
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: center center;
+		}
 
+		.background-video {
+			width: 100vw;
+			height: auto;
+		}
+
+		// applies to both BG image + video
+		.media {
 			transition: opacity 400ms cubic-bezier(0.39, 0.575, 0.565, 1), filter 400ms linear;
 
+			&.passive {
+				opacity: var(--background-opacity-scroll, 1);
+				filter: blur(var(--background-blur-scroll, 0.5));
+			}
 		}
 
 	}
@@ -530,21 +521,6 @@
 
 /** == EDITOR STYLES == */
 /** ================================================== */
-
-
-	/** Leading Text */
-	// .lead-text.lead-text {
-	// 	font-family: "Open Sans";
-	// 	text-align: center;
-	// 	font-size: 24px;
-	// 	font-weight: 200;
-	// 	color: #0F0F0F;
-	// 	margin-bottom: 0;
-
-	// 	@include breakpoint($mobile)  { font-size: 22px;}
-	// }
-
-
 
 
 	.page-load-status {

@@ -36,8 +36,16 @@
             </div>
 
             <!-- HERO HEADER -->
+            <?php $background_video = get_field('background_video') ? get_field('background_video') : false; ?>
             <div class="hero-header">
-                <div class="media"></div>
+                <?php if ($background_video) { ?>
+                    <video class="background-video media" playsinline autoplay muted loop>
+                        <source src="<?php echo esc_url($background_video); ?>" type="video/mp4">
+                        Your browser does not support HTML video.
+                    </video>
+                <?php } else { ?>
+                    <div class="background-image media"></div>
+                <?php } ?>
             </div>
 
             <!-- BEGIN: SITE CONTAINER -->

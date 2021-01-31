@@ -33,8 +33,9 @@
 #-----------------------------------------------------------------#
 
 	$background_image   		 = get_field('background_image', $post_ID);
+	$background_video   		 = get_field('background_video', $post_ID);
 	$background_fit   		 	 = 'cover';
-	$background_image_opacity    = get_field('background_image_opacity', $post_ID);
+	$background_opacity    		 = get_field('background_opacity', $post_ID);
 
 ?>
 
@@ -45,8 +46,9 @@
 	:root {
 		/** BACKGROUND: Background Media */
 		--background-image: <?php echo 'url(' . $background_image . ')'; ?>;
+		--background-video: <?php echo 'url(' . $background_video . ')'; ?>;
 		--background-fit: <?php echo $background_fit; ?>;
-		--background-opacity-scroll: <?php echo $background_image_opacity; ?>;
+		--background-opacity-scroll: <?php echo $background_opacity; ?>;
 
 		/** TYPOGRAPHY: Fonts */
 		--primary-font-stack:    'Lora', sans-serif;
