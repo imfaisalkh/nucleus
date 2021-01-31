@@ -88,6 +88,9 @@
 				<?php if ($header_icon) { ?>
 					<img src="<?php echo esc_url($header_icon); ?>" />
 				<?php } ?>
+				<?php if ($header_backdrop) { ?>
+					<span class="backdrop"><?php echo esc_html($header_backdrop); ?></span>
+				<?php } ?>
 				<h3 class="title"><?php echo $header_title; ?></h3>
 				<?php if (is_home()) { ?>
 					<ul class="categories">

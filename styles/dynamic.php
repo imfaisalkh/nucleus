@@ -80,7 +80,6 @@
 		/** COLORS: Menu */
 		--menu-bg-color: #FFF;
 		--menu-text-color: #292929;
-
 	}
 
 	/** Custom Color Scheme */

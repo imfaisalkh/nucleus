@@ -9,6 +9,68 @@ export default jQuery(function($) {
     // Functions Object
     var base = {
 
+        /** CSS Variables */
+        css_variables: function() {
+            // determine base color pallete
+            let root = window.getComputedStyle(document.body); // :root HTML element
+            const primary_accent_color = root.getPropertyValue('--primary-accent')
+            const secondary_accent_color = root.getPropertyValue('--secondary-accent')
+            const background_color = root.getPropertyValue('--background-color')
+            const text_color = root.getPropertyValue('--text-color')
+
+            // determine active color scheme
+            let is_light_color_scheme = $('body').hasClass('light-color-scheme')
+            let is_dark_color_scheme = $('body').hasClass('dark-color-scheme')
+            let is_custom_color_scheme = $('body').hasClass('custom-color-scheme')
+
+            // convert custom color scheme to (light, dark)
+            if (is_custom_color_scheme) {
+                let is_light_bg = tinycolor(background_color).isLight()
+                if (is_light_bg) {
+                    is_custom_color_scheme = 'dark-color-scheme'
+                } else {
+                    is_custom_color_scheme = 'light-color-scheme'
+                }
+            }
+
+            // set color pallate if light color scheme is active
+            if (is_light_color_scheme || is_custom_color_scheme == 'light-color-scheme') {
+                let menu_bg = tinycolor(background_color).darken(90).toString()
+                document.body.style.setProperty('--menu-background', menu_bg);
+
+                let menu_text = tinycolor(menu_bg).lighten(90).toString()
+                document.body.style.setProperty('--menu-text', menu_text);
+
+                let menu_seperator = tinycolor(menu_bg).lighten(15).toString()
+                document.body.style.setProperty('--menu-seperator', menu_seperator);
+
+                let menu_caption = tinycolor(menu_text).darken(60).toString()
+                document.body.style.setProperty('--menu-caption', menu_caption);
+
+                let backdrop_color = tinycolor(background_color).darken(10).toString()
+                document.body.style.setProperty('--backdrop-color', backdrop_color);
+            }
+
+            // set color pallate if dark color scheme is active
+            if (is_dark_color_scheme || is_custom_color_scheme == 'dark-color-scheme') {
+                let menu_bg = tinycolor(background_color).lighten(100).toString()
+                document.body.style.setProperty('--menu-background', menu_bg);
+
+                let menu_text = tinycolor(menu_bg).darken(90).toString()
+                document.body.style.setProperty('--menu-text', menu_text);
+
+                let menu_seperator = tinycolor(menu_bg).darken(15).toString()
+                document.body.style.setProperty('--menu-seperator', menu_seperator);
+
+                let menu_caption = tinycolor(menu_text).lighten(60).toString()
+                document.body.style.setProperty('--menu-caption', menu_caption);
+
+                let backdrop_color = tinycolor(background_color).lighten(10).toString()
+                document.body.style.setProperty('--backdrop-color', backdrop_color);
+            }
+
+        },
+
         /** Scroll Position */
         scroll_position: function() {
             // initial postion on page load
@@ -197,6 +259,7 @@ export default jQuery(function($) {
     }  
 
     $(window).on('load', function() {
+        base.css_variables();
         base.scroll_position();
         base.site_notification();
         base.site_preloader();
