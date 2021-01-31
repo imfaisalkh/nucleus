@@ -3,8 +3,11 @@
                 <!-- END: SITE BODY -->
 
                 <!-- BEGIN: SITE FOOTER -->
-                <?php $footer_style = get_field('footer_style') ? get_field('footer_style') : get_theme_mod('nucleus_footer_style', 'center'); ?>
-                
+                <?php
+                    // Helper Variable(s)
+                    $footer_style = (get_field('site_footer') == 'center' || get_field('site_footer') == 'full-width') ? get_field('site_footer') : get_theme_mod('nucleus_footer_style', 'center');
+                ?>
+
                 <footer id="site-footer" data-footer-style="<?php echo $footer_style; ?>">
 
                     <?php include(locate_template( 'partials/scaffolding/primary-footer.php' )); ?>

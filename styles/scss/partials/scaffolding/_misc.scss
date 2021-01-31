@@ -533,16 +533,16 @@
 
 
 	/** Leading Text */
-	.lead-text.lead-text {
-		font-family: "Open Sans";
-		text-align: center;
-		font-size: 24px;
-		font-weight: 200;
-		color: #0F0F0F;
-		margin-bottom: 0;
+	// .lead-text.lead-text {
+	// 	font-family: "Open Sans";
+	// 	text-align: center;
+	// 	font-size: 24px;
+	// 	font-weight: 200;
+	// 	color: #0F0F0F;
+	// 	margin-bottom: 0;
 
-		@include breakpoint($mobile)  { font-size: 22px;}
-	}
+	// 	@include breakpoint($mobile)  { font-size: 22px;}
+	// }
 
 
 

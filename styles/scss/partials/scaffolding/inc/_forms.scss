@@ -91,13 +91,13 @@
 		border-style: solid;
 		border-radius: 0;
 
-		background: #0FFFBE;
-		border-color: #0FFFBE;
-		color: #000;
+		background: var(--secondary-accent);
+		border-color: var(--secondary-accent);
+		color:var(--background-color);
 
-		background: var(--form-button-background-color, #0FFFBE);
-		border-color: var(--form-button-border-color, #000);
-		color: var(--form-button-text-color, #0FFFBE);
+		// background: var(--form-button-background-color, #0FFFBE);
+		// border-color: var(--form-button-border-color, #000);
+		// color: var(--form-button-text-color, #0FFFBE);
 
 		transition: all 200ms ease-in-out 0s;
 
@@ -136,15 +136,14 @@
 -------------------------------------------------------- */
 
 	label {
-		font-family: $primary-font-stack;
-		font-size: 1.8rem;
-		font-style: italic;
+		font-family: $secondary-font-stack;
+		font-size: 1.7rem;
 		line-height: 46px;
 		color: #838383;
 		color: var(--form-text-label-color, #838383);
 
-		span.required,
-		& ~ span.required
+		span.req,
+		& ~ span.req
 		{
 			font-style: normal;
 			color: #FF0000;
@@ -232,3 +231,11 @@
 		}
 	}
 
+
+/*---------------------------------------------------------
+ Contact Form 7 (_forms.scss)
+-------------------------------------------------------- */
+
+	form.wpcf7-form {
+		input[type="submit"] { width: 100%; }
+	}

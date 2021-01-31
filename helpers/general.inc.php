@@ -47,16 +47,16 @@
 #  Allow certain mime types to upload
 #-------------------------------------------------------------------------------#
 
-	if ( !function_exists('malmo_mime_types') ) {
+	if ( !function_exists('nucleus_mime_types') ) {
 
-		function malmo_mime_types($mimes) {
+		function nucleus_mime_types($mimes) {
 			$mimes['svg'] = 'image/svg+xml';
 			return $mimes;
 		}
 
 	}
 
-	add_filter('upload_mimes', 'malmo_mime_types');
+	add_filter('upload_mimes', 'nucleus_mime_types');
 
 
 #-------------------------------------------------------------------------------#

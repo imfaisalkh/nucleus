@@ -83,7 +83,26 @@
 					
 					// Modern Menu
 					.modern-menu & {
-						@include breakpoint($no-touch)	  { font-size: 32px; }
+						@include breakpoint($no-touch) {
+							display: flex;
+							flex-direction: column;
+							transform: translateY(-7px);
+							.bar {
+								display: inline-block;
+								height: 2px;
+								width: 32px;
+								background: #000;
+								margin: 4px 0;
+								border-radius: 2px;
+								transition: width 300ms linear;
+
+								&:nth-child(2) { width: 23px; }
+							}
+
+							&:hover {
+								.bar { width: 32px; }
+							}
+						}
 					}
 
 				}

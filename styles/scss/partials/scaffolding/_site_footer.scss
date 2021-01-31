@@ -86,7 +86,7 @@
 
 
 		&[data-footer-style="center"] {
-			margin: 120px auto;
+			margin: 90px auto;
 			width: 420px;
 			text-align: center;
 			@include breakpoint($mobile) { width: 100%; }
@@ -98,7 +98,7 @@
 		&[data-footer-style="full-width"] {
 			&:after { width: 0; height: 0; }
 
-			margin: 120px auto 30px auto;
+			margin: 30px auto 30px auto;
 
 			.inner-wrap {
 				&:before {

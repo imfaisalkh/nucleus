@@ -11,7 +11,7 @@
 		return $buttons;
 	}
 
-	add_filter('mce_buttons_2', 'wpb_mce_buttons_2');
+	// add_filter('mce_buttons_2', 'wpb_mce_buttons_2');
 
 
 #-------------------------------------------------------------------------------#

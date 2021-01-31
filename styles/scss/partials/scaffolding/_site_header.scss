@@ -25,6 +25,11 @@
 			display: flex;
 			justify-content: space-between; /* Align Childs on Main-Axis */
 			align-items: center; /* Align Childs on Cross-Axis */
+
+			&[data-header-style="traditional"] {}
+			&[data-header-style="modern"] {
+				.icons-wrap { margin-left: auto; }
+			}
 		}
 
 		@include make-full-width;

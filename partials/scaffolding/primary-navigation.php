@@ -1,8 +1,13 @@
+<?php
+    // Helper Variable(s)
+    $header_style = (get_field('site_header') == 'traditional' || get_field('site_header') == 'modern') ? get_field('site_header') : get_theme_mod('nucleus_menu_type', 'traditional');
+?>
+
 <div class="bg-wrap">
     <div class="media"></div>
 </div>
 
-<div class="inner-wrap">
+<div class="inner-wrap" data-header-style="<?php echo $header_style; ?>">
 
     <div class="logo-wrap">
 
@@ -54,8 +59,7 @@
 
     </div>
 
-    <?php $menu_type = isset($_GET['nav']) ? $_GET['nav'] : get_theme_mod('nucleus_menu_type', 'traditional'); ?>
-    <?php if( $menu_type == "traditional" ) { ?>
+    <?php if( $header_style == "traditional" || $header_style == "center" ) { ?>
 
         <div class="menu-wrap">
             
@@ -92,7 +96,11 @@
                     </li>
                 <?php } ?>
                 <li class="menu-icon">
-                    <a href="#"><i class="fi fi-menu" aria-hidden="true"></i></a>
+                    <a href="#">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </a>
                 </li>
             </ul>
         </div>
