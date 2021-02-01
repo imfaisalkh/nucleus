@@ -46,6 +46,7 @@
 		}
 	}
 
+	
 
 /** == SOCIAL SHARE == */
 /** ================================================== */
@@ -136,6 +137,49 @@
 
 			&.notification {
 				margin-bottom: 10px !important;
+			}
+			&.sound-bars {
+				position: relative;
+				display: flex;
+				margin-bottom: 10px;
+
+				.bar {
+					position: absolute;
+					bottom: 1px;
+					display: inline-block;
+					width: 3px;
+					height: 25px;
+					opacity: 0.5;
+					background: var(--text-color);
+					margin: 0 2px 0 2px;
+					border-radius: 2px;
+					animation: sound 0ms -800ms linear infinite alternate;
+
+					// non-active
+					&:nth-child(1)  { height: 17px; left: 1px; animation-duration: 0; }
+					&:nth-child(2)  { height: 25px; left: 6px; animation-duration: 0; }
+					&:nth-child(3)  { height: 19px; left: 11px; animation-duration: 0; }
+					&:nth-child(4)  { height: 15px; left: 16px; animation-duration: 0; }
+
+				}
+				&.active {
+					.bar {
+						&:nth-child(1)  { left: 1px; animation-duration: 474ms; }
+						&:nth-child(2)  { left: 6px; animation-duration: 433ms; }
+						&:nth-child(3)  { left: 11px; animation-duration: 407ms; }
+						&:nth-child(4)  { left: 16px; animation-duration: 458ms; }
+					}
+				}
+				@keyframes sound {
+					0% {
+					   opacity: .35;
+						height: 3px; 
+					}
+					100% {
+						opacity: 1;       
+						height: 25px;        
+					}
+				}
 			}
 		}
 	}

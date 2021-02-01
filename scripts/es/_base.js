@@ -87,6 +87,26 @@ export default jQuery(function($) {
 				speed: 600
 			});
         },
+
+        /** Background Sound */
+        toggle_bg_sound: function() {
+
+            $('#page-controls .page-control.sound-bars').on( 'click' , function(e) {
+                e.preventDefault();
+
+                let background_audio = $('.hero-header audio')[0]
+                let is_active = $(this).hasClass('active')
+
+                if (is_active) {
+                    $(this).removeClass('active')
+                    background_audio.pause()
+                } else {
+                    $(this).addClass('active')
+                    background_audio.play()
+                }
+            });
+
+        },
         
         /** Site Notification */
         site_notification: function() {
@@ -160,9 +180,15 @@ export default jQuery(function($) {
              // trigger fullscreen functionality
              $('ul#icons-menu li.fullscreen-icon a').on( 'click' , function(e) {
                 e.preventDefault();
-                if (document.fullscreenElement) {
+
+                let is_fullscreen = document.fullscreenElement
+
+                if (is_fullscreen) {
+                    // $(this).removeClass('active')
                     document.exitFullscreen();
+                    $('i', this).addClass('fi-fullscreen').removeClass('fi-smallscreen')
                 } else {
+                    $('i', this).removeClass('fi-fullscreen').addClass('fi-smallscreen')
                     document.documentElement.requestFullscreen();
                 }
             });
@@ -261,6 +287,7 @@ export default jQuery(function($) {
     $(window).on('load', function() {
         base.css_variables();
         base.scroll_position();
+        base.toggle_bg_sound();
         base.site_notification();
         base.site_preloader();
         base.site_menu();

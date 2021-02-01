@@ -1,3 +1,15 @@
+<?php
+	
+	// Post or Page ID
+	if( is_home() || is_archive() || is_search() ) {
+		$post_ID = get_option('page_for_posts');
+	} else {
+		$post_ID = get_the_ID();
+    }
+    
+    
+?>
+
 <!-- BEGIN: SITE CONTROLS -->
 <div id="site-controls">
 
@@ -15,6 +27,14 @@
     <?php if ( !get_theme_mod('nucleus_page_actions') ) { ?>
 
         <div id="page-controls">
+            <?php if (get_field('background_audio')) { ?>
+                <a class="page-control sound-bars active" href="#toggle-sound">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            <?php } ?>
             <?php if ( !get_theme_mod('nucleus_notification_disable') && get_theme_mod('nucleus_notification_title') ) { ?>
                 <a class="page-control notification" href="#site-info" data-balloon="<?php echo get_theme_mod('nucleus_notification_tooltip'); ?>" data-balloon-pos="left"><i class="fi fi-info" aria-hidden="true"></i></a>
             <?php } ?>
