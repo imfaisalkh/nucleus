@@ -137,14 +137,14 @@
 
 	  li {
 		position: relative;
-		line-height: 1.1;
+		line-height: 1;
 		letter-spacing: 0;
 		white-space: nowrap;
 		transition: background .2s;
 
 		a {
 		  font-family: $secondary-font-stack;
-		  font-size: 17px;
+		  font-size: 16px;
 		  display: block;
 		  position: relative;
 		  display: block;
@@ -156,6 +156,7 @@
 
 		  &:hover {
 			color: var(--menu-text) !important;
+			background: #F3F3F3;
 		  }
 		}
 
@@ -257,6 +258,32 @@
   }
 
 
+	/** == MENU TAGS == */
+	/** ================================================== */
+	ul.sf-menu {
+		li.is-gallery {
+			> a {
+				position: relative;
+				&:after {
+					height: 14px;
+					display: inline-flex;
+					justify-content: center; align-items: center;
+					background: var(--menu-text);
+					border-radius: 2px;
+					font-size: 9px;
+					color: var(--menu-background);
+					text-transform: uppercase;
+					padding: 1px 3px;
+					margin-left: 6px;
+				}
+			}
+		}
+
+		li.is-gallery > a:after { content: 'gallery'; }
+	}
+
+
+
 
 	/** == SPECIAL MENU ITEMS == */
 	/** ================================================== */
@@ -280,6 +307,81 @@
 				padding: 11px 14px 3px 14px;
 				margin: 2px 22px 5px 22px;
 				@include breakpoint($mobile) { display: none !important; }
+			}
+		}
+	}
+
+
+/** == MEGA MENU == */
+/** ================================================== */
+
+	ul#main-menu {
+		> li.mega-menu {
+			> ul.sub-menu {
+				display: flex;
+				min-width: 600px;
+				left: auto;
+
+				&:before {
+					left: auto;
+				}
+				&:after {
+					display: none;
+				}
+
+				li {
+					a.sf-with-ul {
+						display: inline-block;
+						font-family: $secondary-font-stack;
+						font-size: 12px;
+						font-weight: 400;
+						text-transform: uppercase;
+						color: var(--menu-caption);
+						padding: 11px 14px 3px 14px;
+						margin: 2px 22px 5px 22px;
+						&:hover {
+							color: var(--menu-caption) !important;
+							background: none;
+							cursor: initial;
+						}
+						&:after {
+							display: none;
+						}
+					}
+					ul.sub-menu {
+						display: block !important;
+						position: initial !important;
+						padding: 10px 0;
+						box-shadow: none;
+						opacity: 1 !important;
+						margin-bottom: 0;
+
+						li {
+							&.current-menu-item {
+								a { background: var(--menu-hover); }
+							}
+							a {
+								&:hover {
+									background: var(--menu-hover);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			// Mega Menu Widths + Positioning
+			&.three-columns {
+				> ul.sub-menu {
+					right: -300%;
+					&:before { right: 25%; }
+				}
+			}
+			&.four-columns {
+				> ul.sub-menu {
+					right: -600%;
+					&:before { right: 40.5%; }
+				}
 			}
 		}
 	}

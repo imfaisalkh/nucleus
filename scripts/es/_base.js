@@ -41,6 +41,9 @@ export default jQuery(function($) {
                 let menu_text = tinycolor(menu_bg).lighten(90).toString()
                 document.body.style.setProperty('--menu-text', menu_text);
 
+                let menu_hover = tinycolor(menu_text).darken(85).toString()
+                document.body.style.setProperty('--menu-hover', menu_hover);
+
                 let menu_seperator = tinycolor(menu_bg).lighten(15).toString()
                 document.body.style.setProperty('--menu-seperator', menu_seperator);
 
@@ -58,6 +61,9 @@ export default jQuery(function($) {
 
                 let menu_text = tinycolor(menu_bg).darken(90).toString()
                 document.body.style.setProperty('--menu-text', menu_text);
+
+                let menu_hover = tinycolor(menu_text).lighten(85).toString()
+                document.body.style.setProperty('--menu-hover', menu_hover);
 
                 let menu_seperator = tinycolor(menu_bg).darken(15).toString()
                 document.body.style.setProperty('--menu-seperator', menu_seperator);
@@ -138,7 +144,7 @@ export default jQuery(function($) {
 			// Traditional Menu
             $('ul.sf-menu').superfish({
                 animation: { opacity: 'show', top: "220%" },
-                animationOut: {opacity:'hide', top: "260%" },
+                animationOut: { opacity:'hide', top: "260%" },
                 speed: 'fast',
                 delay: 600,
             });

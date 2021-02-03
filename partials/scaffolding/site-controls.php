@@ -28,7 +28,7 @@
 
         <div id="page-controls">
             <?php if (get_field('background_audio')) { ?>
-                <a class="page-control sound-bars active" href="#toggle-sound">
+                <a class="page-control sound-bars active" href="#toggle-sound" aria-label="<?php echo esc_html('Toggle Sound', 'nucleus'); ?>" data-balloon-pos="left">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -36,7 +36,7 @@
                 </a>
             <?php } ?>
             <?php if ( !get_theme_mod('nucleus_notification_disable') && get_theme_mod('nucleus_notification_title') ) { ?>
-                <a class="page-control notification" href="#site-info" data-balloon="<?php echo get_theme_mod('nucleus_notification_tooltip'); ?>" data-balloon-pos="left"><i class="fi fi-info" aria-hidden="true"></i></a>
+                <a class="page-control notification" href="#site-info" aria-label="<?php echo get_theme_mod('nucleus_notification_tooltip'); ?>" data-balloon-pos="left"><i class="fi fi-info" aria-hidden="true"></i></a>
             <?php } ?>
             <a class="page-control go-top" href="#site-container"><i class="fi fi-arrow-up" aria-hidden="true"></i></a>
         </div>
