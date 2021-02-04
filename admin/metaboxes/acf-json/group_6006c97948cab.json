@@ -22,8 +22,7 @@
                 "textual": "Textual",
                 "forza": "Forza",
                 "tiles": "Tiles",
-                "ribbon": "Ribbon",
-                "stack": "Stack"
+                "ribbon": "Ribbon"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -87,5 +86,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1612453091
+    "modified": 1612459911
 }
