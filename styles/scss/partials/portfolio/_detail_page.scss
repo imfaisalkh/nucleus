@@ -11,45 +11,28 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
 
-        div {
-
-            &.prev,
-            &.next {
-                a {
-                    display: inline-flex;
-                    font-size: 18px;
-                    text-transform: uppercase;
-                    line-height: 34px;
-                    letter-spacing: 0.5px;
-                    color: var(--text-color, #FFF);
-
-                    i {
-                        font-size: 26px;
-                    }
-                }
-            }
-            &.prev i { margin-left: 10px; } 
-            &.next i { margin-right: 10px; } 
-
-            &.index {
-                width: 100px;
-                text-align: center;
-
-                a {
-                    color: var(--text-color, #FFF);
-                    i { font-size: 41px; transition: font-size 400ms ease-in-out; }
-                    &:hover {
-                        // i { font-size: 41px; }
-                    }
-                }
-            }
-
-            &.no-more-content {
-                opacity: 0;
-                visibility: hidden;
-            }
-
+        &.no-more-content {
+            opacity: 0;
+            visibility: hidden;
         }
+
+        .caption {
+            font-family: $secondary-font-stack;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-color);
+            opacity: 0.5;
+        }
+        .next-folio {
+            display: inline-block;
+            font-family: $primary-font-stack;
+            font-size: 48px;
+            color: var(--text-color);
+            line-height: 1.2;
+        }
+
     }
 }

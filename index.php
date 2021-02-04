@@ -1,5 +1,10 @@
 <?php get_header(); ?>
 
+<?php
+	// Helper Variable(s)
+    $pagination_type = get_query_var('pagination') ? get_query_var('pagination') : get_theme_mod('nucleus_blog_infinite_scroll', 'button'); // scroll, button
+?>
+
 	<!-- Main Content -->
 	<div id="main-content">
 
@@ -11,7 +16,7 @@
 				<?php if ( have_posts() ) : ?>
 
 					<!-- BEGIN: BLOG LIST -->
-					<section class="blog-minimal" data-load-trigger="<?php echo get_theme_mod('nucleus_blog_infinite_scroll', 'button'); ?>">
+					<section class="blog-minimal" data-load-trigger="<?php echo $pagination_type; ?>">
 
 						<?php while ( have_posts() ) : the_post(); ?>
 							<?php get_template_part( 'partials/blog/master-page' ); ?>

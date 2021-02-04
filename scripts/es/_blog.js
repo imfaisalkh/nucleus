@@ -16,20 +16,21 @@ export default jQuery(function($) {
 			// defining some data (for 'infiniteScroll')
             var $container 	 = is_blog ? $('.blog-minimal') : $('.grid');
             var item 		 = is_blog ? '.type-post' : '.grid-item';
-            var loadMore 	 = '#load-more';
+            var load_more 	 = '#load-more';
 			var load_trigger = $container.data('load-trigger');
 			
             // let's start the engines
 			var startEngine = {
 
-                init: function(){
+                init: function() {
 
 					$container.infiniteScroll({
 						append: item,
 						path: '#load-more a',
 						loadOnScroll: (load_trigger == 'button') ? false : true,
-						button: loadMore,
+						button: load_more,
 						status: '.page-load-status',
+						history: false,
 						// debug: true,
 					});
 
@@ -39,14 +40,14 @@ export default jQuery(function($) {
 					// 1: triggers when making request for the next page to be loaded
 					$container.on( 'request.infiniteScroll', function( event, path ) {
 						if (load_trigger == 'button') {
-							$(loadMore).fadeOut(200); // add spinning animation while loading 
+							$(load_more).fadeOut(200); // add spinning animation while loading 
 						}
 					});
 
 					// 2: triggers when next page loaded but not appended
 					$container.on( 'load.infiniteScroll', function( event, response, path ) {
 						if (load_trigger == 'button') {
-							$(loadMore).fadeIn(200); // add spinning animation while loading 
+							$(load_more).fadeIn(200); // add spinning animation while loading 
 						}
 					});
 

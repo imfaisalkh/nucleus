@@ -4,7 +4,7 @@
     $portfolio_columns = 4;
     $portfolio_gutter = 30;
     $portfolio_count = 8;
-    $portfolio_load_more = "button"; // scroll, button
+    $pagination_type = get_query_var('pagination') ? get_query_var('pagination') : get_field('portfolio_pagination'); // scroll, button
 
     // WP_QUERY Arguments
     $portfolio_args = array(
@@ -20,7 +20,7 @@
 
 <?php if ( $portfolio_query->have_posts() ) : ?>
 
-    <section class="grid" data-col="<?php echo esc_attr( $portfolio_columns ); ?>" data-margin="<?php echo esc_attr( $portfolio_gutter ); ?>" data-load-trigger="<?php echo esc_attr( $portfolio_load_more ); ?>" style="grid-gap: <?php echo esc_attr( $portfolio_gutter ); ?>px;">
+    <section class="grid" data-col="<?php echo esc_attr( $portfolio_columns ); ?>" data-margin="<?php echo esc_attr( $portfolio_gutter ); ?>" data-load-trigger="<?php echo esc_attr( $pagination_type ); ?>" style="grid-gap: <?php echo esc_attr( $portfolio_gutter ); ?>px;">
 
         <?php while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post(); ?>
             <?php include(locate_template( 'partials/portfolio/includes/classic-loop.php' )); ?>

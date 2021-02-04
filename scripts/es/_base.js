@@ -62,7 +62,7 @@ export default jQuery(function($) {
                 let menu_text = tinycolor(menu_bg).darken(90).toString()
                 document.body.style.setProperty('--menu-text', menu_text);
 
-                let menu_hover = tinycolor(menu_text).lighten(85).toString()
+                let menu_hover = tinycolor(menu_text).lighten(87).toString()
                 document.body.style.setProperty('--menu-hover', menu_hover);
 
                 let menu_seperator = tinycolor(menu_bg).darken(15).toString()

@@ -1,0 +1,186 @@
+/** == GENERAL == */
+/** ================================================== */
+
+    body.portfolio-tiles {
+        overflow: hidden;
+        background-image: url(../../images/corner-pattern.svg);
+        background-position: top left;
+        background-repeat: no-repeat;
+    }
+
+/** == TILES CAROUSEL == */
+/** ================================================== */
+
+    #tiles-slider {
+        position: relative;
+        top: -194px; left: 0; right: 0;
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+        z-index: 10; // make it beneath menu
+
+        .columns {
+            position: absolute;
+            top: 160px;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            .column {
+                display: flex;
+                align-items: center;
+                width: 50%;
+                height: 100%;
+                overflow: hidden;
+                padding-bottom: 50px;
+
+                &.text {
+                    width: 45%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    padding-right: 150px;
+
+                    .prefix {
+                        position: relative;
+                        font-family: $secondary-font-stack;
+                        font-size: 17px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 0.4px;
+                        margin: 0 0 10px 0;
+    
+                        &:before {
+                            display: inline-block;
+                            content: '';
+                            width: 75px;
+                            height: 2px;
+                            background: #FFF;
+                            transform: translateY(-5px);
+                            margin-right: 18px;
+                        }
+                    }
+                    .title {
+                        font-size: 60px;
+                        margin: 0 0 20px 0;
+                        line-height: 1;
+                    }
+                    p {
+                        font-size: 18px;
+                        color: #A5A5A5;
+                        margin-bottom: 0;
+                    }
+                    .button {
+                        margin: 30px 0 0 0;
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                        border-radius: 5px;
+                    }
+                }
+
+                &.slider {
+                    width: 55%;
+                    .main-carousel {
+                        height: 100%
+                    }
+                }
+            }
+        }
+
+        .slider-controls {
+            // Progress Bar
+            .progress-bar {
+                @extend .slider-progress-bar;
+                @include make-full-width();
+            }
+    
+            // All Works
+            .all-works {
+                @extend .all-works;
+            }
+    
+            // Counter
+            .counter {
+                @extend .counter;
+            }
+        }
+        
+        .main-carousel {
+            width: 100%;
+            
+            // Dots
+            .flickity-page-dots {
+                @extend .slider-page-dots;
+                text-align: center;
+                bottom: -30px;
+                padding: 0;
+            }
+
+            // Arrows 
+            .flickity-prev-next-button {
+                @extend .flickity-prev-next-button;
+            }
+            
+            // Viewport
+            .flickity-viewport {
+                overflow: visible !important;
+                height: 100% !important;
+
+                .flickity-slider {
+                    // @include make-full-width();
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+
+                    // margin-left: calc(-50vw + 65%);
+
+                    .carousel-cell {
+                        position: relative;
+                        text-align: center;
+                        width: 31%;
+                        height: 100%; /* height of carousel */
+                        overflow: hidden;
+                        margin: 0 10px;
+                        border-radius: 5px;
+                        background-size: cover;
+                        background-position: center center;
+
+
+                        .carousel-desc {
+                            display: none;
+                            @include animate-this(); // CSS-3 animation is triggered via addition of '.is-selected' class
+                            position: absolute;
+                            left: 19%;
+                            top: 50%;
+                            transform: translateY(-50%) translateX(-50%);
+                            text-align: left;
+
+                            .title {
+                                font-size: 48px;
+                                // color: #000;
+                                margin: 0;
+                                // letter-spacing: 0;
+                            }
+                            .tags {
+                                font-size: 14px;
+                                text-transform: uppercase;
+                                letter-spacing: 1px;
+                                color: #696969;
+                            }
+                        }
+
+                        /* animate-in carousel description when selected */
+                        &.is-selected {
+                            .carousel-desc {
+                                opacity: 1;
+                                visibility: visible;
+                                transform: translate3d(-50%, -56%, 0);
+                                transition-delay: 600ms;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

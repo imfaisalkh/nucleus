@@ -21,11 +21,46 @@
                 "spotlight": "Spotlight",
                 "textual": "Textual",
                 "forza": "Forza",
-                "tiles": "Tiles"
+                "tiles": "Tiles",
+                "ribbon": "Ribbon",
+                "stack": "Stack"
             },
             "allow_null": 0,
             "other_choice": 0,
             "default_value": "classic",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_601c0844decd2",
+            "label": "Pagination Type",
+            "name": "portfolio_pagination",
+            "type": "radio",
+            "instructions": "Choose a pagination type for your portfolio.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6006c987a8e4e",
+                        "operator": "==",
+                        "value": "classic"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "button": "Load More",
+                "number": "Numbered",
+                "scroll": "Infinite Scroll"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "load-more",
             "layout": "horizontal",
             "return_format": "value",
             "save_other_choice": 0
@@ -52,5 +87,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1611336344
+    "modified": 1612453091
 }
