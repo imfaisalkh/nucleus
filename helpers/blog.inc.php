@@ -52,7 +52,9 @@
 #-------------------------------------------------------------------------------#
 
 	function nucleus_search_filter( $query ) {
-		if ( $query->is_home() && !is_admin() ) {
+		$blog_layout = get_query_var('blog') ? get_query_var('blog') : get_theme_mod('nucleus_blog_layout', 'minimal');
+
+		if ( $query->is_home() && !is_admin() && $blog_layout == 'magazine' ) {
 			$query->set( 'post__not_in', explode(',', get_theme_mod('nucleus_blog_slider')) );
 		}
 		return $query;

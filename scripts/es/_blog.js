@@ -20,8 +20,8 @@ export default jQuery(function($) {
             var $container 	 = is_blog ? $('.blog-container') : $('.grid');
             var item 		 = is_blog ? '.blog-container .type-post' : '.grid-item';
             var load_more 	 = '#load-more';
-			var load_trigger = $container.data('load-trigger');
-			
+            var load_trigger = $container.data('load-trigger');
+            
             // let's start the engines
 			var startEngine = {
 
@@ -35,8 +35,8 @@ export default jQuery(function($) {
 						status: '.page-load-status',
 						history: false,
 						// debug: true,
-					});
-
+                    });
+                    
 					// 0: current state of 'infiniteScroll' instance
 					var infScroll = $container.data('infiniteScroll');
 
@@ -163,11 +163,27 @@ export default jQuery(function($) {
 
         },
 
+        /** Sidebar */
+        sidebar: function() {
+            $('.open-sidebar').on('click', function (e) {
+                e.preventDefault()
+                $('html').addClass('noscroll')
+                $('#page-sidebar').addClass('active')
+            })
+            $('.close-sidebar').on('click', function (e) {
+                e.preventDefault()
+                $('html').removeClass('noscroll')
+                $('#page-sidebar').removeClass('active')
+            })
+        },
+
+
         
     }  
 
     $(window).on('load', function() {
 		blog.load_more();
+		blog.sidebar();
 
 		if (blog_magazine_page) {
             blog.carousel();

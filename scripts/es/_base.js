@@ -52,6 +52,12 @@ export default jQuery(function($) {
 
                 let backdrop_color = tinycolor(background_color).darken(10).toString()
                 document.body.style.setProperty('--backdrop-color', backdrop_color);
+
+                let sidebar_title = tinycolor(background_color).darken(30).toString()
+                document.body.style.setProperty('--sidebar-title', sidebar_title);
+
+                let sidebar_trigger_color = tinycolor(background_color).darken(5).toString()
+                document.body.style.setProperty('--sidebar-trigger-color', sidebar_trigger_color);
             }
 
             // set color pallate if dark color scheme is active
@@ -73,6 +79,12 @@ export default jQuery(function($) {
 
                 let backdrop_color = tinycolor(background_color).lighten(10).toString()
                 document.body.style.setProperty('--backdrop-color', backdrop_color);
+
+                let sidebar_title = tinycolor(background_color).lighten(10).toString()
+                document.body.style.setProperty('--sidebar-title', sidebar_title);
+
+                let sidebar_trigger_color = tinycolor(background_color).lighten(5).toString()
+                document.body.style.setProperty('--sidebar-trigger-color', sidebar_trigger_color);
             }
 
         },

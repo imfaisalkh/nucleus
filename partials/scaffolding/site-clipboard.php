@@ -1,6 +1,19 @@
 <!-- BEGIN: SITE CONTROLS -->
 <div id="site-clipboard">
 
+    <!-- Page Sidebar -->
+    <?php if ( is_active_sidebar( 'blog-sidebar' ) && is_home() ) { ?>
+        <a href="#open-sidebar" class="open-sidebar">
+            <i class="fi fi-sidebar-arrow" aria-hidden="true"></i>
+        </a>
+        <aside id="page-sidebar">
+            <a href="#close-sidebar" class="close-sidebar">
+                <i class="fi fi-close" aria-hidden="true"></i>
+            </a>
+            <?php get_sidebar(); ?> 
+        </aside>
+    <?php } ?>
+
     <!-- Custom Cursor -->
     <div class="cursor">
         <div class="cursor-helper cursor-view">
