@@ -1,10 +1,13 @@
 // Export Functions
 export default jQuery(function($) {
-    'use strict';
+	'use strict';
+
+	// Global Variable(s)
+	const blog_magazine_page = $('body').hasClass('blog-magazine')
+	var $carousel = $('#blog-slider .main-carousel')
 
     // Functions Object
     var blog = {
-
 
 		/** Infinite Scroll */
 		load_more: function() {
@@ -14,8 +17,8 @@ export default jQuery(function($) {
 			var is_load_more = $('#load-more').length;
 
 			// defining some data (for 'infiniteScroll')
-            var $container 	 = is_blog ? $('.blog-minimal') : $('.grid');
-            var item 		 = is_blog ? '.type-post' : '.grid-item';
+            var $container 	 = is_blog ? $('.blog-container') : $('.grid');
+            var item 		 = is_blog ? '.blog-container .type-post' : '.grid-item';
             var load_more 	 = '#load-more';
 			var load_trigger = $container.data('load-trigger');
 			
@@ -67,10 +70,107 @@ export default jQuery(function($) {
 			}
 
 		},
+
+
+        // Private: Configure Progress Bar
+        _configure_progress_bar: function(time) {
+            var time = time;
+            var $bar, $slick, isPause, tick, percentTime;
+
+            $bar = $('.progress-bar .progress');
+
+            $('.main-carousel').on({
+                mouseenter: function() {
+                    isPause = true;
+                },
+                mouseleave: function() {
+                    isPause = false;
+                }
+            })
+
+            function start_progress_bar() {
+                reset_progress_bar();
+                percentTime = 0;
+                isPause = false;
+                tick = setInterval(interval, 10);
+            }
+
+            function interval() {
+                if(isPause === false) {
+                    percentTime += 1 / (time+0.1);
+                    $bar.css({
+                        width: percentTime+"%"
+                    });
+                if(percentTime >= 100) {
+                    $carousel.flickity( 'next' )
+                        start_progress_bar();
+                    }
+                }
+            }
+
+            function reset_progress_bar() {
+                $bar.css({
+                    width: 0+'%' 
+                });
+                clearTimeout(tick);
+            }
+
+            start_progress_bar()
+
+            // reset progress bar (on scroll)
+            $carousel.on( 'scroll.flickity', function( event, progress ) {
+                start_progress_bar()
+            });
+        },
+
+        /** Horizon Carousel */
+        carousel: function() {
+
+            // assign current scope to self
+            let self = this
+
+            var is_flickity = true;
+            // var is_flickity = $('body').hasClass('is-flickity-enabled');
+
+            if (is_flickity) {
+                // init flickity instance
+                $carousel.flickity({
+                    contain: true,
+                    wrapAround: true,
+                    pageDots: false,
+                    // percentPosition: false,
+                    arrowShape: 'M71.1066 13.0002L8.10661 13.0002M8.8995 23.3997L1.5 13.5002L8.89949 3.60068L8.8995 23.3997Z'
+                });
+
+                // start progress bar
+                self._configure_progress_bar(80)
+      
+                // parallax image
+                // var $imgs = $carousel.find('.carousel-cell img');
+                // var docStyle = document.documentElement.style; // get transform property
+                // var transformProp = typeof docStyle.transform == 'string' ? 'transform' : 'WebkitTransform';
+
+                // var flkty = $carousel.data('flickity'); // get Flickity instance
+                // $carousel.on( 'scroll.flickity', function() {
+                //     flkty.slides.forEach( function( slide, i ) {
+                //       var img = $imgs[i];
+                //       var x = ( slide.target + flkty.x ) * -1/3;
+                //       img.style[ transformProp ] = 'translateX(' + x  + 'px)';
+                //     });
+                // });
+
+            }
+
+        },
+
         
     }  
 
     $(window).on('load', function() {
-        blog.load_more();
+		blog.load_more();
+
+		if (blog_magazine_page) {
+            blog.carousel();
+        }
     }); 
 })

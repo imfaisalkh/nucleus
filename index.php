@@ -2,13 +2,19 @@
 
 <?php
 	// Helper Variable(s)
-    $pagination_type = get_query_var('pagination') ? get_query_var('pagination') : get_theme_mod('nucleus_blog_infinite_scroll', 'button'); // scroll, button
+	$blog_layout = get_query_var('blog') ? get_query_var('blog') : get_theme_mod('nucleus_blog_layout', 'minimal');
+    $pagination_type = get_query_var('pagination') ? get_query_var('pagination') : get_theme_mod('nucleus_blog_pagination', 'button'); // scroll, button
+	$current_page = get_query_var('paged') ? get_query_var('paged') : 1;
 ?>
 
 	<!-- Main Content -->
 	<div id="main-content">
 
-		<?php get_template_part( 'partials/scaffolding/page-header' ); ?>
+		<?php if ($blog_layout == 'minimal') { ?>
+			<?php get_template_part( 'partials/scaffolding/page-header' ); ?>
+		<?php } else if ($blog_layout == 'magazine' && $current_page == 1) { ?>
+			<?php get_template_part( 'partials/blog/slider-posts' ); ?>
+		<?php } ?>
 
 		<!-- Page Content -->
 		<div id="page-content" class="full-width">
@@ -16,10 +22,10 @@
 				<?php if ( have_posts() ) : ?>
 
 					<!-- BEGIN: BLOG LIST -->
-					<section class="blog-minimal" data-load-trigger="<?php echo $pagination_type; ?>">
+					<section class="blog-container blog-<?php echo esc_attr($blog_layout); ?>-inner" data-load-trigger="<?php echo $pagination_type; ?>">
 
 						<?php while ( have_posts() ) : the_post(); ?>
-							<?php get_template_part( 'partials/blog/master-page' ); ?>
+							<?php get_template_part( 'partials/blog/layout', $blog_layout ); ?>
 						<?php endwhile; ?>	
 
 					</section>

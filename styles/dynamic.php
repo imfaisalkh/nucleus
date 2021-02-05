@@ -57,9 +57,7 @@
 	}
 
 	/** Light Color Scheme */
-	body.light-color-scheme,
-	body.blog, body.archive
-	{
+	body.light-color-scheme	{
 		--primary-accent: #FF6000;
 		--secondary-accent : #43f3b7;
 		--background-color: #FFF;

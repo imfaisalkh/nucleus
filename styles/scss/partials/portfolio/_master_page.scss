@@ -134,7 +134,8 @@
 				color: var(--text-color);
 
 				&.current {
-					background: #282828;
+					color: var(--menu-text);
+					background: var(--menu-background);
 				}
 			}
 			.next, .prev { display: none; }

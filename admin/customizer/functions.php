@@ -366,7 +366,7 @@ function nucleus_customize_register($wp_customize) {
 
   // Add: Select
   $wp_customize->add_setting( 'nucleus_blog_layout', array (
-    'default' => 'full_grid_posts',
+    'default' => 'minimal',
     'sanitize_callback' => 'sanitize_text_field',
   ) );
 
@@ -375,15 +375,14 @@ function nucleus_customize_register($wp_customize) {
     'section'  => 'nucleus_blog_settings',
     'type'     => 'select',
     'choices'  => array(
-      'full_posts'  => 'Full Posts',
-      'grid_posts'  => 'Grid Posts',
-      'full_grid_posts'   => 'Full Post + Grid Posts',
+      'minimal'  => 'Minimal',
+      'magazine'  => 'Magazine',
     ),
   ) );
 
   // Add: Select
   $wp_customize->add_setting( 'nucleus_archive_layout', array (
-    'default' => 'full_grid_posts',
+    'default' => 'minimal',
     'sanitize_callback' => 'sanitize_text_field',
   ) );
 
@@ -392,9 +391,8 @@ function nucleus_customize_register($wp_customize) {
     'section'  => 'nucleus_blog_settings',
     'type'     => 'select',
     'choices'  => array(
-      'full_posts'  => 'Full Posts',
-      'grid_posts'  => 'Grid Posts',
-      'full_grid_posts'   => 'Full Post + Grid Posts',
+      'minimal'  => 'Minimal',
+      'magazine'  => 'Magazine',
     ),
   ) );
 
@@ -418,6 +416,34 @@ function nucleus_customize_register($wp_customize) {
         )
     )
   );
+
+  // Add: Text Field
+  $wp_customize->add_setting( 'nucleus_blog_slider', array (
+    'sanitize_callback' => 'sanitize_text_field',
+  ) );
+  
+  $wp_customize->add_control('nucleus_blog_slider', array(
+    'label'       => esc_html__('Slider Posts', 'nucleus'),
+    'section'     => 'nucleus_blog_settings',
+    'description'   => esc_html__('A comma sperated list of post IDs.', 'nucleus'),
+  ) );
+
+  // Add: Select
+  $wp_customize->add_setting( 'nucleus_blog_pagination', array (
+    'default' => 'button',
+    'sanitize_callback' => 'sanitize_text_field',
+  ) );
+
+  $wp_customize->add_control('nucleus_blog_pagination', array(
+    'label'    => esc_html__('Pagination Type', 'lamark'),
+    'section'  => 'nucleus_blog_settings',
+    'type'     => 'select',
+    'choices'  => array(
+      'button'  => 'Load More',
+      'scroll'  => 'Infinite Scroll',
+      'number'  => 'Numbered',
+    ),
+  ) );
 
 
   /*-----------------------------------------------------------------------------------*/

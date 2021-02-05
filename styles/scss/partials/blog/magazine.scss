@@ -1,0 +1,261 @@
+/*========================================================
+  0.  BLOG - MAGAZINE
+========================================================== */
+	
+
+/** == SLIDER == */
+/** ================================================== */
+
+	#blog-slider {
+		margin-bottom: 90px;
+		@include breakpoint($full-hd)  { margin-bottom: 90px; }
+
+		.main-carousel {
+			width: 100%;
+			// margin-top: 100px;
+
+			// Arrows 
+			.flickity-prev-next-button {
+				@extend .flickity-prev-next-button;
+				top: 31%;
+
+				&.previous { left: 10% !important; }
+				&.next { right: 10% !important; }
+			}
+			
+			// Viewport
+			.flickity-viewport {
+				overflow: visible !important;
+
+				.flickity-slider {
+					display: flex;
+					justify-content: center;
+					text-align: center;
+
+					.carousel-cell {
+						position: relative;
+						text-align: center;
+						width: 75%;
+						height: auto; /* height of carousel */
+						overflow: visible;
+						padding: 0 10%;
+
+						@include breakpoint($full-hd)  { width: 70%; padding: 0 10%; }
+
+						// margin: 0 80px;
+
+						.inner-wrap {
+							padding: 0 7%;
+							@include animate-this();
+							transform: translateY(20px);
+							margin-top: 20px;
+						}
+
+						.entry-thumbnail {
+							margin: 0;
+							height: 350px;
+							overflow: hidden;
+							margin-bottom: 20px;
+
+							@include breakpoint($full-hd)  { height: 400px; }
+				
+							img {
+								display: block;
+								width: 100%;
+								object-fit: cover;
+								height: 100% !important;
+							}
+						}
+				
+						.entry-title {
+							font-family: $primary-font-stack;
+							font-size: 36px;
+							font-weight: 400;
+							-ms-word-wrap: break-word;
+							word-wrap: break-word;
+							line-height: 1.2;
+							margin: 0;
+							letter-spacing: 0;
+							margin-bottom: 10px;
+							padding-right: 20px;
+				
+							@include breakpoint($full-hd)  { font-size: 36px; }
+				
+							a {
+								color: var(--text-color);
+								border-bottom: 1px solid transparent;
+								transition: all 300ms linear;
+				
+								&:hover {
+									border-bottom: 1px solid var(--primary-accent);
+								}
+							}
+						}
+						.featured {
+							display: inline-block;
+							border: 1px solid #FF6000;
+							color: #FF6000;
+							border-radius: 5px;
+							text-transform: uppercase;
+							letter-spacing: 1px;
+							font-size: 13px;
+							padding: 3px 8px;
+							margin-bottom: 5px;
+						}
+						.entry-desc {
+							font-size: 18px;
+							font-weight: 300;
+							margin-bottom: 7px;
+						}
+				
+						.timestamp {
+							font-family: $secondary-font-stack;
+							font-size: 16px;
+							color: #949494;
+							a { color: inherit; }
+						}
+
+						/* animate-in carousel description when selected */
+						&.is-selected {
+							.inner-wrap {
+								opacity: 1;
+								visibility: visible;
+								transform: translate3d(0, 10px, 0);
+								transition-delay: 600ms;
+						
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+/** == LOOP == */
+/** ================================================== */
+
+.blog-magazine-inner {
+	width: 100%;
+	display: grid;
+
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+
+	grid-row-gap: 30px; // percentage value cause layout issues
+	grid-column-gap: 6%;
+
+	@include breakpoint($retina)  { grid-row-gap: 45px; grid-column-gap: 7%; }
+	@include breakpoint($full-hd)  { grid-row-gap: 60px; grid-column-gap: 9%; }
+
+
+	[class^="post"], [class*=" post"] {
+		margin-bottom: 45px;
+		
+		// @include animate-this(); // CSS-3 animation is triggered via JS
+
+		&:nth-last-child(-n+2) {
+			@include breakpoint($no-touch)  { margin-bottom: 0; }
+		}
+
+
+		.entry-thumbnail {
+			margin: 0;
+			height: 200px;
+			overflow: hidden;
+			margin-bottom: 20px;
+
+			@include breakpoint($full-hd)  { height: 250px; }
+
+			img {
+				display: block;
+				width: 100%;
+				object-fit: cover;
+				height: 100% !important;
+			}
+		}
+
+		// Sticky Posts
+		&.sticky:first-of-type {
+			grid-row-start: 2;
+			grid-row-end: 3;
+			grid-column-start: span 3;
+			
+			margin: 0 25% 2% 25%;
+			text-align: center;
+
+			.entry-thumbnail {
+				height: 300px;
+				@include breakpoint($full-hd)  { height: 400px; }
+			}
+
+			.inner-wrap {
+				padding: 0 40px;
+
+				.entry-title {
+					padding: 0;
+					font-size: 36px;
+				}
+				.featured {
+					display: inline-block;
+					border: 1px solid #FF6000;
+					color: #FF6000;
+					border-radius: 5px;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					font-size: 13px;
+					padding: 3px 8px;
+					margin-bottom: 5px;
+				}
+				.entry-desc {
+					font-size: 20px;
+				}
+			}
+
+		}
+
+		.inner-wrap {
+			// max-width: calc(100% - 50px);
+		}
+
+		.entry-title {
+			font-family: $primary-font-stack;
+			font-size: 27px;
+			font-weight: 400;
+			-ms-word-wrap: break-word;
+			word-wrap: break-word;
+			line-height: 1.2;
+			margin: 0;
+			letter-spacing: 0;
+			margin-bottom: 7px;
+			padding-right: 20px;
+
+			@include breakpoint($mobile)  { font-size: 20px; }
+			@include breakpoint($retina)  { font-size: 22px; }
+			@include breakpoint($full-hd)  { font-size: 28px; }
+
+			a {
+				color: var(--text-color);
+				border-bottom: 1px solid transparent;
+				transition: all 300ms linear;
+
+				&:hover {
+					border-bottom: 1px solid var(--primary-accent);
+				}
+			}
+		}
+		.entry-desc {
+			font-size: 18px;
+			font-weight: 300;
+			margin-bottom: 7px;
+		}
+
+		.timestamp {
+			font-family: $secondary-font-stack;
+			font-size: 16px;
+			color: #949494;
+			a { color: inherit; }
+		}
+
+	}
+}
+

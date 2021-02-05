@@ -6,7 +6,7 @@
 /** == LOOP == */
 /** ================================================== */
 
-.blog-minimal {
+.blog-minimal-inner {
 	position: relative;
 	margin: 60px auto;
 	// width: 1140px;
@@ -132,5 +132,12 @@
 		font-family: inherit;
 		font-size: inherit;
 		color: inherit;
+	}
+}
+
+body.light-color-scheme {
+	.load-more {
+		background: #bbbaba;
+		color: #5d5d5d;
 	}
 }
