@@ -141,3 +141,32 @@ body.light-color-scheme {
 		color: #5d5d5d;
 	}
 }
+
+
+/** == INSTAGRAM MODULE == */
+/** ================================================== */
+
+	#instagram-module {
+		#sb_instagram {
+			#sbi_images {
+				position: relative;
+
+				&:after {
+					display: inline-block;
+					position: absolute;
+					left: 50%; top: 50%;
+					transform: translateX(-50%) translateY(-50%);
+					background: #FFF;
+					color: #000;
+					content: 'Instagram Photostream';
+					border-radius: 5px;
+					font-size: 15.5px;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					height: 40px;
+					line-height: 40px;
+					padding: 0 15px;
+				}
+			}
+		}
+	}

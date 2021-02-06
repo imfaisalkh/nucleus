@@ -105,6 +105,12 @@ function nucleus_register_required_plugins() {
 		),
 
 		array(
+			'name' 		=> esc_html__('Instagram Feed', 'nucleus'),
+			'slug' 		=> 'instagram-feed',
+			'required' 	=> false,
+		),
+
+		array(
 			'name' 		=> esc_html__('oAuth Twitter Feed', 'nucleus'),
 			'slug' 		=> 'oauth-twitter-feed-for-developers',
 			'required' 	=> false,

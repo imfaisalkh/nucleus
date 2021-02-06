@@ -94,7 +94,7 @@ export default jQuery(function($) {
             }
 
             // If any color scheme
-            let headroom_background = tinycolor(background_color).setAlpha(.7).toString()
+            let headroom_background = tinycolor(background_color).setAlpha(.9).toString()
             document.body.style.setProperty('--headroom-background', headroom_background);
 
             let modal_background = tinycolor(background_color).setAlpha(.9).toString()

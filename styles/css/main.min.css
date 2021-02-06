@@ -352,7 +352,7 @@ body.modern-menu #site-header .icons-wrap{margin-left:auto}
 #site-footer[data-footer-style="full-width"] .inner-wrap .social-icons ul li a{font-size:27px;color:#000;opacity:.8}
 html.noscroll{position:relative}
 html.noscroll body{overflow:hidden}
-html.noscroll body:before{position:absolute;left:0;top:0;right:0;bottom:0;content:'';background:var(--background-color);opacity:.9;z-index:10}
+html.noscroll body:before{position:absolute;left:0;top:0;right:0;bottom:0;content:'';background:var(--background-color);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:.9;z-index:10}
 .open-sidebar{position:fixed;right:0;top:50%;-webkit-transform:translateY(-50%) translateX(50%);transform:translateY(-50%) translateX(50%);background:var(--sidebar-trigger-color);color:var(--text-color);width:100px;height:100px;line-height:100px;border-radius:100%;font-size:18px}
 .open-sidebar i{margin-left:20px}
 #page-sidebar{position:fixed;overflow-y:scroll;right:-530px;top:0;bottom:0;width:530px;height:100%;background:var(--background-color);z-index:20;padding:120px 70px;transition:right 300ms ease-in-out}
@@ -517,6 +517,8 @@ html.noscroll body:before{position:absolute;left:0;top:0;right:0;bottom:0;conten
 .grid[data-load-trigger="scroll"] ~ .load-more,.blog-minimal[data-load-trigger="scroll"] ~ .load-more{display:none}
 .load-more a{display:block;font-family:inherit;font-size:inherit;color:inherit}
 body.light-color-scheme .load-more{background:#bbbaba;color:#5d5d5d}
+#instagram-module #sb_instagram #sbi_images{position:relative}
+#instagram-module #sb_instagram #sbi_images:after{display:inline-block;position:absolute;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);background:#FFF;color:#000;content:'Instagram Photostream';border-radius:5px;font-size:15.5px;text-transform:uppercase;letter-spacing:1px;height:40px;line-height:40px;padding:0 15px}
 #blog-slider{margin-bottom:90px}
 #blog-slider .main-carousel{width:100%}
 #blog-slider .main-carousel .flickity-prev-next-button{top:31%}

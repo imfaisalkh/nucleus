@@ -43,12 +43,14 @@
 
 	</div>
 
-	<!-- BEGIN: INSTAGRAM MODULE -->
-	<section id="instagram-module">
-		<div class="container">
-			
-		</div>
-	</section>
-	<!-- END: INSTAGRAM MODULE -->	
+	<?php if (shortcode_exists( 'instagram-feed' )) { ?>
+		<!-- BEGIN: INSTAGRAM MODULE -->
+		<section id="instagram-module">
+			<div class="container">
+				<?php echo do_shortcode('[instagram-feed num=6 cols=6 imagepadding=1 showfollow=false showheader=false]'); ?>
+			</div>
+		</section>
+		<!-- END: INSTAGRAM MODULE -->	
+	<?php } ?>
 		
 <?php get_footer(); ?>
