@@ -87,6 +87,10 @@ export default jQuery(function($) {
                 document.body.style.setProperty('--sidebar-trigger-color', sidebar_trigger_color);
             }
 
+            // If any color scheme
+            let headroom_background = tinycolor(background_color).setAlpha(.7).toString()
+            document.body.style.setProperty('--headroom-background', headroom_background);
+
         },
 
         /** Scroll Position */
@@ -308,7 +312,7 @@ export default jQuery(function($) {
     base.site_notification();
     base.site_menu();
     base.site_overlay();
-    // base.sticky_header();
+    base.sticky_header();
     base.page_header();
     base.custom_cursor();
     base.lightbox();

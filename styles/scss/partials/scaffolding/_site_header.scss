@@ -97,9 +97,8 @@
 		    left: 0;
 
 		    /* Additional styles */
-		    padding: 5px 0;
-		    background: rgba(0,0,0,0.7);
-			background: var(--background-color, rgba(0,0,0,0.7));
+		    padding: 12px 0;
+			background: var(--headroom-background);
 			backdrop-filter: blur(6px);
 
 			/* When Scrolling Down - Menu Slides Out */

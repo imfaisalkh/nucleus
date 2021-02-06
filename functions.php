@@ -161,6 +161,7 @@
 			wp_register_script('superfish', NUCLEUS_VENDORS_URI . '/superfish/superfish.js', array('jquery'), null, true);
 			wp_register_script('fancybox', NUCLEUS_VENDORS_URI . '/fancybox/jquery.fancybox.min.js', array('jquery'), null, true);
 			wp_register_script('headroom.js', NUCLEUS_VENDORS_URI . '/headroom.js/headroom.js', array('jquery'), null, true);
+			wp_register_script('jquery-headroom.js', NUCLEUS_VENDORS_URI . '/headroom.js/jquery.headroom.js', array('jquery'), null, true);
 			wp_register_script('flickity', NUCLEUS_VENDORS_URI . '/flickity/flickity.pkgd.min.js', array('jquery'), null, true);
 			wp_register_script('flickity-fade', NUCLEUS_VENDORS_URI . '/flickity/flickity-fade.js', array('jquery'), null, true);
 			wp_register_script('packery', NUCLEUS_VENDORS_URI . '/packery/packery.pkgd.min.js', array('jquery'), null, true);
@@ -168,7 +169,7 @@
 			wp_register_script('jquery-smooth-scroll', NUCLEUS_VENDORS_URI . '/jquery-smooth-scroll/jquery.smooth-scroll.min.js', array('jquery'), null, true);
 			wp_register_script('imagesloaded', NUCLEUS_VENDORS_URI . '/imagesloaded/imagesloaded.pkgd.min.js', array('jquery'), null, true);
 			wp_register_script('tinycolor', NUCLEUS_VENDORS_URI . '/tinycolor/tinycolor.min.js', array('jquery'), null, true);
-			wp_enqueue_script('nucleus-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery', 'modernizr', 'superfish', 'fancybox', 'headroom.js', 'flickity', 'flickity-fade', 'packery', 'infinite-scroll', 'jquery-smooth-scroll', 'imagesloaded', 'tinycolor'), null, true);
+			wp_enqueue_script('nucleus-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery', 'modernizr', 'superfish', 'fancybox', 'headroom.js', 'jquery-headroom.js', 'flickity', 'flickity-fade', 'packery', 'infinite-scroll', 'jquery-smooth-scroll', 'imagesloaded', 'tinycolor'), null, true);
 
 			// Enqueue Other Scripts
 			wp_localize_script( 'nucleus-js-main', 'theme_ajax', array(
