@@ -66,10 +66,18 @@
 
 	/** Dark Color Scheme */
 	body.dark-color-scheme {
-		--primary-accent: #ffea36;
+		--primary-accent: #FFEA36;
 		--secondary-accent : #43f3b7;
 		--background-color: #000;
 		--text-color: #FFF;
+	}
+
+	/** Error Page */
+	body.error404 {
+		--primary-accent: #FF6000;
+		--secondary-accent : #000000;
+		--background-color: #F8FF3C;
+		--text-color: #000;
 	}
 
 	/** Custom Color Scheme */

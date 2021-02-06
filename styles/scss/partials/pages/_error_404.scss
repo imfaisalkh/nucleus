@@ -2,6 +2,15 @@
   0.  ERROR 404 
 ========================================================== */
 	
+	body.error404 {
+		background-image: url(../../images/switch-bg.svg);
+		background-position: 90% calc(100% + 100px);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+
+		@include breakpoint($full-hd) { background-position: 80% bottom; }
+	}
+
 
 	.error404 {
 		position: relative;
@@ -34,6 +43,12 @@
 				}
 				.button {
 					margin: 0;
+					color: #FFF;
+
+					&:hover {
+						background: #000;
+						border-color: #000;
+					}
 				}
 			}
 		}

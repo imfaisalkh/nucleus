@@ -839,12 +839,14 @@ body.portfolio-ribbon{overflow:hidden;background-image:url(../../images/corner-p
 .elementor-price-table.elementor-price-table .elementor-price-table__footer .elementor-price-table__additional_info{text-align:center;font-family:"Open Sans",sans-serif;font-size:14px}
 .elementor-price-table.elementor-price-table.is-featured{border-color:#0fffbe}
 .elementor-price-table.elementor-price-table.is-featured .elementor-price-table__footer .elementor-price-table__button{background:#0fffbe;border-color:#0fffbe;color:#000}
+body.error404{background-image:url(../../images/switch-bg.svg);background-position:90% calc(100% + 100px);background-repeat:no-repeat;background-attachment:fixed}
 .error404{position:relative}
 .error404 #main-content{text-align:center}
 .error404 #main-content #page-content{padding-top:90px}
 .error404 #main-content #page-content .title{font-family:"Lato",sans-serif;line-height:.8;font-weight:600;margin:0}
 .error404 #main-content #page-content .caption{font-weight:300;line-height:1.2;margin:60px 0;opacity:.7}
-.error404 #main-content #page-content .button{margin:0}
+.error404 #main-content #page-content .button{margin:0;color:#FFF}
+.error404 #main-content #page-content .button:hover{background:#000;border-color:#000}
 @media screen and (-webkit-min-device-pixel-ratio:0){@font-face{font-family:"Flaticon";src:url("../../fonts/Flaticon.svg#Flaticon") format("svg")}
 }@media(min-width:0) and (max-width:640px){#site-container,.secondary-carousel .container,.advertisement-panel .container,#site-header .inner-wrap,#search-filter .inner-wrap,#mobile-menu .inner-wrap,#page-content,#site-footer,#site-notification{max-width:90%;margin-left:auto;margin-right:auto}
 #site-container:after,.secondary-carousel .container:after,.advertisement-panel .container:after,#site-header .inner-wrap:after,#search-filter .inner-wrap:after,#mobile-menu .inner-wrap:after,#page-content:after,#site-footer:after,#site-notification:after{content:" ";display:block;clear:both}
@@ -988,6 +990,7 @@ body.single-post #site-body #page-sidebar{margin-top:300px}
 #ribbon-slider .main-carousel{margin-left:-285px}
 #ribbon-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell{width:500px;height:250px}
 .elementor-section.elementor-section-boxed>.elementor-container{max-width:1440px !important}
+body.error404{background-position:80% bottom}
 }@-webkit-keyframes sound{0%{opacity:.35;height:3px}
 100%{opacity:1;height:25px}
 }@keyframes sound{0%{opacity:.35;height:3px}
