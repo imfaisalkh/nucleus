@@ -133,11 +133,11 @@
 			'after_title' => '</h3>',
 		) );
 
-		// Register Footer Sidebar
+		// Register Page Sidebar
 		register_sidebar( array(
-			'name' => esc_html__( 'Footer Sidebar', 'nucleus' ),
-			'id' => 'footer-sidebar',
-			'description'   => esc_html__('This sidebar will be displayed on your site footer.', 'nucleus'),
+			'name' => esc_html__( 'Page Sidebar', 'nucleus' ),
+			'id' => 'page-sidebar',
+			'description'   => esc_html__('This sidebar will be displayed on your site page.', 'nucleus'),
 			'before_widget' => '<div id="%1$s" class="widget %2$s column">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3>',
@@ -268,6 +268,13 @@
 	require_once NUCLEUS_ADMIN . '/customizer/functions.php';
 	require_once NUCLEUS_ADMIN . '/metaboxes/functions.php';
 	require_once NUCLEUS_ADMIN . '/plugins/functions.php';
+
+	// require Merlin resources
+	if ( is_admin() ) {
+		require_once NUCLEUS_ADMIN .'/merlin/vendor/autoload.php';
+		require_once NUCLEUS_ADMIN .'/merlin/class-merlin.php';
+		require_once NUCLEUS_ADMIN .'/merlin-config.php';
+	}
 
 	// require CLASSES resources
 	require_once NUCLEUS_CLASSES . '/functions.php';
