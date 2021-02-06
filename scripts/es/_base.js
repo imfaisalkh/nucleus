@@ -35,6 +35,9 @@ export default jQuery(function($) {
 
             // set color pallate if light color scheme is active
             if (is_light_color_scheme || is_custom_color_scheme == 'light-color-scheme') {
+                let background_highlight = tinycolor(background_color).darken(10).toString()
+                document.body.style.setProperty('--background-highlight', background_highlight);
+
                 let menu_bg = tinycolor(background_color).darken(90).toString()
                 document.body.style.setProperty('--menu-background', menu_bg);
 
@@ -62,6 +65,9 @@ export default jQuery(function($) {
 
             // set color pallate if dark color scheme is active
             if (is_dark_color_scheme || is_custom_color_scheme == 'dark-color-scheme') {
+                let background_highlight = tinycolor(background_color).lighten(10).toString()
+                document.body.style.setProperty('--background-highlight', background_highlight);
+
                 let menu_bg = tinycolor(background_color).lighten(100).toString()
                 document.body.style.setProperty('--menu-background', menu_bg);
 
@@ -90,6 +96,9 @@ export default jQuery(function($) {
             // If any color scheme
             let headroom_background = tinycolor(background_color).setAlpha(.7).toString()
             document.body.style.setProperty('--headroom-background', headroom_background);
+
+            let modal_background = tinycolor(background_color).setAlpha(.9).toString()
+            document.body.style.setProperty('--modal-background', modal_background);
 
         },
 
@@ -164,9 +173,9 @@ export default jQuery(function($) {
             });
 
             // Modern Menu
-            // $('#mobile-menu .tn-menu').tendina({
-            // 	speed: 200,
-            // });
+            $('#mobile-menu .tn-menu').tendina({
+            	speed: 200,
+            });
 
 		},
 
