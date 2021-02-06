@@ -10,14 +10,16 @@
 
 		function nucleus_register_session() {
 
-		    session_start();
+			if( !session_id() ) {
+				session_start();
+			}
 
-		    if ( isset($_GET['menu']) && !isset($_GET['type']) ) {
-		        $_SESSION['menu'] = $_GET['menu'];
-		    }
-		    
+		    if ( get_query_var('menu') ) {
+		        $_SESSION['menu'] = get_query_var('menu');
+			}
+			
 		}
 
 	}
 
-	add_filter( 'init', 'nucleus_register_session' );
+	add_filter( 'parse_query', 'nucleus_register_session' );

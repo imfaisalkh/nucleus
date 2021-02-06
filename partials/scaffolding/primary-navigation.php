@@ -1,6 +1,10 @@
 <?php
     // Helper Variable(s)
-    $header_style = (get_field('site_header') == 'traditional' || get_field('site_header') == 'modern') ? get_field('site_header') : get_theme_mod('nucleus_menu_type', 'traditional');
+    if (!isset($_SESSION['menu'])) {
+        $header_style = (get_field('site_header') == 'traditional' || get_field('site_header') == 'modern') ? get_field('site_header') : get_theme_mod('nucleus_menu_type', 'traditional');
+    } else {
+        $header_style = $_SESSION['menu'];
+    }
     $site_logo = get_field('custom_logo') ? get_field('custom_logo') : (has_custom_logo() ? the_custom_logo() : false);
 ?>
 
