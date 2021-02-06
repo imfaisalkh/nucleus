@@ -158,10 +158,9 @@ export default jQuery(function($) {
         
     }  
 
-    $(window).on('load', function() {
-        if (classic_page) {
-            portfolio.grid();
-            portfolio.carousel();
-        }
-    }); 
+    // Initialize Functions
+    if (classic_page) {
+        portfolio.grid();
+        portfolio.carousel();
+    }
 })

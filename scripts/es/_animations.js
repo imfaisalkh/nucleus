@@ -106,7 +106,6 @@ export default jQuery(function($) {
 
     }  
 
-    $(window).on('load', function() {
-        animations.site_transitions();
-    }); 
+    // Initialize Functions
+    animations.site_transitions();
 })

@@ -87,9 +87,8 @@ export default jQuery(function($) {
         
     }  
 
-    $(window).on('load', function() {
-        if (forza_page) {
-            portfolio.carousel();
-        }
-    }); 
+    // Initialize Functions
+    if (forza_page) {
+        portfolio.carousel();
+    }
 })

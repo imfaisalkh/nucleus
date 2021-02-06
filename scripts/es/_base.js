@@ -145,9 +145,7 @@ export default jQuery(function($) {
 
         /** Site Preloader */
 		site_preloader: function() {
-
 			$('.preloader').fadeOut();
-
 		},
 
 		/** Site Menu */
@@ -302,17 +300,16 @@ export default jQuery(function($) {
 
     }  
 
-    $(window).on('load', function() {
-        base.css_variables();
-        base.scroll_position();
-        base.toggle_bg_sound();
-        base.site_notification();
-        base.site_preloader();
-        base.site_menu();
-        base.site_overlay();
-        // base.sticky_header();
-        base.page_header();
-        base.custom_cursor();
-        base.lightbox();
-    }); 
+    // Initialize Functions
+    base.site_preloader();
+    base.css_variables();
+    base.scroll_position();
+    base.toggle_bg_sound();
+    base.site_notification();
+    base.site_menu();
+    base.site_overlay();
+    // base.sticky_header();
+    base.page_header();
+    base.custom_cursor();
+    base.lightbox();
 })

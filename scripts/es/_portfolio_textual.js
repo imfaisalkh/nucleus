@@ -63,9 +63,8 @@ export default jQuery(function($) {
         
     }  
 
-    $(window).on('load', function() {
-        if (textual_page) {
-            portfolio.hover();
-        }
-    }); 
+    // Initialize Functions
+    if (textual_page) {
+        portfolio.hover();
+    }
 })

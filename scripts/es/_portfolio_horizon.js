@@ -139,9 +139,8 @@ export default jQuery(function($) {
         
     }  
 
-    $(window).on('load', function() {
-        if (horizon_page) {
-            portfolio.carousel();
-        }
-    }); 
+    // Initialize Functions
+    if (horizon_page) {
+        portfolio.carousel();
+    }
 })

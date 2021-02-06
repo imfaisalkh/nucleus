@@ -89,9 +89,8 @@ export default jQuery(function($) {
         
     }  
 
-    $(window).on('load', function() {
-        if (tiles_page) {
-            portfolio.carousel();
-        }
-    }); 
+    // Initialize Functions
+    if (tiles_page) {
+        portfolio.carousel();
+    }
 })

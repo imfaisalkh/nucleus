@@ -181,12 +181,11 @@ export default jQuery(function($) {
         
     }  
 
-    $(window).on('load', function() {
-		blog.load_more();
-		blog.sidebar();
+    // Initialize Functions
+    blog.load_more();
+    blog.sidebar();
 
-		if (blog_magazine_page) {
-            blog.carousel();
-        }
-    }); 
+    if (blog_magazine_page) {
+        blog.carousel();
+    }
 })

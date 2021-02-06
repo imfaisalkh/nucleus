@@ -44,8 +44,7 @@ export default jQuery(function($) {
 
     }  
 
-    $(window).on('load', function() {
-        pages.twitter_carousel();
-        pages.elementor_fix();
-    }); 
+    // Initialize Functions
+    pages.twitter_carousel();
+    pages.elementor_fix();
 })

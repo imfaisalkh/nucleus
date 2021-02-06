@@ -100,9 +100,8 @@ export default jQuery(function($) {
         
     }  
 
-    $(window).on('load', function() {
-        if (ribbon_page) {
-            portfolio.carousel();
-        }
-    }); 
+    // Initialize Functions
+    if (ribbon_page) {
+        portfolio.carousel();
+    }
 })
