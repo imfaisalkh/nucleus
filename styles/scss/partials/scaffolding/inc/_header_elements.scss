@@ -31,7 +31,8 @@
 
 		// Image Logo
 		.logo.image {
-
+			@include breakpoint($touch)  { height: var(--header-mobile-logo-size); }
+			@include breakpoint($no-touch)  { height: var(--header-desktop-logo-size); }
 		}
 	}
 

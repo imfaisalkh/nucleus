@@ -195,6 +195,51 @@
             ]
         ] );
 
+     
+        Kirki::add_field( 'nucleus_header_top_bar_text_block_1', [
+            'type'     => 'textarea',
+            'settings' => 'nucleus_header_top_bar_text_block_1',
+            'label'    => esc_html__( 'Text Block # 1', 'kirki' ),
+            'section'  => 'nucleus_header_top_bar',
+            'priority' => 10,
+            'active_callback'  => [
+                [
+                    'setting'  => 'nucleus_header_top_bar_visibility',
+                    'operator' => '==',
+                    'value'    => true,
+                ],
+            ]
+        ] );
+
+        Kirki::add_field( 'nucleus_header_top_bar_text_block_2', [
+            'type'     => 'textarea',
+            'settings' => 'nucleus_header_top_bar_text_block_2',
+            'label'    => esc_html__( 'Text Block # 2', 'kirki' ),
+            'section'  => 'nucleus_header_top_bar',
+            'priority' => 10,
+            'active_callback'  => [
+                [
+                    'setting'  => 'nucleus_header_top_bar_visibility',
+                    'operator' => '==',
+                    'value'    => true,
+                ],
+            ]
+        ] );
+
+        Kirki::add_field( 'nucleus_header_top_bar_text_block_3', [
+            'type'     => 'textarea',
+            'settings' => 'nucleus_header_top_bar_text_block_3',
+            'label'    => esc_html__( 'Text Block # 3', 'kirki' ),
+            'section'  => 'nucleus_header_top_bar',
+            'priority' => 10,
+            'active_callback'  => [
+                [
+                    'setting'  => 'nucleus_header_top_bar_visibility',
+                    'operator' => '==',
+                    'value'    => true,
+                ],
+            ]
+        ] );        
 		
 		// SECTION: Header
 		Kirki::add_section( 'nucleus_header_layout', array(
@@ -369,7 +414,6 @@
                 ],
             ]
         ] );        
-
 
 		// SECTION: Header
 		Kirki::add_section( 'nucleus_header_size', array(

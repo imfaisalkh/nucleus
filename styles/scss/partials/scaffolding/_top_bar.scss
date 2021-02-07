@@ -1,0 +1,53 @@
+/*========================================================
+ 3.  SCAFFOLDING 
+========================================================== */
+
+
+
+/** == GENERAL == */
+/** ================================================== */
+
+    #top-bar {
+        margin-top: -80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background: var(--top-bar-background-color);
+        color: var(--top-bar-text-color);
+        height: var(--top-bar-size);
+
+        .container {
+			width: 100%;
+			display: flex;
+			justify-content: space-between; /* Align Childs on Main-Axis */
+			align-items: center; /* Align Childs on Cross-Axis */
+
+			&.full-width {
+				width: 90%;
+				margin: 0 auto;
+            }
+            
+            .elements {
+				display: flex;
+				flex-shrink: 0; flex-grow: 0; // flexible-width flex child
+
+				// Element Containers
+				&.left-elements {
+					justify-content: flex-start;
+					margin-right: auto;
+
+					*:first-child { margin-left: 0 !important; }
+				}
+				&.center-elements {
+					justify-content: center;
+				}
+				&.right-elements {
+					justify-content: flex-end;
+					margin-left: auto;
+
+					*:last-child { margin-right: 0 !important; }
+				}
+			}
+        }
+    }
