@@ -40,10 +40,9 @@
 	/** Heading Widget */
 	.elementor-widget-heading {
 		.elementor-heading-title.elementor-heading-title {
-			font-family: $secondary-font-stack;
-			font-weight: 600;
-			text-transform: uppercase;
-			letter-spacing: 0.1px;
+			font-family: $primary-font-stack;
+			font-weight: 400;
+			color: var(--text-color);
 		}
 	}
 

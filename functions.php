@@ -267,6 +267,7 @@
 
 	// require ADMIN resources
 	require_once NUCLEUS_ADMIN . '/customizer/functions.php';
+	require_once NUCLEUS_ADMIN . '/kirki/functions.php';
 	require_once NUCLEUS_ADMIN . '/metaboxes/functions.php';
 	require_once NUCLEUS_ADMIN . '/plugins/functions.php';
 

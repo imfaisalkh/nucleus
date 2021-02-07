@@ -73,6 +73,12 @@ function nucleus_register_required_plugins() {
 		),
 
 		array(
+			'name'      => esc_html__('Kirki', 'capstone'),
+			'slug'      => 'kirki',
+			'required'  => true,
+		),
+
+		array(
 			'name' 		=> esc_html__('Classic Editor', 'nucleus'),
 			'slug' 		=> 'classic-editor',
 			'required' 	=> true,

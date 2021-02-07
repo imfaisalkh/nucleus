@@ -796,7 +796,7 @@ body.portfolio-ribbon{overflow:hidden;background-image:url(../../images/corner-p
 .single-portfolio .navigation .next-folio{display:inline-block;font-family:"DM Serif Text",sans-serif;font-size:48px;color:var(--text-color);line-height:1.2}
 .elementor-editor-active .elementor-widget-container .grid .grid-item,.elementor-editor-preview .elementor-widget-container .grid .grid-item{opacity:1 !important;visibility:visible !important}
 .elementor-widget-text-editor.elementor-widget-text-editor{font-family:"Open Sans",sans-serif;font-size:1.6rem;font-weight:400;line-height:1.6}
-.elementor-widget-heading .elementor-heading-title.elementor-heading-title{font-family:"Open Sans",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.1px}
+.elementor-widget-heading .elementor-heading-title.elementor-heading-title{font-family:"DM Serif Text",sans-serif;font-weight:400;color:var(--text-color)}
 .clients-grid .wp-gallery .image{opacity:.15;transition:opacity 400ms ease-in}
 .clients-grid .wp-gallery .image:hover{opacity:1}
 .elementor-widget-heading .elementor-widget-container .elementor-heading-title a{color:inherit !important;border:0 !important}

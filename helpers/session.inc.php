@@ -10,7 +10,7 @@
 
 		function nucleus_register_session() {
 
-			if( !session_id() ) {
+			if( !session_id() && !is_admin() ) {
 				session_start();
 			}
 
