@@ -13,23 +13,25 @@
 
 	/** Site Header */
 	#site-header {
+		height: var(--header-desktop-size);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
 		position: relative;
 		margin-top: 75px;
 		z-index: 20;
+
 		@include breakpoint($mobile)  { margin-top: 40px; }
 		@include breakpoint($laptop)  { margin-top: 60px; }
 
 		&:before { content: ''; }
 
 		.container {
+			width: 100%;
 			display: flex;
 			justify-content: space-between; /* Align Childs on Main-Axis */
 			align-items: center; /* Align Childs on Cross-Axis */
-
-			&[data-header-style="traditional"] {}
-			&[data-header-style="modern"] {
-				.icons-wrap { margin-left: auto; }
-			}
 
 			&.full-width {
 				width: 90%;
@@ -65,26 +67,6 @@
 
 		@include make-full-width;
 
-		/** Header Partition */
-		.logo-wrap  {
-			z-index: 90;
-			// width: 25%;
-			// margin-right: auto; /* Makes it align at the start */
-			// @include breakpoint($touch)	  { width: 60%; }
-			img { display: block; max-width: 100%; height: auto; }
-			
-		}
-		.menu-wrap  {
-			// width: 65%;
-		}
-		.icons-wrap {
-			body.modern-menu & { margin-left: auto; } // align it right if 'modern-menu'
-
-			flex-shrink: 0; flex-grow: 0; // flexible-width flex child
-			// @import 'inc/secondary_menu';
-		}
-
-
 		/** Sticky Header  */
 		&.headroom--not-top {
 		    /* Required styles */
@@ -94,7 +76,8 @@
 		    left: 0;
 
 		    /* Additional styles */
-		    padding: 12px 0;
+			// padding: 12px 0;
+			height: var(--header-sticky-size);
 			background: var(--headroom-background);
 			backdrop-filter: blur(6px);
 

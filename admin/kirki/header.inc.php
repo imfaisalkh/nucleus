@@ -383,7 +383,7 @@
             'settings'    => 'nucleus_header_desktop_height',
             'label'       => esc_html__( 'Desktop Height (px)', 'kirki' ),
             'section'     => 'nucleus_header_size',
-            'default'     => 90,
+            'default'     => 88,
             'choices'     => [
                 'min'  => 50,
                 'max'  => 250,
@@ -409,7 +409,7 @@
             'settings'    => 'nucleus_header_sticky_height',
             'label'       => esc_html__( 'Sticky Header (px)', 'kirki' ),
             'section'     => 'nucleus_header_size',
-            'default'     => 70,
+            'default'     => 112,
             'choices'     => [
                 'min'  => 50,
                 'max'  => 250,

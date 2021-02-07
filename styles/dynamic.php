@@ -88,3 +88,11 @@
 		--text-color : <?php echo $text_color; ?>;
 	}
 	
+
+
+	/** Header Size */
+	:root {
+		--header-desktop-size: <?php echo get_theme_mod('nucleus_header_desktop_height', 88) . 'px'; ?>;
+		--header-mobile-size: <?php echo get_theme_mod('nucleus_header_mobile_height', 60) . 'px'; ?>;
+		--header-sticky-size: <?php echo get_theme_mod('nucleus_header_sticky_height', 112) . 'px'; ?>;
+	}
