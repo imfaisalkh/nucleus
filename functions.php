@@ -111,8 +111,12 @@
 #-----------------------------------------------------------------#
 
 	function nucleus_register_menu() {
-		register_nav_menu('nucleus-desktop-navigation', esc_html__('Desktop Navigation', 'nucleus'));
-		register_nav_menu('nucleus-mobile-navigation', esc_html__('Mobile Navigation', 'nucleus'));
+		register_nav_menu('nucleus-primary-menu', esc_html__('Primary', 'nucleus'));
+		register_nav_menu('nucleus-secondary-menu', esc_html__('Secondary', 'nucleus'));
+		register_nav_menu('nucleus-mobile-menu', esc_html__('Mobile', 'nucleus'));
+		register_nav_menu('nucleus-top-bar-menu', esc_html__('Top Bar', 'nucleus'));
+		register_nav_menu('nucleus-full-screen-menu', esc_html__('Full Screen', 'nucleus'));
+		register_nav_menu('nucleus-footer-menu', esc_html__('Footer', 'nucleus'));
 	}
 	
 

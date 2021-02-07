@@ -201,13 +201,13 @@ export default jQuery(function($) {
             }			
 
             // open search modal window
-            $('ul#icons-menu li.search-icon a').on( 'click' , function(e) {
+            $('#site-header .search-icon a').on( 'click' , function(e) {
                 e.preventDefault();
                 init.openModal('search');
             });
 
              // trigger fullscreen functionality
-             $('ul#icons-menu li.fullscreen-icon a').on( 'click' , function(e) {
+             $('#site-header .fullscreen-icon a').on( 'click' , function(e) {
                 e.preventDefault();
 
                 let is_fullscreen = document.fullscreenElement
@@ -223,7 +223,7 @@ export default jQuery(function($) {
             });
 
             // open menu modal window
-            $('ul#icons-menu li.menu-icon a').on( 'click' , function(e) {
+            $('#site-header .menu-icon a').on( 'click' , function(e) {
                 e.preventDefault();
                 init.openModal('menu');
             });

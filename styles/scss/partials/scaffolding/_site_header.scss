@@ -21,7 +21,7 @@
 
 		&:before { content: ''; }
 
-		.inner-wrap {
+		.container {
 			display: flex;
 			justify-content: space-between; /* Align Childs on Main-Axis */
 			align-items: center; /* Align Childs on Cross-Axis */
@@ -30,6 +30,37 @@
 			&[data-header-style="modern"] {
 				.icons-wrap { margin-left: auto; }
 			}
+
+			&.full-width {
+				width: 90%;
+				margin: 0 auto;
+			}
+
+			.elements {
+				display: flex;
+				flex-shrink: 0; flex-grow: 0; // flexible-width flex child
+
+				// Element Containers
+				&.left-elements {
+					justify-content: flex-start;
+					margin-right: auto;
+
+					*:first-of-type { margin-left: 0 !important; }
+				}
+				&.center-elements {
+					justify-content: center;
+				}
+				&.right-elements {
+					justify-content: flex-end;
+					margin-left: auto;
+
+					*:last-of-type { margin-right: 0 !important; }
+				}
+
+				@import 'inc/primary_menu';
+				@import 'inc/header_elements';
+			}
+
 		}
 
 		@include make-full-width;
@@ -41,50 +72,16 @@
 			// margin-right: auto; /* Makes it align at the start */
 			// @include breakpoint($touch)	  { width: 60%; }
 			img { display: block; max-width: 100%; height: auto; }
-			#site-logo {
-
-				// Text Logo
-				.logo.text {
-					display: inline-block;
-					font-family: $tertiary-font-stack;
-					font-size: 3.2rem;
-					text-transform: uppercase;
-					letter-spacing: 0.4px;
-					color: var(--text-color, #FFF);
-
-					@include breakpoint($mobile)	  { font-size: 2.8rem; }
-
-
-					&:active, &:focus { outline: 0; border: none; } 
-
-					&:after {
-						display: inline-block;
-						content: '';
-						width: 5px;
-						height: 5px;
-						border-radius: 100%;
-						background: #7DBF2A;
-						margin-left: 3px;
-					}
-				}
-
-				// Image Logo
-				.logo.image {
-
-				}
-			}
+			
 		}
 		.menu-wrap  {
 			// width: 65%;
-			margin: 0 30px 0 auto;
-			@import 'inc/primary_menu';
-			@include breakpoint($touch)	  { display: none; }
 		}
 		.icons-wrap {
 			body.modern-menu & { margin-left: auto; } // align it right if 'modern-menu'
 
 			flex-shrink: 0; flex-grow: 0; // flexible-width flex child
-			@import 'inc/secondary_menu';
+			// @import 'inc/secondary_menu';
 		}
 
 

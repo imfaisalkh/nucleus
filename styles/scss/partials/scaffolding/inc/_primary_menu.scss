@@ -2,7 +2,7 @@
 4.  MENU 
 ========================================================== */
 
-  ul#main-menu {
+  ul#primary-menu, ul#secondary-menu {
 	font-family: $secondary-font-stack;
 	display: flex;
 	justify-content: flex-end;

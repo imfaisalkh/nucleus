@@ -7,8 +7,10 @@
     function header_elements() {
 
         return [
+            '' => esc_html__( '', 'kirki' ),
             'logo' => esc_html__( 'Logo', 'kirki' ),
-            'menu' => esc_html__( 'Menu', 'kirki' ),
+            'primary-menu' => esc_html__( 'Primary Menu', 'kirki' ),
+            'secondary-menu' => esc_html__( 'Secondary Menu', 'kirki' ),
             'hamburger-icon' => esc_html__( 'Hamburger Icon', 'kirki' ),
             'search-icon' => esc_html__( 'Search Icon', 'kirki' ),
             'full-screen-icon' => esc_html__( 'Fullscreen Icon', 'kirki' ),
@@ -45,254 +47,9 @@
 			'priority'    => 30,
             'title'          => esc_html__( 'Header Settings', 'nucleus' ),
             'description'    => esc_html__( 'This section configure settings for the site header.', 'nucleus' ),
-		) );
-		
-		// SECTION: Header
-		Kirki::add_section( 'nucleus_header_layout', array(
-            'title'          => esc_html__( 'Header Layout', 'nucleus' ),
-            'description'    => esc_html__( 'This section configure settings for the header layout.', 'nucleus' ),
-            'panel'          => 'nucleus_header_settings',
         ) );
+        
 
-        // OPTION: Select Field
-        Kirki::add_field( 'nucleus_header_version', [
-            'type'        => 'select',
-            'settings'    => 'nucleus_header_version',
-            'label'       => esc_html__( 'Header version', 'kirki' ),
-            'section'     => 'nucleus_header_layout',
-            'default'     => 'traditional',
-            'placeholder' => esc_html__( 'Select an option...', 'kirki' ),
-            'priority'    => 10,
-            'multiple'    => 1,
-            'choices'     => [
-                'traditional' => esc_html__( 'Traditional', 'kirki' ),
-                'modern' => esc_html__( 'Modern', 'kirki' ),
-            ],
-            'active_callback'  => [
-                [
-                    'setting'  => 'nucleus_header_layout_switch',
-                    'operator' => '==',
-                    'value'    => false,
-                ],
-            ]
-        ] );       
-
-        // OPTION: Toggle Field
-        Kirki::add_field( 'nucleus_header_layout_switch', [
-            'type'        => 'toggle',
-            'settings'    => 'nucleus_header_layout_switch',
-            'label'       => esc_html__( 'Use customer header layout?', 'kirki' ),
-            'section'     => 'nucleus_header_layout',
-            'default'     => '0',
-            'priority'    => 10,
-        ] );        
-
-        // OPTION: Repeater Field
-        Kirki::add_field( 'nucleus_header_top_left', [
-            'type'        => 'repeater',
-            'label'       => esc_html__( 'Top - Left Section', 'kirki' ),
-            'section'     => 'nucleus_header_layout',
-            'priority'    => 10,
-            'row_label' => [
-                'type'  => 'field',
-                'field' => 'element'
-            ],
-            'button_label' => esc_html__('Add new element', 'kirki' ),
-            'settings'     => 'nucleus_header_top_left',
-            'fields' => [
-                'element' => [
-                    'type'        => 'select',
-                    'choices'     => header_elements(),
-                ],
-            ],
-            'active_callback'  => [
-                [
-                    'setting'  => 'nucleus_header_layout_switch',
-                    'operator' => '==',
-                    'value'    => true,
-                ],
-            ]
-        ] );
-
-        // OPTION: Repeater Field
-        Kirki::add_field( 'nucleus_header_top_center', [
-            'type'        => 'repeater',
-            'label'       => esc_html__( 'Top - Center Section', 'kirki' ),
-            'section'     => 'nucleus_header_layout',
-            'priority'    => 10,
-            'row_label' => [
-                'type'  => 'field',
-                'field' => 'element'
-            ],
-            'button_label' => esc_html__('Add new element', 'kirki' ),
-            'settings'     => 'nucleus_header_top_center',
-            'fields' => [
-                'element' => [
-                    'type'        => 'select',
-                    'default'     => '',
-                    'choices'     => header_elements(),
-                ],
-            ],
-            'active_callback'  => [
-                [
-                    'setting'  => 'nucleus_header_layout_switch',
-                    'operator' => '==',
-                    'value'    => true,
-                ],
-            ]
-        ] );        
-
-        // OPTION: Repeater Field
-        Kirki::add_field( 'nucleus_header_top_right', [
-            'type'        => 'repeater',
-            'label'       => esc_html__( 'Top - Right Section', 'kirki' ),
-            'section'     => 'nucleus_header_layout',
-            'priority'    => 10,
-            'row_label' => [
-                'type'  => 'field',
-                'field' => 'element'
-            ],
-            'button_label' => esc_html__('Add new element', 'kirki' ),
-            'settings'     => 'nucleus_header_top_right',
-            'fields' => [
-                'element' => [
-                    'type'        => 'select',
-                    'choices'     => header_elements(),
-                ],
-            ],
-            'active_callback'  => [
-                [
-                    'setting'  => 'nucleus_header_layout_switch',
-                    'operator' => '==',
-                    'value'    => true,
-                ],
-            ]
-        ] );
-
-        // OPTION: Toggle Field
-        Kirki::add_field( 'nucleus_header_bottom', [
-            'type'        => 'toggle',
-            'settings'    => 'nucleus_header_bottom',
-            'label'       => esc_html__( 'Show bottom section', 'kirki' ),
-            'section'     => 'nucleus_header_layout',
-            'default'     => '0',
-            'priority'    => 10,
-            'active_callback'  => [
-                [
-                    'setting'  => 'nucleus_header_layout_switch',
-                    'operator' => '==',
-                    'value'    => true,
-                ],
-            ]
-        ] );
-
-        // OPTION: Repeater Field
-        Kirki::add_field( 'nucleus_header_bottom_left', [
-            'type'        => 'repeater',
-            'label'       => esc_html__( 'Bottom - Left Section', 'kirki' ),
-            'section'     => 'nucleus_header_layout',
-            'priority'    => 10,
-            'row_label' => [
-                'type'  => 'field',
-                'field' => 'element'
-            ],
-            'button_label' => esc_html__('Add new element', 'kirki' ),
-            'settings'     => 'nucleus_header_bottom_left',
-            'fields' => [
-                'element' => [
-                    'type'        => 'select',
-                    'choices'     => header_elements(),
-                ],
-            ],
-            'active_callback'  => [
-                [
-                    'setting'  => 'nucleus_header_layout_switch',
-                    'operator' => '==',
-                    'value'    => true,
-                ],
-                [
-                    'setting'  => 'nucleus_header_bottom',
-                    'operator' => '===',
-                    'value'    => true,
-                ],
-            ]
-        ] );
-
-        // OPTION: Repeater Field
-        Kirki::add_field( 'nucleus_header_bottom_center', [
-            'type'        => 'repeater',
-            'label'       => esc_html__( 'Bottom - Center Section', 'kirki' ),
-            'section'     => 'nucleus_header_layout',
-            'priority'    => 10,
-            'row_label' => [
-                'type'  => 'field',
-                'field' => 'element'
-            ],
-            'button_label' => esc_html__('Add new element', 'kirki' ),
-            'settings'     => 'nucleus_header_bottom_center',
-            'fields' => [
-                'element' => [
-                    'type'        => 'select',
-                    'choices'     => header_elements(),
-                ],
-            ],
-            'active_callback'  => [
-                [
-                    'setting'  => 'nucleus_header_layout_switch',
-                    'operator' => '==',
-                    'value'    => true,
-                ],
-                [
-                    'setting'  => 'nucleus_header_bottom',
-                    'operator' => '===',
-                    'value'    => true,
-                ],
-            ]
-        ] );        
-
-        // OPTION: Repeater Field
-        Kirki::add_field( 'nucleus_header_bottom_right', [
-            'type'        => 'repeater',
-            'label'       => esc_html__( 'Bottom - Right Section', 'kirki' ),
-            'section'     => 'nucleus_header_layout',
-            'priority'    => 10,
-            'row_label' => [
-                'type'  => 'field',
-                'field' => 'element'
-            ],
-            'button_label' => esc_html__('Add new element', 'kirki' ),
-            'settings'     => 'nucleus_header_bottom_right',
-            'fields' => [
-                'element' => [
-                    'type'        => 'select',
-                    'choices'     => header_elements(),
-                ],
-            ],
-            'active_callback'  => [
-                [
-                    'setting'  => 'nucleus_header_layout_switch',
-                    'operator' => '==',
-                    'value'    => true,
-                ],
-                [
-                    'setting'  => 'nucleus_header_bottom',
-                    'operator' => '===',
-                    'value'    => true,
-                ],
-            ]
-        ] );
-
-        // OPTION: Toggle Field
-        Kirki::add_field( 'nucleus_header_full_width', [
-            'type'        => 'toggle',
-            'settings'    => 'nucleus_header_full_width',
-            'label'       => esc_html__( 'Header Full Width', 'kirki' ),
-            'section'     => 'nucleus_header_layout',
-            'default'     => '0',
-            'priority'    => 10,
-        ] );        
-
-	
 		// SECTION: Header
 		Kirki::add_section( 'nucleus_header_top_bar', array(
             'title'          => esc_html__( 'Top Bar', 'nucleus' ),
@@ -300,7 +57,6 @@
             'panel'          => 'nucleus_header_settings',
         ) );
 
-        // OPTION: Toggle Field
         Kirki::add_field( 'nucleus_header_top_bar_visibility', [
             'type'        => 'toggle',
             'settings'    => 'nucleus_header_top_bar_visibility',
@@ -310,8 +66,6 @@
             'priority'    => 10,
         ] );        
 
-
-        // OPTION: Repeater Field
         Kirki::add_field( 'nucleus_header_top_bar_left', [
             'type'        => 'repeater',
             'label'       => esc_html__( 'Left Section', 'kirki' ),
@@ -338,7 +92,6 @@
             ]
         ] );
 
-        // OPTION: Repeater Field
         Kirki::add_field( 'nucleus_header_top_bar_center', [
             'type'        => 'repeater',
             'label'       => esc_html__( 'Center Section', 'kirki' ),
@@ -366,7 +119,6 @@
             ]
         ] );        
 
-        // OPTION: Repeater Field
         Kirki::add_field( 'nucleus_header_top_bar_right', [
             'type'        => 'repeater',
             'label'       => esc_html__( 'Right Section', 'kirki' ),
@@ -443,4 +195,273 @@
             ]
         ] );
 
+		
+		// SECTION: Header
+		Kirki::add_section( 'nucleus_header_layout', array(
+            'title'          => esc_html__( 'Header Layout', 'nucleus' ),
+            'description'    => esc_html__( 'This section configure settings for the header layout.', 'nucleus' ),
+            'panel'          => 'nucleus_header_settings',
+        ) );
+
+        Kirki::add_field( 'nucleus_header_version', [
+            'type'        => 'select',
+            'settings'    => 'nucleus_header_version',
+            'label'       => esc_html__( 'Header version', 'kirki' ),
+            'section'     => 'nucleus_header_layout',
+            'default'     => 'v1',
+            'placeholder' => esc_html__( 'Select an option...', 'kirki' ),
+            'priority'    => 10,
+            'multiple'    => 1,
+            'choices'     => [
+                'v1' => esc_html__( 'Header V1', 'kirki' ),
+                'v2' => esc_html__( 'Header V2', 'kirki' ),
+                'v3' => esc_html__( 'Header V3', 'kirki' ),
+                'v4' => esc_html__( 'Header V4', 'kirki' ),
+                'v5' => esc_html__( 'Header V5', 'kirki' ),
+            ],
+            'active_callback'  => [
+                [
+                    'setting'  => 'nucleus_header_custom',
+                    'operator' => '==',
+                    'value'    => false,
+                ],
+            ]
+        ] );       
+
+        Kirki::add_field( 'nucleus_header_custom', [
+            'type'        => 'toggle',
+            'settings'    => 'nucleus_header_custom',
+            'label'       => esc_html__( 'Use customer header layout?', 'kirki' ),
+            'section'     => 'nucleus_header_layout',
+            'default'     => '0',
+            'priority'    => 10,
+        ] );        
+
+        Kirki::add_field( 'nucleus_header_left', [
+            'type'        => 'repeater',
+            'label'       => esc_html__( 'Left Section', 'kirki' ),
+            'section'     => 'nucleus_header_layout',
+            'priority'    => 10,
+            'row_label' => [
+                'type'  => 'field',
+                'field' => 'element'
+            ],
+            'button_label' => esc_html__('Add new element', 'kirki' ),
+            'settings'     => 'nucleus_header_left',
+            'fields' => [
+                'element' => [
+                    'type'        => 'select',
+                    'choices'     => header_elements(),
+                ],
+            ],
+            'active_callback'  => [
+                [
+                    'setting'  => 'nucleus_header_custom',
+                    'operator' => '==',
+                    'value'    => true,
+                ],
+            ]
+        ] );
+
+        Kirki::add_field( 'nucleus_header_center', [
+            'type'        => 'repeater',
+            'label'       => esc_html__( 'Center Section', 'kirki' ),
+            'section'     => 'nucleus_header_layout',
+            'priority'    => 10,
+            'row_label' => [
+                'type'  => 'field',
+                'field' => 'element'
+            ],
+            'button_label' => esc_html__('Add new element', 'kirki' ),
+            'settings'     => 'nucleus_header_center',
+            'fields' => [
+                'element' => [
+                    'type'        => 'select',
+                    'default'     => '',
+                    'choices'     => header_elements(),
+                ],
+            ],
+            'active_callback'  => [
+                [
+                    'setting'  => 'nucleus_header_custom',
+                    'operator' => '==',
+                    'value'    => true,
+                ],
+            ]
+        ] );        
+
+        Kirki::add_field( 'nucleus_header_right', [
+            'type'        => 'repeater',
+            'label'       => esc_html__( 'Right Section', 'kirki' ),
+            'section'     => 'nucleus_header_layout',
+            'priority'    => 10,
+            'row_label' => [
+                'type'  => 'field',
+                'field' => 'element'
+            ],
+            'button_label' => esc_html__('Add new element', 'kirki' ),
+            'settings'     => 'nucleus_header_right',
+            'fields' => [
+                'element' => [
+                    'type'        => 'select',
+                    'choices'     => header_elements(),
+                ],
+            ],
+            'active_callback'  => [
+                [
+                    'setting'  => 'nucleus_header_custom',
+                    'operator' => '==',
+                    'value'    => true,
+                ],
+            ]
+        ] );
+
+        Kirki::add_field( 'nucleus_header_full_width', [
+            'type'        => 'toggle',
+            'settings'    => 'nucleus_header_full_width',
+            'label'       => esc_html__( 'Header Full Width', 'kirki' ),
+            'section'     => 'nucleus_header_layout',
+            'default'     => '0',
+            'priority'    => 10,
+        ] );
+        
+        Kirki::add_field( 'nucleus_header_text_block_1', [
+            'type'     => 'textarea',
+            'settings' => 'nucleus_header_text_block_1',
+            'label'    => esc_html__( 'Text Block # 1', 'kirki' ),
+            'section'  => 'nucleus_header_layout',
+            'priority' => 10,
+            'active_callback'  => [
+                [
+                    'setting'  => 'nucleus_header_custom',
+                    'operator' => '==',
+                    'value'    => true,
+                ],
+            ]
+        ] );
+
+        Kirki::add_field( 'nucleus_header_text_block_2', [
+            'type'     => 'textarea',
+            'settings' => 'nucleus_header_text_block_2',
+            'label'    => esc_html__( 'Text Block # 2', 'kirki' ),
+            'section'  => 'nucleus_header_layout',
+            'priority' => 10,
+            'active_callback'  => [
+                [
+                    'setting'  => 'nucleus_header_custom',
+                    'operator' => '==',
+                    'value'    => true,
+                ],
+            ]
+        ] );
+
+        Kirki::add_field( 'nucleus_header_text_block_3', [
+            'type'     => 'textarea',
+            'settings' => 'nucleus_header_text_block_3',
+            'label'    => esc_html__( 'Text Block # 3', 'kirki' ),
+            'section'  => 'nucleus_header_layout',
+            'priority' => 10,
+            'active_callback'  => [
+                [
+                    'setting'  => 'nucleus_header_custom',
+                    'operator' => '==',
+                    'value'    => true,
+                ],
+            ]
+        ] );        
+
+
+		// SECTION: Header
+		Kirki::add_section( 'nucleus_header_size', array(
+            'title'          => esc_html__( 'Header Size', 'nucleus' ),
+            'description'    => esc_html__( 'This section configure settings for the header size.', 'nucleus' ),
+            'panel'          => 'nucleus_header_settings',
+        ) );
+
+        Kirki::add_field( 'nucleus_header_desktop_height', [
+            'type'        => 'slider',
+            'settings'    => 'nucleus_header_desktop_height',
+            'label'       => esc_html__( 'Desktop Height (px)', 'kirki' ),
+            'section'     => 'nucleus_header_size',
+            'default'     => 90,
+            'choices'     => [
+                'min'  => 50,
+                'max'  => 250,
+                'step' => 1,
+            ]
+        ] );
+
+        Kirki::add_field( 'nucleus_header_mobile_height', [
+            'type'        => 'slider',
+            'settings'    => 'nucleus_header_mobile_height',
+            'label'       => esc_html__( 'Mobile Height (px)', 'kirki' ),
+            'section'     => 'nucleus_header_size',
+            'default'     => 60,
+            'choices'     => [
+                'min'  => 40,
+                'max'  => 120,
+                'step' => 1,
+            ]
+        ] );
+
+        Kirki::add_field( 'nucleus_header_sticky_height', [
+            'type'        => 'slider',
+            'settings'    => 'nucleus_header_sticky_height',
+            'label'       => esc_html__( 'Sticky Header (px)', 'kirki' ),
+            'section'     => 'nucleus_header_size',
+            'default'     => 70,
+            'choices'     => [
+                'min'  => 50,
+                'max'  => 250,
+                'step' => 1,
+            ]
+        ] );
+
+
+		// SECTION: Header
+		Kirki::add_section( 'nucleus_header_logo_size', array(
+            'title'          => esc_html__( 'Logo Size', 'nucleus' ),
+            'description'    => esc_html__( 'This section configure settings for the logo size.', 'nucleus' ),
+            'panel'          => 'nucleus_header_settings',
+        ) );
+
+        Kirki::add_field( 'nucleus_header_desktop_logo_height', [
+            'type'        => 'slider',
+            'settings'    => 'nucleus_header_desktop_logo_height',
+            'label'       => esc_html__( 'Desktop Logo Height (px)', 'kirki' ),
+            'section'     => 'nucleus_header_logo_size',
+            'default'     => 24,
+            'choices'     => [
+                'min'  => 15,
+                'max'  => 200,
+                'step' => 1,
+            ]
+        ] );
+
+        Kirki::add_field( 'nucleus_header_mobile_logo_height', [
+            'type'        => 'slider',
+            'settings'    => 'nucleus_header_mobile_logo_height',
+            'label'       => esc_html__( 'Mobile Logo Height (px)', 'kirki' ),
+            'section'     => 'nucleus_header_logo_size',
+            'default'     => 24,
+            'choices'     => [
+                'min'  => 15,
+                'max'  => 100,
+                'step' => 1,
+            ]
+        ] );
+
+        Kirki::add_field( 'nucleus_header_sticky_logo_height', [
+            'type'        => 'slider',
+            'settings'    => 'nucleus_header_sticky_logo_height',
+            'label'       => esc_html__( 'Sticky Header Logo (px)', 'kirki' ),
+            'section'     => 'nucleus_header_logo_size',
+            'default'     => 24,
+            'choices'     => [
+                'min'  => 15,
+                'max'  => 200,
+                'step' => 1,
+            ]
+        ] );
+	
 	}

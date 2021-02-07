@@ -1,0 +1,175 @@
+/** == SITE LOGO == */
+/** ================================================== */
+
+	#site-logo {
+		margin: 0 20px;
+
+		// Text Logo
+		.logo.text {
+			display: inline-block;
+			font-family: $tertiary-font-stack;
+			font-size: 3.2rem;
+			text-transform: uppercase;
+			letter-spacing: 0.4px;
+			color: var(--text-color, #FFF);
+
+			@include breakpoint($mobile)	  { font-size: 2.8rem; }
+
+
+			&:active, &:focus { outline: 0; border: none; } 
+
+			&:after {
+				display: inline-block;
+				content: '';
+				width: 5px;
+				height: 5px;
+				border-radius: 100%;
+				background: #7DBF2A;
+				margin-left: 3px;
+			}
+		}
+
+		// Image Logo
+		.logo.image {
+
+		}
+	}
+
+/** == MENU == */
+/** ================================================== */
+
+	.primary-menu, .secondary-menu {
+		margin: 0 15px;
+		align-self: center;
+	}
+
+
+/** == SEARCH ICON == */
+/** ================================================== */
+
+	.search-icon {
+		margin: 0 15px;
+		a {
+			color: var(--text-color, #FFF);
+			line-height: 33px;
+			padding: 10px 0 14px 0;
+
+			// Default Values
+			@include breakpoint($touch)  	{ font-size: 25px; }
+			@include breakpoint($no-touch)  { font-size: 26px; }
+			
+			// Modern Menu
+			.modern-menu & {
+				@include breakpoint($no-touch)	  { font-size: 28px; }
+			}
+		}
+	}
+
+
+/** == FULL SCREEN ICON == */
+/** ================================================== */
+
+	.fullscreen-icon {
+		margin: 0 15px;
+
+		a {
+			font-size: 25px;
+			color: var(--text-color, #FFF);
+			line-height: 33px;
+			padding: 10px 0 14px 0;
+		}
+	}
+
+
+/** == HAMBURGER ICON == */
+/** ================================================== */
+
+	.menu-icon {
+		margin: 0 15px;
+		align-self: center;
+
+		a {
+			display: flex;
+			flex-direction: column;
+			
+			.bar {
+				display: inline-block;
+				height: 2px;
+				width: 32px;
+				background: var(--text-color);
+				margin: 4px 0;
+				border-radius: 2px;
+				transition: width 300ms linear;
+
+				// &:nth-child(2) { width: 23px; }
+			}
+
+			&:hover {
+				// .bar { width: 32px; }
+			}
+		}
+	}
+
+
+/** == CART ICON == */
+/** ================================================== */
+
+	.cart-icon {
+		margin: 0 15px;
+
+		a {
+			// Default Values
+			@include breakpoint($touch)  	{ font-size: 27px; }
+			@include breakpoint($no-touch)  { font-size: 28px; }
+			
+			// Modern Menu
+			.modern-menu & {
+				@include breakpoint($no-touch)	  { font-size: 30px; }
+			}
+		}
+		.count {
+			position: absolute;
+			top: 0;
+			right: -9px;
+			display: inline-block;
+			background: #FF5050;
+			width: 16px;
+			height: 16px;
+			line-height: 16px;
+			text-align: center;
+			font-size: 11px;
+			color: #fff;
+			border-radius: 100%;
+		}
+	}
+
+
+/** == SOCIAL ICONS == */
+/** ================================================== */
+
+	ul.social-profiles {
+		margin: 0 15px;
+		padding: 0;
+		list-style: none;
+		
+		li {
+			display: inline-block;
+			margin-left: 12px;
+
+			a {
+				color: inherit;
+				font-size: 26px;
+				opacity: 0.7;
+				
+				&:hover { opacity: 1;}
+			}
+		}
+	}
+
+/** == TEXT BLOCK == */
+/** ================================================== */
+
+	.text-block {
+		margin: 0 10px;
+		align-self: center;
+	}
