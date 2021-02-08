@@ -172,62 +172,50 @@ export default jQuery(function($) {
                 delay: 600,
             });
 
-            // Modern Menu
-            // $('#mobile-menu .tn-menu').tendina({
-            // 	speed: 200,
-            // });
+		},
 
-            // let sub_menus =  $('#full-screen-menu li.menu-item-has-children > ul')
-
-            // sub_menus.each(function(idx, item) {
-            //     item.addClass
-            //     $('.menu-placeholder').append(item)
-            // });
-
+		/** Full Screen Menu */
+		full_screen_menu: function() {
             // Copy All Sub Menus
             $('#full-screen-menu .sub-menu').each(function(){
-                var id = $(this).parent().attr('class').split(' ').pop();
-                $(this).appendTo('.menu-placeholder').addClass('overlay-menu').wrap('<div class="overlay-menu-wrap" style="z-index: 1;" data-id="' + id + '" />');
-                $(this).find('.back-to-menu').appendTo($(this).find('li:nth-child(2)').eq(0));
+                var child_menu_id = $(this).parent().attr('class').split(' ').pop(); // grab child menu ID
+                $(this).appendTo('.child-menus').addClass('overlay-menu').wrap('<div class="child-menu-wrap" data-id="' + child_menu_id + '" />'); // clone child menu to another DIV
             });
             
             // Click Handling on Root Menu
             $('#full-screen-menu li.menu-item-has-children a').on('click', function() {
-                $('#full-screen-menu').hide()
-                let source_id = $(this).parent().attr('class').split(' ').pop()
-                $(".menu-placeholder .overlay-menu-wrap").removeClass('active');
-                $(".menu-placeholder .overlay-menu-wrap[data-id='" + source_id +"']").addClass('active');
-                $('#mobile-menu .go-back').data('node', ['root']).addClass('active')
+                $('#full-screen-menu').hide() // hide the root menu
+                let child_menu_id = $(this).parent().attr('class').split(' ').pop() // grab child menu ID
+                $(".child-menus .child-menu-wrap").removeClass('active') // hide any child menu if visible
+                $(".child-menus .child-menu-wrap[data-id='" + child_menu_id +"']").addClass('active') // show only required child menu
+                $('#responsive-menu .go-back').data('node', ['root']).addClass('active') // add parent menu history to "go-back" link
             });
 
             // Click Handling on Child Items
-            $('.menu-placeholder li.menu-item-has-children a').on('click', function() {
-                $(".menu-placeholder .overlay-menu-wrap").removeClass('active')
-                let source_id = $(this).parent().attr('class').split(' ').pop()
-                $(".menu-placeholder .overlay-menu-wrap").removeClass('active');
-                $(".menu-placeholder .overlay-menu-wrap[data-id='" + source_id +"']").addClass('active');
+            $('.child-menus li.menu-item-has-children a').on('click', function() {
+                let child_menu_id = $(this).parent().attr('class').split(' ').pop() // grab child menu ID
+                $(".child-menus .child-menu-wrap").removeClass('active') // hide any child menu if visible
+                $(".child-menus .child-menu-wrap[data-id='" + child_menu_id +"']").addClass('active')  // show only required child menu
                 
-                let parent_id = $(this).parents('.overlay-menu-wrap').data('id')
-                $('#mobile-menu .go-back').data('node').push(parent_id)
+                let parent_id = $(this).parents('.child-menu-wrap').data('id') // determine parent ID of child menu
+                $('#responsive-menu .go-back').data('node').push(parent_id) // add parent menu history to "go-back" link
             });
 
-            $('#mobile-menu .go-back').on('click', function() {
-                let prev_node = $(this).data('node').pop()
-                console.log(prev_node)
+            // Click Handling on Go Back Button
+            $('#responsive-menu .go-back').on('click', function() {
+                let prev_node = $(this).data('node').pop() // grab the last parent item ID
+                
                 if (prev_node == 'root') {
                     $('#full-screen-menu').show()
-                    $(".menu-placeholder .overlay-menu-wrap").removeClass('active')
-                    $('#mobile-menu .go-back').removeClass('active')
+                    $(".child-menus .child-menu-wrap").removeClass('active')
+                    $('#responsive-menu .go-back').removeClass('active')
                 } else {
-                    $(".menu-placeholder .overlay-menu-wrap").removeClass('active');
-                    $(".menu-placeholder .overlay-menu-wrap[data-id='" + prev_node +"']").addClass('active');
+                    $(".child-menus .child-menu-wrap").removeClass('active');
+                    $(".child-menus .child-menu-wrap[data-id='" + prev_node +"']").addClass('active');
                 }
             })
 
-
-
 		},
-
 
 		/** Site Overlay */
 		site_overlay: function() {
@@ -239,12 +227,12 @@ export default jQuery(function($) {
                     if ( type == 'search' ) {
                         $('#search-filter, #search-filter .widget-wrap, #site-clipboard .close-link').addClass('animate-in');
                     } else if ( type == 'menu' ) {
-                        $('#mobile-menu, #mobile-menu .tn-menu, .menu-caption, #site-clipboard .close-link').addClass('animate-in');
+                        $('#responsive-menu, #full-screen-menu, .menu-caption, #site-clipboard .close-link').addClass('animate-in');
                     }
                 },
 
                 closeModal: function(){
-                    $('#search-filter, #search-filter .widget-wrap, #mobile-menu, #mobile-menu .tn-menu, .menu-caption, #site-clipboard .close-link').removeClass('animate-in');
+                    $('#search-filter, #search-filter .widget-wrap, #responsive-menu, #full-screen-menu, .menu-caption, #site-clipboard .close-link').removeClass('animate-in');
                 }
 
             }			
@@ -369,6 +357,7 @@ export default jQuery(function($) {
     base.toggle_bg_sound();
     base.site_notification();
     base.site_menu();
+    base.full_screen_menu();
     base.site_overlay();
     base.sticky_header();
     base.page_header();
