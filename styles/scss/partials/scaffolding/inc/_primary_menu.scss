@@ -315,7 +315,7 @@
 /** == MEGA MENU == */
 /** ================================================== */
 
-	ul#main-menu {
+	ul#primary-menu, ul#secondary-menu {
 		> li.mega-menu {
 			> ul.sub-menu {
 				display: flex;

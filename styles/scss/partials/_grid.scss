@@ -25,11 +25,12 @@
 	#site-container,
 	.secondary-carousel .container,
 	.advertisement-panel .container,
+	#top-bar .boxed,
 	#site-header .boxed,
 	#search-filter .inner-wrap,
 	#mobile-menu .inner-wrap,
 	#page-content,
-	#site-footer,
+	#site-footer .boxed,
 	#site-notification
 	{
 		@include container();

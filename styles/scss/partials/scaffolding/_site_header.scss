@@ -22,6 +22,8 @@
 		margin-top: 75px;
 		z-index: 20;
 
+		@include make-full-width;
+
 		@include breakpoint($mobile)  { margin-top: 40px; }
 		@include breakpoint($laptop)  { margin-top: 60px; }
 
@@ -65,7 +67,6 @@
 
 		}
 
-		@include make-full-width;
 
 		/** Sticky Header  */
 		&.headroom--not-top {

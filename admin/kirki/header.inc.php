@@ -263,23 +263,8 @@
                 'v3' => esc_html__( 'Header V3', 'kirki' ),
                 'v4' => esc_html__( 'Header V4', 'kirki' ),
                 'v5' => esc_html__( 'Header V5', 'kirki' ),
+                'custom' => esc_html__( 'Custom', 'kirki' ),
             ],
-            'active_callback'  => [
-                [
-                    'setting'  => 'nucleus_header_custom',
-                    'operator' => '==',
-                    'value'    => false,
-                ],
-            ]
-        ] );       
-
-        Kirki::add_field( 'nucleus_header_custom', [
-            'type'        => 'toggle',
-            'settings'    => 'nucleus_header_custom',
-            'label'       => esc_html__( 'Use customer header layout?', 'kirki' ),
-            'section'     => 'nucleus_header_layout',
-            'default'     => '0',
-            'priority'    => 10,
         ] );        
 
         Kirki::add_field( 'nucleus_header_left', [
@@ -301,9 +286,9 @@
             ],
             'active_callback'  => [
                 [
-                    'setting'  => 'nucleus_header_custom',
+                    'setting'  => 'nucleus_header_version',
                     'operator' => '==',
-                    'value'    => true,
+                    'value'    => 'custom',
                 ],
             ]
         ] );
@@ -328,9 +313,9 @@
             ],
             'active_callback'  => [
                 [
-                    'setting'  => 'nucleus_header_custom',
+                    'setting'  => 'nucleus_header_version',
                     'operator' => '==',
-                    'value'    => true,
+                    'value'    => 'custom',
                 ],
             ]
         ] );        
@@ -354,9 +339,9 @@
             ],
             'active_callback'  => [
                 [
-                    'setting'  => 'nucleus_header_custom',
+                    'setting'  => 'nucleus_header_version',
                     'operator' => '==',
-                    'value'    => true,
+                    'value'    => 'custom',
                 ],
             ]
         ] );
@@ -378,9 +363,9 @@
             'priority' => 10,
             'active_callback'  => [
                 [
-                    'setting'  => 'nucleus_header_custom',
+                    'setting'  => 'nucleus_header_version',
                     'operator' => '==',
-                    'value'    => true,
+                    'value'    => 'custom',
                 ],
             ]
         ] );
@@ -393,9 +378,9 @@
             'priority' => 10,
             'active_callback'  => [
                 [
-                    'setting'  => 'nucleus_header_custom',
+                    'setting'  => 'nucleus_header_version',
                     'operator' => '==',
-                    'value'    => true,
+                    'value'    => 'custom',
                 ],
             ]
         ] );
@@ -408,9 +393,9 @@
             'priority' => 10,
             'active_callback'  => [
                 [
-                    'setting'  => 'nucleus_header_custom',
+                    'setting'  => 'nucleus_header_version',
                     'operator' => '==',
-                    'value'    => true,
+                    'value'    => 'custom',
                 ],
             ]
         ] );        

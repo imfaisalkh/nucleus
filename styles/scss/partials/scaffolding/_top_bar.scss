@@ -8,14 +8,15 @@
 /** ================================================== */
 
     #top-bar {
-        margin-top: -80px;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         background: var(--top-bar-background-color);
         color: var(--top-bar-text-color);
-        height: var(--top-bar-size);
+		height: var(--top-bar-size);
+
+		@include make-full-width;
 
         .container {
 			width: 100%;
@@ -47,6 +48,50 @@
 					margin-left: auto;
 
 					*:last-child { margin-right: 0 !important; }
+				}
+			}
+
+			// General Styles
+			font-size: 14px;
+
+			ul.social-profiles {
+				display: flex;
+				align-items: center;
+				margin: 0 15px;
+				padding: 0;
+				list-style: none;
+				
+				li {
+					display: inline-block;
+					margin-left: 12px;
+		
+					a {
+						color: inherit;
+						font-size: 18px;
+						opacity: 0.7;
+						
+						&:hover { opacity: 1;}
+					}
+				}
+			}
+
+			.top-bar-menu {
+				margin: 0 15px;
+				padding: 0;
+				align-self: center;
+
+				ul {
+					margin: 0;
+					padding: 0;
+					list-style: none;
+					li {
+						margin: 10px;
+						font-size: 14px;
+
+						a {
+							color: inherit;
+						}
+					}
 				}
 			}
         }

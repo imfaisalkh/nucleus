@@ -60,11 +60,12 @@
 
             <!-- BEGIN: SITE CONTAINER -->
             <main id="site-container">
-
+                
+                <?php get_template_part( 'partials/scaffolding/top-bar' ); ?>
+                
                 <!-- BEGIN: SITE HEADER -->
                 <header id="site-header">
-                    <?php get_template_part( 'partials/scaffolding/top-bar' ); ?>
-                    <?php get_template_part( 'partials/scaffolding/primary-navigation' ); ?>
+                    <?php get_template_part( 'partials/scaffolding/site-header' ); ?>
                 </header>
                 <!-- END: SITE HEADER -->
 
