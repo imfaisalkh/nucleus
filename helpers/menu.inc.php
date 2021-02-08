@@ -74,15 +74,16 @@ function nucleus_nav_menu_start_el($item_output, $item, $depth, $args) {
 	} elseif ($item->url === '#title') {
 		return '<span class="title">'. esc_html($item->post_title) . '</span>'; // Text without link
 	} else {
+		$title_attr = !empty($item->attr_title) ? '<span class="subtitle" style="display: none;">'. $item->attr_title .'</span>' : '';
 		if ($item->xfn) {
 			$xfn_data = explode('-', $item->xfn);
 			if ($xfn_data[0] == 'query') {
-				return $item_output = '<a href="'. esc_url($item->url) .'?'. $xfn_data[1].'='. $xfn_data[2] .'">'. esc_html($item->post_title) . '</a>';
+				return $item_output = '<a href="'. esc_url($item->url) .'?'. $xfn_data[1].'='. $xfn_data[2] .'">'. esc_html($item->post_title) . '</a>' . $title_attr;
 			} else {
-				return $item_output; // Unmodified output for this link
+				return $item_output . $title_attr; // Unmodified output for this link
 			}
 		} else {
-			return $item_output; // Unmodified output for this link
+			return $item_output . $title_attr; // Unmodified output for this link
 		}
 	}
 }

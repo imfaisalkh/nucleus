@@ -97,14 +97,19 @@
 
         <a href="#" class="close-link"><i class="fi fi-close" aria-hidden="true"></i></a>
 
+        <a href="#back" class="go-back">
+            <span class="icon"><i class="fi fi-sidebar-arrow" aria-hidden="true"></i></span>
+            <span class="text">Go Back</span>
+        </a>
+
         <div class="inner-wrap">
 
             <div class="menu-wrap">
 
                 <?php 
                 $args = array(
-                    'theme_location'  => 'nucleus-mobile-navigation',
-                    'menu_id'         => 'main-menu',
+                    'theme_location'  => 'nucleus-full-screen-menu',
+                    'menu_id'         => 'full-screen-menu',
                     'menu_class'      => 'tn-menu',
                     'fallback_cb'     => 'nucleus_default_menu'
                 );
@@ -112,12 +117,13 @@
                 wp_nav_menu($args);
                 ?>
 
-
                 <div class="menu-caption">
                     <p>We are a Multidisciplinary Design Agency based in United States.</p>
                 </div>
 
             </div>
+
+            <div class="menu-placeholder"></div>
             
         </div>
 

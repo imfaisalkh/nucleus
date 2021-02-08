@@ -328,18 +328,77 @@
 		.inner-wrap {
 			padding-bottom: 10px;
 			@include breakpoint($touch) { padding-bottom: 60px; }
+			align-items: center;
+			justify-content: center;
+		}
+
+		.menu-placeholder {
+			width: 65%;
+			.overlay-menu-wrap {
+				display: none;
+
+				&.active {
+					display: block;
+				}
+			}
+
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				margin: 0; padding: 0;
+				list-style: none;
+
+				&.active {
+					display: block;
+				}
+
+				li {
+					font-family: $primary-font-stack;
+					line-height: 1.4;
+					letter-spacing: 0;
+					margin: 0 30px;
+	
+					a {
+						font-size: 30px;
+						font-weight: 400;
+						color: var(--text-color, #FFF);
+	
+						@include breakpoint($no-touch)	{ font-size: 48px; }
+					}
+	
+					span.subtitle {
+						display: inline-block !important;
+						font-family: $secondary-font-stack;
+						font-size: 12px;
+						margin-left: 7px;
+						text-transform: uppercase;
+						color: var(--menu-caption);
+					}
+	
+					&.current-menu-item > a,
+					&.current-menu-ancestor > a {
+						border-bottom: 1px solid var(--primary-accent);
+					}
+	
+				}
+			}
 		}
 
 		/** Menu List */
-		ul.tn-menu {
+		ul#full-screen-menu {
 			list-style: none;
 			padding-left: 0;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
 			@include animate-this(); // CSS-3 animation is triggered via JS
 
 			> li {
 				font-family: $primary-font-stack;
 				line-height: 1.4;
 				letter-spacing: 0;
+				margin: 0 15px;
 
 				a {
 					font-size: 30px;
@@ -349,15 +408,32 @@
 					@include breakpoint($no-touch)	{ font-size: 48px; }
 				}
 
+				span.subtitle {
+					display: inline-block !important;
+					font-family: $secondary-font-stack;
+					font-size: 12px;
+					margin-left: 7px;
+					text-transform: uppercase;
+					color: var(--menu-caption);
+				}
+
 				&.current-menu-item > a,
 				&.current-menu-ancestor > a {
-					color: var(--primary-accent, #FFF);
+					border-bottom: 1px solid var(--primary-accent);
 				}
 
 				ul {
+					display: none;
 					list-style: none;
 					padding: 0;
 					margin: 13px 0;
+
+					&.active {
+						display: block;
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
 
 					li {
 						font-family: $secondary-font-stack;
@@ -386,18 +462,20 @@
 
 
 		.menu-wrap {
+			position: relative;
 			display: flex;
 			justify-content: space-between;
-			align-items: flex-end;
+			width: 65%;
 
 			@include breakpoint($mobile)	{ flex-direction: column; }
 
 
 			.menu-main-menu-container {
-				width: 350px;
+				width: 100%;
 			}
 
 			.menu-caption {
+				display: none;
 				@include animate-this(); // CSS-3 animation is triggered via JS
 				width: 315px;
 				font-family: $secondary-font-stack;
@@ -418,6 +496,30 @@
 		@include position(fixed, 45px, 85px, auto, auto);
 		color: var(--text-color, #FFF);
 		font-size: 21px;
+	}
+
+	.go-back {
+		display: none;
+		@include position(fixed, 45px, auto, auto, 85px);
+		font-family: $secondary-font-stack;
+		font-size: 16px;
+		color: var(--text-color, #FFF);
+
+		&.active {
+			display: inline-block;
+		}
+
+		.icon {
+			display: inline-block;
+			width: 36px; height: 36px; line-height: 36px;
+			text-align: center;
+			border-radius: 100%;
+			background: #101010;
+			font-size: 14px;
+			margin-right: 7px;
+		}
+		.text {
+		}
 	}
 
 

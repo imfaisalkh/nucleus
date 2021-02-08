@@ -173,9 +173,58 @@ export default jQuery(function($) {
             });
 
             // Modern Menu
-            $('#mobile-menu .tn-menu').tendina({
-            	speed: 200,
+            // $('#mobile-menu .tn-menu').tendina({
+            // 	speed: 200,
+            // });
+
+            // let sub_menus =  $('#full-screen-menu li.menu-item-has-children > ul')
+
+            // sub_menus.each(function(idx, item) {
+            //     item.addClass
+            //     $('.menu-placeholder').append(item)
+            // });
+
+            // Copy All Sub Menus
+            $('#full-screen-menu .sub-menu').each(function(){
+                var id = $(this).parent().attr('class').split(' ').pop();
+                $(this).appendTo('.menu-placeholder').addClass('overlay-menu').wrap('<div class="overlay-menu-wrap" style="z-index: 1;" data-id="' + id + '" />');
+                $(this).find('.back-to-menu').appendTo($(this).find('li:nth-child(2)').eq(0));
             });
+            
+            // Click Handling on Root Menu
+            $('#full-screen-menu li.menu-item-has-children a').on('click', function() {
+                $('#full-screen-menu').hide()
+                let source_id = $(this).parent().attr('class').split(' ').pop()
+                $(".menu-placeholder .overlay-menu-wrap").removeClass('active');
+                $(".menu-placeholder .overlay-menu-wrap[data-id='" + source_id +"']").addClass('active');
+                $('#mobile-menu .go-back').data('node', ['root']).addClass('active')
+            });
+
+            // Click Handling on Child Items
+            $('.menu-placeholder li.menu-item-has-children a').on('click', function() {
+                $(".menu-placeholder .overlay-menu-wrap").removeClass('active')
+                let source_id = $(this).parent().attr('class').split(' ').pop()
+                $(".menu-placeholder .overlay-menu-wrap").removeClass('active');
+                $(".menu-placeholder .overlay-menu-wrap[data-id='" + source_id +"']").addClass('active');
+                
+                let parent_id = $(this).parents('.overlay-menu-wrap').data('id')
+                $('#mobile-menu .go-back').data('node').push(parent_id)
+            });
+
+            $('#mobile-menu .go-back').on('click', function() {
+                let prev_node = $(this).data('node').pop()
+                console.log(prev_node)
+                if (prev_node == 'root') {
+                    $('#full-screen-menu').show()
+                    $(".menu-placeholder .overlay-menu-wrap").removeClass('active')
+                    $('#mobile-menu .go-back').removeClass('active')
+                } else {
+                    $(".menu-placeholder .overlay-menu-wrap").removeClass('active');
+                    $(".menu-placeholder .overlay-menu-wrap[data-id='" + prev_node +"']").addClass('active');
+                }
+            })
+
+
 
 		},
 
