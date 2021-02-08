@@ -338,6 +338,18 @@
 				width: 70%;
 
 				ul {
+					height: auto;
+					opacity: 1;
+					transform: translateX(0);
+					visibility: visible;
+					transition: all 200ms linear;
+
+					&.hide {
+						height: 0;
+						opacity: 0;
+						transform: translateX(30px);
+						visibility: hidden;
+					}
 					li {
 						margin: 0 15px;
 					}
@@ -346,12 +358,25 @@
 
 			// Child Menu(s)
 			.child-menus {
-				width: 70%;
-
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+				max-width: 100vw;
+				
 				.child-menu-wrap {
-					display: none; // hidden by default
+					width: 70%;
+					height: 0;
+					opacity: 0;
+					transform: translateX(30px);
+					visibility: hidden;
+					transition: all 200ms linear;
+
 					&.active {
-						display: block;
+						height: auto;
+						opacity: 1;
+						transform: translateX(0);
+						visibility: visible;
 					}
 				}
 			}
