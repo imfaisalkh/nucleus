@@ -3,10 +3,10 @@
     $container_class = get_theme_mod('nucleus_header_full_width', false) ? 'full-width' : 'boxed';
     $is_custom_header = get_theme_mod('nucleus_header_version', 'v1') == 'custom';
     
-    if (!get_query_var('menu')) {
+    if (!get_query_var('header')) {
         $header_style = get_field('site_header') != 'global' ? get_field('site_header') : get_theme_mod('nucleus_header_version', 'v1');
     } else {
-        $header_style = get_query_var('menu');
+        $header_style = get_query_var('header');
     }
 
     // Header Layout - Defaults

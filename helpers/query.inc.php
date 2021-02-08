@@ -8,7 +8,7 @@ function nucleus_custom_query_vars( $vars ) {
     $vars[] = "blog";
     $vars[] = "skin";
     $vars[] = "pagination";
-    $vars[] = "menu";
+    $vars[] = "header";
     $vars[] = "footer";
 
     return $vars;
