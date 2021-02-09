@@ -1,5 +1,7 @@
 <?php
-	
+
+    $portfolio_hover = get_query_var('hover') ? get_query_var('hover') : 'cursor';
+
 	// Portfolio Configuration - Meta Panel
 	$portfolio_posts = [550, 562, 560, 565, 552];
 	
@@ -26,7 +28,7 @@
             </div>
         </div>
         <div class="column slider">
-            <div class="main-carousel">
+            <div class="portfolio-container main-carousel" data-hover="<?php echo esc_attr($portfolio_hover); ?>">
 
                 <?php while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post(); ?>
 
@@ -36,15 +38,15 @@
                         $folio_permalink = get_post_meta(get_the_ID(), 'custom_url', true) != false ? esc_url( get_post_meta(get_the_ID(), 'custom_url', true) ) : esc_url( get_permalink() );
                     ?>
 
-                    <div class="carousel-cell" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
-                        <div class="carousel-desc">
-                            <a href="<?php echo $folio_permalink; ?>" title="<?php the_title(); ?>" >
-                                <h3 class="title"><?php the_title(); ?></h3>
+                    <div <?php post_class("carousel-cell type-portfolio"); ?> style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
+                        <a href="<?php echo $folio_permalink; ?>" title="<?php the_title(); ?>" >
+                            <div class="entry-caption">
+                                <h3 class="entry-title"><?php the_title(); ?></h3>
                                 <?php if ( $folio_terms ) { ?>
-                                    <span class="tags"><?php echo esc_html( $folio_terms ); ?></span>
+                                    <span class="entry-meta"><?php echo esc_html( $folio_terms ); ?></span>
                                 <?php } ?>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
 
                 <?php endwhile; ?>

@@ -10,15 +10,22 @@
 	// entry url
 	$folio_permalink 		= get_post_meta(get_the_ID(), 'custom_url', true) != false ? esc_url( get_post_meta(get_the_ID(), 'custom_url', true) ) : esc_url( get_permalink() );
 
+	// secondary image
+	$secondary_img = get_field('secondary_image');
+	$secondary_img_class = $secondary_img ? 'has-secondary-image' : '';
+
 ?>
 
 <!-- PORTFOLIO ENTRY -->
-<article id="post-<?php the_ID(); ?>" <?php post_class("grid-item $thumbnail_height $thumbnail_width"); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class("grid-item $thumbnail_height $thumbnail_width $secondary_img_class"); ?>>
 
 	<a class="entry-link" href="<?php echo $folio_permalink; ?>" title="<?php the_title(); ?>" >
 		
 		<figure class="entry-thumbnail">
-			<img src="<?php the_post_thumbnail_url(); ?>">
+			<img class="primary" src="<?php the_post_thumbnail_url(); ?>">
+			<?php if ($secondary_img) { ?>
+				<img class="secondary" src="<?php echo esc_url($secondary_img); ?>">
+			<?php } ?>
 		</figure>
 
 		<header class="entry-caption">
