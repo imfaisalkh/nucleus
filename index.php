@@ -22,7 +22,7 @@
 				<?php if ( have_posts() ) : ?>
 
 					<!-- BEGIN: BLOG LIST -->
-					<section class="blog-container blog-<?php echo esc_attr($blog_layout); ?>-inner" data-load-trigger="<?php echo $pagination_type; ?>">
+					<section class="blog-container blog-<?php echo esc_attr($blog_layout); ?>-inner" data-load-trigger="<?php echo $pagination_type; ?>" data-hover="reveal">
 
 						<?php while ( have_posts() ) : the_post(); ?>
 							<?php get_template_part( 'partials/blog/layout', $blog_layout ); ?>

@@ -177,13 +177,34 @@ export default jQuery(function($) {
             })
         },
 
+        /** Image Reveal */
+        image_reveal: function() {
+            let img_data
 
-        
+            $('.blog-minimal-inner[data-hover="reveal"] .post .entry-title a').each(function(el){
+                $(this).on('mouseover', function(e) {
+                    img_data = $(this).data('image')
+                    $(this).css('z-index', -10)
+                    $(this).parent().siblings('.entry-thumb').attr('src', img_data).addClass('animate-in')
+                })
+                $(this).on('mousemove', function(e) {
+                    $(this).parent().siblings('.entry-thumb').css('top', e.offsetY + 10 + 'px')
+                    $(this).parent().siblings('.entry-thumb').css('left', e.offsetX + 50 + 'px')
+                })
+                $(this).on('mouseleave', function(e) {
+                    $(this).css('z-index', 1)
+                    $(this).parent().siblings('.entry-thumb').attr('src', '').removeClass('animate-in')
+                })
+            });
+           
+        },
+
     }  
 
     // Initialize Functions
     blog.load_more();
     blog.sidebar();
+    blog.image_reveal();
 
     if (blog_magazine_page) {
         blog.carousel();

@@ -1,7 +1,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="inner-wrap">
+		<img class="entry-thumb" src="">
 		<h3 class="entry-title">
-			<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
+			<a href="<?php echo esc_url( get_permalink() ); ?>" data-image="<?php the_post_thumbnail_url(); ?>"><?php the_title(); ?></a>
 		</h3>
 		<span class="timestamp">
 			<a href="<?php echo esc_url( get_permalink() ); ?>">
