@@ -2,144 +2,20 @@
   0.  PORTFOLIO 
 ========================================================== */
 	
-
-/** == SLIDER COMPONENTS == */
-/** ================================================== */
-
-	// Progress Bar
-	.slider-progress-bar {
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		height: 3px !important;
-		width: 100%;
-		z-index: 9999;
-
-		.progress {
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			height: 3px !important;
-			width: 0;
-			background: var(--primary-accent, #ffea36);
-			border-top: 1px solid var(--primary-accent, #e4cd0b);
-			z-index: 99999;
-		}
+	.is-animated {
+	animation: .6s rotate-right;
 	}
 
-	// Arrows 
-	.flickity-prev-next-button {
-		width: 73px;
-		height: 40px;
-		background: transparent;
-		border-radius: 0;
-		padding: 0;
-
-		.arrow {
-			transform: scale(3, 3);
-			fill: var(--text-color, #000);
-
+	@keyframes rotate-right {
+		0% {
+			opacity: 0;
+			visibility: hidden;
+			transform: translate3d(0, 15px, 0);
 		}
-
-		svg {
-			width: 100%;
-			path {
-				stroke: var(--text-color, #000);
-				stroke-width: 2;
-			}
-		}
-
-		&.previous {
-			left: 0%;
-			svg { left: 0; }
-		}
-		&.next {
-			right: 2%;
-			// transform-origin: 0 0;
-			svg {
-				transform: rotate(180deg);
-			}
-		}
-	}
-
-	// Slider Dots
-	.slider-page-dots {
-		position: absolute;
-		right: 0;
-		bottom: 50px;
-		text-align: right;
-		padding-right: 55px;
-
-		.dot {
-			position: relative;
-			width: 7px;
-			height: 7px;
+		100% {
 			opacity: 1;
-			margin: 0 6px;
-			background: var(--text-color, #000);
-			border: 3px solid transparent;
-
-			&.is-selected {
-				&:after {
-					content: ' ';
-					position: absolute;
-					top: -7px; left: -7px;
-					border-radius: 100%;
-					width: 15px;
-					height: 15px;
-					border: 1px solid var(--text-color, rgba(0,0,0,0.7));
-				}
-			}
-		}
-	}
-
-	// All Works Link
-	.all-works {
-		position: absolute;
-		left: 0;
-		bottom: 20px;
-		font-family: $secondary-font-stack;
-		font-size: 15px;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-
-		a {
-			color: var(--text-color, #000);
-
-			&:before {
-				display: inline-block;
-				content: '+';
-				margin-right: 6px;
-				font-size: 24px;
-				transform: translateY(4px);
-			}
-		}
-	}
-
-	// Slider Counter
-	.counter {
-		position: absolute;
-		right: 0;
-		bottom: 20px;
-		font-family: $secondary-font-stack;
-		font-size: 17px;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		color: var(--text-color, #000);
-
-		.total {
-			&:before {
-				display: inline-block;
-				content: '';
-				width: 40px;
-				height: 1px;
-				background: #000;
-				margin: 0 8px;
-				position: relative;
-				top: -5px;
-			}
+			visibility: visible;
+			transform: translate3d(0, 0, 0);
 		}
 	}
 
@@ -147,19 +23,38 @@
 /** == CLASSIC CAROUSEL == */
 /** ================================================== */
 
-	#featured-slider {
+	#classic-slider {
 		position: relative;
 		@include breakpoint($mobile)  { display: none; }
 
+		// Progress Bar
 		.progress-bar {
 			@extend .slider-progress-bar;
 		}
 
+		// Main Carousel
 		.main-carousel {
 			background: #111;
 			margin-bottom: 60px;
 
-			/** Slides **/
+			// Arrows
+			.flickity-prev-next-button {
+				display: none !important;
+			}
+
+			// Dots
+			.flickity-page-dots {
+				@extend .slider-page-dots;
+
+				.dot {
+					background: #000;
+					&.is-selected {
+						&:after { border-color: #000; }
+					}
+				}
+			}
+
+			// Slides
 			.flickity-slider {
 
 				.carousel-cell {
@@ -210,26 +105,267 @@
 					/* animate-in carousel description when selected */
 					&.is-selected {
 						.carousel-desc {
-						    opacity: 1;
-						    visibility: visible;
-						    transform: translate3d(0, 0, 0);
-						    transition-delay: 600ms;
+							opacity: 1;
+							visibility: visible;
+							transform: translate3d(0, 0, 0);
+							transition-delay: 600ms;
 						}
 					}
 
 				}
 			}
 
-			/** Arrows **/
-			.flickity-prev-next-button {
-				display: none !important;
-			}
-
-			/** Dots **/
-			.flickity-page-dots {
-				@extend .slider-page-dots;
-			}
-
 		}		
 
 	}
+
+
+/** == CLASSIC GRID == */
+/** ================================================== */
+
+	.no-transition {
+		transition: none;
+	}
+
+	.grid {
+		.grid-item {
+			overflow: hidden;
+			position: relative;
+			background: #2A2A2A;
+			text-align: center;
+			@include breakpoint($mobile)  { width: 100% !important; height: auto !important; margin-left: 0 !important; margin-right: 0 !important; }
+
+			@include animate-this(); // CSS-3 animation is triggered via JS
+
+			.entry-link {
+
+				.entry-thumbnail {
+					width: 100%;
+					height: 100%;
+					margin: 0;
+
+					img {
+						width: 100%;
+						height: 100% !important;
+						object-fit: cover; // css3 property
+
+						&.primary { display: block; }
+						&.secondary { display: none; }
+					}
+
+				}
+			}
+			
+		}
+	}
+
+/** == COMMON STYLES == */
+/** ================================================== */
+
+	.portfolio-container {
+		.type-portfolio {
+			position: relative;
+			z-index: 5;
+			overflow: visible !important;
+
+			.entry-caption {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				flex-shrink: 0; // do not allow wrapping text
+	
+				@include position(absolute, 0, 0, 0, 0);
+				@include animate-out($translate3d: '0, 0, 0', $duration: '300ms'); // used in combination with @animate-in() mixin
+	
+				z-index: 2;
+
+				.inner-wrap {
+					position: absolute;
+					width: 100%;
+					@include animate-out($duration: '300ms'); // used in combination with @animate-in() mixin
+
+					.entry-title {
+						font-family: $primary-font-stack;
+						font-weight: 600;
+						font-size: 28px;
+						line-height: 1.2;
+						letter-spacing: 0;
+						margin: 0;
+					}
+					.entry-meta {
+						font-family: $secondary-font-stack;
+						font-size: 14px;
+						font-weight: 400 ;
+						letter-spacing: 1px;
+						display: block;
+						margin-top: 4px;
+						text-transform: uppercase;
+					}
+				}
+			}
+			&:hover{
+				.entry-caption {
+					@include animate-in(); // CSS-3 animation is triggered via HOVER
+					.inner-wrap {
+						@include animate-in(); // CSS-3 animation is triggered via HOVER
+					}
+				}
+			}
+		}
+	}
+
+
+/** == IMAGE FILTERS == */
+/** ================================================== */
+
+	// GRAYSCALE
+	.portfolio-container[data-filter="grayscale"] {
+		.type-portfolio {
+			&:hover {
+				.entry-caption {
+					backdrop-filter: grayscale(1);
+				}
+			}
+		}
+	}
+
+	// BLUR
+	.portfolio-container[data-filter="blur"] {
+		.type-portfolio {
+			&:hover {
+				.entry-caption {
+					backdrop-filter: blur(3px);
+				}
+			}
+		}
+	}
+
+
+/** == IMAGE EFFECTS == */
+/** ================================================== */
+
+	// CHANGE
+	.portfolio-container[data-effect="change"] {
+		.type-portfolio.has-secondary-image {
+			&:hover {
+				.entry-thumbnail {
+					.primary { display: none; }
+					.secondary { display: block; }
+				}
+			}
+		}
+	}
+
+	// PARALLAX
+	.portfolio-container[data-effect="parallax"] {
+		.type-portfolio {
+			&:hover {
+				.entry-caption {
+					// backdrop-filter: blur(3px);
+				}
+			}
+		}
+	}
+
+	// ZOOM
+	.portfolio-container[data-effect="zoom"] {
+		.type-portfolio {
+			.entry-thumbnail {
+				overflow: hidden !important;
+				img {
+					position: relative;
+					transition-property: all;
+					transition-duration: 0.8s;
+					transition-timing-function: ease-in-out;
+					transition-delay: 0s;
+				}
+			}
+			&:hover {
+				.entry-thumbnail {
+					img { transform: scale(1.2) rotate(2deg); }
+				}
+				.entry-caption {
+					// backdrop-filter: blur(3px);
+				}
+			}
+		}
+	}
+
+
+/** == CAPTION STYLES == */
+/** ================================================== */
+
+	// FULL-SCREEN
+	.portfolio-container[data-caption="full"] {
+		.type-portfolio {
+			display: flex;
+			.entry-caption {
+				.inner-wrap {
+					.entry-title {
+						color: #000;
+					}
+					.entry-meta {
+						color: rgba(0, 0, 0, 0.4);
+					}
+				}
+			}
+
+		}
+	}
+
+	// OVERLAY
+	.portfolio-container[data-caption="overlay"] {
+		.type-portfolio {
+			.entry-caption {
+				.inner-wrap {
+					padding: 0 70px;
+					text-align: center;
+	
+					.entry-title {
+						color: #000;
+					}
+					.entry-meta {
+						color: rgba(0, 0, 0, 0.4);
+					}
+				}
+			}
+	
+			&:hover {
+				.entry-caption {
+					background: var(--secondary-accent);
+					opacity: 0.9;
+				}
+			}
+
+		}
+	}
+
+	// FLOAT
+	.portfolio-container[data-caption="float"] {
+		.type-portfolio {
+			.entry-caption {
+				.inner-wrap {
+					width: auto;
+
+					.entry-title {
+						color: #000;
+						background: #FFF;
+						padding: 6px 12px;
+						white-space: nowrap; 
+					}
+					.entry-meta {
+						align-self: flex-start !important;
+						color: #FFF;
+						background: #000;
+						padding: 6px 10px;
+						margin: 0;
+					}
+				}
+			}
+			&:hover {
+				z-index: 10;
+			}
+		}
+	}
+

@@ -363,4 +363,9 @@ export default jQuery(function($) {
     base.page_header();
     base.custom_cursor();
     base.lightbox();
+
+    // re-execute on 'changeSkin' triggger
+    $('body').on('changeSkin', function(event, items) {
+        base.css_variables();
+    });
 })

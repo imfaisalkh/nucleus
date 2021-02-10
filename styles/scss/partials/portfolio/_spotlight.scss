@@ -67,12 +67,9 @@
                 overflow: visible !important;
 
                 .flickity-slider {
-                    // @include make-full-width();
                     display: flex;
                     justify-content: center;
                     text-align: center;
-
-                    // margin-left: calc(-50vw + 65%);
 
                     .carousel-cell {
                         position: relative;
@@ -82,11 +79,12 @@
                         padding: 0 15%;
                         overflow: hidden;
 
-                        // margin: 0 80px;
+                        @include breakpoint($full-hd)  { width: 85%; padding: 0 15%; }
 
                         .carousel-image {
                             display: block;
                             border-radius: 5px;
+                            width: 100%;
                         }
 
                         .carousel-desc {
@@ -99,9 +97,7 @@
 
                             .title {
                                 font-size: 48px;
-                                // color: #000;
                                 margin: 0;
-                                // letter-spacing: 0;
                             }
                             .tags {
                                 font-size: 14px;
@@ -118,7 +114,6 @@
                                 visibility: visible;
                                 transform: translate3d(-50%, -56%, 0);
                                 transition-delay: 600ms;
-                        
                             }
                         }
                     }

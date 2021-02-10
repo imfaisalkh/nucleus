@@ -1,0 +1,181 @@
+/*========================================================
+  0.  COMMON STYLES 
+========================================================== */
+
+
+/** == SLIDER COMPONENTS == */
+/** ================================================== */
+
+	// Progress Bar
+	.slider-progress-bar {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		height: 3px !important;
+		width: 100%;
+		z-index: 9999;
+
+		.progress {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			height: 3px !important;
+			width: 0;
+			background: var(--primary-accent, #ffea36);
+			border-top: 1px solid var(--primary-accent, #e4cd0b);
+			z-index: 99999;
+		}
+	}
+
+	// Arrows 
+	.flickity-prev-next-button {
+		width: 73px;
+		height: 40px;
+		background: transparent;
+		border-radius: 0;
+		padding: 0;
+
+		.arrow {
+			transform: scale(3, 3);
+			fill: var(--text-color, #000);
+
+		}
+
+		svg {
+			width: 100%;
+			path {
+				stroke: var(--text-color, #000);
+				stroke-width: 2;
+			}
+		}
+
+		&.previous {
+			left: 0%;
+			svg { left: 0; }
+		}
+		&.next {
+			right: 2%;
+			// transform-origin: 0 0;
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	// Slider Dots
+	.slider-page-dots {
+		position: absolute;
+		right: 0;
+		bottom: 50px;
+		text-align: right;
+		padding-right: 55px;
+
+		.dot {
+			position: relative;
+			width: 7px;
+			height: 7px;
+			opacity: 1;
+			margin: 0 6px;
+			background: var(--text-color);
+			border: 3px solid transparent;
+
+			&.is-selected {
+				&:after {
+					content: ' ';
+					position: absolute;
+					top: -7px; left: -7px;
+					border-radius: 100%;
+					width: 15px;
+					height: 15px;
+					border: 1px solid var(--text-color);
+				}
+			}
+		}
+	}
+
+	// All Works Link
+	.all-works {
+		position: absolute;
+		left: 0;
+		bottom: 20px;
+		font-family: $secondary-font-stack;
+		font-size: 15px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+
+		a {
+			color: var(--text-color, #000);
+
+			&:before {
+				display: inline-block;
+				content: '+';
+				margin-right: 6px;
+				font-size: 24px;
+				transform: translateY(4px);
+			}
+		}
+	}
+
+	// Slider Counter
+	.counter {
+		position: absolute;
+		right: 0;
+		bottom: 20px;
+		font-family: $secondary-font-stack;
+		font-size: 17px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: var(--text-color, #000);
+
+		.total {
+			&:before {
+				display: inline-block;
+				content: '';
+				width: 40px;
+				height: 1px;
+				background: #000;
+				margin: 0 8px;
+				position: relative;
+				top: -5px;
+			}
+		}
+	}
+
+
+
+/** == NUMBERED PAGINATION == */
+/** ================================================== */
+
+#numbered-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+
+    .label {
+        display: inline-block;
+        line-height: 30px;
+        margin-right: 15px;
+        color: var(--text-color);
+        opacity: 0.5;
+    }
+
+    .links {
+        .page-numbers {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 7px;
+            text-align: center;
+            color: var(--text-color);
+
+            &.current {
+                color: var(--menu-text);
+                background: var(--menu-background);
+            }
+        }
+        .next, .prev { display: none; }
+    }
+}

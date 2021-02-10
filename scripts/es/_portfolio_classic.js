@@ -4,7 +4,7 @@ export default jQuery(function($) {
 
     // Global Variable(s)
     const classic_page = $('body').hasClass('portfolio-classic')
-    var $carousel = $('#featured-slider .main-carousel')
+    var $carousel = $('#classic-slider .main-carousel')
 
     // Functions Object
     var portfolio = {
@@ -14,7 +14,6 @@ export default jQuery(function($) {
 		grid: function() {
 
             var init = {
-
 
                 /** Grid Item Filtration **/
                 grid_filtration: function() {
@@ -226,6 +225,7 @@ export default jQuery(function($) {
         
     }  
 
+    // Captions
     portfolio.floating_caption();
     
     // Effects

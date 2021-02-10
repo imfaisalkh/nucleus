@@ -4,6 +4,7 @@ export default jQuery(function($) {
 
     // Global Variable(s)
     const horizon_page = $('body').hasClass('portfolio-horizon')
+    var $carousel_container = $('#horizon-slider')
     var $carousel = $('#horizon-slider .main-carousel')
 
     // Functions Object
@@ -23,6 +24,8 @@ export default jQuery(function($) {
             root.style.setProperty('--secondary-accent', secondary_accent_color);
             root.style.setProperty('--background-color', background_color);
             root.style.setProperty('--text-color', text_color);
+
+            $('body').trigger('changeSkin');
         },
 
         // Private: Configure Progress Bar
@@ -82,7 +85,8 @@ export default jQuery(function($) {
             // assign current scope to self
             let self = this
 
-            var is_flickity = true;
+            var is_flickity = true
+            let slide_duration = $carousel_container.data('slide-duration')
             // var is_flickity = $('body').hasClass('is-flickity-enabled');
 
             if (is_flickity) {
@@ -105,7 +109,7 @@ export default jQuery(function($) {
                 });
                 
                 // start progress bar
-                self._configure_progress_bar(80)
+                self._configure_progress_bar(slide_duration)
 
                 // set counter value (on load)
                 let flkty = $carousel.data('flickity'); // get Flickity instance
@@ -117,20 +121,6 @@ export default jQuery(function($) {
                 $carousel.on( 'change.flickity', function( event, index ) {
                     $('.counter .current').html(index + 1)
                 });
-
-                // parallax image
-                // var $imgs = $carousel.find('.carousel-cell img');
-                // var docStyle = document.documentElement.style; // get transform property
-                // var transformProp = typeof docStyle.transform == 'string' ? 'transform' : 'WebkitTransform';
-
-                // var flkty = $carousel.data('flickity'); // get Flickity instance
-                // $carousel.on( 'scroll.flickity', function() {
-                //     flkty.slides.forEach( function( slide, i ) {
-                //       var img = $imgs[i];
-                //       var x = ( slide.target + flkty.x ) * -1/3;
-                //       img.style[ transformProp ] = 'translateX(' + x  + 'px)';
-                //     });
-                // });
 
             }
 
