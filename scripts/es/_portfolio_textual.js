@@ -4,7 +4,7 @@ export default jQuery(function($) {
 
     // Global Variable(s)
     const textual_page = $('body').hasClass('portfolio-textual')
-    var $cell = $('#textual-slider .main-carousel .entry-cell a')
+    var $cell = $('#textual-slider .main-carousel .carousel-cell a')
 
     // Functions Object
     var portfolio = {
@@ -14,29 +14,25 @@ export default jQuery(function($) {
 
             let root = document.querySelector('body'); // :root HTML element
             let primary_accent_color, secondary_accent_color, background_color, text_color
+            let active_cell
 
             if (index == 0) {
-                let dark_root = document.querySelector('body.dark-color-scheme');
-
-                primary_accent_color = '#ffea36'
-                secondary_accent_color = '#43f3b7'
-                background_color = '#000'
-                text_color = '#FFF'
-
-                console.log("PRIMARY ACCENT:", primary_accent_color)
+                active_cell = $('#textual-slider .main-carousel .carousel-cell').first()
             } else {
-                let active_cell = $(index).parents('.entry-cell')
-    
-                primary_accent_color = active_cell.attr('data-primary-accent-color')
-                secondary_accent_color = active_cell.attr('data-secondary-accent-color')
-                background_color = active_cell.attr('data-bg-color')
-                text_color = active_cell.attr('data-text-color')
+                active_cell = $(index).parents('.carousel-cell')
             }
+
+            primary_accent_color = active_cell.attr('data-primary-accent-color')
+            secondary_accent_color = active_cell.attr('data-secondary-accent-color')
+            background_color = active_cell.attr('data-bg-color')
+            text_color = active_cell.attr('data-text-color')
 
             root.style.setProperty('--primary-accent', primary_accent_color);
             root.style.setProperty('--secondary-accent', secondary_accent_color);
             root.style.setProperty('--background-color', background_color);
             root.style.setProperty('--text-color', text_color);
+
+            $('body').trigger('changeSkin');
         },
 
         /** textual Carousel */
@@ -44,17 +40,28 @@ export default jQuery(function($) {
 
             // assign current scope to self
             let self = this
+            
+            function activate_default_cell() {
+                $('#textual-slider').addClass('is-interactive')
+                $('#textual-slider .main-carousel .carousel-cell').first().addClass('is-selected')
+                self._change_color_scheme(0)
+            }
 
-            $('#textual-slider .main-carousel .entry-cell a').on({
+            // activate default cell on load
+            activate_default_cell()
+
+            $('#textual-slider .main-carousel .carousel-cell a').on({
                 mouseenter: function() {
                     $('#textual-slider').addClass('is-interactive')
-                    $(this).parents('.entry-cell').addClass('is-selected')
+                    $('.carousel-cell').removeClass('is-selected')
+                    $(this).parents('.carousel-cell').addClass('is-selected')
                     self._change_color_scheme(this)
+                    console.log('THIS', this)
                 },
                 mouseleave: function() {
                     $('#textual-slider').removeClass('is-interactive')
-                    $(this).parents('.entry-cell').removeClass('is-selected')
-                    self._change_color_scheme(0)
+                    $(this).parents('.carousel-cell').removeClass('is-selected')
+                    activate_default_cell()
                 }
             })
 
