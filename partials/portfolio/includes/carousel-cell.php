@@ -4,10 +4,12 @@
     $custom_color   = get_field('custom_colors', get_the_ID());
 
     // Custom Colors
-    $primary_accent = $custom_color['primary_accent'];
-    $secondary_accent = $custom_color['secondary_accent'];
-    $background_color = $custom_color['background_color'];
-    $text_color = $custom_color['text_color'];
+    if ($custom_color) {
+        $primary_accent = $custom_color['primary_accent'];
+        $secondary_accent = $custom_color['secondary_accent'];
+        $background_color = $custom_color['background_color'];
+        $text_color = $custom_color['text_color'];
+    }
 
     // Others
     $folio_terms = implode(', ', nucleus_get_term_fields('portfolio_category', 'name'));

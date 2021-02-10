@@ -100,6 +100,8 @@ export default jQuery(function($) {
             let modal_background = tinycolor(background_color).setAlpha(.9).toString()
             document.body.style.setProperty('--modal-background', modal_background);
 
+            let menu_subtitle = tinycolor(modal_background).darken(50).setAlpha(.7).toString()
+            document.body.style.setProperty('--menu-subtitle', menu_subtitle);
         },
 
         /** Scroll Position */
