@@ -3,6 +3,12 @@
     $color_scheme 	= get_field('color_scheme', get_the_ID());
     $custom_color   = get_field('custom_colors', get_the_ID());
 
+    // Temporary Placeholders
+    $primary_accent = '';
+    $secondary_accent = '';
+    $background_color = '';
+    $text_color = '';
+
     // Custom Colors
     if ($custom_color) {
         $primary_accent = $custom_color['primary_accent'];
@@ -18,13 +24,20 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("carousel-cell"); ?> data-primary-accent-color="<?php echo $primary_accent; ?>" data-secondary-accent-color="<?php echo $secondary_accent; ?>" data-bg-color="<?php echo $background_color; ?>" data-text-color="<?php echo $text_color; ?>">
-    <img class="carousel-image" src="<?php echo esc_url($folio_carousel_image); ?>">
-    <div class="carousel-desc">
+    
+    <figure class="entry-thumbnail">
+        <img class="primary" src="<?php echo esc_url($folio_carousel_image); ?>">
+    </figure>
+
+    <header class="entry-caption">
         <a href="<?php echo $folio_permalink; ?>" title="<?php the_title(); ?>" >
-            <h3 class="title"><?php the_title(); ?></h3>
-            <?php if ( $folio_terms ) { ?>
-                <span class="tags"><?php echo esc_html( $folio_terms ); ?></span>
-            <?php } ?>
+            <div class="inner-wrap">
+                <h3 class="entry-title"><?php the_title(); ?></h3>
+                <?php if ( $folio_terms ) { ?>
+                    <span class="entry-meta"><?php echo esc_html( $folio_terms ); ?></span>
+                <?php } ?>
+            </div>
         </a>
-    </div>
+    </header>
+
 </article>

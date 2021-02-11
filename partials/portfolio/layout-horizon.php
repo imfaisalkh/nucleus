@@ -4,7 +4,7 @@
 	$portfolio_effect = 'parallax';
 
 	// Slider Configuration
-	$slide_duration = get_field('portfolio_slide_duration') ? get_field('portfolio_slide_duration') : 8;
+	$slide_duration = get_field('portfolio_slide_duration') ? get_field('portfolio_slide_duration') : 80;
 	
 	// Portfolio Configuration
 	$portfolio_featured_posts = get_field('portfolio_featured_posts') ? get_field('portfolio_featured_posts') : null;
@@ -22,7 +22,7 @@
 
 <?php if ( $portfolio_slider_query->have_posts() && $portfolio_featured_posts ) { ?>
 
-	<div id="horizon-slider" class="portfolio-container" data-effect="<?php echo esc_attr($portfolio_effect); ?>" data-slide-duration="<?php echo esc_attr($slide_duration); ?>">
+	<div id="horizon-slider" class="portfolio-container no-hover" data-effect="<?php echo esc_attr($portfolio_effect); ?>" data-slide-duration="<?php echo esc_attr($slide_duration); ?>">
 
 		<div class="main-carousel">
 

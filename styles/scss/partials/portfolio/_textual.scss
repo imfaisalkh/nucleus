@@ -54,21 +54,23 @@
             margin: 0 30px;
 
             &.is-selected {
-                .carousel-image {
+                .entry-thumbnail {
                     opacity: 1;
                     visibility: visible;
                     transform: translate3d(-50%, -56%, 0);
                 }
             }
             &:not(.is-selected) {
-                .carousel-desc {
+                .entry-caption {
                     a {
-                        opacity: 0.2;
+                        .inner-wrap {
+                            opacity: 0.2;
+                        }
                     }
                 }
             }
 
-            .carousel-image {
+            .entry-thumbnail {
                 @include animate-this(); // CSS-3 animation is triggered via addition of '.is-selected' class
                 position: absolute;
                 left: 50%;
@@ -76,34 +78,39 @@
                 transform: translateX(-50%) translateY(-50%);
                 z-index: -10;
                 margin-top: 45px;
-                border-radius: 5px;
-                max-width: 60% !important;
+
+                img {
+                    border-radius: 5px;
+                    width: 100%;
+                }
             }
 
-            .carousel-desc {
+            .entry-caption {
                 text-align: left;
                 
                 a {
-                    display: flex;
-                    align-items: flex-end;
-
-                    .title {
-                        font-size: 48px;
-                        color: var(--text-color, #000);
-                        margin: 0;
-                        // letter-spacing: 0;
-                    }
-                    &:hover {
-                        .title {
-                            // color: var(--primary-accent, #000);
+                    .inner-wrap {
+                        display: flex;
+                        align-items: flex-end;
+    
+                        .entry-title {
+                            font-size: 48px;
+                            color: var(--text-color, #000);
+                            margin: 0;
+                            // letter-spacing: 0;
                         }
-                    }
-                    .tags {
-                        font-size: 14px;
-                        text-transform: uppercase;
-                        letter-spacing: 1px;
-                        color: #696969;
-                        padding: 0 0 15px 10px;
+                        &:hover {
+                            .entry-title {
+                                // color: var(--primary-accent, #000);
+                            }
+                        }
+                        .entry-meta {
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                            color: #696969;
+                            padding: 0 0 15px 10px;
+                        }
                     }
                 }
 

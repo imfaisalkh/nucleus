@@ -4,6 +4,7 @@ export default jQuery(function($) {
 
     // Global Variable(s)
     const tiles_page = $('body').hasClass('portfolio-tiles')
+    var $carousel_container = $('.portfolio-container')
     var $carousel = $('#tiles-slider .main-carousel')
 
     // Functions Object
@@ -66,7 +67,8 @@ export default jQuery(function($) {
             // assign current scope to self
             let self = this
 
-            var is_flickity = true;
+            var is_flickity = true
+            let slide_duration = $carousel_container.data('slide-duration')
             // var is_flickity = $('body').hasClass('is-flickity-enabled');
 
             if (is_flickity) {
@@ -81,7 +83,7 @@ export default jQuery(function($) {
                 });
                 
                 // start progress bar
-                self._configure_progress_bar(80)
+                self._configure_progress_bar(slide_duration)
             }
 
         },

@@ -218,20 +218,6 @@
                         "operator": "==",
                         "value": "classic"
                     }
-                ],
-                [
-                    {
-                        "field": "field_6006c987a8e4e",
-                        "operator": "==",
-                        "value": "tiles"
-                    }
-                ],
-                [
-                    {
-                        "field": "field_6006c987a8e4e",
-                        "operator": "==",
-                        "value": "ribbon"
-                    }
                 ]
             ],
             "wrapper": {
@@ -327,6 +313,56 @@
             "placeholder": ""
         },
         {
+            "key": "field_602506b65a401",
+            "label": "Portfolio Caption",
+            "name": "portfolio_caption",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6006c987a8e4e",
+                        "operator": "==",
+                        "value": "tiles"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_602506e65a402",
+            "label": "Portfolio Button",
+            "name": "portfolio_button",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6006c987a8e4e",
+                        "operator": "==",
+                        "value": "tiles"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_601c0844decd2",
             "label": "Pagination Type",
             "name": "portfolio_pagination",
@@ -381,5 +417,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1612988590
+    "modified": 1613039363
 }

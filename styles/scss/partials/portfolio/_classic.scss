@@ -78,13 +78,14 @@
 					// @include breakpoint($laptop)  { height: 658px; } // 658px, 16:9 aspect ratio
 					// @include breakpoint($full-hd)  { height: 810px; } // 810px, 16:9 aspect ratio
 
-					.carousel-image {
+					.entry-thumbnail {
 						display: block;
 						width: 100% !important;
 						height: auto;
+						margin: 0;
 					}
 
-					.carousel-desc {
+					.entry-caption {
 						@include animate-this(); // CSS-3 animation is triggered via addition of '.is-selected' class
 						position: absolute;
 						left: 55px;
@@ -93,7 +94,7 @@
 
 						a { border: 0 !important; }
 
-						.title {
+						.entry-title {
 							font-family: $primary-font-stack;
 							font-size: 34px;
 							font-weight: 400;
@@ -103,7 +104,7 @@
 							color: #000;
 							margin: 0;
 						}
-						.tags {
+						.entry-meta {
 							font-family: $secondary-font-stack;
 							font-size: 14px;
 							text-transform: uppercase;
@@ -114,7 +115,7 @@
 
 					/* animate-in carousel description when selected */
 					&.is-selected {
-						.carousel-desc {
+						.entry-caption {
 							opacity: 1;
 							visibility: visible;
 							transform: translate3d(0, 0, 0);
@@ -172,7 +173,7 @@
 /** == COMMON STYLES == */
 /** ================================================== */
 
-	.portfolio-container {
+	.portfolio-container:not(.no-hover) {
 		.type-portfolio {
 			position: relative;
 			z-index: 5;

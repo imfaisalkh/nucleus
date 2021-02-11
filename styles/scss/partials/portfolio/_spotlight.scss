@@ -81,13 +81,17 @@
 
                         @include breakpoint($full-hd)  { width: 85%; padding: 0 15%; }
 
-                        .carousel-image {
+                        .entry-thumbnail {
                             display: block;
-                            border-radius: 5px;
                             width: 100%;
+
+                            img {
+                                border-radius: 5px;
+                                width: 100%;
+                            }
                         }
 
-                        .carousel-desc {
+                        .entry-caption {
                             @include animate-this(); // CSS-3 animation is triggered via addition of '.is-selected' class
                             position: absolute;
                             left: 19%;
@@ -95,21 +99,24 @@
                             transform: translateY(-50%) translateX(-50%);
                             text-align: left;
 
-                            .title {
-                                font-size: 48px;
-                                margin: 0;
-                            }
-                            .tags {
-                                font-size: 14px;
-                                text-transform: uppercase;
-                                letter-spacing: 1px;
-                                color: #696969;
+                            .inner-wrap {
+                                .entry-title {
+                                    font-size: 48px;
+                                    font-weight: 400;
+                                    margin: 0;
+                                }
+                                .entry-meta {
+                                    font-size: 14px;
+                                    text-transform: uppercase;
+                                    letter-spacing: 1px;
+                                    color: #696969;
+                                }
                             }
                         }
 
                         /* animate-in carousel description when selected */
                         &.is-selected {
-                            .carousel-desc {
+                            .entry-caption {
                                 opacity: 1;
                                 visibility: visible;
                                 transform: translate3d(-50%, -56%, 0);

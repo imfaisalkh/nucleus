@@ -35,6 +35,7 @@
                 overflow: hidden;
                 padding-bottom: 50px;
 
+                // Text Column
                 &.text {
                     width: 45%;
                     display: flex;
@@ -79,33 +80,43 @@
                     }
                 }
 
+                // Slider Column
                 &.slider {
                     width: 55%;
-                    .main-carousel {
-                        height: 100%
+                    .portfolio-container {
+                        height: 100%;
+                        width: 100%;
+                        .main-carousel {
+                            display: flex;
+                            flex-direction: column;
+                            height: 100%;
+
+                            .flickity-viewport {
+                                .flickity-slider {}
+                            }
+                        }
                     }
                 }
             }
         }
 
-        .slider-controls {
-            // Progress Bar
-            .progress-bar {
-                @extend .slider-progress-bar;
-                @include make-full-width();
-            }
-    
-            // All Works
-            .all-works {
-                @extend .all-works;
-            }
-    
-            // Counter
-            .counter {
-                @extend .counter;
-            }
+        // Progress Bar
+        .progress-bar {
+            @extend .slider-progress-bar;
+            @include make-full-width();
+        }
+
+        // All Works
+        .all-works {
+            @extend .all-works;
+        }
+
+        // Counter
+        .counter {
+            @extend .counter;
         }
         
+        // Main Carousel
         .main-carousel {
             width: 100%;
             
@@ -119,7 +130,7 @@
 
             // Arrows 
             .flickity-prev-next-button {
-                @extend .flickity-prev-next-button;
+                display: none;
             }
             
             // Viewport
@@ -128,12 +139,10 @@
                 height: 100% !important;
 
                 .flickity-slider {
-                    // @include make-full-width();
                     display: flex;
                     justify-content: center;
+                    align-items: center;
                     text-align: center;
-
-                    // margin-left: calc(-50vw + 65%);
 
                     .carousel-cell {
                         position: relative;
@@ -142,43 +151,25 @@
                         height: 100%; /* height of carousel */
                         overflow: hidden;
                         margin: 0 10px;
-                        border-radius: 5px;
                         background-size: cover;
                         background-position: center center;
 
+                        @include breakpoint($retina)  { height: 85%; }
+                        @include breakpoint($full-hd)  { height: 85%; }
 
-                        .carousel-desc {
-                            display: none;
-                            @include animate-this(); // CSS-3 animation is triggered via addition of '.is-selected' class
-                            position: absolute;
-                            left: 19%;
-                            top: 50%;
-                            transform: translateY(-50%) translateX(-50%);
-                            text-align: left;
+                        
+                        .entry-thumbnail {
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
 
-                            .title {
-                                font-size: 48px;
-                                // color: #000;
-                                margin: 0;
-                                // letter-spacing: 0;
-                            }
-                            .tags {
-                                font-size: 14px;
-                                text-transform: uppercase;
-                                letter-spacing: 1px;
-                                color: #696969;
+                            img {
+                                height: 100% !important;
+                                border-radius: 5px;
+                                object-fit: cover;
                             }
                         }
-
-                        /* animate-in carousel description when selected */
-                        &.is-selected {
-                            .carousel-desc {
-                                opacity: 1;
-                                visibility: visible;
-                                transform: translate3d(-50%, -56%, 0);
-                                transition-delay: 600ms;
-                            }
-                        }
+                    
                     }
                 }
             }

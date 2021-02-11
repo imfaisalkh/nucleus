@@ -23,7 +23,7 @@
 
 <?php if ( $portfolio_slider_query->have_posts() && $portfolio_featured_posts ) { ?>
 
-	<div id="spotlight-slider" class="portfolio-container" data-effect="<?php echo esc_attr($portfolio_effect); ?>" data-slide-duration="<?php echo esc_attr($slide_duration); ?>">
+	<div id="spotlight-slider" class="portfolio-container no-hover" data-effect="<?php echo esc_attr($portfolio_effect); ?>" data-slide-duration="<?php echo esc_attr($slide_duration); ?>">
 
 		<div class="main-carousel">
 
