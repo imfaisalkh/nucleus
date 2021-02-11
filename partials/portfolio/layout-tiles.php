@@ -6,7 +6,7 @@
     $portfolio_effect = 'parallax';
 
     // Slider Configuration
-    $slide_duration = get_field('portfolio_slide_duration') ? get_field('portfolio_slide_duration') : 80;
+    $slide_duration = get_field('portfolio_slide_duration') ? get_field('portfolio_slide_duration') : 8;
 
 	// Portfolio Configuration
 	$portfolio_featured_posts = get_field('portfolio_featured_posts') ? get_field('portfolio_featured_posts') : null;

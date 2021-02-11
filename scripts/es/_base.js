@@ -38,6 +38,7 @@ export default jQuery(function($) {
                 let background_highlight = tinycolor(background_color).darken(10).toString()
                 document.body.style.setProperty('--background-highlight', background_highlight);
 
+                // Menu Skin
                 let menu_bg = tinycolor(background_color).darken(90).toString()
                 document.body.style.setProperty('--menu-background', menu_bg);
 
@@ -61,6 +62,46 @@ export default jQuery(function($) {
 
                 let sidebar_trigger_color = tinycolor(background_color).darken(5).toString()
                 document.body.style.setProperty('--sidebar-trigger-color', sidebar_trigger_color);
+
+                // Form Skin
+                let form_field_bg = tinycolor(background_color).darken(5).toString()
+                document.body.style.setProperty('--form-field-background-color', form_field_bg);
+
+                let form_field_text = tinycolor(background_color).darken(90).toString()
+                document.body.style.setProperty('--form-field-text-color', form_field_text);
+
+                let form_field_border = tinycolor(background_color).darken(6).toString()
+                document.body.style.setProperty('--form-field-border-color', form_field_border);
+
+                let form_field_focus_bg = tinycolor(background_color).darken(7).toString()
+                document.body.style.setProperty('--form-field-background-color-focus', form_field_focus_bg);
+
+                let form_field_focus_text = tinycolor(background_color).darken(90).toString()
+                document.body.style.setProperty('--form-field-text-color-focus', form_field_focus_text);
+
+                let form_field_focus_border = tinycolor(background_color).darken(9).toString()
+                document.body.style.setProperty('--form-field-border-color-focus', form_field_focus_border);
+
+                let form_field_button_bg = tinycolor(background_color).darken(90).toString()
+                document.body.style.setProperty('--form-button-background-color', form_field_button_bg);
+
+                let form_field_button_border = tinycolor(background_color).darken(90).toString()
+                document.body.style.setProperty('--form-button-border-color', form_field_button_border);
+
+                let form_field_button_text = tinycolor(background_color).lighten(3).toString()
+                document.body.style.setProperty('--form-button-text-color', form_field_button_text);
+
+                let form_field_button_hover_bg = tinycolor(background_color).darken(100).toString()
+                document.body.style.setProperty('--form-button-background-color-hover', form_field_button_hover_bg);
+
+                let form_field_button_hover_border = tinycolor(background_color).darken(100).toString()
+                document.body.style.setProperty('--form-button-border-color-hover', form_field_button_hover_border);
+
+                let form_field_button_hover_text = tinycolor(background_color).lighten(3).toString()
+                document.body.style.setProperty('--form-button-text-color-hover', form_field_button_hover_text);
+
+                let form_field_label = tinycolor(background_color).darken(90).toString()
+                document.body.style.setProperty('--form-text-label-color', form_field_label);
             }
 
             // set color pallate if dark color scheme is active
@@ -68,6 +109,7 @@ export default jQuery(function($) {
                 let background_highlight = tinycolor(background_color).lighten(10).toString()
                 document.body.style.setProperty('--background-highlight', background_highlight);
 
+                // Menu Skin
                 let menu_bg = tinycolor(background_color).lighten(100).toString()
                 document.body.style.setProperty('--menu-background', menu_bg);
 
@@ -91,6 +133,46 @@ export default jQuery(function($) {
 
                 let sidebar_trigger_color = tinycolor(background_color).lighten(5).toString()
                 document.body.style.setProperty('--sidebar-trigger-color', sidebar_trigger_color);
+
+                // Form Skin
+                let form_field_bg = tinycolor(background_color).lighten(10).toString()
+                document.body.style.setProperty('--form-field-background-color', form_field_bg);
+
+                let form_field_text = tinycolor(background_color).lighten(90).toString()
+                document.body.style.setProperty('--form-field-text-color', form_field_text);
+
+                let form_field_border = tinycolor(background_color).lighten(17).toString()
+                document.body.style.setProperty('--form-field-border-color', form_field_border);
+
+                let form_field_focus_bg = tinycolor(background_color).lighten(13).toString()
+                document.body.style.setProperty('--form-field-background-color-focus', form_field_focus_bg);
+
+                let form_field_focus_text = tinycolor(background_color).lighten(90).toString()
+                document.body.style.setProperty('--form-field-text-color-focus', form_field_focus_text);
+
+                let form_field_focus_border = tinycolor(background_color).lighten(21).toString()
+                document.body.style.setProperty('--form-field-border-color-focus', form_field_focus_border);
+
+                let form_field_button_bg = tinycolor(background_color).lighten(90).toString()
+                document.body.style.setProperty('--form-button-background-color', secondary_accent_color);
+
+                let form_field_button_border = tinycolor(background_color).lighten(90).toString()
+                document.body.style.setProperty('--form-button-border-color', secondary_accent_color);
+
+                let form_field_button_text = tinycolor(secondary_accent_color).darken(90).toString()
+                document.body.style.setProperty('--form-button-text-color', form_field_button_text);
+
+                let form_field_button_hover_bg = tinycolor(secondary_accent_color).darken(20).toString()
+                document.body.style.setProperty('--form-button-background-color-hover', form_field_button_hover_bg);
+
+                let form_field_button_hover_border = tinycolor(secondary_accent_color).darken(20).toString()
+                document.body.style.setProperty('--form-button-border-color-hover', form_field_button_hover_border);
+
+                let form_field_button_hover_text = tinycolor(background_color).darken(3).toString()
+                document.body.style.setProperty('--form-button-text-color-hover', form_field_button_hover_text);
+
+                let form_field_label = tinycolor(background_color).lighten(90).toString()
+                document.body.style.setProperty('--form-text-label-color', form_field_label);
             }
 
             // If any color scheme

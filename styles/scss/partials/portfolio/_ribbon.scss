@@ -21,8 +21,8 @@
         min-height: calc(100vh - 165px);
         z-index: 10; // make it beneath menu
 
-        @include breakpoint($retina)  { top: 20px; min-height: calc(100vh - 215px); }
         @include breakpoint($laptop)  { top: -10%; min-height: calc(100vh - 195px); }
+        @include breakpoint($retina)  { top: 40px; min-height: calc(100vh - 215px); }
         @include breakpoint($full-hd)  { top: 50px; min-height: calc(100vh - 250px); }
         
         // Intro
@@ -49,11 +49,12 @@
                 }
             }
             .title {
-                font-size: 44px;
+                font-size: 46px;
                 line-height: 1.2;
                 margin-top: 0;
-                padding-right: 10%;
+                padding-right: 9%;
 
+                @include breakpoint($retina)  { font-size: 52px;  }
                 @include breakpoint($full-hd)  { font-size: 48px; }
             }
         }
@@ -70,8 +71,8 @@
                 opacity: 0.3;
                 margin: 0 0 20px 0;
 
-                @include breakpoint($retina)  { margin: 30px 0 30px 0; }
                 @include breakpoint($laptop)  { margin: 10px 0 20px 0; }
+                @include breakpoint($retina)  { margin: 30px 0 30px 0; }
                 @include breakpoint($full-hd)  { margin: 30px 0 30px 0; }
 
             }
@@ -102,7 +103,7 @@
             width: 100%;
             margin-top: 0;
             @include make-full-width();
-            margin-left: -200px;
+            // margin-left: -200px;
 
             @include breakpoint($retina)  { margin-left: -275px; }
             @include breakpoint($laptop)  { margin-left: -240px; }
@@ -113,65 +114,42 @@
                 overflow: visible !important;
 
                 .flickity-slider {
-                    // @include make-full-width();
                     display: flex;
                     justify-content: center;
                     text-align: center;
 
-                    // margin-left: calc(-50vw + 65%);
-
                     .carousel-cell {
+                        $width: 800;
+                        $height: 600;
+                        $aspect_ratio: $width/$height;
+
+
                         position: relative;
                         text-align: center;
                         width: 330px;
                         height: 190px; /* height of carousel */
-                        padding: 0 14px;
+                        padding: 0 15px;
                         overflow: hidden;
 
-                        @include breakpoint($retina)  { width: 20%; height: 190px; }
-                        @include breakpoint($laptop)  { width: 300px; height: 155px; }
-                        @include breakpoint($full-hd)  { width: 500px; height: 250px; }
+                        @include breakpoint($laptop)  { width: 350px; height: 190px; }
+                        @include breakpoint($retina)  { width: 500px; height: 275px; }
+                        @include breakpoint($full-hd)  { width: 500px; height: 300px; }
 
                         // margin: 0 80px;
 
-                        .carousel-image {
-                            display: block;
+                        .entry-thumbnail {
                             width: 100%;
-                            height: auto;
-                        }
+                            height: 100%;
+                            margin: 0;
 
-                        .carousel-desc {
-                            @include animate-this(); // CSS-3 animation is triggered via addition of '.is-selected' class
-                            position: absolute;
-                            left: 19%;
-                            top: 50%;
-                            transform: translateY(-50%) translateX(-50%);
-                            text-align: left;
-
-                            .title {
-                                font-size: 48px;
-                                // color: #000;
-                                margin: 0;
-                                // letter-spacing: 0;
-                            }
-                            .tags {
-                                font-size: 14px;
-                                text-transform: uppercase;
-                                letter-spacing: 1px;
-                                color: #696969;
+                            img {
+                                width: 100%;
+                                height: 100% !important;
+                                border-radius: 5px;
+                                object-fit: cover;
                             }
                         }
 
-                        /* animate-in carousel description when selected */
-                        &.is-selected {
-                            .carousel-desc {
-                                opacity: 1;
-                                visibility: visible;
-                                transform: translate3d(-50%, -56%, 0);
-                                transition-delay: 600ms;
-                        
-                            }
-                        }
                     }
                 }
             }

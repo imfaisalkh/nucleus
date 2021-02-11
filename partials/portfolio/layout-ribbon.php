@@ -1,12 +1,19 @@
 <?php
 	
-	// Portfolio Configuration - Meta Panel
-	$portfolio_posts = [550, 562, 560, 565, 552];
+    // Hover Variable(s)
+    $portfolio_caption = 'float';
+	$portfolio_effect = 'parallax';
+
+	// Slider Configuration
+    $slide_duration = get_field('portfolio_slide_duration') ? get_field('portfolio_slide_duration') : 8;
+    
+    // Portfolio Configuration
+    $portfolio_featured_posts = get_field('portfolio_featured_posts') ? get_field('portfolio_featured_posts') : null;
 	
 	// WP_QUERY Arguments
 	$portfolio_args = array(
 		'post_type' 	=> 'portfolio',
-		'post__in'    	=> $portfolio_posts,
+		'post__in'    	=> $portfolio_featured_posts,
 		'orderby' 		=> 'post__in'
 
 	);
@@ -18,38 +25,25 @@
 <div id="ribbon-slider">
     <div class="intro">
         <div class="inner">
-            <h5 class="prefix">Hello</h5>
+            <h5 class="prefix"><?php echo esc_html__('Hello', 'nucleus'); ?></h5>
             <h4 class="title">I am Olema Krenel, internationally recognized photographer & designer.</h4>
         </div>
     </div>
-    <div class="slider">
-        <h4 class="title">Selected Works</h4>
-        <div class="main-carousel">
+    <div class="portfolio-container slider" data-caption="<?php echo esc_attr($portfolio_caption); ?>" data-effect="<?php echo esc_attr($portfolio_effect); ?>" data-slide-duration="<?php echo esc_attr($slide_duration); ?>">
+        <h4 class="title"><?php echo esc_html__('Selected Works', 'nucleus'); ?></h4>
 
-            <?php while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post(); ?>
+        <?php if ( $portfolio_query->have_posts() && $portfolio_featured_posts ) { ?>
+            <div class="main-carousel">
 
-                <?php
-                    // Others
-                    $folio_terms = implode(', ', nucleus_get_term_fields('portfolio_category', 'name'));
-                    $folio_permalink = get_post_meta(get_the_ID(), 'custom_url', true) != false ? esc_url( get_post_meta(get_the_ID(), 'custom_url', true) ) : esc_url( get_permalink() );
-                ?>
+                <?php while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post(); ?>
+				    <?php include(locate_template( 'partials/portfolio/includes/carousel-cell.php' )); ?>
+                <?php endwhile; ?>
 
-                <div class="carousel-cell">
-                    <img class="carousel-image" src="<?php the_post_thumbnail_url(); ?>">
-                </div>
+            </div>
+            <?php include(locate_template( 'partials/portfolio/includes/carousel-controls.php' )); ?>
+        <?php } else { ?>
+            <?php get_template_part('content', 'none'); ?>
+        <?php } ?>
 
-            <?php endwhile; ?>
-
-        </div>
-    </div>
-
-    <div class="slider-controls">
-        <div class="progress-bar">
-            <span class="progress"></span>
-        </div>
-        <div class="all-works"><a href="#">All Works</a></div>
-        <div class="counter">
-			<span class="current"></span><span class="total"></span>
-		</div>
     </div>
 </div>

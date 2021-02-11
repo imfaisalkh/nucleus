@@ -25,13 +25,9 @@
 		border-width: 1px;
 		border-style: solid;
 
-		background: #242424;
-		color: #B7B7B7;
-		border-color: #393939;
-
-		background: var(--form-field-background-color, #242424);
-		color: var(--form-field-text-color, #B7B7B7);
-		border-color: var(--form-field-border-color, #393939);
+		background: var(--form-field-background-color);
+		color: var(--form-field-text-color);
+		border-color: var(--form-field-border-color);
 
 		margin: 0;
 		vertical-align: baseline;
@@ -91,13 +87,9 @@
 		border-style: solid;
 		border-radius: 0;
 
-		background: var(--secondary-accent);
-		border-color: var(--secondary-accent);
-		color:var(--background-color);
-
-		// background: var(--form-button-background-color, #0FFFBE);
-		// border-color: var(--form-button-border-color, #000);
-		// color: var(--form-button-text-color, #0FFFBE);
+		background: var(--form-button-background-color);
+		border-color: var(--form-button-border-color);
+		color: var(--form-button-text-color);
 
 		transition: all 200ms ease-in-out 0s;
 
@@ -121,13 +113,9 @@
 	input[type="button"]:hover {
 		cursor: pointer;
 
-		background: #EAEAEA;
-		border-color: #EAEAEA;
-		color: #000;
-		
-		background: var(--form-button-background-color-hover, #EAEAEA);
-		border-color: var(--form-button-border-color-hover, #EAEAEA);
-		color: var(--form-button-text-color-hover, #0FFFBE);
+		background: var(--form-button-background-color-hover);
+		border-color: var(--form-button-border-color-hover);
+		color: var(--form-button-text-color-hover);
 	}
 
 
@@ -215,7 +203,7 @@
 
 	.wpcf7-form-control-wrap {
 		input, textarea, select {
-			margin-top: 10px;
+			margin-top: 5px;
 		}
 	}
 
