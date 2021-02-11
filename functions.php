@@ -55,7 +55,6 @@
 		    'size' => 'nucleus-site-logo'
 		));
 
-
 		// Suport for Post Thumbnails
 		add_theme_support( 'post-thumbnails' );
 
@@ -84,13 +83,10 @@
 
 	    // Register and Enqueue Frontend CSS
 	    add_action('wp_enqueue_scripts', 'nucleus_frontend_styles');
-			add_action('wp_enqueue_scripts', 'nucleus_child_frontend_styles', 20);
+		add_action('wp_enqueue_scripts', 'nucleus_child_frontend_styles', 20);
 
 	    // Register and Enqueue Backend CSS
 	    add_action('admin_enqueue_scripts', 'nucleus_backend_styles');
-
-	    // Register Customizer Funtion(s)
-	    add_action( 'customize_register', 'nucleus_load_customize_controls', 0 );
 
 	}
 
@@ -211,7 +207,6 @@
 		}
 	}
 
-
 	function nucleus_child_frontend_styles() {
 		if ( !is_admin() && is_child_theme() ) {
 
@@ -220,7 +215,6 @@
 
 		}
 	}
-
 
 	function nucleus_backend_styles() {
 	    wp_enqueue_style('nucleus-admin-css', NUCLEUS_ADMIN_URI . '/plugins/css/style.css');
@@ -245,16 +239,6 @@
 		return $fonts_url;
 
 	}
-
-
-#-----------------------------------------------------------------#
-# Register Customizer Funtion(s)
-#-----------------------------------------------------------------#
-
-	function nucleus_load_customize_controls() {
-		require_once NUCLEUS_ADMIN . '/customizer/lib/control-checkbox-multiple.php';
-	}
-
 
 #-----------------------------------------------------------------#
 # Require PHP Theme Resources

@@ -45,7 +45,7 @@
 <?php if ( $total_pages > 1 ) { ?>
 	<?php if ($pagination_type == 'number') { ?>
 		<div id="numbered-pagination">
-			<span class="label"><?php echo esc_html('Pages:', 'nucleus'); ?></span>
+			<span class="label"><?php echo esc_html__('Pages:', 'nucleus'); ?></span>
 			<nav class="links">
 				<?php
 					echo paginate_links(array(

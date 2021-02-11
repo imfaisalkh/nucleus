@@ -46,7 +46,7 @@
                 <?php if ($background_video) { ?>
                     <video class="background-video media" playsinline autoplay muted loop>
                         <source src="<?php echo esc_url($background_video); ?>" type="video/mp4">
-                        Your browser does not support HTML video.
+                        <?php echo esc_html__('Your browser does not support HTML video.', 'nucleus'); ?>
                     </video>
                 <?php } else { ?>
                     <div class="background-image media"></div>
@@ -55,7 +55,7 @@
                 <?php if ($background_audio) { ?>
                     <audio class="background-audio media" autoplay loop>
                         <source src="<?php echo esc_url($background_audio); ?>" type="audio/mpeg">
-                        Your browser does not support HTML audio.
+                        <?php echo esc_html__('Your browser does not support HTML audio.', 'nucleus'); ?>
                     </audio>
                 <?php } ?>
             </div>

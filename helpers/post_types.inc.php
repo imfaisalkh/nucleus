@@ -9,8 +9,6 @@
 
 	function get_next_post_types_link( $label = null, $max_page = 0, $current_page = 1, $custom_query ) {
 
-		// var_dump($max_page);
-
 		if ( !$max_page )
 			$max_page = $custom_query->max_num_pages;
 

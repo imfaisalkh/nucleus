@@ -83,7 +83,7 @@
 					?>
 					<span class="category"><a href="<?php echo esc_url( $link ); ?>"><?php echo esc_html($name); ?></a></span>
 				<?php } else if (is_home()) { ?>
-					<span class="timestamp">Since 2015</span>
+					<span class="timestamp"><?php echo esc_html__('Since 2015', 'nucleus'); ?></span>
 				<?php } ?>
 				<?php if ($header_icon) { ?>
 					<img src="<?php echo esc_url($header_icon); ?>" />
@@ -91,7 +91,7 @@
 				<?php if ($header_backdrop) { ?>
 					<span class="backdrop"><?php echo esc_html($header_backdrop); ?></span>
 				<?php } ?>
-				<h3 class="title"><?php echo esc_html($header_title); ?></h3>
+				<h3 class="title"><?php echo wp_kses_post($header_title); ?></h3>
 				<?php if (is_home()) { ?>
 					<ul class="categories">
 						<li class="active"><a href="<?php echo esc_url( home_url('/') ); ?>">All</a></li>
@@ -130,7 +130,6 @@
 			<div class="scroll-indicator">
 				<a href="#page-content">
 					<span class="icon"><i class="fi fi-mouse" aria-hidden="true"></i></span>
-					<!-- <span class="label">scroll</span> -->
 				</a>
 			</div>
 		<?php } ?>

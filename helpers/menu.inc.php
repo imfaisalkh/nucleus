@@ -11,7 +11,7 @@
 		function nucleus_default_menu() { ?>
 
 		    <div id="classic-menu-container" class="menu-main-menu-container">
-		        <ul id="main-menu" class="sf-menu">
+		        <ul id="primary-menu" class="sf-menu">
 		            <li class="menu-item"><a href="<?php echo esc_url( admin_url('nav-menus.php') ); ?>"><?php esc_html_e( 'Create Menu', 'nucleus' ); ?></a></li>
 		        </ul>
 		    </div>
@@ -26,8 +26,6 @@
 #  Mark parent navigation active when on custom post type single page
 #-------------------------------------------------------------------------------#
 
-
-	
 	function nucleus_add_current_nav_class($classes, $item) {
 
 		if ( is_singular('portfolio') ) {

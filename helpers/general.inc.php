@@ -47,7 +47,6 @@
 #  Convert Hex code to RGB code
 #-------------------------------------------------------------------------------#
 
-
 	function nucleus_disable_wp_updates( $r, $url ) {
 	    if ( 0 !== strpos( $url, 'http://api.wordpress.org/themes/update-check' ) )
 	        return $r; // Not a theme update request. Bail immediately.

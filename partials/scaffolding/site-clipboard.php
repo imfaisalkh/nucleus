@@ -14,19 +14,6 @@
         </aside>
     <?php } ?>
 
-    <!-- Custom Cursor -->
-    <div class="cursor">
-        <div class="cursor-helper cursor-view">
-            <span>VIEW</span>
-        </div>
-
-        <div class="cursor-helper cursor-close">
-            <span>CLOSE</span>
-        </div>
-
-        <div class="cursor-helper cursor-link"></div>
-    </div>
-
     <?php if ( !get_theme_mod('nucleus_notification_disable') ) { ?>
 
         <!-- Seacrh Filter -->
@@ -99,7 +86,7 @@
             <a href="#" class="close-link"><i class="fi fi-close" aria-hidden="true"></i></a>
             <a href="#back" class="go-back">
                 <span class="icon"><i class="fi fi-sidebar-arrow" aria-hidden="true"></i></span>
-                <span class="text">Go Back</span>
+                <span class="text"><?php echo esc_html__('Go Back', 'nucleus'); ?></span>
             </a>
         </div>
 
@@ -120,10 +107,6 @@
             </div>
 
             <div class="child-menus"></div>
-
-            <div class="menu-caption">
-                <p>We are a Multidisciplinary Design Agency based in United States.</p>
-            </div>
 
         </div>
 

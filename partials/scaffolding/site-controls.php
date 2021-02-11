@@ -28,7 +28,7 @@
 
         <div id="page-controls">
             <?php if (get_field('background_audio')) { ?>
-                <a class="page-control sound-bars active" href="#toggle-sound" aria-label="<?php echo esc_html('Toggle Sound', 'nucleus'); ?>" data-balloon-pos="left">
+                <a class="page-control sound-bars active" href="#toggle-sound" aria-label="<?php echo esc_html__('Toggle Sound', 'nucleus'); ?>" data-balloon-pos="left">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
