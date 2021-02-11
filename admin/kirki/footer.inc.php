@@ -17,22 +17,22 @@
         Kirki::add_field( 'nucleus_footer_version', [
             'type'        => 'select',
             'settings'    => 'nucleus_footer_version',
-            'label'       => esc_html__( 'Footer version', 'kirki' ),
+            'label'       => esc_html__( 'Footer version', 'nucleus' ),
             'section'     => 'nucleus_footer_layout',
             'default'     => 'v1',
-            'placeholder' => esc_html__( 'Select an option...', 'kirki' ),
+            'placeholder' => esc_html__( 'Select an option...', 'nucleus' ),
             'priority'    => 10,
             'multiple'    => 1,
             'choices'     => [
-                'v1' => esc_html__( 'Footer V1', 'kirki' ),
-                'v2' => esc_html__( 'Footer V2', 'kirki' ),
+                'v1' => esc_html__( 'Footer V1', 'nucleus' ),
+                'v2' => esc_html__( 'Footer V2', 'nucleus' ),
             ],
         ] );
 
         Kirki::add_field( 'nucleus_footer_v1_heading', [
             'type'     => 'text',
             'settings' => 'nucleus_footer_v1_heading',
-            'label'    => esc_html__( 'Heading', 'kirki' ),
+            'label'    => esc_html__( 'Heading', 'nucleus' ),
             'section'  => 'nucleus_footer_layout',
             'default'  => esc_html__('Let\'s Talk', 'nucleus'),
             'priority' => 10,
@@ -48,7 +48,7 @@
         Kirki::add_field( 'nucleus_footer_v1_text', [
             'type'     => 'textarea',
             'settings' => 'nucleus_footer_v1_text',
-            'label'    => esc_html__( 'Text Block', 'kirki' ),
+            'label'    => esc_html__( 'Text Block', 'nucleus' ),
             'section'  => 'nucleus_footer_layout',
             'description'   => esc_html__('You can use <br> tag or other HTML tags here.', 'nucleus'),
             'default'  => wp_kses_post( __('Have a Project or an idea you would like to discuss? <br> Then what are you waiting for?', 'nucleus') ),
@@ -65,7 +65,7 @@
         Kirki::add_field( 'nucleus_footer_v2_copyright', [
             'type'     => 'textarea',
             'settings' => 'nucleus_footer_v2_copyright',
-            'label'    => esc_html__( 'Copyright Text', 'kirki' ),
+            'label'    => esc_html__( 'Copyright Text', 'nucleus' ),
             'section'  => 'nucleus_footer_layout',
             'default' => wp_kses_post( __('2021 Nucleus Theme <br> Crafted & Designed by Digitalscouts.', 'nucleus') ),
             'priority' => 10,
@@ -81,7 +81,7 @@
         Kirki::add_field( 'nucleus_footer_v2_contact', [
             'type'     => 'textarea',
             'settings' => 'nucleus_footer_v2_contact',
-            'label'    => esc_html__( 'Contact Text', 'kirki' ),
+            'label'    => esc_html__( 'Contact Text', 'nucleus' ),
             'section'  => 'nucleus_footer_layout',
             'priority' => 10,
             'default' => sprintf( wp_kses_post( __( 'Want to work with us? Lets boogie. <a href="%1$s">hello@example.com</a>.', 'nucleus' ) ), esc_url( 'mailto:hello@example.com' ) ),
@@ -97,7 +97,7 @@
         Kirki::add_field( 'nucleus_footer_full_width', [
             'type'        => 'toggle',
             'settings'    => 'nucleus_footer_full_width',
-            'label'       => esc_html__( 'Footer Full Width', 'kirki' ),
+            'label'       => esc_html__( 'Footer Full Width', 'nucleus' ),
             'section'     => 'nucleus_footer_layout',
             'default'     => '0',
             'priority'    => 10,

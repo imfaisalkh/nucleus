@@ -24,8 +24,6 @@
 	define('NUCLEUS_IMG_URI', get_template_directory_uri() .'/images');
 	define('NUCLEUS_HELPERS', get_template_directory() .'/helpers');
 	define('NUCLEUS_HELPERS_URI', get_template_directory_uri() .'/helpers');
-	define('NUCLEUS_CLASSES', get_template_directory() .'/classes');
-	define('NUCLEUS_CLASSES_URI', get_template_directory_uri() .'/classes');
 	define('NUCLEUS_VENDORS', get_template_directory() .'/vendors');
 	define('NUCLEUS_VENDORS_URI', get_template_directory_uri() .'/vendors');
 
@@ -66,21 +64,14 @@
 			'default-color'        => '#000',
 		) );
 
-
-		// Enable support for Post Formats
-		add_theme_support( 'post-formats', array(
-			'video',
-			'audio',
-		) );
-
-    // Custom Image Sizes
-	add_image_size( 'nucleus-site-logo', 200, 200 );
-    add_image_size( 'nucleus-portfolio-index', 281, '', true );
-    add_image_size( 'nucleus-blog-carousel-featured', 900, 500, true );
-    add_image_size( 'nucleus-blog-carousel-regular-odd', 510, 315, true );
-    add_image_size( 'nucleus-blog-carousel-regular-even', 235, 315, true );
-    add_image_size( 'nucleus-blog-full', 910, 605, true );
-    add_image_size( 'nucleus-blog-grid', 435, 325, true );
+		// Custom Image Sizes
+		add_image_size( 'nucleus-site-logo', 200, 200 );
+		add_image_size( 'nucleus-portfolio-index', 281, '', true );
+		add_image_size( 'nucleus-blog-carousel-featured', 900, 500, true );
+		add_image_size( 'nucleus-blog-carousel-regular-odd', 510, 315, true );
+		add_image_size( 'nucleus-blog-carousel-regular-even', 235, 315, true );
+		add_image_size( 'nucleus-blog-full', 910, 605, true );
+		add_image_size( 'nucleus-blog-grid', 435, 325, true );
 
 	    // Register WP3.0+ Menus
 	    add_action('init', 'nucleus_register_menu');
@@ -281,9 +272,6 @@
 		require_once NUCLEUS_ADMIN .'/merlin/class-merlin.php';
 		require_once NUCLEUS_ADMIN .'/merlin-config.php';
 	}
-
-	// require CLASSES resources
-	require_once NUCLEUS_CLASSES . '/functions.php';
 
 	// require HELPER theme functions
 	require_once NUCLEUS_HELPERS . '/functions.php';

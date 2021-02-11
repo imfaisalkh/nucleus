@@ -19,7 +19,7 @@
 <!-- PORTFOLIO ENTRY -->
 <article id="post-<?php the_ID(); ?>" <?php post_class("grid-item $thumbnail_height $thumbnail_width $secondary_img_class"); ?>>
 
-	<a class="entry-link" href="<?php echo $folio_permalink; ?>" title="<?php the_title(); ?>" >
+	<a class="entry-link" href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title(); ?>" >
 		
 		<figure class="entry-thumbnail">
 			<img class="primary" src="<?php the_post_thumbnail_url(); ?>">

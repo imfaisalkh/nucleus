@@ -19,7 +19,7 @@
 ?>
 
 
-<div class="container <?php echo esc_attr($container_class); ?> row" data-footer-style="<?php echo $footer_style; ?>">
+<div class="container <?php echo esc_attr($container_class); ?> row" data-footer-style="<?php echo esc_attr($footer_style); ?>">
 
 	<?php if ( $footer_style == 'v2' ) { ?>
 		<div class="copyright column" data-span="2">

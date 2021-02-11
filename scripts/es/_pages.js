@@ -23,6 +23,20 @@ export default jQuery(function($) {
             }
     
         },
+
+
+		/** Testimonial Carousel */
+		testimonial_carousel: function() {
+    
+            // init Flickity instance
+            var $carousel = $('.testimonials-carousel').flickity({
+                cellSelector: '.testimonial',
+                pageDots: true,
+                prevNextButtons: false,
+            });
+    
+        },
+        
         
         /** Elementor Fix */
         elementor_fix: function() {
@@ -46,5 +60,6 @@ export default jQuery(function($) {
 
     // Initialize Functions
     pages.twitter_carousel();
+    pages.testimonial_carousel();
     pages.elementor_fix();
 })

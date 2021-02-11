@@ -50,7 +50,7 @@
 
 ?>
 
-<div class="container <?php echo esc_attr($container_class); ?>" data-header-style="<?php echo $header_style; ?>">
+<div class="container <?php echo esc_attr($container_class); ?>" data-header-style="<?php echo esc_attr($header_style); ?>">
 
     <?php if ($header_left_elements) { ?>
         <div class="left-elements elements">

@@ -50,7 +50,7 @@
 		// prepare "Grid Container" having different columns
 		@for $i from 1 through 6 {
 
-			.grid[data-col="#{$i}"] {
+			.grid[data-col="#{$i}"], .team-grid[data-col="#{$i}"] {
 				display: grid; // declare the container as "Grid"
 				grid-template-columns: repeat( $i, 1fr ); // define grid "Columns"
 				grid-template-rows: auto; // define grid "Rows"
@@ -65,7 +65,7 @@
 		// prepare "Grid Item" having different row/column span
 		@for $i from 2 through 6 {
 
-			.grid {
+			.grid, .team-grid {
 				.grid-item {
 					&.height-#{$i}x {
 						grid-row: span $i; // define "Row Span" for specific "Grid Item"

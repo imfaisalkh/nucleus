@@ -29,7 +29,7 @@
 		</div>
 
 		<!-- Load More - (Button) -->
-		<div id="load-more" class="load-more" data-current-page="<?php echo $current_page; ?>" data-total-pages="<?php echo $total_pages; ?>" data-post-type="<?php echo get_post_type(); ?>" data-page-id="<?php echo get_queried_object_id(); ?>">
+		<div id="load-more" class="load-more" data-current-page="<?php echo esc_attr($current_page); ?>" data-total-pages="<?php echo esc_attr($total_pages); ?>" data-post-type="<?php echo get_post_type(); ?>" data-page-id="<?php echo get_queried_object_id(); ?>">
 			<?php if (!$is_posts_page) {
 				next_post_types_link( __('Load More &#8230;', 'nucleus'), $total_pages, $current_page, $portfolio_query );
 			} else {

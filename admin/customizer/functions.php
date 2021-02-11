@@ -24,7 +24,7 @@ function nucleus_customize_register($wp_customize) {
   ) );
 
   $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'nucleus_mobile_logo', array(
-    'label'       => esc_html__('Mobile Logo', 'lamark'),
+    'label'       => esc_html__('Mobile Logo', 'nucleus'),
     'description'   => esc_html__('The logo above will be used by default if no mobile logo provided.', 'nucleus'),
     'section'   => 'title_tagline',
     'priority'    => 9
@@ -371,7 +371,7 @@ function nucleus_customize_register($wp_customize) {
   ) );
 
   $wp_customize->add_control('nucleus_blog_layout', array(
-    'label'    => esc_html__('Blog Layout', 'lamark'),
+    'label'    => esc_html__('Blog Layout', 'nucleus'),
     'section'  => 'nucleus_blog_settings',
     'type'     => 'select',
     'choices'  => array(
@@ -387,7 +387,7 @@ function nucleus_customize_register($wp_customize) {
   ) );
 
   $wp_customize->add_control('nucleus_archive_layout', array(
-    'label'    => esc_html__('Archive Layout', 'lamark'),
+    'label'    => esc_html__('Archive Layout', 'nucleus'),
     'section'  => 'nucleus_blog_settings',
     'type'     => 'select',
     'choices'  => array(
@@ -435,7 +435,7 @@ function nucleus_customize_register($wp_customize) {
   ) );
 
   $wp_customize->add_control('nucleus_blog_pagination', array(
-    'label'    => esc_html__('Pagination Type', 'lamark'),
+    'label'    => esc_html__('Pagination Type', 'nucleus'),
     'section'  => 'nucleus_blog_settings',
     'type'     => 'select',
     'choices'  => array(

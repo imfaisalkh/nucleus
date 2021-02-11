@@ -70,7 +70,7 @@
 <?php if ( !is_page_template( 'template-portfolio.php' ) && !$is_disabled_header ) { ?>
 
 	<!-- Page Header -->
-	<header id="page-header" class="<?php echo $page_header_class; ?>" data-text-size="<?php echo $header_text_size; ?>">
+	<header id="page-header" class="<?php echo esc_attr($page_header_class); ?>" data-text-size="<?php echo esc_attr($header_text_size); ?>">
 		<?php if ( !$is_blank_header ) { ?>
 			<div class="inner-wrap">
 				<?php if ( is_singular('post') ) { ?>
@@ -81,7 +81,7 @@
 						$cat_id 	= get_cat_ID( $name );
 						$link 		= get_category_link( $cat_id );
 					?>
-					<span class="category"><a href="<?php echo esc_url( $link ); ?>"><?php echo $name; ?></a></span>
+					<span class="category"><a href="<?php echo esc_url( $link ); ?>"><?php echo esc_html($name); ?></a></span>
 				<?php } else if (is_home()) { ?>
 					<span class="timestamp">Since 2015</span>
 				<?php } ?>
@@ -91,7 +91,7 @@
 				<?php if ($header_backdrop) { ?>
 					<span class="backdrop"><?php echo esc_html($header_backdrop); ?></span>
 				<?php } ?>
-				<h3 class="title"><?php echo $header_title; ?></h3>
+				<h3 class="title"><?php echo esc_html($header_title); ?></h3>
 				<?php if (is_home()) { ?>
 					<ul class="categories">
 						<li class="active"><a href="<?php echo esc_url( home_url('/') ); ?>">All</a></li>
@@ -99,10 +99,10 @@
 					</ul>
 				<?php } ?>
 				<?php if ( $header_subtitle ) { ?>
-					<p class="subtitle"><?php echo $header_subtitle; ?></p>
+					<p class="subtitle"><?php echo esc_html($header_subtitle); ?></p>
 				<?php } ?>
 				<?php if ( $button_title && $is_hero_header ) { ?>
-					<a class="button" href="<?php echo esc_url( $button_url ); ?>"><?php echo $button_title; ?></a>
+					<a class="button" href="<?php echo esc_url( $button_url ); ?>"><?php echo esc_html($button_title); ?></a>
 				<?php } ?>
 				<?php if ( is_singular('post') ) { ?>
 					<?php

@@ -47,10 +47,10 @@
 					$folio_permalink = get_post_meta(get_the_ID(), 'custom_url', true) != false ? esc_url( get_post_meta(get_the_ID(), 'custom_url', true) ) : esc_url( get_permalink() );
 				?>
 
-				<div class="carousel-cell" data-primary-accent-color="<?php echo $primary_accent; ?>" data-secondary-accent-color="<?php echo $secondary_accent; ?>" data-bg-color="<?php echo $background_color; ?>" data-text-color="<?php echo $text_color; ?>">
+				<div class="carousel-cell" data-primary-accent-color="<?php echo esc_attr($primary_accent); ?>" data-secondary-accent-color="<?php echo esc_attr($secondary_accent); ?>" data-bg-color="<?php echo esc_attr($background_color); ?>" data-text-color="<?php echo esc_attr($text_color); ?>">
 					<img class="carousel-image" src="<?php the_post_thumbnail_url(); ?>">
 					<div class="carousel-desc">
-						<a href="<?php echo $folio_permalink; ?>" title="<?php the_title(); ?>" >
+						<a href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title(); ?>" >
 							<h3 class="title"><?php the_title(); ?></h3>
 						</a>
 						<?php if ( $folio_terms ) { ?>

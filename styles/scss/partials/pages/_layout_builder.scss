@@ -44,6 +44,47 @@
 			font-weight: 400;
 			color: var(--text-color);
 		}
+
+		&.prefix-heading {
+			.elementor-heading-title {
+				position: relative;
+				font-family: $secondary-font-stack;
+				font-size: 17px;
+				font-weight: 600;
+				text-transform: uppercase;
+				padding-left: 90px;
+
+				&:before {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					display: inline-block;
+					content: '';
+					width: 75px;
+					height: 2px;
+					background: var(--text-color);
+				}
+			}
+		}
+		&.prefix-link {
+			.elementor-heading-title {
+				position: relative;
+				color: #869DE8;
+				padding-left: 90px;
+
+				&:before {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					display: inline-block;
+					content: '';
+					width: 75px;
+					height: 1px;
+					background: inherit;
+					background: #869DE8;
+				}
+			}
+		}
 	}
 
 

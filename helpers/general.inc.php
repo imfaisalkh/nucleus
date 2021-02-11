@@ -44,22 +44,6 @@
 
 
 #-------------------------------------------------------------------------------#
-#  Allow certain mime types to upload
-#-------------------------------------------------------------------------------#
-
-	if ( !function_exists('nucleus_mime_types') ) {
-
-		function nucleus_mime_types($mimes) {
-			$mimes['svg'] = 'image/svg+xml';
-			return $mimes;
-		}
-
-	}
-
-	add_filter('upload_mimes', 'nucleus_mime_types');
-
-
-#-------------------------------------------------------------------------------#
 #  Convert Hex code to RGB code
 #-------------------------------------------------------------------------------#
 

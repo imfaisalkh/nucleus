@@ -73,7 +73,7 @@ function nucleus_register_required_plugins() {
 		),
 
 		array(
-			'name'      => esc_html__('Kirki', 'capstone'),
+			'name'      => esc_html__('Kirki', 'nucleus'),
 			'slug'      => 'kirki',
 			'required'  => true,
 		),
@@ -85,7 +85,7 @@ function nucleus_register_required_plugins() {
 		),
 
 		array(
-			'name' 		=> esc_html__('Safe SVG', 'capstone'),
+			'name' 		=> esc_html__('Safe SVG', 'nucleus'),
 			'slug' 		=> 'safe-svg',
 			'required' 	=> false,
 		),
@@ -94,6 +94,13 @@ function nucleus_register_required_plugins() {
 			'name'     	=> 'Core Portfolio', // The plugin name
 			'slug'     	=> 'core-portfolio', // The plugin slug (typically the folder name)
 			'source'   	=> 'https://github.com/imfaisalkh/core-portfolio/archive/master.zip', // The plugin source
+			'required' 	=> true, // If false, the plugin is only 'recommended' instead of required
+		),
+
+		array(
+			'name'     	=> 'Core Team', // The plugin name
+			'slug'     	=> 'core-team', // The plugin slug (typically the folder name)
+			'source'   	=> 'https://github.com/imfaisalkh/core-team/archive/master.zip', // The plugin source
 			'required' 	=> true, // If false, the plugin is only 'recommended' instead of required
 		),
 

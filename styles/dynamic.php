@@ -47,8 +47,8 @@
 		/** BACKGROUND: Background Media */
 		--background-image: <?php echo 'url(' . $background_image . ')'; ?>;
 		--background-video: <?php echo 'url(' . $background_video . ')'; ?>;
-		--background-fit: <?php echo $background_fit; ?>;
-		--background-opacity-scroll: <?php echo $background_opacity; ?>;
+		--background-fit: <?php echo esc_html($background_fit); ?>;
+		--background-opacity-scroll: <?php echo esc_html($background_opacity); ?>;
 
 		/** TYPOGRAPHY: Fonts */
 		--primary-font-stack:    'Lora', sans-serif;
@@ -82,10 +82,10 @@
 
 	/** Custom Color Scheme */
 	body.custom-color-scheme {
-		--primary-accent : <?php echo $primary_accent; ?>;
-		--secondary-accent : <?php echo $secondary_accent; ?>;
-		--background-color : <?php echo $background_color; ?>;
-		--text-color : <?php echo $text_color; ?>;
+		--primary-accent : <?php echo esc_html($primary_accent); ?>;
+		--secondary-accent : <?php echo esc_html($secondary_accent); ?>;
+		--background-color : <?php echo esc_html($background_color); ?>;
+		--text-color : <?php echo esc_html($text_color); ?>;
 	}
 
 

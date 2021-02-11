@@ -23,14 +23,14 @@
     $folio_carousel_image = get_field('slider_image') ? get_field('slider_image') : get_the_post_thumbnail_url();
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class("carousel-cell"); ?> data-primary-accent-color="<?php echo $primary_accent; ?>" data-secondary-accent-color="<?php echo $secondary_accent; ?>" data-bg-color="<?php echo $background_color; ?>" data-text-color="<?php echo $text_color; ?>">
+<article id="post-<?php the_ID(); ?>" <?php post_class("carousel-cell"); ?> data-primary-accent-color="<?php echo esc_attr($primary_accent); ?>" data-secondary-accent-color="<?php echo esc_attr($secondary_accent); ?>" data-bg-color="<?php echo esc_attr($background_color); ?>" data-text-color="<?php echo esc_attr($text_color); ?>">
     
     <figure class="entry-thumbnail">
         <img class="primary" src="<?php echo esc_url($folio_carousel_image); ?>">
     </figure>
 
     <header class="entry-caption">
-        <a href="<?php echo $folio_permalink; ?>" title="<?php the_title(); ?>" >
+        <a href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title(); ?>" >
             <div class="inner-wrap">
                 <h3 class="entry-title"><?php the_title(); ?></h3>
                 <?php if ( $folio_terms ) { ?>

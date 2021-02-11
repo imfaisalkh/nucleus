@@ -23,6 +23,8 @@
 
     <body <?php body_class(); ?>>
 
+        <?php wp_body_open(); ?>
+
         <!-- BEGIN: ROOT CONTAINER -->
         <div id="root-container">
 
