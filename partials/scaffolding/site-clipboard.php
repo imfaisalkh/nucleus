@@ -2,7 +2,7 @@
 <div id="site-clipboard">
 
     <!-- Page Sidebar -->
-    <?php if ( is_active_sidebar( 'blog-sidebar' ) && is_home() ) { ?>
+    <?php if ( is_active_sidebar( 'blog-sidebar' ) && is_home() || is_singular('post') ) { ?>
         <a href="#open-sidebar" class="open-sidebar">
             <i class="fi fi-sidebar-arrow" aria-hidden="true"></i>
         </a>

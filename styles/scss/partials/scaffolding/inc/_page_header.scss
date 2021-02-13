@@ -2,6 +2,13 @@
  8.  PAGE HEADER 
 ========================================================== */
 
+	#page-header.no-border {
+		&:after { display: none; }
+		.inner-wrap:before { display: none; }
+		.inner-wrap:after { display: none; }
+		margin-bottom: 0 !important;
+	}
+
 	#page-header {
 		display: flex;
 		flex-wrap: wrap;
@@ -76,7 +83,7 @@
 				transform: translateY(7px);
 				font-size: 17px;
 				text-transform: uppercase;
-				color: #E6AA4C;
+				color: #E6AA4C !important;
 			}
 			.title {
 				font-size: 48px !important;
@@ -84,11 +91,14 @@
 			}
 			ul.categories {
 				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
 				list-style: none;
 				margin: 7px 0 20px 0; padding: 0;
 
 				li {
 					margin-right: 35px;
+					margin-bottom: 12px;
 					&.active {
 						a {
 							background: #C4C4C4;
@@ -103,6 +113,8 @@
 						letter-spacing: 1px;
 						color: #BBBBBB;
 					}
+
+					ul.children { display: none; }
 				}
 			}
 		}
@@ -124,12 +136,10 @@
 
 				.single-post & {
 					font-style: normal;
-					font-size: 40px;
+					font-size: 52px;
+					line-height: 1.3;
 					letter-spacing: -0.5px;
-					margin: 30px 0 15px 0;
-
-					@include breakpoint($mobile)  { font-size: 26px; }
-					@include breakpoint($laptop)  { font-size: 40px; }
+					margin: 10px 0 15px 0;
 				}
 				.single-portfolio & {
 					margin-bottom: 5px;
@@ -142,6 +152,12 @@
 				color: var(--text-color, #FFF); opacity: 0.7;
 				
 				@include breakpoint($mobile)  { font-size: 16px; padding: 0 15px; }
+			}
+			.timestamp {
+				font-family: $secondary-font-stack;
+				font-size: 18px;
+				color: var(--text-color, #FFF); opacity: 0.7;
+
 			}
 			.backdrop {
 				position: absolute;
@@ -179,27 +195,6 @@
 
 			.meta-info {
 				font-size: 16px;
-			}
-			.category {
-				font-family: $secondary-font-stack;
-				font-size: 15px;
-				font-weight: 600;
-				text-transform: uppercase;
-				letter-spacing: 1px;
-
-				a {
-					color: #fff;
-					border: 1px solid #414141;
-					border-radius: 30px;
-					padding: 6px 19px;
-					transition: all 400ms ease-in-out;
-
-					&:hover {
-						background: #fff;
-						border-color: #fff;
-						color: #000;
-					}
-				}
 			}
 		}
 

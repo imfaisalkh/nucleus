@@ -135,12 +135,6 @@ function nucleus_register_required_plugins() {
 			'required' 	=> false,
 		),
 
-		array(
-			'name' 		=> esc_html__('One Click Demo Import', 'nucleus'),
-			'slug' 		=> 'one-click-demo-import',
-			'required' 	=> false,
-		),
-
 	);
 
 	/*

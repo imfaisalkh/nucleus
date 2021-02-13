@@ -30,7 +30,7 @@
         },
         {
             "key": "field_6015abdf38b6f",
-            "label": "Custom Title",
+            "label": "Page Title",
             "name": "header_title",
             "type": "text",
             "instructions": "Enter some text to replace default page title.",
@@ -52,7 +52,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "49",
                 "class": "",
                 "id": ""
             },
@@ -86,7 +86,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "49",
                 "class": "",
                 "id": ""
             },
@@ -223,6 +223,25 @@
                 "id": ""
             },
             "return_format": "array"
+        },
+        {
+            "key": "field_602833c75647c",
+            "label": "Disable Header Border",
+            "name": "header_disable_border",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Check this box to disable header border",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -254,5 +273,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1613039042
+    "modified": 1613247586
 }

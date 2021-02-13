@@ -63,6 +63,10 @@ export default jQuery(function($) {
                 let sidebar_trigger_color = tinycolor(background_color).darken(5).toString()
                 document.body.style.setProperty('--sidebar-trigger-color', sidebar_trigger_color);
 
+                // Modal
+                let menu_subtitle = tinycolor(modal_background).darken(50).setAlpha(.7).toString()
+                document.body.style.setProperty('--menu-subtitle', menu_subtitle);
+
                 // Form Skin
                 let form_field_bg = tinycolor(background_color).darken(5).toString()
                 document.body.style.setProperty('--form-field-background-color', form_field_bg);
@@ -134,6 +138,10 @@ export default jQuery(function($) {
                 let sidebar_trigger_color = tinycolor(background_color).lighten(5).toString()
                 document.body.style.setProperty('--sidebar-trigger-color', sidebar_trigger_color);
 
+                // Modal
+                let menu_subtitle = tinycolor(modal_background).lighten(40).setAlpha(.7).toString()
+                document.body.style.setProperty('--menu-subtitle', menu_subtitle);
+
                 // Form Skin
                 let form_field_bg = tinycolor(background_color).lighten(10).toString()
                 document.body.style.setProperty('--form-field-background-color', form_field_bg);
@@ -182,8 +190,6 @@ export default jQuery(function($) {
             let modal_background = tinycolor(background_color).setAlpha(.9).toString()
             document.body.style.setProperty('--modal-background', modal_background);
 
-            let menu_subtitle = tinycolor(modal_background).darken(50).setAlpha(.7).toString()
-            document.body.style.setProperty('--menu-subtitle', menu_subtitle);
         },
 
         /** Scroll Position */

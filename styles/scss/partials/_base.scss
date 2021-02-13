@@ -212,14 +212,24 @@
 /** == WP CLASSES == */
 /** ================================================== */
 
+	// WP-BLOCK
+	.wp-block-cover {
+		&.alignleft {
+			margin: 0 30px 30px 0;
+		}
+	}
+
+	// ALIGNMENT CLASSES
 	.alignleft {
 	  display: inline;
 	  float: left;
+	  margin-right: 30px;
 	}
 
 	.alignright {
 	  display: inline;
 	  float: right;
+	  margin-left: 30px;
 	}
 
 	.aligncenter {
@@ -228,13 +238,15 @@
 	  margin-left: auto;
 	}
 
-	.wp-gallery, .gallery {
+	// WP-GALLERY
+	.wp-block-gallery, .wp-gallery {
 		a {
 			border: 0 !important;
 			img { display: block; }
 		}
 	}
 
+	// BLOCK QUOTE
 	blockquote.alignleft,
 	.wp-caption.alignleft,
 	img.alignleft {
@@ -303,5 +315,20 @@
 			.image {
 				img { margin-bottom: 0 !important;}
 			}
+		}
+	}
+
+	// BLOCK FILE
+	.wp-block-file {
+		.wp-block-file__button {
+			border: 0 !important;
+		}
+	}
+
+	// BLOCK BUTTON
+	.wp-block-button {
+		.wp-block-button__link {
+			border: 0 !important;
+			margin-bottom: 20px;
 		}
 	}

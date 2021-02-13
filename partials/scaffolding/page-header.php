@@ -25,8 +25,12 @@
 	$is_blank_header		= ($header_style == 'is_blank');
 	$is_disabled_header		= ($header_style == 'is_disabled');
 
-	$page_header_class		= ($is_hero_header || $is_blank_header) ? 'fullscreen' : 'compact';
+	$header_style_class		= ($is_hero_header || $is_blank_header) ? 'fullscreen' : 'compact';
 
+	$header_border			= get_field('header_disable_border');
+	$header_border_class 	= $header_border || (is_singular('post') && has_post_thumbnail()) ? 'no-border' : '';
+
+	$page_header_class		= $header_style_class .' '. $header_border_class;
 
 	// Custom Header - Meta Panel - (Page Fallback)
 	$header_title	 		= $header_title ? $header_title : get_the_title();
@@ -91,6 +95,9 @@
 				<?php if ($header_backdrop) { ?>
 					<span class="backdrop"><?php echo esc_html($header_backdrop); ?></span>
 				<?php } ?>
+				<?php if ((!$header_backdrop && is_home()) || is_singular('post')) { ?>
+					<span class="backdrop"><?php echo esc_html__('Blog', 'nucleus'); ?></span>
+				<?php } ?>
 				<h3 class="title"><?php echo wp_kses_post($header_title); ?></h3>
 				<?php if (is_home()) { ?>
 					<ul class="categories">
@@ -109,19 +116,8 @@
 						// Helper Variable(s)
 						$post_author_ID = get_post_field( 'post_author', $post_ID );
 					?>
-					<div class="meta-info">
-						<span class="timestamp">
-							<?php esc_html_e('Published:', 'nucleus'); ?>
-							<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ' . esc_html__( 'ago', 'nucleus' ); ?>	
-						</span> -
-						<span class="author">
-	                    	<?php esc_html_e('By:', 'nucleus'); ?>
-	                        <a href="<?php echo esc_url( get_author_posts_url( $post_author_ID ) ); ?>">
-	                            <?php echo get_the_author_meta( 'display_name', $post_author_ID ); ?>
-	                        </a>
-	                    </span>
-
-						</span>
+					<div class="timestamp">
+						<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ' . esc_html__( 'ago', 'nucleus' ); ?>	
 					</div>
 				<?php } ?>
 			</div>

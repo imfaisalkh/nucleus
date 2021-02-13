@@ -402,20 +402,20 @@ function nucleus_customize_register($wp_customize) {
     'sanitize_callback' => 'sanitize_text_field',
   ) );
 
-  $wp_customize->add_control(
-    new JT_Customize_Control_Checkbox_Multiple( $wp_customize, 'nucleus_blog_sidebar',
-        array(
-            'section' => 'nucleus_blog_settings',
-            'label'   => __( 'Enable Sidebar', 'nucleus' ),
-            'description'   => esc_html__('Enable "Blog Sidebar" on following pages.', 'nucleus'),
-            'choices' => array(
-                'blog_master'      => __( 'Blog Master Page', 'nucleus' ),
-                'blog_detail'     => __( 'Blog Detail Page', 'nucleus' ),
-                'blog_archive'       => __( 'Blog Archive Page', 'nucleus' )
-            )
-        )
-    )
-  );
+  // $wp_customize->add_control(
+  //   new JT_Customize_Control_Checkbox_Multiple( $wp_customize, 'nucleus_blog_sidebar',
+  //       array(
+  //           'section' => 'nucleus_blog_settings',
+  //           'label'   => __( 'Enable Sidebar', 'nucleus' ),
+  //           'description'   => esc_html__('Enable "Blog Sidebar" on following pages.', 'nucleus'),
+  //           'choices' => array(
+  //               'blog_master'      => __( 'Blog Master Page', 'nucleus' ),
+  //               'blog_detail'     => __( 'Blog Detail Page', 'nucleus' ),
+  //               'blog_archive'       => __( 'Blog Archive Page', 'nucleus' )
+  //           )
+  //       )
+  //   )
+  // );
 
   // Add: Text Field
   $wp_customize->add_setting( 'nucleus_blog_slider', array (

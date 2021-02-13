@@ -327,9 +327,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
+		
 		&:not(.animate-in) {
 			// display: none;
+			z-index: -10;
 			height: 0; // FIX: an issue where menu items are clickable after closing responsive menu (although it cause flickiering text when menu closed)
 		}
 
