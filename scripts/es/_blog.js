@@ -199,12 +199,20 @@ export default jQuery(function($) {
            
         },
 
+        /** Pingback Class */
+        pingback_class: function() {
+            $('ol.comment-list li.pingback:last').addClass('last-pingback');
+
+            $('ol.comment-list > li:not(.comment):lt(99)').wrapAll('<div class="pingback-group" />');
+        },
+
     }  
 
     // Initialize Functions
     blog.load_more();
     blog.sidebar();
     blog.image_reveal();
+    blog.pingback_class();
 
     if (blog_magazine_page) {
         blog.carousel();

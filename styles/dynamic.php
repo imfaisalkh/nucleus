@@ -17,16 +17,57 @@
 # Page Style (Meta Panel)
 #-----------------------------------------------------------------#
 
-	// Color Scheme
-	$color_scheme 	= get_field('color_scheme', $post_ID);
-	$custom_color   = get_field('custom_colors', $post_ID);
+	// 0: BASE COLOR SCHEME
+	$base_color_scheme 	= get_field('base_color_scheme', $post_ID);
+	$base_colors   = get_field('base_colors', $post_ID);
 
-	// Custom Colors
-	$primary_accent   	= $custom_color ? $custom_color['primary_accent'] : '';
-	$secondary_accent   = $custom_color ? $custom_color['secondary_accent'] : '';
-	$background_color   = $custom_color ? $custom_color['background_color'] : '';
-	$text_color   		= $custom_color ? $custom_color['text_color'] : '';
+	// Base Colors
+	$primary_accent   	= $base_colors ? $base_colors['primary_accent'] : '';
+	$secondary_accent   = $base_colors ? $base_colors['secondary_accent'] : '';
+	$background_color   = $base_colors ? $base_colors['background_color'] : '';
+	$text_color   		= $base_colors ? $base_colors['text_color'] : '';
 	
+
+	// 1: FORM COLOR SCHEME
+	$form_color_scheme 		= get_field('form_color_scheme', $post_ID);
+	$form_text_colors   	= get_field('form_text_colors', $post_ID);
+	$form_field_colors   	= get_field('form_field_colors', $post_ID);
+	$form_button_colors   	= get_field('form_button_colors', $post_ID);
+
+	// Text Colors
+	$form_label_color   	= $form_text_colors ? $form_text_colors['label'] : '';
+	$form_req_symbol   		= $form_text_colors ? $form_text_colors['required'] : '';
+	
+	// Field Colors
+	$form_field_background   	= $form_field_colors ? $form_field_colors['background'] : '';
+	$form_field_border   		= $form_field_colors ? $form_field_colors['border'] : '';
+	$form_field_text   			= $form_field_colors ? $form_field_colors['text'] : '';
+
+	$form_field_background_focus   	= $form_field_colors ? $form_field_colors['background_focus'] : '';
+	$form_field_border_focus   		= $form_field_colors ? $form_field_colors['border_focus'] : '';
+	$form_field_text_focus   		= $form_field_colors ? $form_field_colors['text_focus'] : '';
+
+	// Button Colors
+	$form_button_background   		= $form_button_colors ? $form_button_colors['background'] : '';
+	$form_button_border   			= $form_button_colors ? $form_button_colors['border'] : '';
+	$form_button_text   			= $form_button_colors ? $form_button_colors['text'] : '';
+
+	$form_button_background_hover   	= $form_button_colors ? $form_button_colors['background_hover'] : '';
+	$form_button_border_hover   		= $form_button_colors ? $form_button_colors['border_hover'] : '';
+	$form_button_text_hover   			= $form_button_colors ? $form_button_colors['text_hover'] : '';
+
+
+	// 2: MENU COLOR SCHEME
+	$menu_color_scheme 		= get_field('menu_color_scheme', $post_ID);
+	$menu_colors   			= get_field('menu_colors', $post_ID);
+
+	// Menu Colors
+	$menu_background   		= $menu_colors ? $menu_colors['background'] : '';
+	$menu_text   			= $menu_colors ? $menu_colors['text'] : '';
+
+	$menu_background_hover  = $menu_colors ? $menu_colors['background_hover'] : '';
+	$menu_text_hover   		= $menu_colors ? $menu_colors['text_hover'] : '';
+
 
 #-----------------------------------------------------------------#
 # Page Background (Meta Panel)
@@ -57,7 +98,7 @@
 	}
 
 	/** Light Color Scheme */
-	body.light-color-scheme	{
+	body.light-base-color-scheme	{
 		--primary-accent: #FF6000;
 		--secondary-accent : #43f3b7;
 		--background-color: #FFF;
@@ -65,7 +106,7 @@
 	}
 
 	/** Dark Color Scheme */
-	body.dark-color-scheme {
+	body.dark-base-color-scheme {
 		--primary-accent: #FFEA36;
 		--secondary-accent : #43f3b7;
 		--background-color: #000;
@@ -80,14 +121,50 @@
 		--text-color: #000;
 	}
 
-	/** Custom Color Scheme */
-	body.custom-color-scheme {
+	/** Base Color Scheme */
+	body.custom-base-color-scheme {
 		--primary-accent : <?php echo esc_html($primary_accent); ?>;
 		--secondary-accent : <?php echo esc_html($secondary_accent); ?>;
 		--background-color : <?php echo esc_html($background_color); ?>;
 		--text-color : <?php echo esc_html($text_color); ?>;
 	}
 
+	/** Form - Text Colors */
+	body.custom-form-color-scheme {
+		--form-text-label-color: <?php echo esc_html($form_label_color); ?>;
+		--form-text-req-symbol-color: <?php echo esc_html($form_req_symbol); ?>;
+	}
+
+	/** Form - Field Colors */
+	body.custom-form-color-scheme {
+		--form-field-background-color: <?php echo esc_html($form_field_background); ?>;
+		--form-field-text-color: <?php echo esc_html($form_field_text); ?>;
+		--form-field-border-color: <?php echo esc_html($form_field_border); ?>;
+
+		--form-field-background-color-focus: <?php echo esc_html($form_field_background_focus); ?>;
+		--form-field-text-color-focus: <?php echo esc_html($form_field_text_focus); ?>;
+		--form-field-border-color-focus: <?php echo esc_html($form_field_border_focus); ?>;
+	}
+
+	/** Form - Button Colors */
+	body.custom-form-color-scheme {
+		--form-button-background-color: <?php echo esc_html($form_button_background); ?>;
+		--form-button-border-color: <?php echo esc_html($form_button_border); ?>;
+		--form-button-text-color: <?php echo esc_html($form_button_text); ?>;
+
+		--form-button-background-color-hover: <?php echo esc_html($form_button_background_hover); ?>;
+		--form-button-border-color-hover: <?php echo esc_html($form_button_border_hover); ?>;
+		--form-button-text-color-hover: <?php echo esc_html($form_button_text_hover); ?>;
+	}
+
+	/** Menu Colors */
+	body.custom-menu-color-scheme {
+		--menu-background: <?php echo esc_html($menu_background); ?>;
+		--menu-text: <?php echo esc_html($menu_text); ?>;
+
+		--menu-background-hover: <?php echo esc_html($menu_background_hover); ?>;
+		--menu-text-hover: <?php echo esc_html($menu_text_hover); ?>;
+	}
 
 	/** Header Size */
 	:root {
@@ -95,7 +172,6 @@
 		--header-mobile-size: <?php echo get_theme_mod('nucleus_header_mobile_height', 60) . 'px'; ?>;
 		--header-sticky-size: <?php echo get_theme_mod('nucleus_header_sticky_height', 112) . 'px'; ?>;
 	}
-
 
 	/** Logo Size */
 	:root {

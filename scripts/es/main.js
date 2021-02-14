@@ -9,6 +9,7 @@ Author URI:      http://wpscouts.net/
 
 // Import Modules
 import './_base'
+import './_colors'
 import './_portfolio_classic'
 import './_portfolio_horizon'
 import './_portfolio_spotlight'

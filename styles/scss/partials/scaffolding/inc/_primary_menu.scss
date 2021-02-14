@@ -155,8 +155,8 @@
 		  color: var(--menu-text);
 
 		  &:hover {
-			color: var(--menu-text) !important;
-			background: #F3F3F3;
+			color: var(--menu-text-hover) !important;
+			background: var(--menu-background-hover) !important;
 		  }
 		}
 

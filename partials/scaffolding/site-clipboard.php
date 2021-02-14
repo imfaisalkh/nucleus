@@ -67,7 +67,7 @@
                     <div id="blog-widget" class="modal-widget">
                         <h4 class="widget-title"><?php esc_html_e( 'Categories', 'nucleus' ); ?></h4>
                         <ul class="widget-list">
-                            <?php wp_list_categories(array('child_of' => get_field('category'), 'title_li' => '', 'style' => 'none', 'taxonomy' => 'category', 'show_option_none'   => '', 'walker' => new Nucleus_Category_Walker())); ?>
+                            <?php wp_list_categories(array('child_of' => get_field('category'), 'depth' => 1, 'title_li' => '', 'style' => 'none', 'taxonomy' => 'category', 'show_option_none'   => '', 'walker' => new Nucleus_Category_Walker())); ?>
                         </ul>              
                     </div>
                 </div>

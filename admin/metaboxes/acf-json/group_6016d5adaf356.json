@@ -17,8 +17,11 @@
             },
             "choices": {
                 "global": "Global",
-                "traditional": "Traditional",
-                "modern": "Modern"
+                "v1": "Version 1",
+                "v2": "Version 2",
+                "v3": "Version 3",
+                "v4": "Version 4",
+                "v5": "Version 5"
             },
             "default_value": [
                 "global"
@@ -45,8 +48,8 @@
             },
             "choices": {
                 "global": "Global",
-                "center": "Center",
-                "full-width": "Full Width"
+                "v1": "Version 1",
+                "v2": "Version 2"
             },
             "default_value": [
                 "global"
@@ -90,5 +93,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1612111157
+    "modified": 1613329756
 }
