@@ -191,8 +191,8 @@
 			wp_enqueue_style('fancybox', NUCLEUS_VENDORS_URI . '/fancybox/jquery.fancybox.min.css');
 			wp_enqueue_style('flickity', NUCLEUS_VENDORS_URI . '/flickity/flickity.min.css');
 			wp_enqueue_style('flickity-fade', NUCLEUS_VENDORS_URI . '/flickity/flickity-fade.css');
-			wp_enqueue_style('nucleus-css-main', NUCLEUS_CSS_URI . '/main.css');
-			wp_enqueue_style('nucleus-css-editor', get_template_directory_uri() . '/custom-editor-style.css');
+			wp_enqueue_style('nucleus-main', NUCLEUS_CSS_URI . '/main.css');
+			wp_enqueue_style('nucleus-editor', get_template_directory_uri() . '/custom-editor-style.css');
 			
 			// Google Fonts
 			wp_enqueue_style( 'google-fonts', nucleus_fonts_url(), array(), null );
@@ -202,7 +202,7 @@
 			require( get_template_directory() .'/styles/dynamic.php' );
 			$dynamic_css = ob_get_clean();
 
-	        wp_add_inline_style('nucleus-css-main', $dynamic_css);
+	        wp_add_inline_style('nucleus-main', $dynamic_css);
 
 		}
 	}
@@ -246,7 +246,6 @@
 
 	// require ADMIN resources
 	require_once NUCLEUS_ADMIN . '/customizer/functions.php';
-	require_once NUCLEUS_ADMIN . '/kirki/functions.php';
 	require_once NUCLEUS_ADMIN . '/metaboxes/functions.php';
 	require_once NUCLEUS_ADMIN . '/plugins/functions.php';
 

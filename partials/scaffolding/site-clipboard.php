@@ -14,15 +14,16 @@
         </aside>
     <?php } ?>
 
-    <?php if ( !get_theme_mod('nucleus_notification_disable') ) { ?>
+    <?php $page_actions_group = get_theme_mod( 'nucleus_page_actions_group'); ?>
+    <?php if ( in_array('info', $page_actions_group) ) { ?>
 
         <!-- Seacrh Filter -->
         <div id="site-notification">
             <a href="#" class="close"><i class="fi fi-close" aria-hidden="true"></i></a>
             <div class="inner-wrap">
-                <h3 class="title"><?php echo get_theme_mod('nucleus_notification_title'); ?></h3>
+                <h3 class="title"><?php echo get_theme_mod('nucleus_info_box_title'); ?></h3>
                 <div class="content">
-                    <?php echo get_theme_mod('nucleus_notification_content'); ?>
+                    <?php echo get_theme_mod('nucleus_info_box_content'); ?>
                 </div>
             </div>
         </div>

@@ -341,8 +341,8 @@
 						margin: 2px 22px 5px 22px;
 						&:hover {
 							color: var(--menu-caption) !important;
-							background: none;
-							cursor: initial;
+							background: none !important;
+							cursor: auto;
 						}
 						&:after {
 							display: none;
@@ -381,13 +381,13 @@
 			&.three-columns {
 				> ul.sub-menu {
 					right: -300%;
-					&:before { right: 25%; }
+					&:before { right: 23%; }
 				}
 			}
 			&.four-columns {
 				> ul.sub-menu {
 					right: -600%;
-					&:before { right: 40.5%; }
+					&:before { right: 42.5%; }
 				}
 			}
 			&.five-columns {

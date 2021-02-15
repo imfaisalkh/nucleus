@@ -44,7 +44,7 @@
 
 		// PANEL: Dashboard Settings
 		Kirki::add_panel( 'nucleus_header_settings', array(
-			'priority'    => 30,
+			'priority'       => 25,
             'title'          => esc_html__( 'Header Settings', 'nucleus' ),
             'description'    => esc_html__( 'This section configure settings for the site header.', 'nucleus' ),
         ) );

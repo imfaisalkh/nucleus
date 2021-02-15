@@ -19,6 +19,8 @@
         min-height: 100vh;
         z-index: 10; // make it beneath menu
 
+        @include breakpoint($mobile) { top: -143px; }
+
         .columns {
             position: absolute;
             top: 160px;
@@ -26,6 +28,8 @@
             width: 100%;
             display: flex;
             align-items: center;
+
+            @include breakpoint($mobile) { flex-wrap: wrap; justify-content: space-between; }
 
             .column {
                 display: flex;
@@ -42,6 +46,8 @@
                     flex-wrap: wrap;
                     align-items: center;
                     padding-right: 150px;
+
+                    @include breakpoint($mobile) {  }
 
                     .prefix {
                         position: relative;
@@ -66,6 +72,8 @@
                         font-size: 60px;
                         margin: 0 0 20px 0;
                         line-height: 1;
+
+                        @include breakpoint($mobile) { font-size: 48px; }
                     }
                     p {
                         font-size: 18px;
@@ -77,12 +85,17 @@
                         padding-top: 15px;
                         padding-bottom: 15px;
                         border-radius: 5px;
+
+                        @include breakpoint($mobile) { padding: 15px 20px; }
                     }
                 }
 
                 // Slider Column
                 &.slider {
                     width: 55%;
+
+                    @include breakpoint($mobile) { width: 50%; }
+
                     .portfolio-container {
                         height: 100%;
                         width: 100%;
@@ -154,6 +167,7 @@
                         background-size: cover;
                         background-position: center center;
 
+                        @include breakpoint($mobile) { width: 90%; }
                         @include breakpoint($retina)  { height: 85%; }
                         @include breakpoint($full-hd)  { height: 85%; }
 

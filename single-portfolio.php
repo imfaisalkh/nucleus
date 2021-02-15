@@ -3,9 +3,7 @@
 <?php
 
 	// Original Variable(s)
-	$portfolio_page_global	= get_permalink( get_theme_mod('nucleus_portfolio_page') );
-	$portfolio_page 		= get_field('portfolio_page') ? get_field('portfolio_page') : $portfolio_page_global;
-	$custom_url 			= get_field('custom_url');
+	$custom_url = get_field('custom_url');
 
 	// Entry Navigation
 	$next_entry = get_adjacent_post(false, '', true);

@@ -19,7 +19,7 @@
 
 			// get values defined in 'globals.inc.php'
 		    $vendor_classes 	= wp_script_is( 'nucleus-js-vendors', 'enqueued' ) ? ' is-isotope-enabled is-packery-enabled is-infinite-scroll-enabled is-flickity-enabled is-fancybox-enabled' : '';
-		    $is_site_preloader  = get_theme_mod('nucleus_site_preloader') ? ' site-preloader-disabled' : '';
+		    $is_site_preloader  = get_theme_mod('nucleus_site_preloader', true) ? '' : ' site-preloader-disabled';
 
 			// Header Version
 			$menu_type		= get_field('site_header') ? get_field('site_header') : get_theme_mod('nucleus_header_version', 'v1');

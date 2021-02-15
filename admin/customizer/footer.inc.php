@@ -10,6 +10,7 @@
 
 		// SECTION: Footer
 		Kirki::add_section( 'nucleus_footer_layout', array(
+            'priority'       => 30,
             'title'          => esc_html__( 'Footer Settings', 'nucleus' ),
             'description'    => esc_html__( 'This section configure settings for the site footer.', 'nucleus' ),
         ) );
