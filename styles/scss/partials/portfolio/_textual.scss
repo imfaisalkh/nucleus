@@ -18,6 +18,8 @@
         min-height: 100vh;
         z-index: 10; // make it beneath menu
 
+        @include breakpoint($mobile) { top: -143px; }
+
         &:not(.is-interactive) {
             background: url(../../images/textual-backdrop.svg) center calc(50% + 10px) no-repeat;
         }
@@ -46,12 +48,16 @@
             flex-wrap: wrap;
             width: 85%;
             margin-top: 45px;
+
+            @include breakpoint($mobile) { width: 100%; }
         }
 
         // Entry Cell
         .carousel-cell {
             display: inline-block;
             margin: 0 30px;
+
+            @include breakpoint($mobile) { margin: 5px 15px; }
 
             &.is-selected {
                 .entry-thumbnail {
@@ -79,6 +85,8 @@
                 z-index: -10;
                 margin-top: 45px;
 
+                @include breakpoint($mobile) { margin: 0; left: 0 !important; transform: translateX(0) translateY(-50%) !important; }
+
                 img {
                     border-radius: 5px;
                     width: 100%;
@@ -97,7 +105,8 @@
                             font-size: 48px;
                             color: var(--text-color, #000);
                             margin: 0;
-                            // letter-spacing: 0;
+
+                            @include breakpoint($mobile) { font-size: 36px; line-height: 1.2; flex: 1; }
                         }
                         &:hover {
                             .entry-title {
@@ -110,6 +119,8 @@
                             letter-spacing: 1px;
                             color: #696969;
                             padding: 0 0 15px 10px;
+
+                            @include breakpoint($mobile) { flex: 1; }
                         }
                     }
                 }

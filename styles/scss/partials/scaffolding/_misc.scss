@@ -219,6 +219,8 @@
 		@include animate-this($translate3d: '0, 0, 0'); // CSS-3 animation is triggered via JS
 		&.animate-in { opacity: 1; }
 
+		// @include breakpoint($mobile)  { @include position(absolute, 0, 0, 0, 0); }
+
 		.inner-wrap {
 			display: flex;
 			flex-direction: column;
@@ -322,11 +324,24 @@
 /** ================================================== */
 
 
+	html.noscroll-only {
+		position: relative;
+		body {
+			overflow: hidden;
+		}
+		#root-container {
+			height: 100%;
+			overflow: hidden;
+		}
+	}
+
 	#responsive-menu {
 		@extend .modal-core;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		@include breakpoint($mobile)  { align-items: flex-end; }
 		
 		&:not(.animate-in) {
 			// display: none;
@@ -339,9 +354,13 @@
 			justify-content: center;
 			flex-wrap: wrap;
 
+			@include breakpoint($mobile)  { justify-content: flex-start; }
+
 			// Root Menu
 			.root-menu {
 				width: 70%;
+
+				@include breakpoint($mobile)  { width: 100%; }
 
 				ul {
 					height: auto;
@@ -349,6 +368,7 @@
 					transform: translateX(0);
 					visibility: visible;
 					transition: all 200ms linear;
+					
 
 					&.hide {
 						height: 0;
@@ -358,6 +378,8 @@
 					}
 					li {
 						margin: 0 15px;
+
+						@include breakpoint($mobile)  { margin: 4px 15px; }
 					}
 				}
 			}
@@ -377,6 +399,8 @@
 					transform: translateX(30px);
 					visibility: hidden;
 					transition: all 200ms linear;
+
+					@include breakpoint($mobile)  { width: 100%; }
 
 					&.active {
 						height: auto;
@@ -412,6 +436,8 @@
 			list-style: none;
 			// @include animate-this(); // CSS-3 animation is triggered via JS
 
+			@include breakpoint($mobile)  { justify-content: flex-start; margin-bottom: 90px; }
+
 			&.active {
 				display: block;
 			}
@@ -422,11 +448,14 @@
 				letter-spacing: 0;
 				margin: 0 30px;
 
+				@include breakpoint($mobile)  { flex: 100%; margin: 5px 15px; }
+
 				a {
 					font-size: 30px;
 					font-weight: 400;
 					color: var(--text-color, #FFF);
 
+					@include breakpoint($mobile)	{ font-size: 33px; }
 					@include breakpoint($no-touch)	{ font-size: 48px; }
 
 					&:hover {
@@ -441,6 +470,8 @@
 					margin-left: 7px;
 					text-transform: uppercase;
 					color: var(--menu-subtitle);
+
+					@include breakpoint($mobile)  { display: none !important; }
 				}
 
 				&.current-menu-item > a,
@@ -457,6 +488,8 @@
 				@include position(fixed, 45px, 85px, auto, auto);
 				color: var(--text-color, #FFF);
 				font-size: 21px;
+
+				@include breakpoint($mobile)  { @include position(fixed, 35px, 35px, auto, auto); }
 			}
 		
 			.go-back {
@@ -465,6 +498,8 @@
 				font-family: $secondary-font-stack;
 				font-size: 16px;
 				color: var(--text-color, #FFF);
+
+				@include breakpoint($mobile)  { @include position(fixed, 35px, auto, auto, 35px); }
 		
 				&.active {
 					display: inline-block;

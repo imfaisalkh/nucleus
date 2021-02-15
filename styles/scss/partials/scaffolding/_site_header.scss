@@ -24,7 +24,7 @@
 
 		@include make-full-width;
 
-		@include breakpoint($mobile)  { margin-top: 40px; }
+		@include breakpoint($mobile)  { margin-top: 10px; }
 		@include breakpoint($laptop)  { margin-top: 60px; }
 
 		&:before { content: ''; }

@@ -5,7 +5,7 @@
         overflow: hidden;
     }
 
-/** == dSPOTLIGHT CAROUSEL == */
+/** == SPOTLIGHT CAROUSEL == */
 /** ================================================== */
 
     #spotlight-slider {
@@ -15,6 +15,8 @@
         align-items: center;
         min-height: 100vh;
         z-index: 10; // make it beneath menu
+
+        @include breakpoint($mobile) { top: -143px; }
         
         // Progress Bar
         .progress-bar {
@@ -52,12 +54,18 @@
                     right: 150px;
                     transform: rotate(90deg);
 
+                    @include breakpoint($mobile) { right: 5px; }
+
                     &.previous {
                         top: 30%;
                         right: 155px;
+
+                        @include breakpoint($mobile) { top: 20%; right: 10px; }
                     }
                     &.next {
                         top: 52%;
+
+                        @include breakpoint($mobile) { top: 55%; }
                     }
                 }
             }
@@ -79,11 +87,14 @@
                         padding: 0 15%;
                         overflow: hidden;
 
+                        @include breakpoint($mobile) { width: 100%; padding: 0; overflow: visible; }
                         @include breakpoint($full-hd)  { width: 85%; padding: 0 15%; }
 
                         .entry-thumbnail {
                             display: block;
                             width: 100%;
+
+                            @include breakpoint($mobile) { margin: 0;}
 
                             img {
                                 border-radius: 5px;
@@ -99,11 +110,17 @@
                             transform: translateY(-50%) translateX(-50%);
                             text-align: left;
 
+                            @include breakpoint($mobile) {
+                                left: 0; top: 0;
+                            }
+
                             .inner-wrap {
                                 .entry-title {
                                     font-size: 48px;
                                     font-weight: 400;
                                     margin: 0;
+
+                                    @include breakpoint($mobile) { font-size: 36px; line-height: 1.2; }
                                 }
                                 .entry-meta {
                                     font-size: 14px;
@@ -121,6 +138,8 @@
                                 visibility: visible;
                                 transform: translate3d(-50%, -56%, 0);
                                 transition-delay: 600ms;
+
+                                @include breakpoint($mobile) { transform: translate3d(10%, -40%, 0); }
                             }
                         }
                     }

@@ -8,6 +8,8 @@
 
 	#blog-slider {
 		margin-bottom: 90px;
+
+		@include breakpoint($mobile) { margin-bottom: 0; }
 		@include breakpoint($full-hd)  { margin-bottom: 90px; }
 
 		.main-carousel {
@@ -16,6 +18,8 @@
 
 			// Arrows 
 			.flickity-prev-next-button {
+				@include breakpoint($mobile) { display: none; }
+
 				@extend .flickity-prev-next-button;
 				top: 31%;
 
@@ -40,6 +44,7 @@
 						overflow: visible;
 						padding: 0 10%;
 
+						@include breakpoint($mobile) { width: 100%; padding: 0 4%; }
 						@include breakpoint($full-hd)  { width: 70%; padding: 0 10%; }
 
 						// margin: 0 80px;
@@ -49,6 +54,8 @@
 							@include animate-this();
 							transform: translateY(20px);
 							margin-top: 20px;
+
+							@include breakpoint($mobile) { padding: 0 0; }
 						}
 
 						.entry-thumbnail {
@@ -57,6 +64,7 @@
 							overflow: hidden;
 							margin-bottom: 20px;
 
+							@include breakpoint($mobile) { height: 175px; }
 							@include breakpoint($full-hd)  { height: 400px; }
 				
 							img {
@@ -79,6 +87,7 @@
 							margin-bottom: 10px;
 							padding-right: 20px;
 				
+							@include breakpoint($mobile)  { font-size: 30px; }
 							@include breakpoint($full-hd)  { font-size: 36px; }
 				
 							a {
@@ -106,6 +115,8 @@
 							font-size: 18px;
 							font-weight: 300;
 							margin-bottom: 7px;
+
+							@include breakpoint($mobile)  { font-size: 16px; }
 						}
 				
 						.timestamp {
@@ -144,6 +155,8 @@
 	grid-row-gap: 30px; // percentage value cause layout issues
 	grid-column-gap: 6%;
 
+
+	@include breakpoint($mobile) { grid-template-columns: repeat(1, 1fr); }
 	@include breakpoint($retina)  { grid-row-gap: 45px; grid-column-gap: 7%; }
 	@include breakpoint($full-hd)  { grid-row-gap: 60px; grid-column-gap: 9%; }
 
@@ -179,21 +192,35 @@
 			grid-row-start: 2;
 			grid-row-end: 3;
 			grid-column-start: span 3;
+
 			
 			margin: 0 25% 2% 25%;
 			text-align: center;
+			
+			@include breakpoint($mobile)  {
+				grid-row-start: 1;
+				grid-row-end: 1;
+				grid-column-start: span 1;
+
+				margin: 0;
+			}
 
 			.entry-thumbnail {
 				height: 300px;
+
+				@include breakpoint($mobile) { height: 175px; }
 				@include breakpoint($full-hd)  { height: 400px; }
 			}
 
 			.inner-wrap {
 				padding: 0 40px;
+				@include breakpoint($mobile) { padding: 0; }
 
 				.entry-title {
 					padding: 0;
 					font-size: 36px;
+
+					@include breakpoint($mobile) { font-size: 30px; }
 				}
 				.featured {
 					display: inline-block;
@@ -208,6 +235,8 @@
 				}
 				.entry-desc {
 					font-size: 20px;
+
+					@include breakpoint($mobile) { font-size: 16px; }
 				}
 			}
 
@@ -229,7 +258,7 @@
 			margin-bottom: 7px;
 			padding-right: 20px;
 
-			@include breakpoint($mobile)  { font-size: 20px; }
+			@include breakpoint($mobile)  { font-size: 24px; }
 			@include breakpoint($retina)  { font-size: 22px; }
 			@include breakpoint($full-hd)  { font-size: 28px; }
 

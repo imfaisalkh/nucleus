@@ -40,6 +40,8 @@
 		display: flex;
 		margin-bottom: 45px;
 
+		@include breakpoint($mobile) { width: 100%; }
+
 		// @include animate-this(); // CSS-3 animation is triggered via JS
 
 		&:nth-last-child(-n+2) {
@@ -166,6 +168,8 @@ body.light-color-scheme {
 		#sb_instagram {
 			#sbi_images {
 				position: relative;
+				display: flex;
+				flex-wrap: wrap;
 
 				&:after {
 					display: inline-block;
@@ -182,6 +186,10 @@ body.light-color-scheme {
 					height: 40px;
 					line-height: 40px;
 					padding: 0 15px;
+				}
+
+				.sbi_item {
+					@include breakpoint($mobile) { width: 50%; height: 175px; }
 				}
 			}
 		}

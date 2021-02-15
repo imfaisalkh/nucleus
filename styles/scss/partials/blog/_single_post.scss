@@ -24,8 +24,7 @@
 					}
 				}
 				.title {
-					font-size: 52px;
-					margin-top: 0;
+					@include breakpoint($mobile) { font-size: 48px; }
 				}
 				.date {
 
@@ -35,6 +34,8 @@
 
 		#page-content {
 			width: 75%;
+
+			@include breakpoint($mobile) { width: 100%; }
 
 			> .post {
 				margin-bottom: 30px;
@@ -121,6 +122,8 @@
 							font-family: $primary-font-stack;
 							font-size: 43px;
 							color: #FFF;
+
+							@include breakpoint($mobile)  { font-size: 36px; }
 						}
 					}
 

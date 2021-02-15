@@ -57,6 +57,8 @@
 
 				&[data-content-width="compact"] {
 					width: 75%;
+
+					@include breakpoint($mobile)  { width: 100%; }
 				}
 
 				&.with-sidebar {

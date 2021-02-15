@@ -135,11 +135,13 @@ export default jQuery(function($) {
                         $('#search-filter, #search-filter .widget-wrap, #site-clipboard .close-link').addClass('animate-in');
                     } else if ( type == 'menu' ) {
                         $('#responsive-menu, #full-screen-menu, .menu-caption, #site-clipboard .close-link').addClass('animate-in');
+                        $('html').addClass('noscroll-only');
                     }
                 },
 
                 closeModal: function(){
                     $('#search-filter, #search-filter .widget-wrap, #responsive-menu, #full-screen-menu, .menu-caption, #site-clipboard .close-link').removeClass('animate-in');
+                    $('html').removeClass('noscroll-only');
                 }
 
             }			

@@ -29,7 +29,6 @@
 	#site-header .boxed,
 	#search-filter .inner-wrap,
 	#responsive-menu .boxed,
-	#page-content,
 	#site-footer .boxed,
 	#site-notification
 	{
@@ -145,7 +144,10 @@
 		}
 
 		/** General */
-		.column { margin-bottom: 30px; }
+		.column {
+			margin-bottom: 30px;
+			@include breakpoint($mobile)  { width: 100% !important; }
+		}
 
 		/** Mutiple Columns */
 		.column[data-span="6"] {
