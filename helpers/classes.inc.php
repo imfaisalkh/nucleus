@@ -8,7 +8,7 @@
 
 	if ( !function_exists('nucleus_body_class') ) {
 
-		function nucleus_body_class( $classes ) {
+		function nucleus_body_classes( $classes ) {
 
 			// Post or Page ID
 			if( is_home() || is_archive() || is_search() ) {
@@ -17,24 +17,44 @@
 				$post_ID = get_the_ID();
 			}
 
-			// get values defined in 'globals.inc.php'
-		    $vendor_classes 	= wp_script_is( 'nucleus-js-vendors', 'enqueued' ) ? ' is-isotope-enabled is-packery-enabled is-infinite-scroll-enabled is-flickity-enabled is-fancybox-enabled' : '';
-		    $is_site_preloader  = get_theme_mod('nucleus_site_preloader', true) ? '' : ' site-preloader-disabled';
+			// Get Theme Info
+			$current_theme = wp_get_theme();
+			$theme_name    = esc_attr( str_replace( ' ', '-', strtolower( $current_theme->get( 'Name' ) ) ) );
+			$theme_version = esc_attr( $current_theme->get( 'Version' ) );
+			
+			// Check if child theme is activated
+			if ( $current_theme->parent() ) {
+				
+				// Add child theme version
+				$classes[] = $theme_name . '-child-' . $theme_version;
+				
+				// Get main theme variables
+				$current_theme = $current_theme->parent();
+				$theme_name    = esc_attr( str_replace( ' ', '-', strtolower( $current_theme->get( 'Name' ) ) ) );
+				$theme_version = esc_attr( $current_theme->get( 'Version' ) );
+			}
+			
+			// Theme Version
+			if ( $current_theme->exists() ) {
+				$classes[] = $theme_name . '-' . $theme_version;
+			}
 
-			// Header Version
-			$menu_type		= get_field('site_header') ? get_field('site_header') : get_theme_mod('nucleus_header_version', 'v1');
+			// get values defined in 'globals.inc.php'
+		    $classes[] = wp_script_is( 'nucleus-js-vendors', 'enqueued' ) ? ' is-isotope-enabled is-packery-enabled is-infinite-scroll-enabled is-flickity-enabled is-fancybox-enabled' : '';
+		    $classes[]  = get_theme_mod('nucleus_site_preloader', true) ? '' : ' site-preloader-disabled';
+
+			// Header & Footer Version
+			$classes[]	= get_field('site_header') && get_field('site_header') != 'global' ? 'site-header-'. get_field('site_header') : 'site-header-'. get_theme_mod('nucleus_header_version', 'v1');
+			$classes[]	= get_field('site_footer') && get_field('site_footer') != 'global'  ? 'site-footer-'. get_field('site_footer') : 'site-footer-'. get_theme_mod('nucleus_footer_version', 'v1');
 
 			// Color Schemes
-			$base_color_scheme	= (get_query_var('blog') == 'magazine') ? 'light-base-color-scheme ' : (get_field('base_color_scheme', $post_ID) ? get_field('base_color_scheme', $post_ID) . '-base-color-scheme ' : 'dark-base-color-scheme ');
-			$form_color_scheme	= get_field('form_color_scheme') ? get_field('form_color_scheme') . '-form-color-scheme ' : 'dynamic-form-color-scheme ';
-			$menu_color_scheme	= get_field('menu_color_scheme') ? get_field('menu_color_scheme') . '-menu-color-scheme ' : 'dynamic-menu-color-scheme ';
+			$classes[] 	= (get_query_var('blog') == 'magazine') ? 'light-base-color-scheme ' : (get_field('base_color_scheme', $post_ID) ? get_field('base_color_scheme', $post_ID) . '-base-color-scheme ' : 'dark-base-color-scheme ');
+			$classes[] 	= get_field('form_color_scheme') ? get_field('form_color_scheme') . '-form-color-scheme ' : 'dynamic-form-color-scheme ';
+			$classes[] 	= get_field('menu_color_scheme') ? get_field('menu_color_scheme') . '-menu-color-scheme ' : 'dynamic-menu-color-scheme ';
 			
 			// Portfolio & Blog Layout
-			$portfolio_layout   = get_field('portfolio_style') ? 'portfolio-'. get_field('portfolio_style') : '';
-			$blog_layout   		= get_query_var('blog') ? 'blog-'. get_query_var('blog') : 'blog-'. get_theme_mod('nucleus_blog_layout', 'minimal');
-				
-			// add custom classes to the $classes array
-			$classes[] = $base_color_scheme . $form_color_scheme . $menu_color_scheme . $is_site_preloader .' '. $menu_type . '-site-header '.' '. $vendor_classes .' '. $portfolio_layout .' '. $blog_layout;
+			$classes[]   = get_field('portfolio_style') ? 'portfolio-'. get_field('portfolio_style') : '';
+			$classes[]	 = get_query_var('blog') ? 'blog-'. get_query_var('blog') : 'blog-'. get_theme_mod('nucleus_blog_layout', 'minimal');
 
 			// return the $classes array
 			return $classes;
@@ -42,7 +62,7 @@
 
 	}
 
-	add_filter( 'body_class', 'nucleus_body_class' );
+	add_filter( 'body_class', 'nucleus_body_classes' );
 
 
 #-------------------------------------------------------------------------------#

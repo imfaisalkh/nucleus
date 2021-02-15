@@ -73,7 +73,7 @@
 # Page Background (Meta Panel)
 #-----------------------------------------------------------------#
 
-	$background_image   		 = get_field('background_image', $post_ID);
+	$background_image   		 = attachment_url_to_postid(get_field('background_image', $post_ID)); // get ID from the image URL
 	$background_video   		 = get_field('background_video', $post_ID);
 	$background_fit   		 	 = 'cover';
 	$background_opacity    		 = get_field('background_opacity', $post_ID);
@@ -86,7 +86,7 @@
 	/** Global Variables */
 	:root {
 		/** BACKGROUND: Background Media */
-		--background-image: <?php echo 'url(' . $background_image . ')'; ?>;
+		--background-image: <?php echo 'url(' . wp_get_attachment_image_url($background_image, 'nucleus-background-image') . ')'; ?>;
 		--background-video: <?php echo 'url(' . $background_video . ')'; ?>;
 		--background-fit: <?php echo esc_html($background_fit); ?>;
 		--background-opacity-scroll: <?php echo esc_html($background_opacity); ?>;

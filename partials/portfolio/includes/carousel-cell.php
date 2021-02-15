@@ -17,15 +17,39 @@
         $text_color = $custom_color['text_color'];
     }
 
+    // Image Size
+    $image_size = '';
+    if ( isset($portfolio_style) ) {
+        switch ($portfolio_style) {
+            case 'tiles':
+                $image_size = 'nucleus-portfolio-portrait';
+                break;
+            case 'horizon':
+            case 'spotlight':
+            case 'textual':
+            case 'forza':
+                $image_size = 'nucleus-portfolio-carousel';
+                break;
+            case 'classic':
+                $image_size = 'nucleus-portfolio-grid';
+                break;
+            case 'classic_slider':
+                $image_size = 'nucleus-portfolio-grid-slider';
+                break;
+            default:
+                $image_size = '';
+        }
+    }
+
     // Others
     $folio_terms = implode(', ', nucleus_get_term_fields('portfolio_category', 'name'));
     $folio_permalink = get_post_meta(get_the_ID(), 'custom_url', true) != false ? esc_url( get_post_meta(get_the_ID(), 'custom_url', true) ) : esc_url( get_permalink() );
-    $folio_carousel_image = get_field('slider_image') ? get_field('slider_image') : get_the_post_thumbnail_url();
+    $folio_carousel_image = get_field('slider_image') ? get_field('slider_image') : get_the_post_thumbnail_url(get_the_ID(), $image_size);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("carousel-cell"); ?> data-primary-accent-color="<?php echo esc_attr($primary_accent); ?>" data-secondary-accent-color="<?php echo esc_attr($secondary_accent); ?>" data-bg-color="<?php echo esc_attr($background_color); ?>" data-text-color="<?php echo esc_attr($text_color); ?>">
     
-    <figure class="entry-thumbnail">
+    <figure class="entry-thumbnail" data-size="<?php echo esc_attr($image_size); ?>">
         <img class="primary" src="<?php echo esc_url($folio_carousel_image); ?>">
     </figure>
 

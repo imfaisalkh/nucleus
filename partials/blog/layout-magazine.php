@@ -1,6 +1,11 @@
+<?php
+	// Helper Variable(s)
+	$image_size = (isset($is_slider_post) && $is_slider_post) || is_sticky() ? 'nucleus-blog-magazine-featured' : 'nucleus-blog-magazine-grid';
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<figure class="entry-thumbnail">
-		<img src="<?php the_post_thumbnail_url(); ?>">
+	<figure class="entry-thumbnail" data-size="<?php echo esc_attr($image_size); ?>">
+		<img src="<?php the_post_thumbnail_url($image_size); ?>">
 	</figure>
 	<div class="inner-wrap">
 		<?php if(isset($is_slider_post) && $is_slider_post) { ?>

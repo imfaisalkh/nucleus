@@ -9,7 +9,7 @@
 	<?php if ( has_post_thumbnail() ) { ?>
 		<figure class="entry-media">
 			<a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title(); ?>">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail('nucleus-blog-single'); ?>
 			</a>
 		</figure>
 	<?php } ?>

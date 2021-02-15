@@ -1,5 +1,8 @@
 <?php
 	
+	// Portfolio Style
+	$portfolio_style = 'textual'; // used for image size allocation
+
 	// Portfolio Configuration
 	$portfolio_featured_posts = get_field('portfolio_featured_posts') ? get_field('portfolio_featured_posts') : null;
 	

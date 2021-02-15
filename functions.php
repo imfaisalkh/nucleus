@@ -65,12 +65,17 @@
 
 		// Custom Image Sizes
 		add_image_size( 'nucleus-site-logo', 200, 200 );
-		add_image_size( 'nucleus-portfolio-index', 281, '', true );
-		add_image_size( 'nucleus-blog-carousel-featured', 900, 500, true );
-		add_image_size( 'nucleus-blog-carousel-regular-odd', 510, 315, true );
-		add_image_size( 'nucleus-blog-carousel-regular-even', 235, 315, true );
-		add_image_size( 'nucleus-blog-full', 910, 605, true );
-		add_image_size( 'nucleus-blog-grid', 435, 325, true );
+		add_image_size( 'nucleus-background-image', 1920);
+
+		add_image_size( 'nucleus-blog-magazine-featured', 720, 400, true );
+		add_image_size( 'nucleus-blog-magazine-grid', 400, 250, true );
+		add_image_size( 'nucleus-blog-minimal', 400 );
+		add_image_size( 'nucleus-blog-single', 1080 );
+
+		add_image_size( 'nucleus-portfolio-grid-slider', 1440, 650, true );
+		add_image_size( 'nucleus-portfolio-grid', 800);
+		add_image_size( 'nucleus-portfolio-carousel', 585, 335, true );
+		add_image_size( 'nucleus-portfolio-portrait', 245, 590, true );
 
 	    // Register WP3.0+ Menus
 	    add_action('init', 'nucleus_register_menu');

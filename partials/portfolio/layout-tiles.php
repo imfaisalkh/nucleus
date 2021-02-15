@@ -1,5 +1,8 @@
 <?php
 
+	// Portfolio Style
+	$portfolio_style = 'tiles'; // used for image size allocation
+
     // Hover Effects
     $portfolio_caption = 'float';
     $portfolio_filter = '';

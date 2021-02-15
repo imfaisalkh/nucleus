@@ -1,5 +1,8 @@
 <?php
 
+	// Portfolio Style
+	$portfolio_style = 'horizon'; // used for image size allocation
+
 	// Hover Variable(s)
 	$portfolio_effect = 'parallax';
 
