@@ -133,11 +133,11 @@
             ],
             'default'     => [
                 'font-family'    => 'Open Sans',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'variant'        => '400',
+                'font-size'      => '14px',
+                'line-height'    => '1.65',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -155,11 +155,11 @@
             ],
             'default'     => [
                 'font-family'    => 'Open Sans',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'variant'        => '400',
+                'font-size'      => '14px',
+                'line-height'    => '1.65',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -183,11 +183,11 @@
                 ],
             ],
             'default'     => [
-                'font-family'    => 'Open Sans',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
+                'font-family'    => 'Lato',
+                'variant'        => '400',
+                'font-size'      => '3.2rem',
+                'line-height'    => '1.6',
+                'letter-spacing' => '0.4px',
                 'text-transform' => 'uppercase',
             ],
             'priority'    => 10,
@@ -235,11 +235,11 @@
             ],
             'default'     => [
                 'font-family'    => 'Open Sans',
-                'variant'        => '600',
+                'variant'        => '400',
                 'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'line-height'    => '1',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -258,7 +258,6 @@
             'description'    => esc_html__( 'This section configure typography for classic portfolio layout.', 'nucleus' ),
             'panel'          => 'nucleus_typography_portfolio',
         ) );
-
 
         Kirki::add_field( 'nucleus_config', [
             'type'        => 'typography',
@@ -468,12 +467,12 @@
                 ],
             ],
             'default'     => [
-                'font-family'    => 'Open Sans',
-                'variant'        => '600',
-                'font-size'      => '16px',
+                'font-family'    => 'DM Serif Text',
+                'variant'        => '400',
+                'font-size'      => '44px',
                 'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'letter-spacing' => '0',
+                'text-transform' => 'capitalize',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -491,15 +490,15 @@
             ],
             'default'     => [
                 'font-family'    => 'Open Sans',
-                'variant'        => '600',
-                'font-size'      => '16px',
+                'variant'        => '400',
+                'font-size'      => '18px',
                 'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
-        ] );
+        ]);
         
         Kirki::add_field( 'nucleus_config', [
             'type'        => 'typography',
@@ -512,12 +511,12 @@
                 ],
             ],
             'default'     => [
-                'font-family'    => 'Open Sans',
-                'variant'        => '600',
-                'font-size'      => '16px',
+                'font-family'    => 'DM Serif Text',
+                'variant'        => '400',
+                'font-size'      => '200px',
                 'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -543,11 +542,11 @@
             ],
             'default'     => [
                 'font-family'    => 'Open Sans',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'variant'        => '400',
+                'font-size'      => '17px',
+                'line-height'    => '46px',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -565,11 +564,11 @@
             ],
             'default'     => [
                 'font-family'    => 'Open Sans',
-                'variant'        => '600',
+                'variant'        => '400',
                 'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'line-height'    => '48px',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -588,8 +587,8 @@
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
+                'font-size'      => '17px',
+                'line-height'    => '1.1',
                 'letter-spacing' => '0.5px',
                 'text-transform' => 'uppercase',
             ],
@@ -605,42 +604,32 @@
             'description'    => esc_html__( 'This section configure typography for the blog.', 'nucleus' ),
         ) );
 
-        // SECTION: Menu Typography
-        Kirki::add_section( 'nucleus_typography_blog_master', array(
-            'title'          => esc_html__( 'Blog Master', 'nucleus' ),
-            'description'    => esc_html__( 'This section configure typography for the blog master page.', 'nucleus' ),
+        // PANEL: Blog Typography
+		Kirki::add_panel( 'nucleus_typography_blog_master', array(
             'panel'          => 'nucleus_typography_blog',
+			'priority'       => 70,
+            'title'          => esc_html__( 'Blog Master', 'nucleus' ),
+        ) );
+
+        // SECTION: Menu Typography
+        Kirki::add_section( 'nucleus_typography_blog_master_minimal', array(
+            'title'          => esc_html__( 'Minimal Blog', 'nucleus' ),
+            'description'    => esc_html__( 'This section configure typography for the minimal blog master page.', 'nucleus' ),
+            'panel'          => 'nucleus_typography_blog_master',
         ) );
 
         Kirki::add_field( 'nucleus_config', [
             'type'        => 'typography',
-            'settings'    => 'nucleus_typography_blog_master_standard_title',
-            'label'       => esc_html__( 'Standard Post - Title', 'kirki' ),
-            'section'     => 'nucleus_typography_blog_master',
+            'settings'    => 'nucleus_typography_blog_master_minimal_title',
+            'label'       => esc_html__( 'Title', 'kirki' ),
+            'section'     => 'nucleus_typography_blog_master_minimal',
             'default'     => [
                 'font-family'    => 'DM Serif Text',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
-            ],
-            'priority'    => 10,
-            'transport'   => 'auto',
-        ] );
-        
-        Kirki::add_field( 'nucleus_config', [
-            'type'        => 'typography',
-            'settings'    => 'nucleus_typography_blog_master_standard_desc',
-            'label'       => esc_html__( 'Standard Post - Description', 'kirki' ),
-            'section'     => 'nucleus_typography_blog_master',
-            'default'     => [
-                'font-family'    => 'DM Serif Text',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'variant'        => '400',
+                'font-size'      => '24px',
+                'line-height'    => '1.3',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -648,83 +637,159 @@
 
         Kirki::add_field( 'nucleus_config', [
             'type'        => 'typography',
-            'settings'    => 'nucleus_typography_blog_master_standard_meta',
-            'label'       => esc_html__( 'Standard Post - Meta', 'kirki' ),
-            'section'     => 'nucleus_typography_blog_master',
-            'default'     => [
-                'font-family'    => 'DM Serif Text',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
-            ],
-            'priority'    => 10,
-            'transport'   => 'auto',
-        ] );
-
-        Kirki::add_field( 'nucleus_config', [
-            'type'        => 'typography',
-            'settings'    => 'nucleus_typography_blog_master_featured_title',
-            'label'       => esc_html__( 'Featured Post - Title', 'kirki' ),
-            'section'     => 'nucleus_typography_blog_master',
-            'default'     => [
-                'font-family'    => 'DM Serif Text',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
-            ],
-            'priority'    => 10,
-            'transport'   => 'auto',
-        ] );
-        
-        Kirki::add_field( 'nucleus_config', [
-            'type'        => 'typography',
-            'settings'    => 'nucleus_typography_blog_master_featured_desc',
-            'label'       => esc_html__( 'Featured Post - Description', 'kirki' ),
-            'section'     => 'nucleus_typography_blog_master',
-            'default'     => [
-                'font-family'    => 'DM Serif Text',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
-            ],
-            'priority'    => 10,
-            'transport'   => 'auto',
-        ] );
-
-        Kirki::add_field( 'nucleus_config', [
-            'type'        => 'typography',
-            'settings'    => 'nucleus_typography_blog_master_featured_meta',
-            'label'       => esc_html__( 'Featured Post - Meta', 'kirki' ),
-            'section'     => 'nucleus_typography_blog_master',
-            'default'     => [
-                'font-family'    => 'DM Serif Text',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
-            ],
-            'priority'    => 10,
-            'transport'   => 'auto',
-        ] );
-
-        Kirki::add_field( 'nucleus_config', [
-            'type'        => 'typography',
-            'settings'    => 'nucleus_typography_blog_master_featured_tag',
-            'label'       => esc_html__( 'Fetaured Post - Tag', 'kirki' ),
-            'section'     => 'nucleus_typography_blog_master',
+            'settings'    => 'nucleus_typography_blog_master_minimal_meta',
+            'label'       => esc_html__( 'Meta', 'kirki' ),
+            'section'     => 'nucleus_typography_blog_master_minimal',
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
+                'font-size'      => '14px',
+                'line-height'    => '1.3',
+                'letter-spacing' => '0',
+                'text-transform' => 'uppercase',
+            ],
+            'priority'    => 10,
+            'transport'   => 'auto',
+        ] );
+
+        Kirki::add_field( 'nucleus_config', [
+            'type'        => 'typography',
+            'settings'    => 'nucleus_typography_blog_master_minimal_counter',
+            'label'       => esc_html__( 'Counter', 'kirki' ),
+            'section'     => 'nucleus_typography_blog_master_minimal',
+            'default'     => [
+                'font-family'    => 'DM Serif Text',
+                'variant'        => '800',
+                'font-size'      => '26px',
+                'line-height'    => '1',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+            ],
+            'priority'    => 10,
+            'transport'   => 'auto',
+        ] );
+
+
+        // SECTION: Menu Typography
+        Kirki::add_section( 'nucleus_typography_blog_master_magazine', array(
+            'title'          => esc_html__( 'Magazine Blog', 'nucleus' ),
+            'description'    => esc_html__( 'This section configure typography for the magazine blog master page.', 'nucleus' ),
+            'panel'          => 'nucleus_typography_blog_master',
+        ) );
+
+        Kirki::add_field( 'nucleus_config', [
+            'type'        => 'typography',
+            'settings'    => 'nucleus_typography_blog_master_magazine_standard_title',
+            'label'       => esc_html__( 'Standard Post - Title', 'kirki' ),
+            'section'     => 'nucleus_typography_blog_master_magazine',
+            'default'     => [
+                'font-family'    => 'DM Serif Text',
+                'variant'        => '400',
+                'font-size'      => '28px',
+                'line-height'    => '1.2',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+            ],
+            'priority'    => 10,
+            'transport'   => 'auto',
+        ] );
+        
+        Kirki::add_field( 'nucleus_config', [
+            'type'        => 'typography',
+            'settings'    => 'nucleus_typography_blog_master_magazine_standard_desc',
+            'label'       => esc_html__( 'Standard Post - Description', 'kirki' ),
+            'section'     => 'nucleus_typography_blog_master_magazine',
+            'default'     => [
+                'font-family'    => 'Open Sans',
+                'variant'        => '300',
+                'font-size'      => '18px',
+                'line-height'    => '1.2',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+            ],
+            'priority'    => 10,
+            'transport'   => 'auto',
+        ] );
+
+        Kirki::add_field( 'nucleus_config', [
+            'type'        => 'typography',
+            'settings'    => 'nucleus_typography_blog_master_magazine_standard_meta',
+            'label'       => esc_html__( 'Standard Post - Meta', 'kirki' ),
+            'section'     => 'nucleus_typography_blog_master_magazine',
+            'default'     => [
+                'font-family'    => 'Open Sans',
+                'variant'        => '400',
                 'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
+                'line-height'    => '1.6',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+            ],
+            'priority'    => 10,
+            'transport'   => 'auto',
+        ] );
+
+        Kirki::add_field( 'nucleus_config', [
+            'type'        => 'typography',
+            'settings'    => 'nucleus_typography_blog_master_magazine_featured_title',
+            'label'       => esc_html__( 'Featured Post - Title', 'kirki' ),
+            'section'     => 'nucleus_typography_blog_master_magazine',
+            'default'     => [
+                'font-family'    => 'DM Serif Text',
+                'variant'        => '400',
+                'font-size'      => '36px',
+                'line-height'    => '1.2',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+            ],
+            'priority'    => 10,
+            'transport'   => 'auto',
+        ] );
+        
+        Kirki::add_field( 'nucleus_config', [
+            'type'        => 'typography',
+            'settings'    => 'nucleus_typography_blog_master_magazine_featured_desc',
+            'label'       => esc_html__( 'Featured Post - Description', 'kirki' ),
+            'section'     => 'nucleus_typography_blog_master_magazine',
+            'default'     => [
+                'font-family'    => 'Open Sans',
+                'variant'        => '300',
+                'font-size'      => '20px',
+                'line-height'    => '1.6',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+            ],
+            'priority'    => 10,
+            'transport'   => 'auto',
+        ] );
+
+        Kirki::add_field( 'nucleus_config', [
+            'type'        => 'typography',
+            'settings'    => 'nucleus_typography_blog_master_magazine_featured_meta',
+            'label'       => esc_html__( 'Featured Post - Meta', 'kirki' ),
+            'section'     => 'nucleus_typography_blog_master_magazine',
+            'default'     => [
+                'font-family'    => 'Open Sans',
+                'variant'        => '400',
+                'font-size'      => '16px',
+                'line-height'    => '1.6',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+            ],
+            'priority'    => 10,
+            'transport'   => 'auto',
+        ] );
+
+        Kirki::add_field( 'nucleus_config', [
+            'type'        => 'typography',
+            'settings'    => 'nucleus_typography_blog_master_magazine_featured_tag',
+            'label'       => esc_html__( 'Fetaured Post - Tag', 'kirki' ),
+            'section'     => 'nucleus_typography_blog_master_magazine',
+            'default'     => [
+                'font-family'    => 'Open Sans',
+                'variant'        => '400',
+                'font-size'      => '13px',
+                'line-height'    => '1.6',
+                'letter-spacing' => '1px',
                 'text-transform' => 'uppercase',
             ],
             'priority'    => 10,

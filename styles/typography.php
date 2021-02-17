@@ -21,83 +21,121 @@
 		<?php } ?>
 	}
 
-
-/** == BLOG MASTER == */
+/** == BLOG MASTER - MINIMAL == */
 /** ================================================== */
 
 	<?php
-		$typography_blog_master_standard_title = get_theme_mod( 'nucleus_typography_blog_master_standard_title', [] );
-		$typography_blog_master_standard_desc = get_theme_mod( 'nucleus_typography_blog_master_standard_desc', [] );
-        $typography_blog_master_standard_meta = get_theme_mod( 'nucleus_typography_blog_master_standard_meta', [] );
-        
-		$typography_blog_master_featured_title = get_theme_mod( 'nucleus_typography_blog_master_featured_title', [] );
-		$typography_blog_master_featured_desc = get_theme_mod( 'nucleus_typography_blog_master_featured_desc', [] );
-		$typography_blog_master_featured_meta = get_theme_mod( 'nucleus_typography_blog_master_featured_meta', [] );
-		$typography_blog_master_featured_tag = get_theme_mod( 'nucleus_typography_blog_master_featured_tag', [] );
+		$typography_blog_master_minimal_title = get_theme_mod( 'nucleus_typography_blog_master_minimal_title', [] );
+        $typography_blog_master_minimal_meta = get_theme_mod( 'nucleus_typography_blog_master_minimal_meta', [] );
+		$typography_blog_master_minimal_counter = get_theme_mod( 'nucleus_typography_blog_master_minimal_counter', [] );
 	?>
 
 	:root {
-		<?php if ($typography_blog_master_standard_title) { ?>
-		--blog-standard-title-font-family: <?php echo esc_html($typography_blog_master_standard_title['font-family']); ?>;
-		--blog-standard-title-variant: <?php echo esc_html($typography_blog_master_standard_title['variant']); ?>;
-		--blog-standard-title-font-size: <?php echo esc_html($typography_blog_master_standard_title['font-size']); ?>;
-		--blog-standard-title-line-height: <?php echo esc_html($typography_blog_master_standard_title['line-height']); ?>;
-		--blog-standard-title-letter-spacing: <?php echo esc_html($typography_blog_master_standard_title['letter-spacing']); ?>;
-		--blog-standard-title-text-transform: <?php echo esc_html($typography_blog_master_standard_title['text-transform']); ?>;
+		<?php if ($typography_blog_master_minimal_title) { ?>
+		--blog-minimal-title-font-family: <?php echo esc_html($typography_blog_master_minimal_title['font-family']); ?>;
+		--blog-minimal-title-variant: <?php echo esc_html($typography_blog_master_minimal_title['variant']); ?>;
+		--blog-minimal-title-font-size: <?php echo esc_html($typography_blog_master_minimal_title['font-size']); ?>;
+		--blog-minimal-title-line-height: <?php echo esc_html($typography_blog_master_minimal_title['line-height']); ?>;
+		--blog-minimal-title-letter-spacing: <?php echo esc_html($typography_blog_master_minimal_title['letter-spacing']); ?>;
+		--blog-minimal-title-text-transform: <?php echo esc_html($typography_blog_master_minimal_title['text-transform']); ?>;
 		<?php } ?>
 
-		<?php if ($typography_blog_master_standard_desc) { ?>
-		--blog-standard-desc-font-family: <?php echo esc_html($typography_blog_master_standard_desc['font-family']); ?>;
-		--blog-standard-desc-variant: <?php echo esc_html($typography_blog_master_standard_desc['variant']); ?>;
-		--blog-standard-desc-font-size: <?php echo esc_html($typography_blog_master_standard_desc['font-size']); ?>;
-		--blog-standard-desc-line-height: <?php echo esc_html($typography_blog_master_standard_desc['line-height']); ?>;
-		--blog-standard-desc-letter-spacing: <?php echo esc_html($typography_blog_master_standard_desc['letter-spacing']); ?>;
-		--blog-standard-desc-text-transform: <?php echo esc_html($typography_blog_master_standard_desc['text-transform']); ?>;
+        <?php if ($typography_blog_master_minimal_meta) { ?>
+		--blog-minimal-meta-font-family: <?php echo esc_html($typography_blog_master_minimal_meta['font-family']); ?>;
+		--blog-minimal-meta-variant: <?php echo esc_html($typography_blog_master_minimal_meta['variant']); ?>;
+		--blog-minimal-meta-font-size: <?php echo esc_html($typography_blog_master_minimal_meta['font-size']); ?>;
+		--blog-minimal-meta-line-height: <?php echo esc_html($typography_blog_master_minimal_meta['line-height']); ?>;
+		--blog-minimal-meta-letter-spacing: <?php echo esc_html($typography_blog_master_minimal_meta['letter-spacing']); ?>;
+		--blog-minimal-meta-text-transform: <?php echo esc_html($typography_blog_master_minimal_meta['text-transform']); ?>;
 		<?php } ?>
 
-        <?php if ($typography_blog_master_standard_meta) { ?>
-		--blog-standard-meta-font-family: <?php echo esc_html($typography_blog_master_standard_meta['font-family']); ?>;
-		--blog-standard-meta-variant: <?php echo esc_html($typography_blog_master_standard_meta['variant']); ?>;
-		--blog-standard-meta-font-size: <?php echo esc_html($typography_blog_master_standard_meta['font-size']); ?>;
-		--blog-standard-meta-line-height: <?php echo esc_html($typography_blog_master_standard_meta['line-height']); ?>;
-		--blog-standard-meta-letter-spacing: <?php echo esc_html($typography_blog_master_standard_meta['letter-spacing']); ?>;
-		--blog-standard-meta-text-transform: <?php echo esc_html($typography_blog_master_standard_meta['text-transform']); ?>;
+		<?php if ($typography_blog_master_minimal_counter) { ?>
+		--blog-minimal-counter-font-family: <?php echo esc_html($typography_blog_master_minimal_counter['font-family']); ?>;
+		--blog-minimal-counter-variant: <?php echo esc_html($typography_blog_master_minimal_counter['variant']); ?>;
+		--blog-minimal-counter-font-size: <?php echo esc_html($typography_blog_master_minimal_counter['font-size']); ?>;
+		--blog-minimal-counter-line-height: <?php echo esc_html($typography_blog_master_minimal_counter['line-height']); ?>;
+		--blog-minimal-counter-letter-spacing: <?php echo esc_html($typography_blog_master_minimal_counter['letter-spacing']); ?>;
+		--blog-minimal-counter-text-transform: <?php echo esc_html($typography_blog_master_minimal_counter['text-transform']); ?>;
+		<?php } ?>
+	}
+
+
+/** == BLOG MASTER - MAGZINE == */
+/** ================================================== */
+
+	<?php
+		$typography_blog_master_magazine_standard_title = get_theme_mod( 'nucleus_typography_blog_master_magazine_standard_title', [] );
+		$typography_blog_master_magazine_standard_desc = get_theme_mod( 'nucleus_typography_blog_master_magazine_standard_desc', [] );
+        $typography_blog_master_magazine_standard_meta = get_theme_mod( 'nucleus_typography_blog_master_magazine_standard_meta', [] );
+        
+		$typography_blog_master_magazine_featured_title = get_theme_mod( 'nucleus_typography_blog_master_magazine_featured_title', [] );
+		$typography_blog_master_magazine_featured_desc = get_theme_mod( 'nucleus_typography_blog_master_magazine_featured_desc', [] );
+		$typography_blog_master_magazine_featured_meta = get_theme_mod( 'nucleus_typography_blog_master_magazine_featured_meta', [] );
+		$typography_blog_master_magazine_featured_tag = get_theme_mod( 'nucleus_typography_blog_master_magazine_featured_tag', [] );
+	?>
+
+	:root {
+		<?php if ($typography_blog_master_magazine_standard_title) { ?>
+		--blog-magazine-standard-title-font-family: <?php echo esc_html($typography_blog_master_magazine_standard_title['font-family']); ?>;
+		--blog-magazine-standard-title-variant: <?php echo esc_html($typography_blog_master_magazine_standard_title['variant']); ?>;
+		--blog-magazine-standard-title-font-size: <?php echo esc_html($typography_blog_master_magazine_standard_title['font-size']); ?>;
+		--blog-magazine-standard-title-line-height: <?php echo esc_html($typography_blog_master_magazine_standard_title['line-height']); ?>;
+		--blog-magazine-standard-title-letter-spacing: <?php echo esc_html($typography_blog_master_magazine_standard_title['letter-spacing']); ?>;
+		--blog-magazine-standard-title-text-transform: <?php echo esc_html($typography_blog_master_magazine_standard_title['text-transform']); ?>;
 		<?php } ?>
 
-		<?php if ($typography_blog_master_featured_title) { ?>
-		--blog-featured-title-font-family: <?php echo esc_html($typography_blog_master_featured_title['font-family']); ?>;
-		--blog-featured-title-variant: <?php echo esc_html($typography_blog_master_featured_title['variant']); ?>;
-		--blog-featured-title-font-size: <?php echo esc_html($typography_blog_master_featured_title['font-size']); ?>;
-		--blog-featured-title-line-height: <?php echo esc_html($typography_blog_master_featured_title['line-height']); ?>;
-		--blog-featured-title-letter-spacing: <?php echo esc_html($typography_blog_master_featured_title['letter-spacing']); ?>;
-		--blog-featured-title-text-transform: <?php echo esc_html($typography_blog_master_featured_title['text-transform']); ?>;
+		<?php if ($typography_blog_master_magazine_standard_desc) { ?>
+		--blog-magazine-standard-desc-font-family: <?php echo esc_html($typography_blog_master_magazine_standard_desc['font-family']); ?>;
+		--blog-magazine-standard-desc-variant: <?php echo esc_html($typography_blog_master_magazine_standard_desc['variant']); ?>;
+		--blog-magazine-standard-desc-font-size: <?php echo esc_html($typography_blog_master_magazine_standard_desc['font-size']); ?>;
+		--blog-magazine-standard-desc-line-height: <?php echo esc_html($typography_blog_master_magazine_standard_desc['line-height']); ?>;
+		--blog-magazine-standard-desc-letter-spacing: <?php echo esc_html($typography_blog_master_magazine_standard_desc['letter-spacing']); ?>;
+		--blog-magazine-standard-desc-text-transform: <?php echo esc_html($typography_blog_master_magazine_standard_desc['text-transform']); ?>;
 		<?php } ?>
 
-        <?php if ($typography_blog_master_featured_desc) { ?>
-		--blog-featured-desc-font-family: <?php echo esc_html($typography_blog_master_featured_desc['font-family']); ?>;
-		--blog-featured-desc-variant: <?php echo esc_html($typography_blog_master_featured_desc['variant']); ?>;
-		--blog-featured-desc-font-size: <?php echo esc_html($typography_blog_master_featured_desc['font-size']); ?>;
-		--blog-featured-desc-line-height: <?php echo esc_html($typography_blog_master_featured_desc['line-height']); ?>;
-		--blog-featured-desc-letter-spacing: <?php echo esc_html($typography_blog_master_featured_desc['letter-spacing']); ?>;
-		--blog-featured-desc-text-transform: <?php echo esc_html($typography_blog_master_featured_desc['text-transform']); ?>;
+        <?php if ($typography_blog_master_magazine_standard_meta) { ?>
+		--blog-magazine-standard-meta-font-family: <?php echo esc_html($typography_blog_master_magazine_standard_meta['font-family']); ?>;
+		--blog-magazine-standard-meta-variant: <?php echo esc_html($typography_blog_master_magazine_standard_meta['variant']); ?>;
+		--blog-magazine-standard-meta-font-size: <?php echo esc_html($typography_blog_master_magazine_standard_meta['font-size']); ?>;
+		--blog-magazine-standard-meta-line-height: <?php echo esc_html($typography_blog_master_magazine_standard_meta['line-height']); ?>;
+		--blog-magazine-standard-meta-letter-spacing: <?php echo esc_html($typography_blog_master_magazine_standard_meta['letter-spacing']); ?>;
+		--blog-magazine-standard-meta-text-transform: <?php echo esc_html($typography_blog_master_magazine_standard_meta['text-transform']); ?>;
 		<?php } ?>
 
-		<?php if ($typography_blog_master_featured_meta) { ?>
-		--blog-featured-meta-font-family: <?php echo esc_html($typography_blog_master_featured_meta['font-family']); ?>;
-		--blog-featured-meta-variant: <?php echo esc_html($typography_blog_master_featured_meta['variant']); ?>;
-		--blog-featured-meta-font-size: <?php echo esc_html($typography_blog_master_featured_meta['font-size']); ?>;
-		--blog-featured-meta-line-height: <?php echo esc_html($typography_blog_master_featured_meta['line-height']); ?>;
-		--blog-featured-meta-letter-spacing: <?php echo esc_html($typography_blog_master_featured_meta['letter-spacing']); ?>;
-		--blog-featured-meta-text-transform: <?php echo esc_html($typography_blog_master_featured_meta['text-transform']); ?>;
+		<?php if ($typography_blog_master_magazine_featured_title) { ?>
+		--blog-magazine-featured-title-font-family: <?php echo esc_html($typography_blog_master_magazine_featured_title['font-family']); ?>;
+		--blog-magazine-featured-title-variant: <?php echo esc_html($typography_blog_master_magazine_featured_title['variant']); ?>;
+		--blog-magazine-featured-title-font-size: <?php echo esc_html($typography_blog_master_magazine_featured_title['font-size']); ?>;
+		--blog-magazine-featured-title-line-height: <?php echo esc_html($typography_blog_master_magazine_featured_title['line-height']); ?>;
+		--blog-magazine-featured-title-letter-spacing: <?php echo esc_html($typography_blog_master_magazine_featured_title['letter-spacing']); ?>;
+		--blog-magazine-featured-title-text-transform: <?php echo esc_html($typography_blog_master_magazine_featured_title['text-transform']); ?>;
 		<?php } ?>
 
-        <?php if ($typography_blog_master_featured_tag) { ?>
-		--blog-featured-tag-font-family: <?php echo esc_html($typography_blog_master_featured_tag['font-family']); ?>;
-		--blog-featured-tag-variant: <?php echo esc_html($typography_blog_master_featured_tag['variant']); ?>;
-		--blog-featured-tag-font-size: <?php echo esc_html($typography_blog_master_featured_tag['font-size']); ?>;
-		--blog-featured-tag-line-height: <?php echo esc_html($typography_blog_master_featured_tag['line-height']); ?>;
-		--blog-featured-tag-letter-spacing: <?php echo esc_html($typography_blog_master_featured_tag['letter-spacing']); ?>;
-		--blog-featured-tag-text-transform: <?php echo esc_html($typography_blog_master_featured_tag['text-transform']); ?>;
+        <?php if ($typography_blog_master_magazine_featured_desc) { ?>
+		--blog-magazine-featured-desc-font-family: <?php echo esc_html($typography_blog_master_magazine_featured_desc['font-family']); ?>;
+		--blog-magazine-featured-desc-variant: <?php echo esc_html($typography_blog_master_magazine_featured_desc['variant']); ?>;
+		--blog-magazine-featured-desc-font-size: <?php echo esc_html($typography_blog_master_magazine_featured_desc['font-size']); ?>;
+		--blog-magazine-featured-desc-line-height: <?php echo esc_html($typography_blog_master_magazine_featured_desc['line-height']); ?>;
+		--blog-magazine-featured-desc-letter-spacing: <?php echo esc_html($typography_blog_master_magazine_featured_desc['letter-spacing']); ?>;
+		--blog-magazine-featured-desc-text-transform: <?php echo esc_html($typography_blog_master_magazine_featured_desc['text-transform']); ?>;
+		<?php } ?>
+
+		<?php if ($typography_blog_master_magazine_featured_meta) { ?>
+		--blog-magazine-featured-meta-font-family: <?php echo esc_html($typography_blog_master_magazine_featured_meta['font-family']); ?>;
+		--blog-magazine-featured-meta-variant: <?php echo esc_html($typography_blog_master_magazine_featured_meta['variant']); ?>;
+		--blog-magazine-featured-meta-font-size: <?php echo esc_html($typography_blog_master_magazine_featured_meta['font-size']); ?>;
+		--blog-magazine-featured-meta-line-height: <?php echo esc_html($typography_blog_master_magazine_featured_meta['line-height']); ?>;
+		--blog-magazine-featured-meta-letter-spacing: <?php echo esc_html($typography_blog_master_magazine_featured_meta['letter-spacing']); ?>;
+		--blog-magazine-featured-meta-text-transform: <?php echo esc_html($typography_blog_master_magazine_featured_meta['text-transform']); ?>;
+		<?php } ?>
+
+        <?php if ($typography_blog_master_magazine_featured_tag) { ?>
+		--blog-magazine-featured-tag-font-family: <?php echo esc_html($typography_blog_master_magazine_featured_tag['font-family']); ?>;
+		--blog-magazine-featured-tag-variant: <?php echo esc_html($typography_blog_master_magazine_featured_tag['variant']); ?>;
+		--blog-magazine-featured-tag-font-size: <?php echo esc_html($typography_blog_master_magazine_featured_tag['font-size']); ?>;
+		--blog-magazine-featured-tag-line-height: <?php echo esc_html($typography_blog_master_magazine_featured_tag['line-height']); ?>;
+		--blog-magazine-featured-tag-letter-spacing: <?php echo esc_html($typography_blog_master_magazine_featured_tag['letter-spacing']); ?>;
+		--blog-magazine-featured-tag-text-transform: <?php echo esc_html($typography_blog_master_magazine_featured_tag['text-transform']); ?>;
 		<?php } ?>
 	}
 

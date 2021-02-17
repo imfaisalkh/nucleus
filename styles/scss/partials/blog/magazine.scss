@@ -76,12 +76,12 @@
 						}
 				
 						.entry-title {
-							font-family: var(--blog-featured-title-font-family, $primary-font-stack);
-							font-weight: var(--blog-featured-title-variant, 400);
-							font-size: var(--blog-featured-title-font-size, 36px);
-							line-height: var(--blog-featured-title-line-height, 1.2);
-							letter-spacing: var(--blog-featured-title-letter-spacing, 0);
-							text-transform: var(--blog-featured-title-text-transform, none);
+							font-family: var(--blog-magazine-featured-title-font-family, $primary-font-stack);
+							font-weight: var(--blog-magazine-featured-title-variant, 400);
+							font-size: var(--blog-magazine-featured-title-font-size, 36px);
+							line-height: var(--blog-magazine-featured-title-line-height, 1.2);
+							letter-spacing: var(--blog-magazine-featured-title-letter-spacing, 0);
+							text-transform: var(--blog-magazine-featured-title-text-transform, none);
 
 							-ms-word-wrap: break-word;
 							word-wrap: break-word;
@@ -103,12 +103,12 @@
 							}
 						}
 						.featured {
-							font-family: var(--blog-featured-tag-font-family, $secondary-font-stack);
-							font-weight: var(--blog-featured-tag-variant, 400);
-							font-size: var(--blog-featured-tag-font-size, 13px);
-							line-height: var(--blog-featured-tag-line-height, 1.6);
-							letter-spacing: var(--blog-featured-tag-letter-spacing, 1px);
-							text-transform: var(--blog-featured-tag-text-transform, uppercase);
+							font-family: var(--blog-magazine-featured-tag-font-family, $secondary-font-stack);
+							font-weight: var(--blog-magazine-featured-tag-variant, 400);
+							font-size: var(--blog-magazine-featured-tag-font-size, 13px);
+							line-height: var(--blog-magazine-featured-tag-line-height, 1.6);
+							letter-spacing: var(--blog-magazine-featured-tag-letter-spacing, 1px);
+							text-transform: var(--blog-magazine-featured-tag-text-transform, uppercase);
 
 							display: inline-block;
 							border: 1px solid #FF6000;
@@ -118,12 +118,12 @@
 							margin-bottom: 5px;
 						}
 						.entry-desc {
-							font-family: var(--blog-featured-desc-font-family, $secondary-font-stack);
-							font-weight: var(--blog-featured-desc-variant, 300);
-							font-size: var(--blog-featured-desc-font-size, 20px);
-							line-height: var(--blog-featured-desc-line-height, 1.6);
-							letter-spacing: var(--blog-featured-desc-letter-spacing, 0);
-							text-transform: var(--blog-featured-desc-text-transform, none);
+							font-family: var(--blog-magazine-featured-desc-font-family, $secondary-font-stack);
+							font-weight: var(--blog-magazine-featured-desc-variant, 300);
+							font-size: var(--blog-magazine-featured-desc-font-size, 20px);
+							line-height: var(--blog-magazine-featured-desc-line-height, 1.6);
+							letter-spacing: var(--blog-magazine-featured-desc-letter-spacing, 0);
+							text-transform: var(--blog-magazine-featured-desc-text-transform, none);
 							
 							margin-bottom: 7px;
 
@@ -131,12 +131,12 @@
 						}
 				
 						.timestamp {
-							font-family: var(--blog-featured-meta-font-family, $secondary-font-stack);
-							font-weight: var(--blog-featured-meta-variant, 400);
-							font-size: var(--blog-featured-meta-font-size, 16px);
-							line-height: var(--blog-featured-meta-line-height, 1.6);
-							letter-spacing: var(--blog-featured-meta-letter-spacing, 0);
-							text-transform: var(--blog-featured-meta-text-transform, none);
+							font-family: var(--blog-magazine-featured-meta-font-family, $secondary-font-stack);
+							font-weight: var(--blog-magazine-featured-meta-variant, 400);
+							font-size: var(--blog-magazine-featured-meta-font-size, 16px);
+							line-height: var(--blog-magazine-featured-meta-line-height, 1.6);
+							letter-spacing: var(--blog-magazine-featured-meta-letter-spacing, 0);
+							text-transform: var(--blog-magazine-featured-meta-text-transform, none);
 
 							color: #949494;
 							a { color: inherit; }
@@ -233,24 +233,24 @@
 				@include breakpoint($mobile) { padding: 0; }
 
 				.entry-title {
-					font-family: var(--blog-featured-title-font-family, $primary-font-stack);
-					font-weight: var(--blog-featured-title-variant, 400);
-					font-size: var(--blog-featured-title-font-size, 36px);
-					line-height: var(--blog-featured-title-line-height, 1.2);
-					letter-spacing: var(--blog-featured-title-letter-spacing, 0);
-					text-transform: var(--blog-featured-title-text-transform, none);
+					font-family: var(--blog-magazine-featured-title-font-family, $primary-font-stack);
+					font-weight: var(--blog-magazine-featured-title-variant, 400);
+					font-size: var(--blog-magazine-featured-title-font-size, 36px);
+					line-height: var(--blog-magazine-featured-title-line-height, 1.2);
+					letter-spacing: var(--blog-magazine-featured-title-letter-spacing, 0);
+					text-transform: var(--blog-magazine-featured-title-text-transform, none);
 
 					padding: 0;
 
 					@include breakpoint($mobile) { font-size: 30px; }
 				}
 				.featured {
-					font-family: var(--blog-featured-tag-font-family, $secondary-font-stack);
-					font-weight: var(--blog-featured-tag-variant, 400);
-					font-size: var(--blog-featured-tag-font-size, 13px);
-					line-height: var(--blog-featured-tag-line-height, 1.6);
-					letter-spacing: var(--blog-featured-tag-letter-spacing, 1px);
-					text-transform: var(--blog-featured-tag-text-transform, uppercase);
+					font-family: var(--blog-magazine-featured-tag-font-family, $secondary-font-stack);
+					font-weight: var(--blog-magazine-featured-tag-variant, 400);
+					font-size: var(--blog-magazine-featured-tag-font-size, 13px);
+					line-height: var(--blog-magazine-featured-tag-line-height, 1.6);
+					letter-spacing: var(--blog-magazine-featured-tag-letter-spacing, 1px);
+					text-transform: var(--blog-magazine-featured-tag-text-transform, uppercase);
 
 					display: inline-block;
 					border: 1px solid #FF6000;
@@ -260,22 +260,22 @@
 					margin-bottom: 5px;
 				}
 				.entry-desc {
-					font-family: var(--blog-featured-desc-font-family, $secondary-font-stack);
-					font-weight: var(--blog-featured-desc-variant, 300);
-					font-size: var(--blog-featured-desc-font-size, 20px);
-					line-height: var(--blog-featured-desc-line-height, 1.6);
-					letter-spacing: var(--blog-featured-desc-letter-spacing, 0);
-					text-transform: var(--blog-featured-desc-text-transform, none);
+					font-family: var(--blog-magazine-featured-desc-font-family, $secondary-font-stack);
+					font-weight: var(--blog-magazine-featured-desc-variant, 300);
+					font-size: var(--blog-magazine-featured-desc-font-size, 20px);
+					line-height: var(--blog-magazine-featured-desc-line-height, 1.6);
+					letter-spacing: var(--blog-magazine-featured-desc-letter-spacing, 0);
+					text-transform: var(--blog-magazine-featured-desc-text-transform, none);
 
 					@include breakpoint($mobile) { font-size: 16px; }
 				}
 				.timestamp {
-					font-family: var(--blog-featured-meta-font-family, $secondary-font-stack);
-					font-weight: var(--blog-featured-meta-variant, 400);
-					font-size: var(--blog-featured-meta-font-size, 16px);
-					line-height: var(--blog-featured-meta-line-height, 1.6);
-					letter-spacing: var(--blog-featured-meta-letter-spacing, 0);
-					text-transform: var(--blog-featured-meta-text-transform, none);
+					font-family: var(--blog-magazine-featured-meta-font-family, $secondary-font-stack);
+					font-weight: var(--blog-magazine-featured-meta-variant, 400);
+					font-size: var(--blog-magazine-featured-meta-font-size, 16px);
+					line-height: var(--blog-magazine-featured-meta-line-height, 1.6);
+					letter-spacing: var(--blog-magazine-featured-meta-letter-spacing, 0);
+					text-transform: var(--blog-magazine-featured-meta-text-transform, none);
 				}
 			}
 
@@ -286,12 +286,12 @@
 		}
 
 		.entry-title {
-			font-family: var(--blog-standard-title-font-family, $primary-font-stack);
-			font-weight: var(--blog-standard-title-variant, 400);
-			font-size: var(--blog-standard-title-font-size, 28px);
-			line-height: var(--blog-standard-title-line-height, 1.2);
-			letter-spacing: var(--blog-standard-title-letter-spacing, 0);
-			text-transform: var(--blog-standard-title-text-transform, none);
+			font-family: var(--blog-magazine-standard-title-font-family, $primary-font-stack);
+			font-weight: var(--blog-magazine-standard-title-variant, 400);
+			font-size: var(--blog-magazine-standard-title-font-size, 28px);
+			line-height: var(--blog-magazine-standard-title-line-height, 1.2);
+			letter-spacing: var(--blog-magazine-standard-title-letter-spacing, 0);
+			text-transform: var(--blog-magazine-standard-title-text-transform, none);
 
 			-ms-word-wrap: break-word;
 			word-wrap: break-word;
@@ -314,24 +314,24 @@
 			}
 		}
 		.entry-desc {
-			font-family: var(--blog-standard-desc-font-family, $primary-font-stack);
-			font-weight: var(--blog-standard-desc-variant, 300);
-			font-size: var(--blog-standard-desc-font-size, 18px);
-			line-height: var(--blog-standard-desc-line-height, 1.2);
-			letter-spacing: var(--blog-standard-desc-letter-spacing, 0);
-			text-transform: var(--blog-standard-desc-text-transform, none);
+			font-family: var(--blog-magazine-standard-desc-font-family, $secondary-font-stack);
+			font-weight: var(--blog-magazine-standard-desc-variant, 300);
+			font-size: var(--blog-magazine-standard-desc-font-size, 18px);
+			line-height: var(--blog-magazine-standard-desc-line-height, 1.2);
+			letter-spacing: var(--blog-magazine-standard-desc-letter-spacing, 0);
+			text-transform: var(--blog-magazine-standard-desc-text-transform, none);
 
 			font-weight: 300;
 			margin-bottom: 7px;
 		}
 
 		.timestamp {
-			font-family: var(--blog-standard-meta-font-family, $secondary-font-stack);
-			font-weight: var(--blog-standard-meta-variant, 400);
-			font-size: var(--blog-standard-meta-font-size, 16px);
-			line-height: var(--blog-standard-meta-line-height, 1.6);
-			letter-spacing: var(--blog-standard-meta-letter-spacing, 0);
-			text-transform: var(--blog-standard-meta-text-transform, none);
+			font-family: var(--blog-magazine-standard-meta-font-family, $secondary-font-stack);
+			font-weight: var(--blog-magazine-standard-meta-variant, 400);
+			font-size: var(--blog-magazine-standard-meta-font-size, 16px);
+			line-height: var(--blog-magazine-standard-meta-line-height, 1.6);
+			letter-spacing: var(--blog-magazine-standard-meta-letter-spacing, 0);
+			text-transform: var(--blog-magazine-standard-meta-text-transform, none);
 			
 			color: #949494;
 			a { color: inherit; }

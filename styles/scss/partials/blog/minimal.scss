@@ -49,12 +49,12 @@
 		}
 
 		&:before {
-			font-family: var(--blog-standard-title-font-family, $primary-font-stack);
-			font-weight: var(--blog-standard-title-variant, 800);
-			font-size: var(--blog-standard-title-font-size, 26px);
-			line-height: var(--blog-standard-title-line-height, 1);
-			letter-spacing: var(--blog-standard-title-letter-spacing, 0);
-			text-transform: var(--blog-standard-title-text-transform, none);
+			font-family: var(--blog-minimal-counter-font-family, $primary-font-stack);
+			font-weight: var(--blog-minimal-counter-variant, 800);
+			font-size: var(--blog-minimal-counter-font-size, 26px);
+			line-height: var(--blog-minimal-counter-line-height, 1);
+			letter-spacing: var(--blog-minimal-counter-letter-spacing, 0);
+			text-transform: var(--blog-minimal-counter-text-transform, none);
 
 			color: #E6AA4C;
 			content: counter(my-badass-counter)".";
@@ -79,12 +79,12 @@
 		}
 
 		.entry-title {
-			font-family: var(--blog-standard-title-font-family, $primary-font-stack);
-			font-weight: var(--blog-standard-title-variant, 400);
-			font-size: var(--blog-standard-title-font-size, 24px);
-			line-height: var(--blog-standard-title-line-height, 1.3);
-			letter-spacing: var(--blog-standard-title-letter-spacing, 0);
-			text-transform: var(--blog-standard-title-text-transform, none);
+			font-family: var(--blog-minimal-title-font-family, $primary-font-stack);
+			font-weight: var(--blog-minimal-title-variant, 400);
+			font-size: var(--blog-minimal-title-font-size, 24px);
+			line-height: var(--blog-minimal-title-line-height, 1.3);
+			letter-spacing: var(--blog-minimal-title-letter-spacing, 0);
+			text-transform: var(--blog-minimal-title-text-transform, none);
 	
 			-ms-word-wrap: break-word;
 			word-wrap: break-word;
@@ -105,12 +105,12 @@
 		}
 
 		.timestamp {
-			font-family: var(--blog-standard-title-font-family, $secondary-font-stack);
-			font-weight: var(--blog-standard-title-variant, 600);
-			font-size: var(--blog-standard-title-font-size, 14px);
-			line-height: var(--blog-standard-title-line-height, 1.3);
-			letter-spacing: var(--blog-standard-title-letter-spacing, 0);
-			text-transform: var(--blog-standard-title-text-transform, uppercase);
+			font-family: var(--blog-minimal-meta-font-family, $secondary-font-stack);
+			font-weight: var(--blog-minimal-meta-variant, 600);
+			font-size: var(--blog-minimal-meta-font-size, 14px);
+			line-height: var(--blog-minimal-meta-line-height, 1.3);
+			letter-spacing: var(--blog-minimal-meta-letter-spacing, 0);
+			text-transform: var(--blog-minimal-meta-text-transform, uppercase);
 
 			color: #737373;
 			a { color: inherit; }

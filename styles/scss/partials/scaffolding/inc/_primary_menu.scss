@@ -18,12 +18,13 @@
 		position: relative;
 		overflow: hidden;
 		padding-bottom: 4px;
+		opacity: 0.7;
+
 		font-size: var(--menu-root-font-size, 16px);
 		font-weight: vat(--menu-root-variant, 600);
 		text-transform: var(--menu-root-text-transform, uppercase);
 		letter-spacing: var(--menu-root-letter-spacing, 0.5px);
 		color: var(--text-color, #FFF);
-		opacity: 0.7;
 		
 		&:hover,
 		&:focus
@@ -146,7 +147,7 @@
 		  font-family: var(--menu-child-font-family, $secondary-font-stack);
 		  font-size: var(--menu-child-font-size, 16px);
 		  font-weight: var(--menu-child-variant, 400);
-		  text-transform: var(--menu-child-text-transform, capitalize);
+		  text-transform: var(--menu-child-text-transform, none);
 		  letter-spacing: var(--menu-child-letter-spacing, 0);
 		  line-height: var(--menu-child-line-height, 1);
 		  
