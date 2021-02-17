@@ -94,11 +94,15 @@
 				
 							a {
 								color: var(--text-color);
-								border-bottom: 1px solid transparent;
-								transition: all 300ms linear;
+
+								background-image: linear-gradient(var(--primary-accent), var(--primary-accent));
+								background-size: 0% 1px;
+								background-position: 0 calc(100% + -2px);
+								background-repeat: no-repeat;
+								transition: all 200ms linear;
 				
 								&:hover {
-									border-bottom: 1px solid var(--primary-accent);
+                            		background-size: 100% 1px;
 								}
 							}
 						}
@@ -288,7 +292,7 @@
 		.entry-title {
 			font-family: var(--blog-magazine-standard-title-font-family, $primary-font-stack);
 			font-weight: var(--blog-magazine-standard-title-variant, 400);
-			font-size: var(--blog-magazine-standard-title-font-size, 28px);
+			font-size: var(--blog-magazine-standard-title-font-size, 27px);
 			line-height: var(--blog-magazine-standard-title-line-height, 1.2);
 			letter-spacing: var(--blog-magazine-standard-title-letter-spacing, 0);
 			text-transform: var(--blog-magazine-standard-title-text-transform, none);
@@ -305,11 +309,15 @@
 
 			a {
 				color: var(--text-color);
-				border-bottom: 1px solid transparent;
-				transition: all 300ms linear;
+
+				background-image: linear-gradient(var(--primary-accent), var(--primary-accent));
+				background-size: 0% 1px;
+				background-position: 0 calc(100% + -3px);
+				background-repeat: no-repeat;
+				transition: all 200ms linear;
 
 				&:hover {
-					border-bottom: 1px solid var(--primary-accent);
+					background-size: 100% 1px;
 				}
 			}
 		}
