@@ -1,25 +1,3 @@
-/** == FONT STACKS == */
-/** ================================================== */
-
-	<?php
-		$typography_primary_stack = get_theme_mod( 'nucleus_typography_general_primary', [] );
-		$typography_secondary_stack = get_theme_mod( 'nucleus_typography_general_secondary', [] );
-		$typography_tertiary_stack = get_theme_mod( 'nucleus_typography_general_tertiary', [] );
-	?>
-
-	:root {
-		<?php if ($typography_primary_stack) { ?>
-		--primary-font-stack: <?php echo esc_html($typography_primary_stack['font-family']); ?>;
-		<?php } ?>
-
-		<?php if ($typography_secondary_stack) { ?>
-		--secondary-font-stack: <?php echo esc_html($typography_secondary_stack['font-family']); ?>;
-		<?php } ?>
-
-		<?php if ($typography_tertiary_stack) { ?>
-		--tertiary-font-stack: <?php echo esc_html($typography_tertiary_stack['font-family']); ?>;
-		<?php } ?>
-	}
 
 /** == BLOG MASTER - MINIMAL == */
 /** ================================================== */

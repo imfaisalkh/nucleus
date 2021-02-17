@@ -7,8 +7,8 @@
 	$blog_slider_args = array(
 		'post_type' 	=> 'post',
 		'post__in'    	=> $blog_slider_posts,
-		'orderby' 		=> 'post__in'
-
+		'orderby' 		=> 'post__in',
+		'ignore_sticky_posts' => 1
 	);
 
 	$blog_slider_query = new WP_Query($blog_slider_args);
