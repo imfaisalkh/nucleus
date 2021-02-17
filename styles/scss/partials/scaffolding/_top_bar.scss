@@ -49,6 +49,16 @@
 
 					*:last-child { margin-right: 0 !important; }
 				}
+
+				// Specific Blocks
+				.text-block, .language-selector {
+					font-family: var(--top-bar-regular-font-family, $secondary-font-stack);
+					font-weight: var(--top-bar-regular-variant, 400);
+					font-size: var(--top-bar-regular-font-size, 14px);
+					line-height: var(--top-bar-regular-line-height, 1.65);
+					letter-spacing: var(--top-bar-regular-letter-spacing, 0);
+					text-transform: var(--top-bar-regular-text-transform, none);
+				}
 			}
 
 			// General Styles
@@ -85,8 +95,14 @@
 					padding: 0;
 					list-style: none;
 					li {
+						font-family: var(--top-bar-menu-font-family, $secondary-font-stack);
+						font-weight: var(--top-bar-menu-variant, 400);
+						font-size: var(--top-bar-menu-font-size, 14px);
+						line-height: var(--top-bar-menu-line-height, 1.65);
+						letter-spacing: var(--top-bar-menu-letter-spacing, 0);
+						text-transform: var(--top-bar-menu-text-transform, none);
+
 						margin: 10px;
-						font-size: 14px;
 
 						a {
 							color: inherit;

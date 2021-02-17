@@ -6,11 +6,14 @@
 
 		// Text Logo
 		.logo.text {
+			font-family: var(--site-logo-font-family, $tertiary-font-stack);
+			font-weight: var(--site-logo-variant, 400);
+			font-size: var(--site-logo-font-size, 3.2rem);
+			line-height: var(--site-logo-line-height, 1.6);
+			letter-spacing: var(--site-logo-letter-spacing, 0.4px);
+			text-transform: var(--site-logo-text-transform, uppercase);
+
 			display: inline-block;
-			font-family: $tertiary-font-stack;
-			font-size: 3.2rem;
-			text-transform: uppercase;
-			letter-spacing: 0.4px;
 			color: var(--text-color, #FFF);
 
 			@include breakpoint($mobile)	  { font-size: 2.8rem; }

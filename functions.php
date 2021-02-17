@@ -204,10 +204,20 @@
 
 			// Add Inline Styles (dynamic)
 			ob_start();
-			require( get_template_directory() .'/styles/dynamic.php' );
-			$dynamic_css = ob_get_clean();
+			require( get_template_directory() .'/styles/general.php' );
+			$general_css = ob_get_clean();
 
-	        wp_add_inline_style('nucleus-main', $dynamic_css);
+			ob_start();
+			require( get_template_directory() .'/styles/colors.php' );
+			$colors_css = ob_get_clean();
+
+			ob_start();
+			require( get_template_directory() .'/styles/typography.php' );
+			$typography_css = ob_get_clean();
+
+	        wp_add_inline_style('nucleus-main', $general_css);
+	        wp_add_inline_style('nucleus-main', $colors_css);
+	        wp_add_inline_style('nucleus-main', $typography_css);
 
 		}
 	}

@@ -12,13 +12,17 @@
 			.inner-wrap {
 				.category {
 					a {
+						font-family: var(--blog-detail-tag-font-family, $secondary-font-stack);
+						font-weight: var(--blog-detail-tag-variant, 400);
+						font-size: var(--blog-detail-tag-font-size, 14px);
+						line-height: var(--blog-detail-tag-line-height, 1.5);
+						letter-spacing: var(--blog-detail-tag-letter-spacing, 1px);
+						text-transform: var(--blog-detail-tag-text-transform, uppercase);
+		
 						display: inline-block;
 						color: #E6AA4C;
 						border: 1px solid #E6AA4C;
 						border-radius: 5px;
-						text-transform: uppercase;
-						letter-spacing: 1px;
-						font-size: 14px;
 						padding: 3px 11px;
 						margin-bottom: 5px;
 					}
@@ -47,13 +51,18 @@
 
 				/** Entry Content */
 				.entry-content {
-					font-family: var(--secondary-font-stack);
-					font-size: 18px;
+					font-family: var(--blog-detail-body-font-family, $secondary-font-stack);
+					font-weight: var(--blog-detail-body-variant, 400);
+					font-size: var(--blog-detail-body-font-size, 18px);
+					line-height: var(--blog-detail-body-line-height, 1.65);
+					letter-spacing: var(--blog-detail-body-letter-spacing, 0);
+					text-transform: var(--blog-detail-body-text-transform, none);
+
 					color: #B0B0B0;
 					line-height: 1.65;
 
 					&::first-letter {
-						font-family: $primary-font-stack;
+						font-family: var(--primary-font-stack, $primary-font-stack);
 						font-size: 110px;
 						color: #515151;
 						float: left;
@@ -102,9 +111,15 @@
 						display: flex;
 						flex-direction: column;
 						span {
-							position: relative;
-							font-family: $secondary-font-stack;
+							font-family: var(--blog-detail-body-font-family, $secondary-font-stack);
+							font-weight: var(--blog-detail-body-variant, 400);
+							// font-size: var(--blog-detail-body-font-size, 18px);
+							line-height: var(--blog-detail-body-line-height, 1.65);
+							letter-spacing: var(--blog-detail-body-letter-spacing, 0);
+							text-transform: var(--blog-detail-body-text-transform, none);
+
 							font-size: 20px;
+							position: relative;
 							color: #696969;
 
 							&:after {
@@ -119,8 +134,14 @@
 							}
 						}
 						a {
+							font-family: var(--blog-detail-title-font-family, $primary-font-stack);
+							font-weight: var(--blog-detail-title-variant, 400);
+							// font-size: var(--blog-detail-title-font-size, 18px);
+							line-height: var(--blog-detail-title-line-height, 1.65);
+							letter-spacing: var(--blog-detail-title-letter-spacing, 0);
+							text-transform: var(--blog-detail-title-text-transform, none);
+
 							display: inline-block;
-							font-family: $primary-font-stack;
 							font-size: 43px;
 							color: #FFF;
 

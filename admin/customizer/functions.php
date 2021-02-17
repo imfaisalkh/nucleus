@@ -10,7 +10,16 @@
 #-----------------------------------------------------------------#
 
     if ( class_exists( 'Kirki' ) ) {
+
+        // Add Theme Config (required for dynamic google fonts to function)
+        Kirki::add_config( 'nucleus_config', array(
+            'option_type'   => 'theme_mod',
+            'output_handle'   => 'nucleus-main',
+        ));
+
+        // Import Customizer Settings
         foreach ( glob( get_template_directory() . "/admin/customizer/*.inc.php" ) as $filename) {
             include $filename;
         }
+
     }

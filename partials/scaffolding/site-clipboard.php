@@ -2,16 +2,18 @@
 <div id="site-clipboard">
 
     <!-- Page Sidebar -->
-    <?php if ( is_active_sidebar( 'blog-sidebar' ) && is_home() || is_singular('post') ) { ?>
-        <a href="#open-sidebar" class="open-sidebar">
-            <i class="fi fi-sidebar-arrow" aria-hidden="true"></i>
-        </a>
-        <aside id="page-sidebar">
-            <a href="#close-sidebar" class="close-sidebar">
-                <i class="fi fi-close" aria-hidden="true"></i>
+    <?php if (get_theme_mod('nucleus_blog_sidebar', true)) { ?>
+        <?php if ( is_active_sidebar( 'blog-sidebar' ) && is_home() || is_singular('post') ) { ?>
+            <a href="#open-sidebar" class="open-sidebar">
+                <i class="fi fi-sidebar-arrow" aria-hidden="true"></i>
             </a>
-            <?php get_sidebar(); ?> 
-        </aside>
+            <aside id="page-sidebar">
+                <a href="#close-sidebar" class="close-sidebar">
+                    <i class="fi fi-close" aria-hidden="true"></i>
+                </a>
+                <?php get_sidebar(); ?> 
+            </aside>
+        <?php } ?>
     <?php } ?>
 
     <?php $page_actions_group = get_theme_mod( 'nucleus_page_actions_group'); ?>

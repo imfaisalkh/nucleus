@@ -76,14 +76,16 @@
 						}
 				
 						.entry-title {
-							font-family: $primary-font-stack;
-							font-size: 36px;
-							font-weight: 400;
+							font-family: var(--blog-featured-title-font-family, $primary-font-stack);
+							font-weight: var(--blog-featured-title-variant, 400);
+							font-size: var(--blog-featured-title-font-size, 36px);
+							line-height: var(--blog-featured-title-line-height, 1.2);
+							letter-spacing: var(--blog-featured-title-letter-spacing, 0);
+							text-transform: var(--blog-featured-title-text-transform, none);
+
 							-ms-word-wrap: break-word;
 							word-wrap: break-word;
-							line-height: 1.2;
 							margin: 0;
-							letter-spacing: 0;
 							margin-bottom: 10px;
 							padding-right: 20px;
 				
@@ -101,27 +103,41 @@
 							}
 						}
 						.featured {
+							font-family: var(--blog-featured-tag-font-family, $secondary-font-stack);
+							font-weight: var(--blog-featured-tag-variant, 400);
+							font-size: var(--blog-featured-tag-font-size, 13px);
+							line-height: var(--blog-featured-tag-line-height, 1.6);
+							letter-spacing: var(--blog-featured-tag-letter-spacing, 1px);
+							text-transform: var(--blog-featured-tag-text-transform, uppercase);
+
 							display: inline-block;
 							border: 1px solid #FF6000;
 							color: #FF6000;
 							border-radius: 5px;
-							text-transform: uppercase;
-							letter-spacing: 1px;
-							font-size: 13px;
 							padding: 3px 8px;
 							margin-bottom: 5px;
 						}
 						.entry-desc {
-							font-size: 18px;
-							font-weight: 300;
+							font-family: var(--blog-featured-desc-font-family, $secondary-font-stack);
+							font-weight: var(--blog-featured-desc-variant, 300);
+							font-size: var(--blog-featured-desc-font-size, 20px);
+							line-height: var(--blog-featured-desc-line-height, 1.6);
+							letter-spacing: var(--blog-featured-desc-letter-spacing, 0);
+							text-transform: var(--blog-featured-desc-text-transform, none);
+							
 							margin-bottom: 7px;
 
 							@include breakpoint($mobile)  { font-size: 16px; }
 						}
 				
 						.timestamp {
-							font-family: $secondary-font-stack;
-							font-size: 16px;
+							font-family: var(--blog-featured-meta-font-family, $secondary-font-stack);
+							font-weight: var(--blog-featured-meta-variant, 400);
+							font-size: var(--blog-featured-meta-font-size, 16px);
+							line-height: var(--blog-featured-meta-line-height, 1.6);
+							letter-spacing: var(--blog-featured-meta-letter-spacing, 0);
+							text-transform: var(--blog-featured-meta-text-transform, none);
+
 							color: #949494;
 							a { color: inherit; }
 						}
@@ -217,26 +233,49 @@
 				@include breakpoint($mobile) { padding: 0; }
 
 				.entry-title {
+					font-family: var(--blog-featured-title-font-family, $primary-font-stack);
+					font-weight: var(--blog-featured-title-variant, 400);
+					font-size: var(--blog-featured-title-font-size, 36px);
+					line-height: var(--blog-featured-title-line-height, 1.2);
+					letter-spacing: var(--blog-featured-title-letter-spacing, 0);
+					text-transform: var(--blog-featured-title-text-transform, none);
+
 					padding: 0;
-					font-size: 36px;
 
 					@include breakpoint($mobile) { font-size: 30px; }
 				}
 				.featured {
+					font-family: var(--blog-featured-tag-font-family, $secondary-font-stack);
+					font-weight: var(--blog-featured-tag-variant, 400);
+					font-size: var(--blog-featured-tag-font-size, 13px);
+					line-height: var(--blog-featured-tag-line-height, 1.6);
+					letter-spacing: var(--blog-featured-tag-letter-spacing, 1px);
+					text-transform: var(--blog-featured-tag-text-transform, uppercase);
+
 					display: inline-block;
 					border: 1px solid #FF6000;
 					color: #FF6000;
 					border-radius: 5px;
-					text-transform: uppercase;
-					letter-spacing: 1px;
-					font-size: 13px;
 					padding: 3px 8px;
 					margin-bottom: 5px;
 				}
 				.entry-desc {
-					font-size: 20px;
+					font-family: var(--blog-featured-desc-font-family, $secondary-font-stack);
+					font-weight: var(--blog-featured-desc-variant, 300);
+					font-size: var(--blog-featured-desc-font-size, 20px);
+					line-height: var(--blog-featured-desc-line-height, 1.6);
+					letter-spacing: var(--blog-featured-desc-letter-spacing, 0);
+					text-transform: var(--blog-featured-desc-text-transform, none);
 
 					@include breakpoint($mobile) { font-size: 16px; }
+				}
+				.timestamp {
+					font-family: var(--blog-featured-meta-font-family, $secondary-font-stack);
+					font-weight: var(--blog-featured-meta-variant, 400);
+					font-size: var(--blog-featured-meta-font-size, 16px);
+					line-height: var(--blog-featured-meta-line-height, 1.6);
+					letter-spacing: var(--blog-featured-meta-letter-spacing, 0);
+					text-transform: var(--blog-featured-meta-text-transform, none);
 				}
 			}
 
@@ -247,14 +286,16 @@
 		}
 
 		.entry-title {
-			font-family: $primary-font-stack;
-			font-size: 28px;
-			font-weight: 400;
+			font-family: var(--blog-standard-title-font-family, $primary-font-stack);
+			font-weight: var(--blog-standard-title-variant, 400);
+			font-size: var(--blog-standard-title-font-size, 28px);
+			line-height: var(--blog-standard-title-line-height, 1.2);
+			letter-spacing: var(--blog-standard-title-letter-spacing, 0);
+			text-transform: var(--blog-standard-title-text-transform, none);
+
 			-ms-word-wrap: break-word;
 			word-wrap: break-word;
-			line-height: 1.2;
 			margin: 0;
-			letter-spacing: 0;
 			margin-bottom: 7px;
 			padding-right: 20px;
 
@@ -273,14 +314,25 @@
 			}
 		}
 		.entry-desc {
-			font-size: 18px;
+			font-family: var(--blog-standard-desc-font-family, $primary-font-stack);
+			font-weight: var(--blog-standard-desc-variant, 300);
+			font-size: var(--blog-standard-desc-font-size, 18px);
+			line-height: var(--blog-standard-desc-line-height, 1.2);
+			letter-spacing: var(--blog-standard-desc-letter-spacing, 0);
+			text-transform: var(--blog-standard-desc-text-transform, none);
+
 			font-weight: 300;
 			margin-bottom: 7px;
 		}
 
 		.timestamp {
-			font-family: $secondary-font-stack;
-			font-size: 16px;
+			font-family: var(--blog-standard-meta-font-family, $secondary-font-stack);
+			font-weight: var(--blog-standard-meta-variant, 400);
+			font-size: var(--blog-standard-meta-font-size, 16px);
+			line-height: var(--blog-standard-meta-line-height, 1.6);
+			letter-spacing: var(--blog-standard-meta-letter-spacing, 0);
+			text-transform: var(--blog-standard-meta-text-transform, none);
+			
 			color: #949494;
 			a { color: inherit; }
 		}

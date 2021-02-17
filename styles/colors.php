@@ -69,33 +69,10 @@
 	$menu_text_hover   		= $menu_colors ? $menu_colors['text_hover'] : '';
 
 
-#-----------------------------------------------------------------#
-# Page Background (Meta Panel)
-#-----------------------------------------------------------------#
-
-	$background_image   		 = attachment_url_to_postid(get_field('background_image', $post_ID)); // get ID from the image URL
-	$background_video   		 = get_field('background_video', $post_ID);
-	$background_fit   		 	 = 'cover';
-	$background_opacity    		 = get_field('background_opacity', $post_ID);
-
 ?>
 
 /** == CUSTOM PROPERTIES == */
 /** ================================================== */
-
-	/** Global Variables */
-	:root {
-		/** BACKGROUND: Background Media */
-		--background-image: <?php echo 'url(' . wp_get_attachment_image_url($background_image, 'nucleus-background-image') . ')'; ?>;
-		--background-video: <?php echo 'url(' . $background_video . ')'; ?>;
-		--background-fit: <?php echo esc_html($background_fit); ?>;
-		--background-opacity-scroll: <?php echo esc_html($background_opacity); ?>;
-
-		/** TYPOGRAPHY: Fonts */
-		--primary-font-stack:    'Lora', sans-serif;
-		--secondary-font-stack:  'Open Sans', sans-serif;
-		--tertiary-font-stack:   'Libre Franklin', sans-serif;
-	}
 
 	/** Light Color Scheme */
 	body.light-base-color-scheme	{
@@ -164,25 +141,4 @@
 
 		--menu-background-hover: <?php echo esc_html($menu_background_hover); ?>;
 		--menu-text-hover: <?php echo esc_html($menu_text_hover); ?>;
-	}
-
-	/** Header Size */
-	:root {
-		--header-desktop-size: <?php echo get_theme_mod('nucleus_header_desktop_height', 88) . 'px'; ?>;
-		--header-mobile-size: <?php echo get_theme_mod('nucleus_header_mobile_height', 60) . 'px'; ?>;
-		--header-sticky-size: <?php echo get_theme_mod('nucleus_header_sticky_height', 112) . 'px'; ?>;
-	}
-
-	/** Logo Size */
-	:root {
-		--header-desktop-logo-size: <?php echo get_theme_mod('nucleus_header_desktop_logo_height', 88) . 'px'; ?>;
-		--header-mobile-logo-size: <?php echo get_theme_mod('nucleus_header_mobile_logo_height', 60) . 'px'; ?>;
-		--header-sticky-logo-size: <?php echo get_theme_mod('nucleus_header_sticky_logo_height', 112) . 'px'; ?>;
-	}
-
-	/** Top Bar */
-	:root {
-		--top-bar-size: <?php echo get_theme_mod('nucleus_header_top_bar_height', 40) . 'px'; ?>;
-		--top-bar-text-color: <?php echo get_theme_mod('nucleus_header_top_bar_text_color', '#FFF'); ?>;
-		--top-bar-background-color: <?php echo get_theme_mod('nucleus_header_top_bar_bg_color', '#232323'); ?>;
 	}

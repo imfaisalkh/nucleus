@@ -18,22 +18,26 @@
 	input[type="tel"],
 	select,
 	textarea {
-		font-family: $secondary-font-stack;
-		font-size: 1.6rem;
-		display: block;
-		width: 100%;
-		border-width: 1px;
-		border-style: solid;
+		font-family: var(--form-field-font-family, $secondary-font-stack);
+		font-weight: var(--form-field-variant, 400);
+		font-size: var(--form-field-font-size, 16px);
+		line-height: var(--form-field-line-height, 48px);
+		letter-spacing: var(--form-field-letter-spacing, 0);
+		text-transform: var(--form-field-text-transform, none);
 
 		background: var(--form-field-background-color);
 		color: var(--form-field-text-color);
 		border-color: var(--form-field-border-color);
 
+		display: block;
+		width: 100%;
+		border-width: 1px;
+		border-style: solid;
+
 		margin: 0;
 		vertical-align: baseline;
 		padding: 0.74rem 1.7rem;
 		border-radius: 5px;
-		line-height: 48px;
 		transition: all 300ms ease-in-out;
 		box-shadow: none;
 	    appearance: none;
@@ -73,19 +77,20 @@
 	input[type="submit"],
 	button:not(.flickity-prev-next-button):not(.elementor-alert-dismiss),
 	input[type="button"] {
-		font-family: $secondary-font-stack;
-		text-transform: uppercase;
-		font-weight: 600;
-		font-size: 17px;
-		padding: 20px 50px;
-		transition: all 300ms ease-in-out 0s;
+		font-family: var(--form-button-font-family, $secondary-font-stack);
+		font-weight: var(--form-button-variant, 600);
+		font-size: var(--form-button-font-size, 17px);
+		line-height: var(--form-button-line-height, 1.1);
+		letter-spacing: var(--form-button-letter-spacing, 0.5px);
+		text-transform: var(--form-button-text-transform, uppercase);
 
-		letter-spacing: 0.5px;
 		display: inline-block;
+		padding: 20px 50px;
 		margin-top: 30px;
 		border-width: 2px;
 		border-style: solid;
 		border-radius: 0;
+		transition: all 300ms ease-in-out 0s;
 
 		background: var(--form-button-background-color);
 		border-color: var(--form-button-border-color);
@@ -124,9 +129,13 @@
 -------------------------------------------------------- */
 
 	label {
-		font-family: $secondary-font-stack;
-		font-size: 1.7rem;
-		line-height: 46px;
+		font-family: var(--form-label-font-family, $secondary-font-stack);
+		font-weight: var(--form-label-variant, 400);
+		font-size: var(--form-label-font-size, 17px);
+		line-height: var(--form-label-line-height, 46px);
+		letter-spacing: var(--form-label-letter-spacing, 0);
+		text-transform: var(--form-label-text-transform, none);
+
 		color: #838383;
 		color: var(--form-text-label-color, #838383);
 

@@ -3,7 +3,7 @@
 ========================================================== */
 
   ul#primary-menu, ul#secondary-menu {
-	font-family: $secondary-font-stack;
+	font-family: var(--menu-root-font-family, $secondary-font-stack);
 	display: flex;
 	justify-content: flex-end;
 	flex-wrap: wrap;
@@ -18,13 +18,13 @@
 		position: relative;
 		overflow: hidden;
 		padding-bottom: 4px;
-		font-size: 16px;
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 0.5px;
-		color: var(--text-color, #FFF); opacity: 0.7;
+		font-size: var(--menu-root-font-size, 16px);
+		font-weight: vat(--menu-root-variant, 600);
+		text-transform: var(--menu-root-text-transform, uppercase);
+		letter-spacing: var(--menu-root-letter-spacing, 0.5px);
+		color: var(--text-color, #FFF);
+		opacity: 0.7;
 		
-
 		&:hover,
 		&:focus
 		{
@@ -143,14 +143,18 @@
 		transition: background .2s;
 
 		a {
-		  font-family: $secondary-font-stack;
-		  font-size: 16px;
+		  font-family: var(--menu-child-font-family, $secondary-font-stack);
+		  font-size: var(--menu-child-font-size, 16px);
+		  font-weight: var(--menu-child-variant, 400);
+		  text-transform: var(--menu-child-text-transform, capitalize);
+		  letter-spacing: var(--menu-child-letter-spacing, 0);
+		  line-height: var(--menu-child-line-height, 1);
+		  
 		  display: block;
 		  position: relative;
 		  display: block;
 		  padding: 9px 17px;
 		  margin: 0 20px;
-		  text-transform: capitalize;
 		  border-radius: 5px;
 		  color: var(--menu-text);
 

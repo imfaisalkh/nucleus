@@ -79,10 +79,20 @@
 					margin: 0 auto;
 
 					.title {
-						font-family: $secondary-font-stack;
-						font-size: 18px;
-						font-weight: 600;
-						text-transform: uppercase;
+						font-family: var(--site-footer-title-font-family, $secondary-font-stack);
+						font-weight: var(--site-footer-title-variant, 600);
+						font-size: var(--site-footer-title-font-size, 18px);
+						line-height: var(--site-footer-title-line-height, 1.5);
+						letter-spacing: var(--site-footer-title-letter-spacing, -1px);
+						text-transform: var(--site-footer-title-text-transform, uppercase);
+					}
+					.desc {
+						font-family: var(--site-footer-text-font-family, $secondary-font-stack);
+						font-weight: var(--site-footer-text-variant, 400);
+						font-size: var(--site-footer-text-font-size, 16px);
+						line-height: var(--site-footer-text-line-height, 1.5);
+						letter-spacing: var(--site-footer-text-letter-spacing, 0);
+						text-transform: var(--site-footer-text-text-transform, none);
 					}
 					.social-profiles {
 						margin: 0;
@@ -107,7 +117,6 @@
 			// Footer V2
 			&[data-footer-style="v2"] {
 				padding-top: 30px;
-				font-size: 1.8rem;
 				margin: 30px auto 0 auto;
 
 				&:before {
@@ -136,7 +145,16 @@
 				    	&:hover { opacity: 1; }
 					}
 
-					p { margin-bottom: 0; }
+					p {
+						font-family: var(--site-footer-text-font-family, $secondary-font-stack);
+						font-weight: var(--site-footer-text-variant, 400);
+						font-size: var(--site-footer-text-font-size, 18px);
+						line-height: var(--site-footer-text-line-height, 1.5);
+						letter-spacing: var(--site-footer-text-letter-spacing, 0);
+						text-transform: var(--site-footer-text-text-transform, none);
+
+						margin-bottom: 0;
+					}
 
 				}
 				.social-icons {

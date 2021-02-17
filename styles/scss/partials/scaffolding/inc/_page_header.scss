@@ -126,21 +126,24 @@
 			max-width: 100%;
 
 			.title {
-				font-family: $primary-font-stack;
-				// font-style: italic;
-				font-weight: 400;
-				font-size: 44px;
+				font-family: var(--page-header-title-font-family, $primary-font-stack);
+				font-weight: var(--page-header-title-variant, 400);
+				font-size: var(--page-header-title-font-size, 44px);
+				line-height: var(--page-header-title-line-height, 1.5);
+				letter-spacing: var(--page-header-title-letter-spacing, 0);
+				text-transform: var(--page-header-title-text-transform, capitalize);
+	  
 				margin: 0;
-				letter-spacing: 0;
-
 				@include breakpoint($mobile)  { font-size: 36px; }
-				@include breakpoint($laptop)  { font-size: 44px; }
 
 				.single-post & {
-					font-style: normal;
-					font-size: 52px;
-					line-height: 1.3;
-					letter-spacing: -0.5px;
+					font-family: var(--blog-detail-title-font-family, $primary-font-stack);
+					font-weight: var(--blog-detail-title-variant, 400);
+					font-size: var(--blog-detail-title-font-size, 52px);
+					line-height: var(--blog-detail-title-line-height, 1.3);
+					letter-spacing: var(--blog-detail-title-letter-spacing, -0.5px);
+					text-transform: var(--blog-detail-title-text-transform, none);
+					
 					margin: 10px 0 15px 0;
 
 					@include breakpoint($mobile) { font-size: 36px; line-height: 1.2; }
@@ -151,25 +154,40 @@
 			}
 			.subtitle, .meta-info
 			{
-				font-family: $secondary-font-stack;
-				font-size: 18px;
-				color: var(--text-color, #FFF); opacity: 0.7;
+				font-family: var(--page-header-subtitle-font-family, $secondary-font-stack);
+				font-weight: var(--page-header-subtitle-variant, 400);
+				font-size: var(--page-header-subtitle-font-size, 18px);
+				line-height: var(--page-header-subtitle-line-height, 1.5);
+				letter-spacing: var(--page-header-subtitle-letter-spacing, 0);
+				text-transform: var(--page-header-subtitle-text-transform, none);
+
+				color: var(--text-color, #FFF);
+				opacity: 0.7;
 				
 				@include breakpoint($mobile)  { font-size: 16px; padding: 0 15px; }
 			}
 			.timestamp {
-				font-family: $secondary-font-stack;
-				font-size: 18px;
-				color: var(--text-color, #FFF); opacity: 0.7;
+				font-family: var(--blog-detail-meta-font-family, $secondary-font-stack);
+				font-weight: var(--blog-detail-meta-variant, 400);
+				font-size: var(--blog-detail-meta-font-size, 18px);
+				line-height: var(--blog-detail-meta-line-height, 1.3);
+				letter-spacing: var(--blog-detail-meta-letter-spacing, -0.5px);
+				text-transform: var(--blog-detail-meta-text-transform, none);
 
+				color: var(--text-color, #FFF); opacity: 0.7;
 			}
 			.backdrop {
+				font-family: var(--page-header-backdrop-font-family, $primary-font-stack);
+				font-weight: var(--page-header-backdrop-variant, 400);
+				font-size: var(--page-header-backdrop-font-size, 200px);
+				line-height: var(--page-header-backdrop-line-height, 1.5);
+				letter-spacing: var(--page-header-backdrop-letter-spacing, 0);
+				text-transform: var(--page-header-backdrop-text-transform, none);
+
 				position: absolute;
 				top: 50%; left: 50%;
 				transform: translateX(-50%) translateY(-60%);
 				z-index: -10;
-				font-family: $primary-font-stack;
-				font-size: 200px;
 				color: var(--backdrop-color);
 				opacity: 0.5;
 

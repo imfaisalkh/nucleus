@@ -15,6 +15,15 @@
             'description'    => esc_html__( 'This section configure settings for the blog.', 'nucleus' ),
         ) );
 
+        Kirki::add_field( 'nucleus_blog_sidebar', [
+            'type'        => 'toggle',
+            'settings'    => 'nucleus_blog_sidebar',
+            'label'       => esc_html__( 'Enable Blog Sidebar?', 'nucleus' ),
+            'section'     => 'nucleus_blog_settings',
+            'default'     => '1',
+            'priority'    => 10,
+        ] ); 
+
         Kirki::add_field( 'nucleus_blog_layout', [
             'type'        => 'select',
             'settings'    => 'nucleus_blog_layout',
