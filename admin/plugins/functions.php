@@ -60,13 +60,20 @@ function nucleus_register_required_plugins() {
 	$plugins = array(
 
 		array(
-			'name' 		=> esc_html__('Elementor Page Builder', 'nucleus'),
+			'name'      => esc_html__('Nucleus Pro', 'nucleus'), // The plugin name.
+			'slug'      => 'nucleus-pro', // The plugin slug (typically the folder name).
+			'source'    => 'https://bitbucket.org/wpscouts/nucleus-pro/get/af7b159c73ed.zip', // The plugin source.
+			'required'  => true, // If false, the plugin is only 'recommended' instead of required.
+		),
+
+		array(
+			'name' 		=> esc_html__('Elementor - Page Builder', 'nucleus'),
 			'slug' 		=> 'elementor',
 			'required' 	=> true,
 		),
 
 		array(
-			'name'      => esc_html__('Advanced Custom Fields Pro', 'nucleus'), // The plugin name.
+			'name'      => esc_html__('ACF Pro', 'nucleus'), // The plugin name.
 			'slug'      => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name).
 			'source'    => 'https://github.com/imfaisalkh/advanced-custom-fields-pro/archive/master.zip', // The plugin source.
 			'required'  => true, // If false, the plugin is only 'recommended' instead of required.
@@ -85,12 +92,6 @@ function nucleus_register_required_plugins() {
 		),
 
 		array(
-			'name' 		=> esc_html__('Safe SVG', 'nucleus'),
-			'slug' 		=> 'safe-svg',
-			'required' 	=> false,
-		),
-
-		array(
 			'name'     	=> 'Core Portfolio', // The plugin name
 			'slug'     	=> 'core-portfolio', // The plugin slug (typically the folder name)
 			'source'   	=> 'https://github.com/imfaisalkh/core-portfolio/archive/master.zip', // The plugin source
@@ -105,10 +106,9 @@ function nucleus_register_required_plugins() {
 		),
 
 		array(
-			'name'      => esc_html__('Nucleus Pro', 'nucleus'), // The plugin name.
-			'slug'      => 'nucleus-pro', // The plugin slug (typically the folder name).
-			'source'    => 'https://bitbucket.org/wpscouts/nucleus-pro/get/af7b159c73ed.zip', // The plugin source.
-			'required'  => false, // If false, the plugin is only 'recommended' instead of required.
+			'name' 		=> esc_html__('Safe SVG', 'nucleus'),
+			'slug' 		=> 'safe-svg',
+			'required' 	=> false,
 		),
 
 		array(
@@ -120,12 +120,6 @@ function nucleus_register_required_plugins() {
 		array(
 			'name' 		=> esc_html__('Instagram Feed', 'nucleus'),
 			'slug' 		=> 'instagram-feed',
-			'required' 	=> false,
-		),
-
-		array(
-			'name' 		=> esc_html__('oAuth Twitter Feed', 'nucleus'),
-			'slug' 		=> 'oauth-twitter-feed-for-developers',
 			'required' 	=> false,
 		),
 

@@ -126,11 +126,6 @@
             'settings'    => 'nucleus_typography_top_bar_regular_text',
             'label'       => esc_html__( 'Regular Text', 'kirki' ),
             'section'     => 'nucleus_top_bar_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '400',
@@ -148,11 +143,6 @@
             'settings'    => 'nucleus_typography_top_bar_menu_text',
             'label'       => esc_html__( 'Menu Text', 'kirki' ),
             'section'     => 'nucleus_top_bar_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '400',
@@ -177,11 +167,6 @@
             'settings'    => 'nucleus_typography_logo_text',
             'label'       => esc_html__( 'Logo Text', 'kirki' ),
             'section'     => 'nucleus_logo_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Lato',
                 'variant'        => '400',
@@ -206,11 +191,6 @@
             'settings'    => 'nucleus_typography_menu_root',
             'label'       => esc_html__( 'Menu Root', 'kirki' ),
             'section'     => 'nucleus_menu_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
@@ -228,11 +208,6 @@
             'settings'    => 'nucleus_typography_menu_child',
             'label'       => esc_html__( 'Menu Child', 'kirki' ),
             'section'     => 'nucleus_menu_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '400',
@@ -264,11 +239,6 @@
             'settings'    => 'nucleus_typography_portfolio_slider_title',
             'label'       => esc_html__( 'Slider Title', 'kirki' ),
             'section'     => 'nucleus_portfolio_grid_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
@@ -286,11 +256,6 @@
             'settings'    => 'nucleus_typography_portfolio_slider_subtitle',
             'label'       => esc_html__( 'Slider Subtitle', 'kirki' ),
             'section'     => 'nucleus_portfolio_grid_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
@@ -308,11 +273,6 @@
             'settings'    => 'nucleus_typography_portfolio_grid_title',
             'label'       => esc_html__( 'Grid Title', 'kirki' ),
             'section'     => 'nucleus_portfolio_grid_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
@@ -330,11 +290,6 @@
             'settings'    => 'nucleus_typography_portfolio_grid_subtitle',
             'label'       => esc_html__( 'Grid Subtitle', 'kirki' ),
             'section'     => 'nucleus_portfolio_grid_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
@@ -359,11 +314,6 @@
             'settings'    => 'nucleus_typography_portfolio_carousel_title',
             'label'       => esc_html__( 'Title', 'kirki' ),
             'section'     => 'nucleus_portfolio_carousel_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
@@ -381,11 +331,6 @@
             'settings'    => 'nucleus_typography_portfolio_carousel_subtitle',
             'label'       => esc_html__( 'Subtitle', 'kirki' ),
             'section'     => 'nucleus_portfolio_carousel_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
@@ -403,11 +348,6 @@
             'settings'    => 'nucleus_typography_portfolio_carousel_desc',
             'label'       => esc_html__( 'Description', 'kirki' ),
             'section'     => 'nucleus_portfolio_carousel_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
@@ -425,11 +365,6 @@
             'settings'    => 'nucleus_typography_portfolio_carousel_caption',
             'label'       => esc_html__( 'Caption', 'kirki' ),
             'section'     => 'nucleus_portfolio_carousel_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
@@ -461,11 +396,6 @@
             'settings'    => 'nucleus_typography_page_header_title',
             'label'       => esc_html__( 'Title', 'kirki' ),
             'section'     => 'nucleus_page_header_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'DM Serif Text',
                 'variant'        => '400',
@@ -483,11 +413,6 @@
             'settings'    => 'nucleus_typography_page_header_subtitle',
             'label'       => esc_html__( 'Subtitle', 'kirki' ),
             'section'     => 'nucleus_page_header_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '400',
@@ -505,11 +430,6 @@
             'settings'    => 'nucleus_typography_page_header_backdrop',
             'label'       => esc_html__( 'Backdrop', 'kirki' ),
             'section'     => 'nucleus_page_header_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'DM Serif Text',
                 'variant'        => '400',
@@ -535,11 +455,6 @@
             'settings'    => 'nucleus_typography_form_label',
             'label'       => esc_html__( 'Label', 'kirki' ),
             'section'     => 'nucleus_forms_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '400',
@@ -557,11 +472,6 @@
             'settings'    => 'nucleus_typography_form_field_text',
             'label'       => esc_html__( 'Field Text', 'kirki' ),
             'section'     => 'nucleus_forms_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '400',
@@ -579,11 +489,6 @@
             'settings'    => 'nucleus_typography_form_button_text',
             'label'       => esc_html__( 'Button Text', 'kirki' ),
             'section'     => 'nucleus_forms_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
@@ -796,7 +701,7 @@
             'transport'   => 'auto',
         ] );
 
-        // SECTION: Menu Typography
+        // SECTION: Blog Detail Typography
         Kirki::add_section( 'nucleus_typography_blog_detail', array(
             'title'          => esc_html__( 'Blog Detail', 'nucleus' ),
             'description'    => esc_html__( 'This section configure typography for the blog master page.', 'nucleus' ),
@@ -810,11 +715,11 @@
             'section'     => 'nucleus_typography_blog_detail',
             'default'     => [
                 'font-family'    => 'DM Serif Text',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'variant'        => '400',
+                'font-size'      => '52px',
+                'line-height'    => '1.3',
+                'letter-spacing' => '-0.5px',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -826,12 +731,12 @@
             'label'       => esc_html__( 'Meta', 'kirki' ),
             'section'     => 'nucleus_typography_blog_detail',
             'default'     => [
-                'font-family'    => 'DM Serif Text',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'font-family'    => 'Open Sans',
+                'variant'        => '400',
+                'font-size'      => '18px',
+                'line-height'    => '1.3',
+                'letter-spacing' => '-0.5px',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -844,10 +749,10 @@
             'section'     => 'nucleus_typography_blog_detail',
             'default'     => [
                 'font-family'    => 'Open Sans',
-                'variant'        => '600',
-                'font-size'      => '16px',
+                'variant'        => '400',
+                'font-size'      => '14px',
                 'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
+                'letter-spacing' => '1px',
                 'text-transform' => 'uppercase',
             ],
             'priority'    => 10,
@@ -860,12 +765,12 @@
             'label'       => esc_html__( 'Body Text', 'kirki' ),
             'section'     => 'nucleus_typography_blog_detail',
             'default'     => [
-                'font-family'    => 'DM Serif Text',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'font-family'    => 'Open Sans',
+                'variant'        => '400',
+                'font-size'      => '18px',
+                'line-height'    => '1.65',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -884,18 +789,13 @@
             'settings'    => 'nucleus_typography_comments_title',
             'label'       => esc_html__( 'Section Title', 'kirki' ),
             'section'     => 'nucleus_comments_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
-                'font-family'    => 'Open Sans',
-                'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'font-family'    => 'DM Serif Text',
+                'variant'        => '400',
+                'font-size'      => '36px',
+                'line-height'    => '1.3',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -906,18 +806,13 @@
             'settings'    => 'nucleus_typography_comments_subtitle',
             'label'       => esc_html__( 'Section Subtitle', 'kirki' ),
             'section'     => 'nucleus_comments_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
-                'variant'        => '600',
+                'variant'        => '400',
                 'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'line-height'    => '1.65',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -928,18 +823,13 @@
             'settings'    => 'nucleus_typography_comments_author',
             'label'       => esc_html__( 'Author Name', 'kirki' ),
             'section'     => 'nucleus_comments_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
-                'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'font-size'      => '18px',
+                'line-height'    => '1.6',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -950,18 +840,13 @@
             'settings'    => 'nucleus_typography_comments_text',
             'label'       => esc_html__( 'Comment Text', 'kirki' ),
             'section'     => 'nucleus_comments_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
-                'variant'        => '600',
+                'variant'        => '400',
                 'font-size'      => '16px',
-                'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'line-height'    => '1.6',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
@@ -981,17 +866,12 @@
             'settings'    => 'nucleus_typography_site_footer_title',
             'label'       => esc_html__( 'Title', 'kirki' ),
             'section'     => 'nucleus_site_footer_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '600',
-                'font-size'      => '16px',
+                'font-size'      => '18px',
                 'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
+                'letter-spacing' => '-1px',
                 'text-transform' => 'uppercase',
             ],
             'priority'    => 10,
@@ -1003,18 +883,13 @@
             'settings'    => 'nucleus_typography_site_footer_text',
             'label'       => esc_html__( 'Text', 'kirki' ),
             'section'     => 'nucleus_site_footer_typography',
-            'choices' => [
-                'fonts' => [
-                    'google' => google_font_stacks(),
-                ],
-            ],
             'default'     => [
                 'font-family'    => 'Open Sans',
-                'variant'        => '600',
+                'variant'        => '400',
                 'font-size'      => '16px',
                 'line-height'    => '1.5',
-                'letter-spacing' => '0.5px',
-                'text-transform' => 'uppercase',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
             ],
             'priority'    => 10,
             'transport'   => 'auto',
