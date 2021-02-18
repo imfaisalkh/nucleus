@@ -15,7 +15,7 @@
 
     <?php if ( get_theme_mod('nucleus_enable_social_sharing', false) ) { ?>
 
-        <?php $social_sharing_group = get_theme_mod( 'nucleus_social_sharing_group'); ?>
+        <?php $social_sharing_group = get_theme_mod('nucleus_social_sharing_group', array('twitter', 'facebook', 'pinterest')); ?>
 
         <div id="social-share">
             <span class="label"><?php esc_html_e( 'Share', 'nucleus' ); ?></span>
@@ -45,7 +45,7 @@
 
     <?php if ( get_theme_mod('nucleus_enable_page_actions', false) ) { ?>
 
-        <?php $page_actions_group = get_theme_mod( 'nucleus_page_actions_group'); ?>
+        <?php $page_actions_group = get_theme_mod('nucleus_page_actions_group', array('audio', 'info', 'top')); ?>
 
         <div id="page-controls">
             <?php
