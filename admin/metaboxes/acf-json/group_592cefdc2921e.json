@@ -52,7 +52,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "49",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -86,7 +86,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "49",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -231,7 +231,15 @@
             "type": "true_false",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_597abde7e20ba",
+                        "operator": "==",
+                        "value": "is_standard"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -273,5 +281,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1613247586
+    "modified": 1613657350
 }

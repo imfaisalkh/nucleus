@@ -17,7 +17,7 @@
     <?php } ?>
 
     <?php $page_actions_group = get_theme_mod( 'nucleus_page_actions_group'); ?>
-    <?php if ( in_array('info', $page_actions_group) ) { ?>
+    <?php if ( is_array($page_actions_group) && in_array('info', $page_actions_group) ) { ?>
 
         <!-- Seacrh Filter -->
         <div id="site-notification">

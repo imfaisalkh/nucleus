@@ -1495,7 +1495,7 @@ body.light-base-color-scheme .load-more { background: #b7b7b7; color: #fff; }
 /** ================================================== */
 #blog-slider { margin-bottom: 90px; }
 
-@media (min-width: 0) and (max-width: 640px) { #blog-slider { margin-bottom: 45px; } }
+@media (min-width: 0) and (max-width: 640px) { #blog-slider { margin-bottom: 30px; } }
 
 @media (min-width: 1920px) and (max-width: 2559px) { #blog-slider { margin-bottom: 90px; } }
 

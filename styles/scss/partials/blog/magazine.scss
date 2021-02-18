@@ -9,7 +9,7 @@
 	#blog-slider {
 		margin-bottom: 90px;
 
-		@include breakpoint($mobile) { margin-bottom: 45px; }
+		@include breakpoint($mobile) { margin-bottom: 30px; }
 		@include breakpoint($full-hd)  { margin-bottom: 90px; }
 
 		.main-carousel {

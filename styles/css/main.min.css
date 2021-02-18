@@ -1016,7 +1016,7 @@ html.cssgrid .grid .grid-item.width-6x,html.cssgrid .team-grid .grid-item.width-
 .blog-minimal-inner [class^="post"],.blog-minimal-inner [class*=" post"]{width:100%}
 .blog-minimal-inner [class^="post"] .entry-title,.blog-minimal-inner [class*=" post"] .entry-title{font-size:22px}
 #instagram-module #sb_instagram #sbi_images .sbi_item{width:50%;height:175px}
-#blog-slider{margin-bottom:45px}
+#blog-slider{margin-bottom:30px}
 #blog-slider .main-carousel .flickity-prev-next-button{display:none}
 #blog-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-thumbnail{height:175px}
 #blog-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-title{font-size:30px}
