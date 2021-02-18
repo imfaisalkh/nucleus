@@ -4,6 +4,15 @@
 #  Global Options
 #-------------------------------------------------------------------------------#
 
+    function element_visibility() {
+
+        return [
+            'both' => esc_html__( 'Mobile + Desktop', 'nucleus' ),
+            'mobile' => esc_html__( 'Mobile Only', 'nucleus' ),
+            'desktop' => esc_html__( 'Desktop Only', 'nucleus' ),
+        ];
+    }
+
     function header_elements() {
 
         return [
@@ -79,8 +88,15 @@
             'settings'     => 'nucleus_header_top_bar_left',
             'fields' => [
                 'element' => [
+                    'label'       => esc_html__( 'Element', 'nucleus' ),
                     'type'        => 'select',
                     'choices'     => top_bar_elements(),
+                ],
+                'visibility' => [
+                    'label'       => esc_html__( 'Visibility', 'nucleus' ),
+                    'type'        => 'select',
+                    'default'     => 'desktop',
+                    'choices'     => element_visibility(),
                 ],
             ],
             'active_callback'  => [
@@ -105,9 +121,16 @@
             'settings'     => 'nucleus_header_top_bar_center',
             'fields' => [
                 'element' => [
+                    'label'       => esc_html__( 'Element', 'nucleus' ),
                     'type'        => 'select',
                     'default'     => '',
                     'choices'     => top_bar_elements(),
+                ],
+                'visibility' => [
+                    'label'       => esc_html__( 'Visibility', 'nucleus' ),
+                    'type'        => 'select',
+                    'default'     => 'desktop',
+                    'choices'     => element_visibility(),
                 ],
             ],
             'active_callback'  => [
@@ -132,8 +155,15 @@
             'settings'     => 'nucleus_header_top_bar_right',
             'fields' => [
                 'element' => [
+                    'label'       => esc_html__( 'Element', 'nucleus' ),
                     'type'        => 'select',
                     'choices'     => top_bar_elements(),
+                ],
+                'visibility' => [
+                    'label'       => esc_html__( 'Visibility', 'nucleus' ),
+                    'type'        => 'select',
+                    'default'     => 'desktop',
+                    'choices'     => element_visibility(),
                 ],
             ],
             'active_callback'  => [
@@ -280,8 +310,15 @@
             'settings'     => 'nucleus_header_left',
             'fields' => [
                 'element' => [
+                    'label'       => esc_html__( 'Element', 'nucleus' ),
                     'type'        => 'select',
                     'choices'     => header_elements(),
+                ],
+                'visibility' => [
+                    'label'       => esc_html__( 'Visibility', 'nucleus' ),
+                    'type'        => 'select',
+                    'default'     => 'desktop',
+                    'choices'     => element_visibility(),
                 ],
             ],
             'active_callback'  => [
@@ -306,9 +343,16 @@
             'settings'     => 'nucleus_header_center',
             'fields' => [
                 'element' => [
+                    'label'       => esc_html__( 'Element', 'nucleus' ),
                     'type'        => 'select',
                     'default'     => '',
                     'choices'     => header_elements(),
+                ],
+                'visibility' => [
+                    'label'       => esc_html__( 'Visibility', 'nucleus' ),
+                    'type'        => 'select',
+                    'default'     => 'desktop',
+                    'choices'     => element_visibility(),
                 ],
             ],
             'active_callback'  => [
@@ -333,8 +377,15 @@
             'settings'     => 'nucleus_header_right',
             'fields' => [
                 'element' => [
+                    'label'       => esc_html__( 'Element', 'nucleus' ),
                     'type'        => 'select',
                     'choices'     => header_elements(),
+                ],
+                'visibility' => [
+                    'label'       => esc_html__( 'Visibility', 'nucleus' ),
+                    'type'        => 'select',
+                    'default'     => 'desktop',
+                    'choices'     => element_visibility(),
                 ],
             ],
             'active_callback'  => [

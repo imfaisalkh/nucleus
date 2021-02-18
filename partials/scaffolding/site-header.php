@@ -18,29 +18,29 @@
     if (!$is_custom_header) {
         switch ($header_style) {
             case 'v2':
-                $header_left_elements = [['element'  => 'logo'], ['element'  => 'primary-menu']];
+                $header_left_elements = [['element'  => 'logo', 'visibility' => 'both'], ['element'  => 'primary-menu', 'visibility' => 'desktop']];
                 $header_center_elements = '';
-                $header_right_elements = [['element'  => 'social-icons']];
+                $header_right_elements = [['element'  => 'social-icons', 'visibility' => 'both'], ['element'  => 'hamburger-icon', 'visibility' => 'mobile']];
                 break;
             case 'v3':
-                $header_left_elements = [['element'  => 'hamburger-icon'], ['element'  => 'logo']];
+                $header_left_elements = [['element'  => 'hamburger-icon', 'visibility' => 'desktop'], ['element'  => 'logo', 'visibility' => 'both']];
                 $header_center_elements = '';
-                $header_right_elements = [['element'  => 'primary-menu'], ['element'  => 'full-screen-icon'], ['element'  => 'search-icon']];
+                $header_right_elements = [['element'  => 'primary-menu', 'visibility' => 'desktop'], ['element'  => 'full-screen-icon', 'visibility' => 'both'], ['element'  => 'search-icon', 'visibility' => 'both'], ['element'  => 'hamburger-icon', 'visibility' => 'mobile']];
                 break;
             case 'v4':
-                $header_left_elements = [['element'  => 'hamburger-icon']];
-                $header_center_elements = [['element'  => 'primary-menu'], ['element'  => 'logo'], ['element'  => 'secondary-menu']];
-                $header_right_elements = [['element'  => 'full-screen-icon'], ['element'  => 'search-icon']];
+                $header_left_elements = [['element'  => 'logo', 'visibility' => 'mobile'], ['element'  => 'hamburger-icon', 'visibility' => 'desktop']];
+                $header_center_elements = [['element'  => 'primary-menu', 'visibility' => 'desktop'], ['element'  => 'logo', 'visibility' => 'desktop'], ['element'  => 'secondary-menu', 'visibility' => 'desktop']];
+                $header_right_elements = [['element'  => 'full-screen-icon', 'visibility' => 'both'], ['element'  => 'search-icon', 'visibility' => 'both'], ['element'  => 'hamburger-icon', 'visibility' => 'mobile']];
                 break;
             case 'v5':
-                $header_left_elements = [['element'  => 'logo']];
+                $header_left_elements = [['element'  => 'logo', 'visibility' => 'both']];
                 $header_center_elements = '';
-                $header_right_elements = [['element'  => 'full-screen-icon'], ['element'  => 'search-icon'], ['element'  => 'hamburger-icon']];
+                $header_right_elements = [['element'  => 'full-screen-icon', 'visibility' => 'both'], ['element'  => 'search-icon', 'visibility' => 'both'], ['element'  => 'hamburger-icon', 'visibility' => 'both']];
                 break;
             default:
-                $header_left_elements = [['element'  => 'logo']];
+                $header_left_elements = [['element'  => 'logo', 'visibility' => 'both']];
                 $header_center_elements = '';
-                $header_right_elements = [['element'  => 'primary-menu'], ['element'  => 'full-screen-icon'], ['element'  => 'search-icon']];
+                $header_right_elements = [['element'  => 'primary-menu', 'visibility' => 'desktop'], ['element'  => 'full-screen-icon', 'visibility' => 'both'], ['element'  => 'search-icon', 'visibility' => 'both'], ['element'  => 'hamburger-icon', 'visibility' => 'mobile']];
         }
     } else {
         $header_left_elements = get_theme_mod('nucleus_header_left', $header_left_elements);
@@ -55,7 +55,7 @@
     <?php if ($header_left_elements) { ?>
         <div class="left-elements elements">
             <?php foreach ($header_left_elements as $element) { ?>
-                <?php get_template_part( 'partials/scaffolding/header/' . $element['element'] ); ?>
+                <?php include(locate_template( 'partials/scaffolding/header/'. $element['element'] .'.php' )); ?>
             <?php } ?>
         </div>
     <?php } ?>
@@ -63,7 +63,7 @@
     <?php if ($header_center_elements) { ?>
         <div class="center-elements elements">
             <?php foreach ($header_center_elements as $element) { ?>
-                <?php get_template_part( 'partials/scaffolding/header/' . $element['element'] ); ?>
+                <?php include(locate_template( 'partials/scaffolding/header/'. $element['element'] .'.php' )); ?>
             <?php } ?>
         </div>
     <?php } ?>
@@ -71,7 +71,7 @@
     <?php if ($header_right_elements) { ?>
         <div class="right-elements elements">
             <?php foreach ($header_right_elements as $element) { ?>
-                <?php get_template_part( 'partials/scaffolding/header/' . $element['element'] ); ?>
+                <?php include(locate_template( 'partials/scaffolding/header/'. $element['element'] .'.php' )); ?>
             <?php } ?>
         </div>
     <?php } ?>

@@ -33,6 +33,21 @@
 				display: flex;
 				flex-shrink: 0; flex-grow: 0; // flexible-width flex child
 
+				// Visibility
+				.element {
+					display: none; // every element is hidden by default
+
+					&[data-visibility="both"] {
+						display: inline-block;
+					}
+					&[data-visibility="mobile"] {
+						@include breakpoint($touch) { display: inline-block; }
+					}
+					&[data-visibility="desktop"] {
+						@include breakpoint($no-touch) { display: inline-block; }
+					}
+				}
+
 				// Element Containers
 				&.left-elements {
 					justify-content: flex-start;

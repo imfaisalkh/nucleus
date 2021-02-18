@@ -1,4 +1,4 @@
-<ul class="social-profiles">
+<ul class="social-profiles element" data-visibility="<?php echo esc_attr(isset($element['visibility']) ? $element['visibility'] : 'desktop'); ?>">
     <?php if(get_theme_mod('nucleus_facebook_profile')) : ?><li class="facebook"><a href="<?php echo esc_url(get_theme_mod('nucleus_facebook_profile')); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li><?php endif; ?>
     <?php if(get_theme_mod('nucleus_twitter_profile')) : ?><li class="twitter"><a href="<?php echo esc_url(get_theme_mod('nucleus_twitter_profile')); ?>" target="_blank"><i class="fa fa-twitter"></i></a></li><?php endif; ?>
     <?php if(get_theme_mod('nucleus_dribbble_profile')) : ?><li class="dribbble"><a href="<?php echo esc_url(get_theme_mod('nucleus_dribbble_profile')); ?>" target="_blank"><i class="fa fa-dribbble"></i></a></li><?php endif; ?>
