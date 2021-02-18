@@ -26,7 +26,7 @@
 	if ( !function_exists('nucleus_custom_excerpt_length') ) {
 
 		function nucleus_custom_excerpt_length( $length ) {
-			return 35;
+			return 28;
 		}
 
 	}

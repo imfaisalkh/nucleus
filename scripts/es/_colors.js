@@ -71,7 +71,7 @@ export default jQuery(function($) {
                 let sidebar_title = tinycolor(this.get_base_color('background')).darken(30).toString()
                 document.body.style.setProperty('--sidebar-title', sidebar_title);
 
-                let sidebar_trigger_color = tinycolor(this.get_base_color('background')).darken(5).toString()
+                let sidebar_trigger_color = tinycolor(this.get_base_color('background')).darken(5).setAlpha(.7).toString()
                 document.body.style.setProperty('--sidebar-trigger-color', sidebar_trigger_color);
 
                 let menu_subtitle = tinycolor(modal_background).darken(50).setAlpha(.7).toString()
@@ -86,7 +86,7 @@ export default jQuery(function($) {
                 let sidebar_title = tinycolor(this.get_base_color('background')).lighten(10).toString()
                 document.body.style.setProperty('--sidebar-title', sidebar_title);
 
-                let sidebar_trigger_color = tinycolor(this.get_base_color('background')).lighten(5).toString()
+                let sidebar_trigger_color = tinycolor(this.get_base_color('background')).lighten(5).setAlpha(.7).toString()
                 document.body.style.setProperty('--sidebar-trigger-color', sidebar_trigger_color);
 
                 let menu_subtitle = tinycolor(modal_background).lighten(40).setAlpha(.7).toString()

@@ -36,7 +36,7 @@
 
 	[class^="post"], [class*=" post"] {
 		position: relative;
-		width: 43%;
+		width: 44%;
 		display: flex;
 		margin-bottom: 45px;
 
@@ -81,7 +81,7 @@
 		.entry-title {
 			font-family: var(--blog-minimal-title-font-family, $primary-font-stack);
 			font-weight: var(--blog-minimal-title-variant, 400);
-			font-size: var(--blog-minimal-title-font-size, 24px);
+			font-size: var(--blog-minimal-title-font-size, 26px);
 			line-height: var(--blog-minimal-title-line-height, 1.3);
 			letter-spacing: var(--blog-minimal-title-letter-spacing, 0);
 			text-transform: var(--blog-minimal-title-text-transform, none);
@@ -164,10 +164,10 @@
 	}
 }
 
-body.light-color-scheme {
+body.light-base-color-scheme {
 	.load-more {
-		background: #bbbaba;
-		color: #5d5d5d;
+		background: #b7b7b7;
+		color: #fff;
 	}
 }
 

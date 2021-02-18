@@ -43,6 +43,7 @@
 						height: auto; /* height of carousel */
 						overflow: visible;
 						padding: 0 10%;
+						opacity: 0.5;
 
 						@include breakpoint($mobile) { width: 100%; padding: 0 4%; }
 						@include breakpoint($full-hd)  { width: 70%; padding: 0 10%; }
@@ -50,7 +51,7 @@
 						// margin: 0 80px;
 
 						.inner-wrap {
-							padding: 0 7%;
+							padding: 0 8%;
 							@include animate-this();
 							transform: translateY(20px);
 							margin-top: 20px;
@@ -87,7 +88,7 @@
 							word-wrap: break-word;
 							margin: 0;
 							margin-bottom: 10px;
-							padding-right: 20px;
+							padding: 0 5%;
 				
 							@include breakpoint($mobile)  { font-size: 30px; }
 							@include breakpoint($full-hd)  { font-size: 36px; }
@@ -148,12 +149,12 @@
 
 						/* animate-in carousel description when selected */
 						&.is-selected {
+							opacity: 1;
 							.inner-wrap {
 								opacity: 1;
 								visibility: visible;
 								transform: translate3d(0, 10px, 0);
 								transition-delay: 600ms;
-						
 							}
 						}
 					}
@@ -214,7 +215,7 @@
 			grid-column-start: span 3;
 
 			
-			margin: 0 25% 2% 25%;
+			margin: 1% 22.5% 3% 22.5%;
 			text-align: center;
 			
 			@include breakpoint($mobile)  {
@@ -244,7 +245,7 @@
 					letter-spacing: var(--blog-magazine-featured-title-letter-spacing, 0);
 					text-transform: var(--blog-magazine-featured-title-text-transform, none);
 
-					padding: 0;
+					padding: 0 5%;
 
 					@include breakpoint($mobile) { font-size: 30px; }
 				}
@@ -324,8 +325,8 @@
 		.entry-desc {
 			font-family: var(--blog-magazine-standard-desc-font-family, $secondary-font-stack);
 			font-weight: var(--blog-magazine-standard-desc-variant, 300);
-			font-size: var(--blog-magazine-standard-desc-font-size, 18px);
-			line-height: var(--blog-magazine-standard-desc-line-height, 1.4);
+			font-size: var(--blog-magazine-standard-desc-font-size, 17.5px);
+			line-height: var(--blog-magazine-standard-desc-line-height, 1.5);
 			letter-spacing: var(--blog-magazine-standard-desc-letter-spacing, 0);
 			text-transform: var(--blog-magazine-standard-desc-text-transform, none);
 

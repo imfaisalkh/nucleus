@@ -515,8 +515,8 @@
             'default'     => [
                 'font-family'    => 'Open Sans',
                 'variant'        => '300',
-                'font-size'      => '18px',
-                'line-height'    => '1.4',
+                'font-size'      => '17.5px',
+                'line-height'    => '1.5',
                 'letter-spacing' => '0',
                 'text-transform' => 'none',
             ],

@@ -80,7 +80,7 @@
 		}
 
 		.blog & {
-			.timestamp {
+			.timestamp.timestamp {
 				display: inline-block;
 				transform: translateY(7px);
 				font-size: 17px;
@@ -88,7 +88,7 @@
 				color: #E6AA4C !important;
 			}
 			.title {
-				font-size: 48px !important;
+				font-size: 50px !important;
 				margin-top: 0;
 			}
 			ul.categories {

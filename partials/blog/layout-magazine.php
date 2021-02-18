@@ -20,7 +20,7 @@
 			<?php if((isset($is_slider_post) && $is_slider_post)) { ?>
 				<?php echo get_the_excerpt(); ?>
 			<?php } else if(is_sticky()) { ?>
-				<?php nucleus_excerpt(27); ?>
+				<?php nucleus_excerpt(28); ?>
 			<?php } else { ?>
 				<?php nucleus_excerpt(); ?>
 			<?php } ?>
