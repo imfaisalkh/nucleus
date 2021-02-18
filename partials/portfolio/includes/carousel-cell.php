@@ -1,7 +1,7 @@
 <?php
     // Color Scheme
-    $color_scheme 	= get_field('color_scheme', get_the_ID());
-    $custom_color   = get_field('custom_colors', get_the_ID());
+    $base_color_scheme 	= get_field('base_color_scheme', get_the_ID());
+    $base_colors   = get_field('base_colors', get_the_ID());
 
     // Temporary Placeholders
     $primary_accent = '';
@@ -10,11 +10,11 @@
     $text_color = '';
 
     // Custom Colors
-    if ($custom_color) {
-        $primary_accent = $custom_color['primary_accent'];
-        $secondary_accent = $custom_color['secondary_accent'];
-        $background_color = $custom_color['background_color'];
-        $text_color = $custom_color['text_color'];
+    if ($base_colors) {
+        $primary_accent = $base_colors['primary_accent'];
+        $secondary_accent = $base_colors['secondary_accent'];
+        $background_color = $base_colors['background_color'];
+        $text_color = $base_colors['text_color'];
     }
 
     // Image Size
