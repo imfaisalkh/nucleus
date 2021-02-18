@@ -62,8 +62,22 @@ function nucleus_register_required_plugins() {
 		array(
 			'name'      => esc_html__('Nucleus Pro', 'nucleus'), // The plugin name.
 			'slug'      => 'nucleus-pro', // The plugin slug (typically the folder name).
-			'source'    => 'https://bitbucket.org/wpscouts/nucleus-pro/get/af7b159c73ed.zip', // The plugin source.
+			'source'    => 'https://github.com/imfaisalkh/nucleus-pro/archive/master.zip', // The plugin source.
 			'required'  => true, // If false, the plugin is only 'recommended' instead of required.
+		),
+
+		array(
+			'name'     	=> 'Core Portfolio', // The plugin name
+			'slug'     	=> 'core-portfolio', // The plugin slug (typically the folder name)
+			'source'   	=> 'https://github.com/imfaisalkh/core-portfolio/archive/master.zip', // The plugin source
+			'required' 	=> true, // If false, the plugin is only 'recommended' instead of required
+		),
+
+		array(
+			'name'     	=> 'Core Team', // The plugin name
+			'slug'     	=> 'core-team', // The plugin slug (typically the folder name)
+			'source'   	=> 'https://github.com/imfaisalkh/core-team/archive/master.zip', // The plugin source
+			'required' 	=> true, // If false, the plugin is only 'recommended' instead of required
 		),
 
 		array(
@@ -89,20 +103,6 @@ function nucleus_register_required_plugins() {
 			'name' 		=> esc_html__('Classic Editor', 'nucleus'),
 			'slug' 		=> 'classic-editor',
 			'required' 	=> true,
-		),
-
-		array(
-			'name'     	=> 'Core Portfolio', // The plugin name
-			'slug'     	=> 'core-portfolio', // The plugin slug (typically the folder name)
-			'source'   	=> 'https://github.com/imfaisalkh/core-portfolio/archive/master.zip', // The plugin source
-			'required' 	=> true, // If false, the plugin is only 'recommended' instead of required
-		),
-
-		array(
-			'name'     	=> 'Core Team', // The plugin name
-			'slug'     	=> 'core-team', // The plugin slug (typically the folder name)
-			'source'   	=> 'https://github.com/imfaisalkh/core-team/archive/master.zip', // The plugin source
-			'required' 	=> true, // If false, the plugin is only 'recommended' instead of required
 		),
 
 		array(
