@@ -9,7 +9,7 @@
 	#blog-slider {
 		margin-bottom: 90px;
 
-		@include breakpoint($mobile) { margin-bottom: 0; }
+		@include breakpoint($mobile) { margin-bottom: 45px; }
 		@include breakpoint($full-hd)  { margin-bottom: 90px; }
 
 		.main-carousel {
@@ -45,7 +45,7 @@
 						padding: 0 10%;
 						opacity: 0.5;
 
-						@include breakpoint($mobile) { width: 100%; padding: 0 4%; }
+						@include breakpoint($touch) { width: 100%; padding: 0 10px; }
 						@include breakpoint($full-hd)  { width: 70%; padding: 0 10%; }
 
 						// margin: 0 80px;
@@ -56,7 +56,7 @@
 							transform: translateY(20px);
 							margin-top: 20px;
 
-							@include breakpoint($mobile) { padding: 0 0; }
+							@include breakpoint($touch) { padding: 0; }
 						}
 
 						.entry-thumbnail {
@@ -178,6 +178,7 @@
 
 
 	@include breakpoint($mobile) { grid-template-columns: repeat(1, 1fr); }
+	@include breakpoint($tablet) { grid-template-columns: repeat(2, 1fr); }
 	@include breakpoint($retina)  { grid-row-gap: 45px; grid-column-gap: 7%; }
 	@include breakpoint($full-hd)  { grid-row-gap: 60px; grid-column-gap: 9%; }
 
@@ -224,6 +225,14 @@
 				grid-column-start: span 1;
 
 				margin: 0;
+			}
+
+			@include breakpoint($tablet)  {
+				grid-row-start: 2;
+				grid-row-end: 2;
+				grid-column-start: span 2;
+
+				margin: 0 0 5% 0;
 			}
 
 			.entry-thumbnail {

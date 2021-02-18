@@ -34,7 +34,7 @@
 	{
 		@include container();
 		@include breakpoint($mobile)  			{ @include container(90%); }
-		@include breakpoint($tablet)  			{ @include container(600px); }
+		@include breakpoint($tablet)  			{ @include container(650px); }
 		@include breakpoint($laptop)    		{ @include container(1170px); }
 		@include breakpoint($full-hd)    		{ @include container(1440px); }
 	}

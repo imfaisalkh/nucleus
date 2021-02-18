@@ -377,7 +377,7 @@
 			.root-menu {
 				width: 70%;
 
-				@include breakpoint($mobile)  { width: 100%; }
+				@include breakpoint($touch)  { width: 100%; }
 
 				ul {
 					height: auto;
@@ -473,6 +473,7 @@
 					color: var(--text-color, #FFF);
 
 					@include breakpoint($mobile)	{ font-size: 33px; }
+					@include breakpoint($tablet)	{ font-size: 36px; }
 					@include breakpoint($no-touch)	{ font-size: 48px; }
 
 					&:hover {

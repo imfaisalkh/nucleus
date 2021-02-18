@@ -30,7 +30,7 @@
 		left: 50%;
 		border-left: 1px solid rgba(255, 255, 255, 0.15);
 		transform: translate(-50%);
-		@include breakpoint($touch)  { border: 0; }
+		@include breakpoint($mobile)  { border: 0; }
 	}
 
 
@@ -41,6 +41,7 @@
 		margin-bottom: 45px;
 
 		@include breakpoint($mobile) { width: 100%; }
+		@include breakpoint($tablet) { width: 46%; }
 
 		// @include animate-this(); // CSS-3 animation is triggered via JS
 
@@ -90,7 +91,8 @@
 			word-wrap: break-word;
 			margin: 0;
 
-			@include breakpoint($mobile)  { font-size: 20px; }
+			@include breakpoint($mobile)  { font-size: 22px; }
+			@include breakpoint($tablet)  { font-size: 23px; }
 			@include breakpoint($retina)  { font-size: 22px; }
 
 			a {
@@ -201,6 +203,8 @@ body.light-base-color-scheme {
 
 				.sbi_item {
 					@include breakpoint($mobile) { width: 50%; height: 175px; }
+					@include breakpoint($tablet) { width: 25%; height: 250px; }
+
 				}
 			}
 		}
