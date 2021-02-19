@@ -1,3 +1,6 @@
+// Import Functions
+import { init_progress_bar, set_color_scheme } from './_util'
+
 // Export Functions
 export default jQuery(function($) {
     'use strict';
@@ -9,75 +12,6 @@ export default jQuery(function($) {
 
     // Functions Object
     var portfolio = {
-
-        // Private: Change Color Scheme
-        _change_color_scheme: function(index) {
-            let root = document.querySelector('body'); // :root HTML element
-            const active_cell = $('#horizon-slider .main-carousel .carousel-cell').eq(index)
-
-            const primary_accent_color = active_cell.attr('data-primary-accent-color')
-            const secondary_accent_color = active_cell.attr('data-secondary-accent-color')
-            const background_color = active_cell.attr('data-bg-color')
-            const text_color = active_cell.attr('data-text-color')
-
-            root.style.setProperty('--primary-accent', primary_accent_color);
-            root.style.setProperty('--secondary-accent', secondary_accent_color);
-            root.style.setProperty('--background-color', background_color);
-            root.style.setProperty('--text-color', text_color);
-
-            $('body').trigger('changeSkin');
-        },
-
-        // Private: Configure Progress Bar
-        _configure_progress_bar: function(time) {
-            var time = time;
-            var $bar, $slick, isPause, tick, percentTime;
-
-            $bar = $('.progress-bar .progress');
-
-            $('.main-carousel').on({
-                mouseenter: function() {
-                    isPause = true;
-                },
-                mouseleave: function() {
-                    isPause = false;
-                }
-            })
-
-            function start_progress_bar() {
-                reset_progress_bar();
-                percentTime = 0;
-                isPause = false;
-                tick = setInterval(interval, 10);
-            }
-
-            function interval() {
-                if(isPause === false) {
-                    percentTime += 1 / (time+0.1);
-                    $bar.css({
-                        width: percentTime+"%"
-                    });
-                if(percentTime >= 100) {
-                    $carousel.flickity( 'next' )
-                        start_progress_bar();
-                    }
-                }
-            }
-
-            function reset_progress_bar() {
-                $bar.css({
-                    width: 0+'%' 
-                });
-                clearTimeout(tick);
-            }
-
-            start_progress_bar()
-
-            // reset progress bar (on scroll)
-            $carousel.on( 'scroll.flickity', function( event, progress ) {
-                start_progress_bar()
-            });
-        },
 
         /** Horizon Carousel */
         carousel: function() {
@@ -92,7 +26,7 @@ export default jQuery(function($) {
             if (is_flickity) {
                 // change color scheme (on load)
                 $carousel.on( 'ready.flickity', function() {
-                    self._change_color_scheme(0)
+                    set_color_scheme($carousel_container, 0)
                 });
 
                 // init flickity instance
@@ -105,11 +39,11 @@ export default jQuery(function($) {
 
                 // change color scheme (on change)
                 $carousel.on( 'change.flickity', function( event, index ) {
-                    self._change_color_scheme(index)
+                    set_color_scheme($carousel_container, index)
                 });
                 
                 // start progress bar
-                self._configure_progress_bar(slide_duration)
+                init_progress_bar($carousel, slide_duration)
 
                 // set counter value (on load)
                 let flkty = $carousel.data('flickity'); // get Flickity instance
@@ -133,4 +67,5 @@ export default jQuery(function($) {
     if (horizon_page) {
         portfolio.carousel();
     }
+
 })

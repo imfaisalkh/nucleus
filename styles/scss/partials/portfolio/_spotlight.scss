@@ -1,23 +1,12 @@
-/** == GENERAL == */
-/** ================================================== */
-
-    body.portfolio-spotlight {
-        overflow: hidden;
-    }
-
 /** == SPOTLIGHT CAROUSEL == */
 /** ================================================== */
 
     #spotlight-slider {
         position: relative;
-        top: -194px; left: 0; right: 0;
         display: flex;
         align-items: center;
-        min-height: 100vh;
         z-index: 10; // make it beneath menu
 
-        @include breakpoint($mobile) { top: -143px; }
-        
         // Progress Bar
         .progress-bar {
             @extend .slider-progress-bar;
@@ -36,14 +25,16 @@
         
         .main-carousel {
             width: 100%;
-            margin-top: 100px;
-            
+            height: 100%;
+
             // Dots
             .flickity-page-dots {
                 @extend .slider-page-dots;
                 text-align: center;
-                bottom: -50px;
+                bottom: 30px;
                 padding: 0;
+
+                @include breakpoint($full-hd) { bottom: 30px; }
             }
 
             // Arrows 
@@ -57,10 +48,12 @@
                     @include breakpoint($mobile) { right: 5px; }
 
                     &.previous {
-                        top: 30%;
+                        top: 36%;
                         right: 155px;
 
                         @include breakpoint($mobile) { top: 20%; right: 10px; }
+                        @include breakpoint($full-hd) { top: 42%; }
+
                     }
                     &.next {
                         top: 52%;
@@ -77,6 +70,7 @@
                 .flickity-slider {
                     display: flex;
                     justify-content: center;
+                    align-items: center;
                     text-align: center;
 
                     .carousel-cell {

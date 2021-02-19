@@ -198,7 +198,7 @@
 /** == TOOLTIPS == */
 /** ================================================== */
 
-	[aria-label] {
+	.page-control[aria-label] {
 
 		&:after {
 			background: var(--menu-background) !important;

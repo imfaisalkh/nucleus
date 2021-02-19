@@ -1,8 +1,32 @@
 /** == GENERAL == */
 /** ================================================== */
 
-    body.portfolio-horizon {
+    body.portfolio-horizon,
+    body.portfolio-spotlight,
+    body.portfolio-textual
+    {
         overflow: hidden;
+
+        #site-body {
+            position: absolute;
+            left: 0; top: 0; right: 0; bottom: 0;
+
+            #main-content {
+                margin: 0;
+                height: calc(100% - 100px);
+                transform: translateY(100px);
+            }
+
+            #page-content, .portfolio-container {
+                margin: 0;
+                height: 100%;
+            }
+            .portfolio-container  {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
     }
 
 /** == HORIZON CAROUSEL == */
@@ -10,14 +34,10 @@
 
     #horizon-slider {
         position: relative;
-        top: -194px; left: 0; right: 0;
         display: flex;
         align-items: center;
-        min-height: 100vh;
         z-index: 10; // make it beneath menu
         
-        @include breakpoint($mobile) { top: -143px; }
-
         // Progress Bar
         .progress-bar {
             @extend .slider-progress-bar;
@@ -37,13 +57,13 @@
         // Main Carousel
         .main-carousel {
             width: 100%;
-            margin-top: 100px;
+            height: 100%;
             
             // Dots
             .flickity-page-dots {
                 @extend .slider-page-dots;
                 text-align: center;
-                bottom: -50px;
+                bottom: 30px;
                 padding: 0;
             }
 
@@ -63,11 +83,14 @@
             
             // Viewport
             .flickity-viewport {
+                height: 100% !important;
                 overflow: visible !important;
 
                 .flickity-slider {
+                    height: 100% !important;
                     display: flex;
                     justify-content: center;
+                    align-items: center;
                     text-align: center;
 
                     .carousel-cell {

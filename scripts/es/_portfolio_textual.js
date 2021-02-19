@@ -13,7 +13,6 @@ export default jQuery(function($) {
         _change_color_scheme: function(index) {
 
             let root = document.querySelector('body'); // :root HTML element
-            let primary_accent_color, secondary_accent_color, background_color, text_color
             let active_cell
 
             if (index == 0) {
@@ -22,10 +21,10 @@ export default jQuery(function($) {
                 active_cell = $(index).parents('.carousel-cell')
             }
 
-            primary_accent_color = active_cell.attr('data-primary-accent-color')
-            secondary_accent_color = active_cell.attr('data-secondary-accent-color')
-            background_color = active_cell.attr('data-bg-color')
-            text_color = active_cell.attr('data-text-color')
+            const primary_accent_color = active_cell.attr('data-primary-accent-color')
+            const secondary_accent_color = active_cell.attr('data-secondary-accent-color')
+            const background_color = active_cell.attr('data-bg-color')
+            const text_color = active_cell.attr('data-text-color')
 
             root.style.setProperty('--primary-accent', primary_accent_color);
             root.style.setProperty('--secondary-accent', secondary_accent_color);
