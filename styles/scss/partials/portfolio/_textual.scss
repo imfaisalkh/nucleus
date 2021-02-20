@@ -34,9 +34,13 @@
         .main-carousel {
             display: flex;
             justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
             width: 100%;
-            height: 100%;
+            height: auto; // important to contain it in the middle
+            padding-bottom: 80px;
+
+            @include breakpoint($full-hd) { width: 85%; }
         }
 
         // Entry Cell
@@ -44,13 +48,11 @@
             display: inline-block;
             margin: 0 30px;
 
-            @include breakpoint($mobile) { margin: 5px 15px; }
-
             &.is-selected {
                 .entry-thumbnail {
                     opacity: 1;
                     visibility: visible;
-                    transform: translate3d(-50%, -56%, 0);
+                    transform: translate3d(-50%, -55%, 0);
                 }
             }
             &:not(.is-selected) {
@@ -70,7 +72,7 @@
                 top: 50%;
                 transform: translateX(-50%) translateY(-50%);
                 z-index: -10;
-                margin-top: 45px;
+                margin: 0;
 
                 @include breakpoint($mobile) { margin: 0; left: 0 !important; transform: translateX(0) translateY(-50%) !important; }
 

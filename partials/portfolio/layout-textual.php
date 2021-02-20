@@ -20,7 +20,7 @@
 
 <?php if ( $portfolio_slider_query->have_posts() && $portfolio_featured_posts ) { ?>
 
-<div id="textual-slider" class="portfolio-container">
+<div id="textual-slider" class="portfolio-container no-hover">
 
     <div class="main-carousel">
 
