@@ -7,7 +7,7 @@
             "label": "Content Width",
             "name": "page_content_width",
             "type": "radio",
-            "instructions": "",
+            "instructions": "What should be the starting content width?",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -34,6 +34,13 @@
                 "operator": "==",
                 "value": "page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "portfolio"
+            }
         ]
     ],
     "menu_order": 0,
@@ -42,7 +49,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1613246858
+    "modified": 1613935460
 }

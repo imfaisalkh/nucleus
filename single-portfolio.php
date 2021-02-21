@@ -2,6 +2,9 @@
 
 <?php
 
+	// Content Width
+	$content_width = get_field('page_content_width') ? get_field('page_content_width') : 'compact';
+
 	// Original Variable(s)
 	$custom_url = get_field('custom_url');
 
@@ -15,7 +18,7 @@
 		<?php get_template_part( 'partials/scaffolding/page-header' ); ?>
 
 		<!-- Page Content -->
-		<div id="page-content" class="full-width">
+		<div id="page-content" data-content-width="<?php echo esc_attr($content_width); ?>">
 
 			<?php while( have_posts() ) : the_post(); ?>
 				<?php the_content(); ?>
