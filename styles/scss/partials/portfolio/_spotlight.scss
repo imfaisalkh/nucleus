@@ -48,12 +48,10 @@
                     @include breakpoint($mobile) { right: 5px; }
 
                     &.previous {
-                        top: 36%;
+                        top: calc(52% - 72px);
                         right: 155px;
 
                         @include breakpoint($mobile) { top: 20%; right: 10px; }
-                        @include breakpoint($full-hd) { top: 42%; }
-
                     }
                     &.next {
                         top: 52%;

@@ -36,17 +36,18 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            width: 100%;
+            width: 90%;
             height: auto; // important to contain it in the middle
             padding-bottom: 80px;
 
+            @include breakpoint($mobile) { width: 100%; }
             @include breakpoint($full-hd) { width: 85%; }
         }
 
         // Entry Cell
         .carousel-cell {
             display: inline-block;
-            margin: 0 30px;
+            margin: 0 15px;
 
             &.is-selected {
                 .entry-thumbnail {

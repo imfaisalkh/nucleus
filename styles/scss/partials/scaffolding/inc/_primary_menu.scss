@@ -266,7 +266,7 @@
 	/** == MENU TAGS == */
 	/** ================================================== */
 	ul.sf-menu {
-		li.is-gallery {
+		li.is-gallery, li.is-experimental {
 			> a {
 				position: relative;
 				&:after {
@@ -285,6 +285,7 @@
 		}
 
 		li.is-gallery > a:after { content: 'gallery'; }
+		li.is-experimental > a:after { content: 'experimental'; }
 	}
 
 
