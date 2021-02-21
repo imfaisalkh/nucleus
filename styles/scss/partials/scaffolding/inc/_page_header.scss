@@ -232,10 +232,10 @@
 				.title {
 					line-height: 1.2;
 					
-					@include breakpoint($mobile)  { font-size: 36px; font-size: 11vmin; }
+					@include breakpoint($mobile)  { font-size: 36px; }
 					@include breakpoint($tablet)  { font-size: 42px; }
-					@include breakpoint($laptop)  { font-size: 42px; font-size: 6.8vmin; }
-					@include breakpoint($full-hd) { font-size: 46px; }
+					@include breakpoint($laptop)  { font-size: 48px; }
+					@include breakpoint($full-hd) { font-size: 48px; }
 				}
 
 				.single-portfolio & {
