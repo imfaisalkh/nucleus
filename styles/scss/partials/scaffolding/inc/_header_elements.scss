@@ -179,3 +179,17 @@
 		margin: 0 10px;
 		align-self: center;
 	}
+
+/** == BUTTON == */
+/** ================================================== */
+
+.button {
+	font-family: $secondary-font-stack;
+	background: var(--menu-background);
+	color: var(--menu-text);
+	border-radius: 5px;
+	font-weight: 600;
+	padding: 6px 25px;
+	line-height: 1.8;
+	margin: 0 10px;
+}

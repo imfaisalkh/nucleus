@@ -24,6 +24,7 @@
             'search-icon' => esc_html__( 'Search Icon', 'nucleus' ),
             'full-screen-icon' => esc_html__( 'Fullscreen Icon', 'nucleus' ),
             'social-icons' => esc_html__( 'Social Icons', 'nucleus' ),
+            'button' => esc_html__( 'Button', 'nucleus' ),
             'text-1' => esc_html__( 'Text Block # 1', 'nucleus' ),
             'text-2' => esc_html__( 'Text Block # 2', 'nucleus' ),
             'text-3' => esc_html__( 'Text Block # 3', 'nucleus' ),
@@ -403,6 +404,47 @@
             'section'     => 'nucleus_header_layout',
             'default'     => '0',
             'priority'    => 10,
+        ] );
+
+        Kirki::add_field( 'nucleus_header_button_text', [
+            'type'     => 'text',
+            'settings' => 'nucleus_header_button_text',
+            'label'    => esc_html__( 'Button Text', 'nucleus' ),
+            'default'  => esc_html__( 'Let\'s Talk', 'nucleus' ),
+            'section'  => 'nucleus_header_layout',
+            'priority' => 10,
+            'active_callback'  => [[
+                [
+                    'setting'  => 'nucleus_header_version',
+                    'operator' => '==',
+                    'value'    => 'v2',
+                ],
+                [
+                    'setting'  => 'nucleus_header_version',
+                    'operator' => '==',
+                    'value'    => 'custom',
+                ],
+            ]]
+        ] );
+
+        Kirki::add_field( 'nucleus_header_button_link', [
+            'type'     => 'text',
+            'settings' => 'nucleus_header_button_link',
+            'label'    => esc_html__( 'Button Link', 'nucleus' ),
+            'section'  => 'nucleus_header_layout',
+            'priority' => 10,
+            'active_callback'  => [[
+                [
+                    'setting'  => 'nucleus_header_version',
+                    'operator' => '==',
+                    'value'    => 'v2',
+                ],
+                [
+                    'setting'  => 'nucleus_header_version',
+                    'operator' => '==',
+                    'value'    => 'custom',
+                ],
+            ]]
         ] );
         
         Kirki::add_field( 'nucleus_header_text_block_1', [

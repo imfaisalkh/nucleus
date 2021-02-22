@@ -20,7 +20,7 @@
             case 'v2':
                 $header_left_elements = [['element'  => 'logo', 'visibility' => 'both'], ['element'  => 'primary-menu', 'visibility' => 'desktop']];
                 $header_center_elements = '';
-                $header_right_elements = [['element'  => 'social-icons', 'visibility' => 'both'], ['element'  => 'hamburger-icon', 'visibility' => 'mobile']];
+                $header_right_elements = [['element'  => 'social-icons', 'visibility' => 'both'], ['element'  => 'button', 'visibility' => 'desktop'], ['element'  => 'hamburger-icon', 'visibility' => 'mobile']];
                 break;
             case 'v3':
                 $header_left_elements = [['element'  => 'hamburger-icon', 'visibility' => 'desktop'], ['element'  => 'logo', 'visibility' => 'both']];
