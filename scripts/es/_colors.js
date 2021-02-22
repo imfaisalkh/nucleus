@@ -214,7 +214,7 @@ export default jQuery(function($) {
                 let menu_bg_hover = tinycolor(menu_text).darken(85).toString()
                 document.body.style.setProperty('--menu-background-hover', menu_bg_hover);
 
-                let menu_text_hover = tinycolor(menu_text).darken(85).toString()
+                let menu_text_hover = tinycolor(menu_text).lighten(100).toString()
                 document.body.style.setProperty('--menu-text-hover', menu_text_hover);
 
                 let menu_seperator = tinycolor(menu_bg).lighten(15).toString()

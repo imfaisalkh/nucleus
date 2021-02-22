@@ -166,7 +166,7 @@
 			wp_register_script('jquery-smooth-scroll', NUCLEUS_VENDORS_URI . '/jquery-smooth-scroll/jquery.smooth-scroll.min.js', array('jquery'), null, true);
 			wp_register_script('imagesloaded', NUCLEUS_VENDORS_URI . '/imagesloaded/imagesloaded.pkgd.min.js', array('jquery'), null, true);
 			wp_register_script('tinycolor', NUCLEUS_VENDORS_URI . '/tinycolor/tinycolor.min.js', array('jquery'), null, true);
-			wp_register_script('ionicons', NUCLEUS_VENDORS_URI . '/ionicons/ionicons.js', array('jquery'), null, true);
+			wp_register_script('ionicons', 'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js', array('jquery'), null, true);
 			wp_enqueue_script('nucleus-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery', 'modernizr', 'superfish', 'fancybox', 'headroom.js', 'jquery-headroom.js', 'tendina', 'flickity', 'flickity-fade', 'packery', 'infinite-scroll', 'jquery-smooth-scroll', 'imagesloaded', 'tinycolor', 'ionicons'), null, true);
 
 			// Enqueue Other Scripts

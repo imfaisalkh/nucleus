@@ -229,6 +229,7 @@ blockquote.aligncenter,.wp-caption.aligncenter,img.aligncenter{clear:both;margin
 #site-header .container .elements ul.social-profiles li a:hover{opacity:1}
 #site-header .container .elements .text-block{margin:0 10px;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center}
 #site-header .container .elements .button{font-family:"Open Sans",sans-serif;background:var(--menu-background);color:var(--menu-text);border-radius:5px;font-weight:600;padding:7px 27px;line-height:1.8;margin:0 10px}
+#site-header .container .elements .button ion-icon{font-size:18px;-webkit-transform:translateY(2px);transform:translateY(2px);margin-left:3px}
 #site-header.headroom--not-top{position:-webkit-sticky;position:sticky;z-index:990009;top:0;left:0;height:var(--header-sticky-size);background:var(--headroom-background);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 #site-header.headroom--not-top.headroom--unpinned{-webkit-transform:translateY(-100%);transform:translateY(-100%)}
 #site-header.headroom--not-top.headroom--unpinned.animate-out{transition:all 300ms ease-in-out}
