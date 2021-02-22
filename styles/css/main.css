@@ -612,15 +612,15 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter { clear: both; 
 
 #site-header .container .elements ul.social-profiles { margin: 0 15px; padding: 0; list-style: none; }
 
-#site-header .container .elements ul.social-profiles li { display: inline-block; margin-left: 12px; }
+#site-header .container .elements ul.social-profiles li { display: inline-block; margin-left: 10px; }
 
-#site-header .container .elements ul.social-profiles li a { color: inherit; font-size: 26px; opacity: 0.7; }
+#site-header .container .elements ul.social-profiles li a { color: inherit; font-size: 24px; opacity: 0.7; }
 
 #site-header .container .elements ul.social-profiles li a:hover { opacity: 1; }
 
 #site-header .container .elements .text-block { margin: 0 10px; -ms-flex-item-align: center; -ms-grid-row-align: center; align-self: center; }
 
-#site-header .container .elements .button { font-family: "Open Sans", sans-serif; background: var(--menu-background); color: var(--menu-text); border-radius: 5px; font-weight: 600; padding: 6px 25px; line-height: 1.8; margin: 0 10px; }
+#site-header .container .elements .button { font-family: "Open Sans", sans-serif; background: var(--menu-background); color: var(--menu-text); border-radius: 5px; font-weight: 600; padding: 7px 27px; line-height: 1.8; margin: 0 10px; }
 
 #site-header.headroom--not-top { /* Required styles */ position: -webkit-sticky; position: sticky; z-index: 990009; top: 0; left: 0; /* Additional styles */ height: var(--header-sticky-size); background: var(--headroom-background); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); /* When Scrolling Down - Menu Slides Out */ /* When Scrolling Up - Menu Slides In */ }
 
