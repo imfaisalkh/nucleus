@@ -902,7 +902,7 @@ body.portfolio-ribbon{overflow:hidden;background-image:url(../../images/corner-p
 .meta-fields .meta-field{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-right:10px;position:relative}
 .meta-fields .meta-field .label{white-space:nowrap;font-size:18px;font-weight:200}
 .meta-fields .meta-field .value{white-space:nowrap;position:relative;font-size:18px;font-weight:600;padding-left:50px;padding-right:50px}
-.meta-fields .meta-field .value:before{content:'';width:17px;height:1px;position:absolute;z-index:-1;top:50%;left:8%;border-width:1px 0 0 0;border-style:solid;border-color:#000;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
+.meta-fields .meta-field .value:before{content:'';width:17px;height:1px;position:absolute;z-index:-1;top:50%;left:8%;border-width:1px 0 0 0;border-style:solid;border-color:var(--text-color);-webkit-transform:translateY(-50%);transform:translateY(-50%)}
 .twitter-carousel .tweet{width:100%;text-align:center;padding:0 90px}
 .twitter-carousel .tweet .content{font-size:22px;margin-bottom:15px}
 .twitter-carousel .tweet .content a{color:#fff85f !important}
