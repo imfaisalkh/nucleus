@@ -16,7 +16,7 @@
         <?php } ?>
     <?php } ?>
 
-    <?php $page_actions_group = get_theme_mod( 'nucleus_page_actions_group'); ?>
+    <?php $page_actions_group = get_theme_mod('nucleus_page_actions_group', array('audio', 'info', 'top')); ?>
     <?php if ( is_array($page_actions_group) && in_array('info', $page_actions_group) ) { ?>
 
         <!-- Seacrh Filter -->

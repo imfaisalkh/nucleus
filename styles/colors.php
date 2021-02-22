@@ -68,7 +68,6 @@
 	$menu_background_hover  = $menu_colors ? $menu_colors['background_hover'] : '';
 	$menu_text_hover   		= $menu_colors ? $menu_colors['text_hover'] : '';
 
-
 ?>
 
 /** == CUSTOM PROPERTIES == */
@@ -141,4 +140,10 @@
 
 		--menu-background-hover: <?php echo esc_html($menu_background_hover); ?>;
 		--menu-text-hover: <?php echo esc_html($menu_text_hover); ?>;
+	}
+
+	/** Site Notification */
+	:root {
+		--site-notification-background: <?php echo get_theme_mod('nucleus_info_box_bg_color', '#F4F2A5'); ?>;
+		--site-notification-text: <?php echo get_theme_mod('nucleus_info_box_text_color', '#000'); ?>;
 	}

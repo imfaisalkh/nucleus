@@ -41,4 +41,20 @@
             'priority' => 10,
         ] );
 
+        Kirki::add_field( 'nucleus_info_box_bg_color', [
+            'type'        => 'color',
+            'settings'    => 'nucleus_info_box_bg_color',
+            'label'       => __( 'Background Color', 'nucleus' ),
+            'section'     => 'nucleus_info_box',
+            'default'     => '#F4F2A5',
+        ] );
+
+        Kirki::add_field( 'nucleus_info_box_text_color', [
+            'type'        => 'color',
+            'settings'    => 'nucleus_info_box_text_color',
+            'label'       => __( 'Text Color', 'nucleus' ),
+            'section'     => 'nucleus_info_box',
+            'default'     => '#000',
+        ] );
+
 	}

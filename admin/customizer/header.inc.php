@@ -225,7 +225,6 @@
             ]
         ] );
 
-     
         Kirki::add_field( 'nucleus_header_top_bar_text_block_1', [
             'type'     => 'textarea',
             'settings' => 'nucleus_header_top_bar_text_block_1',

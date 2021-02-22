@@ -10,7 +10,7 @@
 
 		// PANEL: Dashboard Settings
 		Kirki::add_panel( 'nucleus_typography_settings', array(
-			'priority'       => 10,
+			'priority'       => 60,
             'title'          => esc_html__( 'Typography Settings', 'nucleus' ),
             'description'    => esc_html__( 'This section configure settings for the site typography.', 'nucleus' ),
         ) );

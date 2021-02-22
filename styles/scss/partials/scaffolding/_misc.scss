@@ -10,7 +10,7 @@
 		width: 420px;
 		border-radius: 4px;
 
-		background: #F4F2A5 url('../../images/noty-bg.png') repeat center center;
+		background: var(--site-notification-background) url('../../images/noty-bg.png') repeat center center;
 		border: 1px solid rgba(0, 0, 0, 0.1);
 
 		@include animate-this($translate3d: '0, -30px, 0'); // CSS-3 animation is triggered via JS
@@ -20,7 +20,7 @@
 			position: absolute;
 			top: 30px;
 			right: 30px;
-			color: #000;
+			color: var(--site-notification-text);
 			font-size: 15px;
 		}
 
@@ -34,10 +34,10 @@
 				font-weight: 600;
 				letter-spacing: 0.3px;
 				text-transform: uppercase;
-				color: #000;
+				color: var(--site-notification-text);
 			}
 			.content {
-				color: #000;
+				color: var(--site-notification-text);
 				line-height: 2;
 
 				a { text-decoration: underline; color: inherit; }
