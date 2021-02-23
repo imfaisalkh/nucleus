@@ -15,7 +15,7 @@
 
 				$atts['columns'] = !empty($atts['columns']) ? $atts['columns'] : 3;
 
-				$gallery_ids = explode(',', $atts['ids']);
+				$gallery_ids = !is_array($atts['ids']) ? explode(',', $atts['ids']) : $atts['ids'];
 
 				$return = '<div id="gallery-'. rand(10,100) .'" class="wp-gallery" data-col="'. $atts['columns'] .'">';
 

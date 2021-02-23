@@ -105,7 +105,7 @@ export default jQuery(function($) {
                 let border_color = tinycolor(this.get_base_color('background')).lighten(20).setAlpha(.7).toString()
                 document.body.style.setProperty('--border-color', border_color);
 
-                let tag_bg = tinycolor(this.get_base_color('background')).lighten(13).setAlpha(.8).toString()
+                let tag_bg = tinycolor(this.get_base_color('background')).lighten(20).setAlpha(.8).toString()
                 document.body.style.setProperty('--tag-background', tag_bg);
 
                 let comment_bg = tinycolor(this.get_base_color('background')).lighten(6.5).setAlpha(.7).toString()
