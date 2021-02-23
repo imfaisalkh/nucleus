@@ -47,7 +47,16 @@
 				padding-top: 10px;
 				margin: 0 auto;
 
-				.entry-media { margin: 0 0 2em 0; }
+				.entry-media {
+					margin: 0 0 2em 0;
+					width: 112%;
+					margin-left: -6%;
+			
+					@include breakpoint($mobile)  { width: auto; margin-left: auto;  }
+
+					img { width: 100%; height: auto; }
+
+				}
 
 				/** Entry Content */
 				.entry-content {
@@ -61,14 +70,17 @@
 					color: #B0B0B0;
 					line-height: 1.65;
 
-					&::first-letter {
-						font-family: var(--primary-font-stack, $primary-font-stack);
-						font-size: 110px;
-						color: #515151;
-						float: left;
-						line-height: 0.65;
-						margin: 0.1em 0.1em 0.2em 0;
+					p:first-of-type {
+						&::first-letter {
+							font-family: var(--primary-font-stack, $primary-font-stack);
+							font-size: 110px;
+							color: #515151;
+							float: left;
+							line-height: 0.65;
+							margin: 0.1em 0.1em 0.2em 0;
+						}
 					}
+
 					
 					p:first-of-type { clear: both; }
 

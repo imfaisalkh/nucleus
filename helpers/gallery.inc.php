@@ -13,7 +13,7 @@
 
 			if ( !empty($atts['ids']) ) { // proceed only if ids exist
 
-				$atts['columns'] = !empty($atts['columns']) ? $atts['columns'] : null;
+				$atts['columns'] = !empty($atts['columns']) ? $atts['columns'] : 3;
 
 				$gallery_ids = explode(',', $atts['ids']);
 
