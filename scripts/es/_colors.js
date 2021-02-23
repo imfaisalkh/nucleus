@@ -22,6 +22,7 @@ export default jQuery(function($) {
                     return root.getPropertyValue('--text-color')
                     break;
                 default:
+                    return root.getPropertyValue(color)
                     break;
                 }
         },
@@ -65,7 +66,7 @@ export default jQuery(function($) {
 
             // Set color scheme if LIGHT base scheme is active
             if (base_color_scheme == 'light-base-color-scheme') {
-                let backdrop_color = tinycolor(this.get_base_color('background')).darken(10).toString()
+                let backdrop_color = tinycolor(this.get_base_color('background')).darken(12).toString()
                 document.body.style.setProperty('--backdrop-color', backdrop_color);
 
                 let sidebar_title = tinycolor(this.get_base_color('background')).darken(30).toString()
@@ -76,6 +77,15 @@ export default jQuery(function($) {
 
                 let menu_subtitle = tinycolor(modal_background).darken(50).setAlpha(.7).toString()
                 document.body.style.setProperty('--menu-subtitle', menu_subtitle);
+
+                let border_color = tinycolor(this.get_base_color('background')).darken(20).setAlpha(.7).toString()
+                document.body.style.setProperty('--border-color', border_color);
+
+                let tag_bg = tinycolor(this.get_base_color('background')).darken(8).setAlpha(.7).toString()
+                document.body.style.setProperty('--tag-background', tag_bg);
+
+                let comment_bg = tinycolor(this.get_base_color('background')).darken(6.5).setAlpha(.7).toString()
+                document.body.style.setProperty('--comment-background', comment_bg);
             }
 
             // Set color scheme if DARK base scheme is active
@@ -91,6 +101,15 @@ export default jQuery(function($) {
 
                 let menu_subtitle = tinycolor(modal_background).lighten(40).setAlpha(.7).toString()
                 document.body.style.setProperty('--menu-subtitle', menu_subtitle);
+
+                let border_color = tinycolor(this.get_base_color('background')).lighten(20).setAlpha(.7).toString()
+                document.body.style.setProperty('--border-color', border_color);
+
+                let tag_bg = tinycolor(this.get_base_color('background')).lighten(13).setAlpha(.8).toString()
+                document.body.style.setProperty('--tag-background', tag_bg);
+
+                let comment_bg = tinycolor(this.get_base_color('background')).lighten(6.5).setAlpha(.7).toString()
+                document.body.style.setProperty('--comment-background', comment_bg);
             }
 
         },
@@ -196,53 +215,77 @@ export default jQuery(function($) {
         menu_colors: function() {
              // Check if DYNAMIC color scheme is active
              let is_dynamic_color_scheme = $('body').hasClass('dynamic-menu-color-scheme')
-
-             if (!is_dynamic_color_scheme)
-                return
- 
+             
              // Get base color scheme
              let base_color_scheme = this.get_base_color_scheme()
 
-            // Set color scheme if LIGHT base scheme is active
-            if (base_color_scheme == 'light-base-color-scheme') {
-                let menu_bg = tinycolor(this.get_base_color('background')).darken(90).toString()
-                document.body.style.setProperty('--menu-background', menu_bg);
+            if (is_dynamic_color_scheme) {
 
-                let menu_text = tinycolor(menu_bg).lighten(90).toString()
-                document.body.style.setProperty('--menu-text', menu_text);
+                // Set color scheme if LIGHT base scheme is active
+                if (base_color_scheme == 'light-base-color-scheme') {
+                    let menu_bg = tinycolor(this.get_base_color('background')).darken(90).toString()
+                    document.body.style.setProperty('--menu-background', menu_bg);
 
-                let menu_bg_hover = tinycolor(menu_text).darken(85).toString()
-                document.body.style.setProperty('--menu-background-hover', menu_bg_hover);
+                    let menu_text = tinycolor(menu_bg).lighten(90).toString()
+                    document.body.style.setProperty('--menu-text', menu_text);
 
-                let menu_text_hover = tinycolor(menu_text).lighten(100).toString()
-                document.body.style.setProperty('--menu-text-hover', menu_text_hover);
+                    let menu_bg_hover = tinycolor(menu_text).darken(85).toString()
+                    document.body.style.setProperty('--menu-background-hover', menu_bg_hover);
 
-                let menu_seperator = tinycolor(menu_bg).lighten(15).toString()
-                document.body.style.setProperty('--menu-seperator', menu_seperator);
+                    let menu_text_hover = tinycolor(menu_text).lighten(100).toString()
+                    document.body.style.setProperty('--menu-text-hover', menu_text_hover);
 
-                let menu_caption = tinycolor(menu_text).darken(60).toString()
-                document.body.style.setProperty('--menu-caption', menu_caption);
-            }
+                    let menu_seperator = tinycolor(menu_bg).lighten(15).toString()
+                    document.body.style.setProperty('--menu-seperator', menu_seperator);
 
-            // Set color scheme if DARK base scheme is active
-            if (base_color_scheme == 'dark-base-color-scheme') {
-                let menu_bg = tinycolor(this.get_base_color('background')).lighten(100).toString()
-                document.body.style.setProperty('--menu-background', menu_bg);
+                    let menu_caption = tinycolor(menu_text).darken(60).toString()
+                    document.body.style.setProperty('--menu-caption', menu_caption);
 
-                let menu_text = tinycolor(menu_bg).darken(90).toString()
-                document.body.style.setProperty('--menu-text', menu_text);
+                }
 
-                let menu_bg_hover = tinycolor(menu_text).lighten(87).toString()
-                document.body.style.setProperty('--menu-background-hover', menu_bg_hover);
+                // Set color scheme if DARK base scheme is active
+                if (base_color_scheme == 'dark-base-color-scheme') {
+                    let menu_bg = tinycolor(this.get_base_color('background')).lighten(100).toString()
+                    document.body.style.setProperty('--menu-background', menu_bg);
 
-                let menu_text_hover = tinycolor(menu_bg).darken(90).toString()
-                document.body.style.setProperty('--menu-text-hover', menu_text_hover);
+                    let menu_text = tinycolor(menu_bg).darken(90).toString()
+                    document.body.style.setProperty('--menu-text', menu_text);
 
-                let menu_seperator = tinycolor(menu_bg).darken(15).toString()
-                document.body.style.setProperty('--menu-seperator', menu_seperator);
+                    let menu_bg_hover = tinycolor(menu_text).lighten(87).toString()
+                    document.body.style.setProperty('--menu-background-hover', menu_bg_hover);
 
-                let menu_caption = tinycolor(menu_text).lighten(60).toString()
-                document.body.style.setProperty('--menu-caption', menu_caption);
+                    let menu_text_hover = tinycolor(menu_bg).darken(90).toString()
+                    document.body.style.setProperty('--menu-text-hover', menu_text_hover);
+
+                    let menu_seperator = tinycolor(menu_bg).darken(15).toString()
+                    document.body.style.setProperty('--menu-seperator', menu_seperator);
+
+                    let menu_caption = tinycolor(menu_text).lighten(60).toString()
+                    document.body.style.setProperty('--menu-caption', menu_caption);
+                }
+
+            } else {
+                // Dynamically generate following menu colors in every case
+                let menu_bg = this.get_base_color('--menu-background')
+                let menu_text = this.get_base_color('--menu-text')
+
+                let menu_text_is_light = tinycolor(menu_text).isLight()
+
+                // Set color scheme if LIGHT base scheme is active
+                if (menu_text_is_light) {
+                    let menu_seperator = tinycolor(menu_bg).lighten(15).toString()
+                    document.body.style.setProperty('--menu-seperator', menu_seperator);
+
+                    let menu_caption = tinycolor(menu_text).darken(60).toString()
+                    document.body.style.setProperty('--menu-caption', menu_caption);
+                } else {
+                    let menu_seperator = tinycolor(menu_bg).darken(15).toString()
+                    document.body.style.setProperty('--menu-seperator', menu_seperator);
+
+                    let menu_caption = tinycolor(menu_text).lighten(60).toString()
+                    document.body.style.setProperty('--menu-caption', menu_caption);
+                }
+
             }
 
         },

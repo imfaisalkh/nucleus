@@ -50,7 +50,7 @@
 			}
 
 			a {
-				border: 0 !important;
+				color: var(--text-color);
 			}
 
 			#cancel-comment-reply-link {
@@ -116,7 +116,7 @@
 
 		li.comment {
 			position: relative;
-			background: #0C0C0C;
+			background: var(--comment-background);
 			padding: 30px;
 			border-radius: 5px;
 			margin-bottom: 40px;
@@ -132,7 +132,6 @@
 
 					.author-avatar {
 						float: left;
-						margin-right: 30px;
 						border: 0 !important;
 
 						img {
@@ -145,6 +144,7 @@
 
 					.comment-meta {
 						display: flex;
+						margin-left: 100px;
 
 						.author {
 							font-family: var(--comments-author-font-family, $secondary-font-stack);
@@ -178,7 +178,7 @@
 				/** Comment Body */
 				.comment-body {
 					@include clearfix();
-					padding-left: 90px;
+					padding-left: 100px;
 					margin-top: -40px;
 
 					.comment-content {
@@ -194,6 +194,9 @@
 
 						p:last-of-type {
 							margin-bottom: 0;
+						}
+						a {
+							color: #3B5998;
 						}
 					}
 

@@ -67,7 +67,7 @@
 					letter-spacing: var(--blog-detail-body-letter-spacing, 0);
 					text-transform: var(--blog-detail-body-text-transform, none);
 
-					color: #B0B0B0;
+					color: var(--text-color);
 					line-height: 1.65;
 
 					p:first-of-type {
@@ -75,6 +75,8 @@
 							font-family: var(--primary-font-stack, $primary-font-stack);
 							font-size: 110px;
 							color: #515151;
+							color: var(--text-color);
+							opacity: 0.3;
 							float: left;
 							line-height: 0.65;
 							margin: 0.1em 0.1em 0.2em 0;
@@ -155,7 +157,7 @@
 
 							display: inline-block;
 							font-size: 43px;
-							color: #FFF;
+							color: var(--text-color);
 
 							@include breakpoint($mobile)  { font-size: 36px; }
 						}
@@ -201,7 +203,7 @@
 						width: 100%;
 						display: flex;
 						justify-content: space-between;
-						border-top: 2px solid #363636;
+						border-top: 2px solid var(--border-color); // #363636
 						margin-top: 30px;
 						padding-top: 20px;
 
@@ -220,7 +222,7 @@
 							margin: -12px 0 0 0; padding: 0;
 
 							li {
-								background: #444444;
+								background: var(--tag-background);
 								border-radius: 5px;
 								padding: 2px 15px;
 								margin: 12px 12px 0 0;
@@ -229,7 +231,7 @@
 								&:last-child { margin-right: 0; }
 
 								a {
-									color: #D3D3D3;
+									color: var(--text-color);
 								}
 							}
 						}

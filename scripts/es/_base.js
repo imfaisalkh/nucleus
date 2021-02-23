@@ -234,9 +234,11 @@ export default jQuery(function($) {
 
             var is_fancybox = $('body').hasClass('is-fancybox-enabled');
 
-            if (is_fancybox) {
+            if (false) {
 
-                $('.portfolio-grid .portfolio > a[rel="lightbox"], .elementor-image a').fancybox({
+                let gallery_links = $('.wp-gallery a[rel="lightbox"], .portfolio-grid .portfolio > a[rel="lightbox"], .elementor-image a')
+
+                gallery_links.fancybox({
                     padding : 0,
                     helpers : {
                         title   : {
