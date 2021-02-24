@@ -15,7 +15,7 @@ export default jQuery(function($) {
 
                 const is_admin_bar = $('body').hasClass('admin-bar')
                 const admin_bar_height = $('#wpadminbar').height()
-                const container_height = $(window).height() - admin_bar_height
+                const container_height = is_admin_bar ? $(window).height() - admin_bar_height : $(window).height()
                 $('#site-body').css('height', container_height)
             }
         },
