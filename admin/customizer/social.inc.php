@@ -22,7 +22,7 @@
             'panel'          => 'nucleus_social_networks',
         ) );
 
-        Kirki::add_field( 'nucleus_enable_social_sharing', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'toggle',
             'settings'    => 'nucleus_enable_social_sharing',
             'label'       => __( 'Enable Social Sharing', 'nucleus' ),
@@ -32,7 +32,7 @@
             'priority'    => 10,
         ] );
 
-        Kirki::add_field( 'nucleus_social_sharing_group', array(
+        Kirki::add_field( 'nucleus_config', array(
 			'type'        => 'sortable',
 			'settings'    => 'nucleus_social_sharing_group',
 			'label'       => __( 'Sharing Links', 'nucleus' ),
@@ -62,7 +62,7 @@
         ) );
 
         // OPTION: Repeater Field
-        Kirki::add_field( 'nucleus_social_profiles_group', array(
+        Kirki::add_field( 'nucleus_config', array(
             'type'        => 'repeater',
             'settings'    => 'nucleus_social_profiles_group',
             'label'       => esc_html__( 'Profile Links', 'nucleus' ),

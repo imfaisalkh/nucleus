@@ -15,7 +15,7 @@
             'description'    => esc_html__( 'This section configure page actions settings.', 'nucleus' ),
         ) );
 
-        Kirki::add_field( 'nucleus_enable_page_actions', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'toggle',
             'settings'    => 'nucleus_enable_page_actions',
             'label'       => __( 'Enable Page Actions', 'nucleus' ),
@@ -25,7 +25,7 @@
             'priority'    => 10,
         ] );
 
-        Kirki::add_field( 'nucleus_page_actions_group', array(
+        Kirki::add_field( 'nucleus_config', array(
 			'type'        => 'sortable',
 			'settings'    => 'nucleus_page_actions_group',
 			'label'       => __( 'Page Actions', 'nucleus' ),

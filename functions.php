@@ -219,7 +219,6 @@
 	        wp_add_inline_style('nucleus-main', $general_css);
 	        wp_add_inline_style('nucleus-main', $colors_css);
 	        wp_add_inline_style('nucleus-main', $typography_css);
-
 		}
 	}
 

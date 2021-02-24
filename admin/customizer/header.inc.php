@@ -67,7 +67,7 @@
             'panel'          => 'nucleus_header_settings',
         ) );
 
-        Kirki::add_field( 'nucleus_header_top_bar_visibility', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'toggle',
             'settings'    => 'nucleus_header_top_bar_visibility',
             'label'       => esc_html__( 'Show top bar?', 'nucleus' ),
@@ -76,7 +76,7 @@
             'priority'    => 10,
         ] );        
 
-        Kirki::add_field( 'nucleus_header_top_bar_left', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'repeater',
             'label'       => esc_html__( 'Left Section', 'nucleus' ),
             'section'     => 'nucleus_header_top_bar',
@@ -109,7 +109,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_top_bar_center', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'repeater',
             'label'       => esc_html__( 'Center Section', 'nucleus' ),
             'section'     => 'nucleus_header_top_bar',
@@ -143,7 +143,7 @@
             ]
         ] );        
 
-        Kirki::add_field( 'nucleus_header_top_bar_right', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'repeater',
             'label'       => esc_html__( 'Right Section', 'nucleus' ),
             'section'     => 'nucleus_header_top_bar',
@@ -176,7 +176,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_top_bar_height', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'slider',
             'settings'    => 'nucleus_header_top_bar_height',
             'label'       => esc_html__( 'Height (px)', 'nucleus' ),
@@ -196,7 +196,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_top_bar_text_color', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'color',
             'settings'    => 'nucleus_header_top_bar_text_color',
             'label'       => __( 'Text Color', 'nucleus' ),
@@ -211,7 +211,7 @@
             ]
         ] );
         
-        Kirki::add_field( 'nucleus_header_top_bar_bg_color', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'color',
             'settings'    => 'nucleus_header_top_bar_bg_color',
             'label'       => __( 'Background Color', 'nucleus' ),
@@ -226,7 +226,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_top_bar_text_block_1', [
+        Kirki::add_field( 'nucleus_config', [
             'type'     => 'textarea',
             'settings' => 'nucleus_header_top_bar_text_block_1',
             'label'    => esc_html__( 'Text Block # 1', 'nucleus' ),
@@ -241,7 +241,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_top_bar_text_block_2', [
+        Kirki::add_field( 'nucleus_config', [
             'type'     => 'textarea',
             'settings' => 'nucleus_header_top_bar_text_block_2',
             'label'    => esc_html__( 'Text Block # 2', 'nucleus' ),
@@ -256,7 +256,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_top_bar_text_block_3', [
+        Kirki::add_field( 'nucleus_config', [
             'type'     => 'textarea',
             'settings' => 'nucleus_header_top_bar_text_block_3',
             'label'    => esc_html__( 'Text Block # 3', 'nucleus' ),
@@ -278,7 +278,7 @@
             'panel'          => 'nucleus_header_settings',
         ) );
 
-        Kirki::add_field( 'nucleus_header_version', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'select',
             'settings'    => 'nucleus_header_version',
             'label'       => esc_html__( 'Header version', 'nucleus' ),
@@ -297,7 +297,7 @@
             ],
         ] );        
 
-        Kirki::add_field( 'nucleus_header_left', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'repeater',
             'label'       => esc_html__( 'Left Section', 'nucleus' ),
             'section'     => 'nucleus_header_layout',
@@ -330,7 +330,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_center', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'repeater',
             'label'       => esc_html__( 'Center Section', 'nucleus' ),
             'section'     => 'nucleus_header_layout',
@@ -364,7 +364,7 @@
             ]
         ] );        
 
-        Kirki::add_field( 'nucleus_header_right', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'repeater',
             'label'       => esc_html__( 'Right Section', 'nucleus' ),
             'section'     => 'nucleus_header_layout',
@@ -397,7 +397,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_full_width', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'toggle',
             'settings'    => 'nucleus_header_full_width',
             'label'       => esc_html__( 'Header Full Width', 'nucleus' ),
@@ -406,7 +406,7 @@
             'priority'    => 10,
         ] );
 
-        Kirki::add_field( 'nucleus_header_button_text', [
+        Kirki::add_field( 'nucleus_config', [
             'type'     => 'text',
             'settings' => 'nucleus_header_button_text',
             'label'    => esc_html__( 'Button Text', 'nucleus' ),
@@ -427,7 +427,7 @@
             ]]
         ] );
 
-        Kirki::add_field( 'nucleus_header_button_link', [
+        Kirki::add_field( 'nucleus_config', [
             'type'     => 'text',
             'settings' => 'nucleus_header_button_link',
             'label'    => esc_html__( 'Button Link', 'nucleus' ),
@@ -447,7 +447,7 @@
             ]]
         ] );
         
-        Kirki::add_field( 'nucleus_header_text_block_1', [
+        Kirki::add_field( 'nucleus_config', [
             'type'     => 'textarea',
             'settings' => 'nucleus_header_text_block_1',
             'label'    => esc_html__( 'Text Block # 1', 'nucleus' ),
@@ -462,7 +462,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_text_block_2', [
+        Kirki::add_field( 'nucleus_config', [
             'type'     => 'textarea',
             'settings' => 'nucleus_header_text_block_2',
             'label'    => esc_html__( 'Text Block # 2', 'nucleus' ),
@@ -477,7 +477,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_text_block_3', [
+        Kirki::add_field( 'nucleus_config', [
             'type'     => 'textarea',
             'settings' => 'nucleus_header_text_block_3',
             'label'    => esc_html__( 'Text Block # 3', 'nucleus' ),
@@ -512,7 +512,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_mobile_height', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'slider',
             'settings'    => 'nucleus_header_mobile_height',
             'label'       => esc_html__( 'Mobile Height (px)', 'nucleus' ),
@@ -525,7 +525,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_sticky_height', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'slider',
             'settings'    => 'nucleus_header_sticky_height',
             'label'       => esc_html__( 'Sticky Header (px)', 'nucleus' ),
@@ -546,7 +546,7 @@
             'panel'          => 'nucleus_header_settings',
         ) );
 
-        Kirki::add_field( 'nucleus_header_desktop_logo_height', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'slider',
             'settings'    => 'nucleus_header_desktop_logo_height',
             'label'       => esc_html__( 'Desktop Logo Height (px)', 'nucleus' ),
@@ -559,7 +559,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_mobile_logo_height', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'slider',
             'settings'    => 'nucleus_header_mobile_logo_height',
             'label'       => esc_html__( 'Mobile Logo Height (px)', 'nucleus' ),
@@ -572,7 +572,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_header_sticky_logo_height', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'slider',
             'settings'    => 'nucleus_header_sticky_logo_height',
             'label'       => esc_html__( 'Sticky Header Logo (px)', 'nucleus' ),

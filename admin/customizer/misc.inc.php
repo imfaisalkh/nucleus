@@ -8,7 +8,7 @@
 
 	function nucleus_customize_misc_settings() {
 
-        Kirki::add_field( 'nucleus_site_preloader', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'toggle',
             'settings'    => 'nucleus_site_preloader',
             'label'       => __( 'Enable Site Preloader', 'nucleus' ),

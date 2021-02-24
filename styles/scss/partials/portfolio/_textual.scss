@@ -23,6 +23,16 @@
             @extend .all-works;
             left: 50%;
             transform: translateX(-50%);
+
+            .content {
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+
+                &:before, &:after {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
         }
 
         // Counter

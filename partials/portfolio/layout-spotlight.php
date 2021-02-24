@@ -33,6 +33,7 @@
 			<?php while ( $portfolio_slider_query->have_posts() ) : $portfolio_slider_query->the_post(); ?>
 				<?php include(locate_template( 'partials/portfolio/includes/carousel-cell.php' )); ?>
 			<?php endwhile; ?>
+			<?php wp_reset_postdata(); ?>
 
 		</div>
 

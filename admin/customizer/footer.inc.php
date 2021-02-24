@@ -15,7 +15,7 @@
             'description'    => esc_html__( 'This section configure settings for the site footer.', 'nucleus' ),
         ) );
 
-        Kirki::add_field( 'nucleus_footer_version', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'select',
             'settings'    => 'nucleus_footer_version',
             'label'       => esc_html__( 'Footer version', 'nucleus' ),
@@ -30,7 +30,7 @@
             ],
         ] );
 
-        Kirki::add_field( 'nucleus_footer_v1_heading', [
+        Kirki::add_field( 'nucleus_config', [
             'type'     => 'text',
             'settings' => 'nucleus_footer_v1_heading',
             'label'    => esc_html__( 'Heading', 'nucleus' ),
@@ -46,7 +46,7 @@
             ]
         ] );
         
-        Kirki::add_field( 'nucleus_footer_v1_text', [
+        Kirki::add_field( 'nucleus_config', [
             'type'     => 'textarea',
             'settings' => 'nucleus_footer_v1_text',
             'label'    => esc_html__( 'Text Block', 'nucleus' ),
@@ -63,7 +63,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_footer_v2_copyright', [
+        Kirki::add_field( 'nucleus_config', [
             'type'     => 'textarea',
             'settings' => 'nucleus_footer_v2_copyright',
             'label'    => esc_html__( 'Copyright Text', 'nucleus' ),
@@ -79,7 +79,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_footer_v2_contact', [
+        Kirki::add_field( 'nucleus_config', [
             'type'     => 'textarea',
             'settings' => 'nucleus_footer_v2_contact',
             'label'    => esc_html__( 'Contact Text', 'nucleus' ),
@@ -95,7 +95,7 @@
             ]
         ] );        
     
-        Kirki::add_field( 'nucleus_footer_full_width', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'toggle',
             'settings'    => 'nucleus_footer_full_width',
             'label'       => esc_html__( 'Footer Full Width', 'nucleus' ),

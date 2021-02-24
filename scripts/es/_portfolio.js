@@ -20,8 +20,8 @@ export default jQuery(function($) {
             }
         },
 
-         // Private: Configure Progress Bar
-         _configure_progress_bar: function(time) {
+        // Private: Configure Progress Bar
+        _configure_progress_bar: function(time) {
             var time = time;
             var $bar, $slick, isPause, tick, percentTime;
 
@@ -70,11 +70,27 @@ export default jQuery(function($) {
                 start_progress_bar()
             });
         },
+
+        // All Works
+        all_works: function() {
+            // open "all works" menu
+            $('.all-works .trigger').on('click', function() {
+                $(this).parent().find('.content').addClass('animate-in')
+            })
+
+            // close "all works" menu
+            $(document).on('click', function (e) {
+                if ($(e.target).closest('.all-works').length === 0) {
+                    $('.all-works .content').removeClass('animate-in')
+                }
+            });
+        },
         
     }  
 
     // Initialize Functions
     portfolio_global.align_to_top();
+    portfolio_global.all_works();
 
     $(window).on('resize', function () {
         portfolio_global.align_to_top();

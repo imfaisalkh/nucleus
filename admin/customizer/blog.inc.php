@@ -15,7 +15,7 @@
             'description'    => esc_html__( 'This section configure settings for the blog.', 'nucleus' ),
         ) );
 
-        Kirki::add_field( 'nucleus_blog_sidebar', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'toggle',
             'settings'    => 'nucleus_blog_sidebar',
             'label'       => esc_html__( 'Enable Blog Sidebar?', 'nucleus' ),
@@ -24,7 +24,7 @@
             'priority'    => 10,
         ] ); 
 
-        Kirki::add_field( 'nucleus_blog_layout', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'select',
             'settings'    => 'nucleus_blog_layout',
             'label'       => esc_html__( 'Blog Layout', 'nucleus' ),
@@ -39,7 +39,7 @@
             ],
         ] );
 
-        Kirki::add_field( 'nucleus_blog_slider', [
+        Kirki::add_field( 'nucleus_config', [
             'type'     => 'text',
             'settings' => 'nucleus_blog_slider',
             'label'    => esc_html__( 'Slider Posts', 'nucleus' ),
@@ -55,7 +55,7 @@
             ]
         ] );
 
-        Kirki::add_field( 'nucleus_blog_pagination', [
+        Kirki::add_field( 'nucleus_config', [
             'type'        => 'select',
             'settings'    => 'nucleus_blog_pagination',
             'label'       => esc_html__( 'Pagination Type', 'nucleus' ),
