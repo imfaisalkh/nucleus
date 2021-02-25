@@ -1,25 +1,15 @@
-/** == GENERAL == */
-/** ================================================== */
-
-    body.portfolio-forza {
-        overflow: hidden;
-    }
-
 /** == FORZA CAROUSEL == */
 /** ================================================== */
 
     #forza-slider {
         position: relative;
-        top: -194px; left: 0; right: 0;
         display: flex;
         align-items: center;
-        min-height: 100vh;
         z-index: 10; // make it beneath menu
         
         // Progress Bar
         .progress-bar {
-            @extend .slider-progress-bar;
-            @include make-full-width();
+            display: none;
         }
 
         // All Works
@@ -37,14 +27,14 @@
             display: inline-block;
             position: absolute;
             left: calc(-50vw + 50%); top: 0; bottom: 0;
-            width: 5px; height: 100%;
+            width: 5px; height: 100vh;
             background: var(--primary-accent);
             z-index: 9999999;
         }
         
         .main-carousel {
             width: 100%;
-            margin-top: 100px;
+            height: 100%;
             
             // Dots
             .flickity-page-dots {
@@ -63,7 +53,7 @@
                     transform: rotate(90deg);
 
                     &.previous {
-                        top: 30%;
+                        top: calc(52% - 72px);
                         right: -75px;
                     }
                     &.next {
@@ -75,82 +65,94 @@
             // Viewport
             .flickity-viewport {
                 overflow: visible !important;
+                height: 100% !important;
 
                 .flickity-slider {
-                    // @include make-full-width();
                     display: flex;
                     justify-content: center;
+                    align-items: center;
                     text-align: center;
 
-                    // margin-left: calc(-50vw + 65%);
-
                     .carousel-cell {
+                        position: relative;
                         display: flex;
                         justify-content: space-between;
                         position: relative;
                         width: 100%;
                         height: auto; /* height of carousel */
                         padding: 0;
-                        // overflow: hidden;
+                        overflow: hidden;
+
+                        @include breakpoint($mobile) { flex-direction: column; }
 
                         // margin: 0 80px;
 
-                        .carousel-image {
+                        .entry-thumbnail {
                             display: block;
-                            border-radius: 5px;
-                            margin-left: auto;
-                            margin-right: 0;
+                            width: 50%;
+                            order: 1;
+
+                            @include breakpoint($mobile) { width: 100%; margin: 0; order: 0; }
+
+                            img {
+                                border-radius: 5px;
+                                width: 100%;
+                            }
                         }
 
-                        .carousel-desc {
-                            @include animate-this(); // CSS-3 animation is triggered via addition of '.is-selected' class
-                            position: absolute;
-                            left: 0 !important;
-                            top: 15%;
-                            transform: translateX(0) translateY(-15%);
+                        .entry-caption {
+                            @include animate-this($duration: '200ms'); // CSS-3 animation is triggered via addition of '.is-selected' class
+                            width: 50%;
+                            order: 0;
+                            display: flex;
+                            align-items: center;
                             text-align: left;
 
-                            .title {
-                                font-size: 48px;
-                                // color: #000;
-                                margin: 0;
-                                // letter-spacing: 0;
+                            @include breakpoint($mobile) { order: 1; width: 100%; }
+
+                            .inner-wrap {
+                                .entry-title {
+                                    font-size: 48px;
+                                    margin: 0;
+
+                                    @include breakpoint($mobile) { font-size: 36px; }
+                                }
+                                .entry-meta {
+                                    font-size: 14px;
+                                    text-transform: uppercase;
+                                    letter-spacing: 1px;
+                                    color: #696969;
+                                }
+                                .entry-caption {
+                                    font-family: $secondary-font-stack;
+                                    font-size: 18px;
+                                    color: var(--text-color);
+                                    width: 450px;
+                                    margin: 10px 0 0 0;
+                                }
+                                .explore {
+                                    display: inline-block;
+                                    font-family: $secondary-font-stack;
+                                    font-size: 15px;
+                                    font-weight: 400;
+                                    text-transform: uppercase;
+                                    letter-spacing: 1px;
+                                    color: var(--text-color);
+                                    background: var(--secondary-accent);
+                                    border-radius: 5px;
+                                    padding: 14px 22px;
+                                    margin-top: 20px;
+                                }
                             }
-                            .tags {
-                                font-size: 14px;
-                                text-transform: uppercase;
-                                letter-spacing: 1px;
-                                color: #696969;
-                            }
-                            .caption {
-                                font-family: $secondary-font-stack;
-                                font-size: 20px;
-                                font-weight: 300;
-                                color: #000;
-                                width: 450px;
-                                margin: 10px 0 0 0;
-                            }
-                            .explore {
-                                display: inline-block;
-                                font-family: $secondary-font-stack;
-                                font-size: 15px;
-                                font-weight: 400;
-                                text-transform: uppercase;
-                                letter-spacing: 1px;
-                                color: var(--text-color);
-                                background: var(--secondary-accent);
-                                border-radius: 5px;
-                                padding: 14px 22px;
-                                margin-top: 20px;
-                            }
+                            
                         }
 
                         /* animate-in carousel description when selected */
                         &.is-selected {
-                            .carousel-desc {
+                            .entry-caption {
                                 opacity: 1;
                                 visibility: visible;
-                                transform: translate3d(0, -10%, 0);
+                                transform: translate3d(0, 0, 0);
                                 transition-delay: 600ms;
                         
                             }

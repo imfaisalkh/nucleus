@@ -42,3 +42,5 @@
 <div class="counter">
     <span class="current"></span><span class="total"></span>
 </div>
+
+<span class="vertical-line"></span>

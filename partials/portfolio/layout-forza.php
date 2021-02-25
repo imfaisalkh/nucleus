@@ -10,14 +10,19 @@
 		$post_ID = get_the_ID();
 	}
 
+	// Hover Variable(s)
+	$portfolio_effect = '';
 
-	// Portfolio Configuration - Meta Panel
-	$portfolio_slider_posts = [530, 532, 534];
+	// Slider Configuration
+	$slide_duration = get_field('portfolio_slide_duration') ? get_field('portfolio_slide_duration') : 8;
+	
+	// Portfolio Configuration
+	$portfolio_featured_posts = get_field('portfolio_featured_posts') ? get_field('portfolio_featured_posts') : null;
 	
 	// WP_QUERY Arguments
 	$portfolio_slider_args = array(
 		'post_type' 	=> 'portfolio',
-		'post__in'    	=> $portfolio_slider_posts,
+		'post__in'    	=> $portfolio_featured_posts,
 		'orderby' 		=> 'post__in'
 
 	);
@@ -26,55 +31,23 @@
 
 ?>
 
-<?php if ( $portfolio_slider_query->have_posts() ) { ?>
+<?php if ( $portfolio_slider_query->have_posts() && $portfolio_featured_posts  ) { ?>
 
-	<div id="forza-slider">
+	<div id="forza-slider" class="portfolio-container no-hover" data-effect="<?php echo esc_attr($portfolio_effect); ?>" data-slide-duration="<?php echo esc_attr($slide_duration); ?>">
 
 		<div class="main-carousel">
 
 			<?php while ( $portfolio_slider_query->have_posts() ) : $portfolio_slider_query->the_post(); ?>
-
-				<?php
-					// Color Scheme
-					$color_scheme 	= get_field('color_scheme', get_the_ID());
-					$custom_color   = get_field('custom_colors', get_the_ID());
-				
-					// Custom Colors
-					$primary_accent = $custom_color['primary_accent'];
-					$secondary_accent = $custom_color['secondary_accent'];
-					$background_color = $custom_color['background_color'];
-					$text_color = $custom_color['text_color'];
-
-					// Others
-					$folio_terms = implode(', ', nucleus_get_term_fields('portfolio_category', 'name'));
-					$folio_permalink = get_post_meta(get_the_ID(), 'custom_url', true) != false ? esc_url( get_post_meta(get_the_ID(), 'custom_url', true) ) : esc_url( get_permalink() );
-				?>
-
-				<div class="carousel-cell" data-primary-accent-color="<?php echo esc_attr($primary_accent); ?>" data-secondary-accent-color="<?php echo esc_attr($secondary_accent); ?>" data-bg-color="<?php echo esc_attr($background_color); ?>" data-text-color="<?php echo esc_attr($text_color); ?>">
-					<img class="carousel-image" src="<?php the_post_thumbnail_url(); ?>">
-					<div class="carousel-desc">
-						<a href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title(); ?>" >
-							<h3 class="title"><?php the_title(); ?></h3>
-						</a>
-						<?php if ( $folio_terms ) { ?>
-							<span class="tags"><?php echo esc_html( $folio_terms ); ?></span>
-						<?php } ?>
-						<p class="caption">Whale was seized and sold, and his Grace the Duke of Wellington.</p>
-						<a href="#explore" class="explore">Open Case Study</a>
-					</div>
-				</div>
-
+				<?php include(locate_template( 'partials/portfolio/includes/carousel-cell.php' )); ?>
 			<?php endwhile; ?>
+			<?php wp_reset_postdata(); ?>
 
 		</div>
 
-		<div class="all-works"><a href="#">All Works</a></div>
-		<div class="counter">
-			<span class="current"></span><span class="total"></span>
-		</div>
-
-		<span class="vertical-line"></span>
+		<?php include(locate_template( 'partials/portfolio/includes/carousel-controls.php' )); ?>
 
 	</div>
 
+<?php } else { ?>
+	<?php get_template_part('content', 'none'); ?>
 <?php } ?>

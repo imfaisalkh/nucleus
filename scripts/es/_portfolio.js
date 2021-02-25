@@ -7,16 +7,21 @@ export default jQuery(function($) {
 
         // Align Conatiner to the Top
         align_to_top: function() {
-            const is_full_screen_page = $('body').hasClass('portfolio-horizon') || $('body').hasClass('portfolio-spotlight') || $('body').hasClass('portfolio-textual')
+            const is_full_screen_page = $('body').hasClass('portfolio-horizon') || $('body').hasClass('portfolio-spotlight') || $('body').hasClass('portfolio-forza') || $('body').hasClass('portfolio-textual')
             
             if (is_full_screen_page) {
                 const margin_top = $('#site-header').css('margin-top')
                 $('#site-body').css('top', '-' + margin_top)
-
+                
                 const is_admin_bar = $('body').hasClass('admin-bar')
                 const admin_bar_height = $('#wpadminbar').height()
                 const container_height = is_admin_bar ? $(window).height() - admin_bar_height : $(window).height()
                 $('#site-body').css('height', container_height)
+                
+                const site_header_height = $('#site-header').height()
+                const vertical_offset = parseInt(margin_top, 10) + site_header_height
+                const final_offset = is_admin_bar ? vertical_offset - admin_bar_height : vertical_offset
+                $('.vertical-line').css('top', '-' + final_offset + 'px')
             }
         },
 

@@ -54,14 +54,27 @@
     </figure>
 
     <header class="entry-caption">
-        <a href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title(); ?>" >
+        <?php if ( $portfolio_style != 'forza' ) { ?>
+            <a href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title(); ?>" >
+                <div class="inner-wrap">
+                    <h3 class="entry-title"><?php the_title(); ?></h3>
+                    <?php if ( $folio_terms ) { ?>
+                        <span class="entry-meta"><?php echo esc_html( $folio_terms ); ?></span>
+                    <?php } ?>
+                </div>
+            </a>
+        <?php } ?>
+
+        <?php if ( $portfolio_style == 'forza' ) { ?>
             <div class="inner-wrap">
                 <h3 class="entry-title"><?php the_title(); ?></h3>
                 <?php if ( $folio_terms ) { ?>
                     <span class="entry-meta"><?php echo esc_html( $folio_terms ); ?></span>
                 <?php } ?>
+                <p class="entry-caption"><?php the_excerpt(); ?></p>
+                <a href="<?php echo esc_url($folio_permalink); ?>" class="explore"><?php echo esc_html__('Open Case Study', 'nucleus'); ?></a>
             </div>
-        </a>
+        <?php } ?>
     </header>
 
 </article>

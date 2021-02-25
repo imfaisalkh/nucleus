@@ -154,7 +154,7 @@
 				padding: 0;
 				padding: 25px;
 
-				background: #FFF url('../../images/portfolio-icon.svg') no-repeat;
+				background: var(--menu-background) url('../../images/portfolio-icon.svg') no-repeat;
 				background-position: calc(100% + 8px) calc(100% + 13px);
 				background-size: 100px;
 
