@@ -420,13 +420,15 @@ html.noscroll body:before{position:absolute;left:0;top:0;right:0;bottom:0;conten
 #page-sidebar .widget a{text-decoration:none;transition:all 300ms ease-in-out 0s}
 #page-sidebar .widget .backdrop-color{color:var(--sidebar-title)}
 #page-sidebar .widget img{max-width:100%;height:auto}
-#page-sidebar .widget_search{padding:25px 35px 35px 35px;border-radius:5px;background:#4c4c4c;background:linear-gradient(137deg,#4c4c4c 0,#222 100%)}
-#page-sidebar .widget_search .screen-reader-text{display:none}
-#page-sidebar .widget_search>h3{color:#FFF;letter-spacing:1px;margin-top:0}
-#page-sidebar .widget_search p{color:#bcbcbc}
-#page-sidebar .widget_search .form-fields{position:relative}
-#page-sidebar .widget_search .form-fields input[type="text"]:focus{border:0;box-shadow:none}
-#page-sidebar .widget_search .form-fields input[type="submit"]{position:absolute;top:0;right:0;padding:0 20px;border-radius:0 5px 5px 0;height:56px;line-height:56px}
+#page-sidebar .widget_search{position:absolute;bottom:0;margin:0 !important;height:100px;width:100%;right:0}
+#page-sidebar .widget_search .widget-title{display:none}
+#page-sidebar .widget_search #searchform{position:fixed;bottom:0;z-index:99;width:80%;height:90px;padding:0 5.2%}
+#page-sidebar .widget_search #searchform:before{opacity:1;position:absolute;bottom:0;left:0;width:100%;height:250px;content:"";pointer-events:none;z-index:99;transition:all 100ms linear;background:linear-gradient(to top,#000 0,#000,150px,rgba(0,0,0,0) 100%)}
+#page-sidebar .widget_search #searchform input{background:0;border:0;width:100%;position:absolute;top:30px;-webkit-appearance:none;border-radius:0;z-index:100;color:#FFF}
+#page-sidebar .widget_search #searchform input[type="submit"]{display:none}
+#page-sidebar .widget_search #searchform ::-webkit-input-placeholder{color:#e6aa4c;opacity:1}
+#page-sidebar .widget_search #searchform :-ms-input-placeholder{color:#e6aa4c;opacity:1}
+#page-sidebar .widget_search #searchform ::placeholder{color:#e6aa4c;opacity:1}
 #page-sidebar .widget_nav_menu .screen-reader-text,#page-sidebar .widget_categories .screen-reader-text,#page-sidebar .widget_archive .screen-reader-text,#page-sidebar .widget_pages .screen-reader-text,#page-sidebar .widget_meta .screen-reader-text,#page-sidebar .widget_recent_comments .screen-reader-text,#page-sidebar .widget_recent_entries .screen-reader-text,#page-sidebar .widget_rss .screen-reader-text,#page-sidebar .widget_product_categories .screen-reader-text,#page-sidebar .widget_portfolio_categories .screen-reader-text,#page-sidebar .widget_list .screen-reader-text{display:none}
 #page-sidebar .widget_nav_menu ul,#page-sidebar .widget_categories ul,#page-sidebar .widget_archive ul,#page-sidebar .widget_pages ul,#page-sidebar .widget_meta ul,#page-sidebar .widget_recent_comments ul,#page-sidebar .widget_recent_entries ul,#page-sidebar .widget_rss ul,#page-sidebar .widget_product_categories ul,#page-sidebar .widget_portfolio_categories ul,#page-sidebar .widget_list ul{padding-left:0;margin-bottom:0;list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
 #page-sidebar .widget_nav_menu ul li,#page-sidebar .widget_categories ul li,#page-sidebar .widget_archive ul li,#page-sidebar .widget_pages ul li,#page-sidebar .widget_meta ul li,#page-sidebar .widget_recent_comments ul li,#page-sidebar .widget_recent_entries ul li,#page-sidebar .widget_rss ul li,#page-sidebar .widget_product_categories ul li,#page-sidebar .widget_portfolio_categories ul li,#page-sidebar .widget_list ul li{line-height:36px}
