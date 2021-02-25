@@ -5,6 +5,7 @@ export default jQuery(function($) {
     // Functions Object
     var colors = {
 
+        // Get's value of any CSS variable
         get_base_color: function(color) {
             let root = window.getComputedStyle(document.body); // :root HTML element
 
@@ -28,6 +29,7 @@ export default jQuery(function($) {
         },
 
 
+        // Returns active color scheme class
         get_base_color_scheme: function() {
 
             let is_light_color_scheme = $('body').hasClass('light-base-color-scheme')
@@ -60,6 +62,9 @@ export default jQuery(function($) {
 
             let headroom_background = tinycolor(this.get_base_color('background')).setAlpha(.9).toString()
             document.body.style.setProperty('--headroom-background', headroom_background);
+
+            let search_background = tinycolor(this.get_base_color('background')).setAlpha(0).toString()
+            document.body.style.setProperty('--search-background', search_background);
 
             let modal_background = tinycolor(this.get_base_color('background')).setAlpha(.9).toString()
             document.body.style.setProperty('--modal-background', modal_background);
@@ -105,7 +110,7 @@ export default jQuery(function($) {
                 let border_color = tinycolor(this.get_base_color('background')).lighten(20).setAlpha(.7).toString()
                 document.body.style.setProperty('--border-color', border_color);
 
-                let tag_bg = tinycolor(this.get_base_color('background')).lighten(20).setAlpha(.8).toString()
+                let tag_bg = tinycolor(this.get_base_color('background')).lighten(30).setAlpha(.8).toString()
                 document.body.style.setProperty('--tag-background', tag_bg);
 
                 let comment_bg = tinycolor(this.get_base_color('background')).lighten(6.5).setAlpha(.7).toString()
