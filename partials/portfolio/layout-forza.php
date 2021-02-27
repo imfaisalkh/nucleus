@@ -3,13 +3,6 @@
 	// Portfolio Style
 	$portfolio_style = 'forza'; // used for image size allocation
 
-	// Post or Page ID
-	if( is_home() || is_archive() || is_search() ) {
-		$post_ID = get_option('page_for_posts');
-	} else {
-		$post_ID = get_the_ID();
-	}
-
 	// Hover Variable(s)
 	$portfolio_effect = '';
 

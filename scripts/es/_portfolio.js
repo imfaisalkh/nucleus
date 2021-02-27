@@ -7,7 +7,7 @@ export default jQuery(function($) {
 
         // Align Conatiner to the Top
         align_to_top: function() {
-            const is_full_screen_page = $('body').hasClass('portfolio-horizon') || $('body').hasClass('portfolio-spotlight') || $('body').hasClass('portfolio-forza') || $('body').hasClass('portfolio-textual')
+            const is_full_screen_page = $('body').hasClass('portfolio-horizon') || $('body').hasClass('portfolio-spotlight') || $('body').hasClass('portfolio-forza') || $('body').hasClass('portfolio-textual') || $('body').hasClass('portfolio-tiles')
             
             if (is_full_screen_page) {
                 const margin_top = $('#site-header').css('margin-top')

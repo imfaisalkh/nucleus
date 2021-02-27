@@ -6,7 +6,7 @@
     // Hover Effects
     $portfolio_caption = 'float';
     $portfolio_filter = '';
-    $portfolio_effect = 'parallax';
+    $portfolio_effect = '';
 
     // Slider Configuration
     $slide_duration = get_field('portfolio_slide_duration') ? get_field('portfolio_slide_duration') : 8;

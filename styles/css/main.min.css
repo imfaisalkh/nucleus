@@ -822,11 +822,11 @@ ol.comment-list li.comment .children{list-style:none}
 .portfolio-container[data-caption="float"] .type-portfolio .entry-caption .inner-wrap .entry-title{color:#000;background:#FFF;padding:6px 12px;white-space:nowrap}
 .portfolio-container[data-caption="float"] .type-portfolio .entry-caption .inner-wrap .entry-meta{-ms-flex-item-align:start !important;align-self:flex-start !important;color:#FFF;background:#000;padding:6px 10px;margin:0}
 .portfolio-container[data-caption="float"] .type-portfolio:hover{z-index:10}
-body.portfolio-horizon,body.portfolio-spotlight,body.portfolio-forza,body.portfolio-textual{overflow:hidden}
-body.portfolio-horizon #site-body,body.portfolio-spotlight #site-body,body.portfolio-forza #site-body,body.portfolio-textual #site-body{position:absolute;left:0;top:0;right:0;bottom:0}
-body.portfolio-horizon #site-body #main-content,body.portfolio-spotlight #site-body #main-content,body.portfolio-forza #site-body #main-content,body.portfolio-textual #site-body #main-content{margin:0;height:calc(100% - 100px);-webkit-transform:translateY(100px);transform:translateY(100px)}
-body.portfolio-horizon #site-body #page-content,body.portfolio-horizon #site-body .portfolio-container,body.portfolio-spotlight #site-body #page-content,body.portfolio-spotlight #site-body .portfolio-container,body.portfolio-forza #site-body #page-content,body.portfolio-forza #site-body .portfolio-container,body.portfolio-textual #site-body #page-content,body.portfolio-textual #site-body .portfolio-container{margin:0;height:100%}
-body.portfolio-horizon #site-body .portfolio-container,body.portfolio-spotlight #site-body .portfolio-container,body.portfolio-forza #site-body .portfolio-container,body.portfolio-textual #site-body .portfolio-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+body.portfolio-horizon,body.portfolio-spotlight,body.portfolio-forza,body.portfolio-textual,body.portfolio-tiles{overflow:hidden}
+body.portfolio-horizon #site-body,body.portfolio-spotlight #site-body,body.portfolio-forza #site-body,body.portfolio-textual #site-body,body.portfolio-tiles #site-body{position:absolute;left:0;top:0;right:0;bottom:0}
+body.portfolio-horizon #site-body #main-content,body.portfolio-spotlight #site-body #main-content,body.portfolio-forza #site-body #main-content,body.portfolio-textual #site-body #main-content,body.portfolio-tiles #site-body #main-content{margin:0;height:calc(100% - 100px);-webkit-transform:translateY(100px);transform:translateY(100px)}
+body.portfolio-horizon #site-body #page-content,body.portfolio-horizon #site-body .portfolio-container,body.portfolio-spotlight #site-body #page-content,body.portfolio-spotlight #site-body .portfolio-container,body.portfolio-forza #site-body #page-content,body.portfolio-forza #site-body .portfolio-container,body.portfolio-textual #site-body #page-content,body.portfolio-textual #site-body .portfolio-container,body.portfolio-tiles #site-body #page-content,body.portfolio-tiles #site-body .portfolio-container{margin:0;height:100%}
+body.portfolio-horizon #site-body .portfolio-container,body.portfolio-spotlight #site-body .portfolio-container,body.portfolio-forza #site-body .portfolio-container,body.portfolio-textual #site-body .portfolio-container,body.portfolio-tiles #site-body .portfolio-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 #horizon-slider{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;z-index:10}
 #horizon-slider .progress-bar{width:calc(100vw - 10px);margin-left:calc(-50vw + 50%)}
 #horizon-slider .main-carousel{width:100%;height:100%}
@@ -869,11 +869,11 @@ body.portfolio-horizon #site-body .portfolio-container,body.portfolio-spotlight 
 #forza-slider .main-carousel .flickity-viewport{overflow:visible !important;height:100% !important}
 #forza-slider .main-carousel .flickity-viewport .flickity-slider{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center}
 #forza-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative;width:100%;height:auto;padding:0;overflow:hidden}
-#forza-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-thumbnail{display:block;width:50%;-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}
+#forza-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-thumbnail{display:block;width:50%;margin:0 !important;-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}
 #forza-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-thumbnail img{border-radius:5px;width:100%}
 #forza-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-caption{opacity:0;visibility:hidden;-webkit-transform:translate3d(0,15px,0) rotate(0);transform:translate3d(0,15px,0) rotate(0);transition:opacity 200ms cubic-bezier(0.39,0.575,0.565,1),visibility 200ms linear,-webkit-transform 200ms cubic-bezier(0.39,0.575,0.565,1);transition:transform 200ms cubic-bezier(0.39,0.575,0.565,1),opacity 200ms cubic-bezier(0.39,0.575,0.565,1),visibility 200ms linear;transition:transform 200ms cubic-bezier(0.39,0.575,0.565,1),opacity 200ms cubic-bezier(0.39,0.575,0.565,1),visibility 200ms linear,-webkit-transform 200ms cubic-bezier(0.39,0.575,0.565,1);width:50%;-webkit-box-ordinal-group:1;-ms-flex-order:0;order:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:left}
 #forza-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-caption.animate-in{opacity:1;visibility:visible;-webkit-transform:translate3d(0,0,0) rotate(0);transform:translate3d(0,0,0) rotate(0)}
-#forza-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-caption .inner-wrap .backdrop{font-family:"Lato",sans-serif;font-weight:800;font-size:200px;-webkit-text-stroke-width:1px;-webkit-text-fill-color:transparent;line-height:1;position:absolute;z-index:-1;top:25%;left:0;-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0);color:var(--button-background);opacity:.7}
+#forza-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-caption .inner-wrap .backdrop{font-family:"Lato",sans-serif;font-weight:800;font-size:200px;-webkit-text-stroke-width:1px;-webkit-text-fill-color:transparent;line-height:1;position:absolute;z-index:-1;top:30%;left:0;-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0);color:var(--button-background);opacity:.7}
 #forza-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-caption .inner-wrap .entry-title{font-size:48px;margin:0;letter-spacing:0}
 #forza-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-caption .inner-wrap .entry-meta{font-size:14px;text-transform:uppercase;letter-spacing:1px;color:#696969}
 #forza-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-caption .inner-wrap .entry-caption{font-family:"Open Sans",sans-serif;font-size:18px;color:var(--text-color);width:450px;margin:10px 0 0 0}
@@ -899,25 +899,25 @@ body.portfolio-horizon #site-body .portfolio-container,body.portfolio-spotlight 
 #textual-slider .carousel-cell .entry-caption a .inner-wrap .entry-title{font-size:48px;color:var(--text-color,#000);margin:0}
 #textual-slider .carousel-cell .entry-caption a .inner-wrap .entry-meta{font-size:14px;text-transform:uppercase;letter-spacing:1px;color:#696969;padding:0 0 15px 10px}
 body.portfolio-tiles{overflow:hidden;background-image:url(../../images/corner-pattern.svg);background-position:top left;background-repeat:no-repeat}
-#tiles-slider{position:relative;top:-194px;left:0;right:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;min-height:100vh;z-index:10}
-#tiles-slider .columns{position:absolute;top:160px;bottom:0;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+#tiles-slider{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;z-index:10;height:100%}
+#tiles-slider .columns{width:100%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-top:45px}
 #tiles-slider .columns .column{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:50%;height:100%;overflow:hidden;padding-bottom:50px}
-#tiles-slider .columns .column.text{width:45%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-right:150px}
+#tiles-slider .columns .column.text{width:30%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-right:45px}
 #tiles-slider .columns .column.text .prefix{position:relative;font-family:"Open Sans",sans-serif;font-size:17px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin:0 0 10px 0}
 #tiles-slider .columns .column.text .prefix:before{display:inline-block;content:'';width:75px;height:2px;background:#FFF;-webkit-transform:translateY(-5px);transform:translateY(-5px);margin-right:18px}
 #tiles-slider .columns .column.text .title{font-size:60px;margin:0 0 20px 0;line-height:1}
 #tiles-slider .columns .column.text p{font-size:18px;color:#a5a5a5;margin-bottom:0}
 #tiles-slider .columns .column.text .button{margin:30px 0 0 0;padding-top:15px;padding-bottom:15px;border-radius:5px}
-#tiles-slider .columns .column.slider{width:55%}
+#tiles-slider .columns .column.slider{width:70%}
 #tiles-slider .columns .column.slider .portfolio-container{height:100%;width:100%}
-#tiles-slider .columns .column.slider .portfolio-container .main-carousel{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;height:100%}
+#tiles-slider .columns .column.slider .portfolio-container .main-carousel{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;width:100%;height:100%}
 #tiles-slider .progress-bar{width:calc(100vw - 10px);margin-left:calc(-50vw + 50%)}
 #tiles-slider .main-carousel{width:100%}
 #tiles-slider .main-carousel .flickity-page-dots{text-align:center;bottom:-30px;padding:0}
 #tiles-slider .main-carousel .flickity-prev-next-button{display:none}
 #tiles-slider .main-carousel .flickity-viewport{overflow:visible !important;height:100% !important}
-#tiles-slider .main-carousel .flickity-viewport .flickity-slider{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center}
-#tiles-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell{position:relative;text-align:center;width:31%;height:100%;overflow:hidden;margin:0 10px;background-size:cover;background-position:center center}
+#tiles-slider .main-carousel .flickity-viewport .flickity-slider{height:100% !important;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center}
+#tiles-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell{position:relative;text-align:center;width:22.5%;height:100%;overflow:hidden;margin:0 10px;background-size:cover;background-position:center center}
 #tiles-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-thumbnail{width:100%;height:100%;margin:0}
 #tiles-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-thumbnail img{height:100% !important;border-radius:5px;-o-object-fit:cover;object-fit:cover}
 body.portfolio-ribbon{overflow:hidden;background-image:url(../../images/corner-pattern.svg);background-position:top left;background-repeat:no-repeat}
@@ -1251,7 +1251,7 @@ body.single-post #site-body #page-sidebar{margin-top:300px}
 #spotlight-slider .main-carousel .flickity-page-dots{bottom:30px}
 #spotlight-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell{width:85%;padding:0 15%}
 #textual-slider .main-carousel{width:85%}
-#tiles-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell{height:85%}
+#tiles-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell{height:80%}
 #ribbon-slider{top:50px;min-height:calc(100vh - 250px)}
 #ribbon-slider .intro .title{font-size:48px}
 #ribbon-slider .slider .title{margin:30px 0 30px 0}

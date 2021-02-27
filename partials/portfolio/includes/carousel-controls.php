@@ -43,4 +43,6 @@
     <span class="current"></span><span class="total"></span>
 </div>
 
-<span class="vertical-line"></span>
+<?php if ( $portfolio_style == 'forza' ) { ?>
+    <span class="vertical-line"></span>
+<?php } ?>

@@ -90,6 +90,7 @@
                         .entry-thumbnail {
                             display: block;
                             width: 50%;
+                            margin: 0 !important;
                             order: 1;
 
                             @include breakpoint($mobile) { width: 100%; margin: 0; order: 0; }
@@ -120,7 +121,7 @@
                                     line-height: 1;
                                     position: absolute;
                                     z-index: -1;
-                                    top: 25%;
+                                    top: 30%;
                                     left: 0;
                                     transform: translate3d(0,-50%,0);
                                     color: var(--button-background);
