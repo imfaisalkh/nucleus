@@ -69,6 +69,10 @@ export default jQuery(function($) {
             let modal_background = tinycolor(this.get_base_color('background')).setAlpha(.9).toString()
             document.body.style.setProperty('--modal-background', modal_background);
 
+            let button_background = tinycolor(this.get_base_color('background')).darken(10).toString()
+            document.body.style.setProperty('--button-background', button_background);
+
+
             // Set color scheme if LIGHT base scheme is active
             if (base_color_scheme == 'light-base-color-scheme') {
                 let backdrop_color = tinycolor(this.get_base_color('background')).darken(12).toString()

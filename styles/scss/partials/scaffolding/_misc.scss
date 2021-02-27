@@ -487,7 +487,8 @@
 					font-size: 12px;
 					margin-left: 7px;
 					text-transform: uppercase;
-					color: var(--menu-subtitle);
+					color: var(--text-color, #FFF);
+					opacity: 0.45;
 
 					@include breakpoint($mobile)  { display: none !important; }
 				}
