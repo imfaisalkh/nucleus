@@ -11,10 +11,10 @@
 
     // Custom Colors
     if ($base_colors) {
-        $primary_accent = $base_colors['primary_accent'];
-        $secondary_accent = $base_colors['secondary_accent'];
-        $background_color = $base_colors['background_color'];
-        $text_color = $base_colors['text_color'];
+        $primary_accent = isset($base_colors['primary_accent']) ? $base_colors['primary_accent'] : '';
+        $secondary_accent = isset($base_colors['secondary_accent']) ? $base_colors['secondary_accent'] : '';
+        $background_color = isset($base_colors['background_color']) ? $base_colors['background_color'] : '';
+        $text_color = isset($base_colors['text_color']) ? $base_colors['text_color'] : '';
     }
 
     // Image Size

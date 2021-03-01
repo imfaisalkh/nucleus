@@ -164,10 +164,11 @@
 			wp_register_script('packery', NUCLEUS_VENDORS_URI . '/packery/packery.pkgd.min.js', array('jquery'), null, true);
 			wp_register_script('infinite-scroll', NUCLEUS_VENDORS_URI . '/infinite-scroll/infinite-scroll.pkgd.min.js', array('jquery'), null, true);
 			wp_register_script('jquery-smooth-scroll', NUCLEUS_VENDORS_URI . '/jquery-smooth-scroll/jquery.smooth-scroll.min.js', array('jquery'), null, true);
+			wp_register_script('jquery-scrollbar', NUCLEUS_VENDORS_URI . '/jquery-scrollbar/jquery.scrollbar.min.js', array('jquery'), null, true);
 			wp_register_script('imagesloaded', NUCLEUS_VENDORS_URI . '/imagesloaded/imagesloaded.pkgd.min.js', array('jquery'), null, true);
 			wp_register_script('tinycolor', NUCLEUS_VENDORS_URI . '/tinycolor/tinycolor.min.js', array('jquery'), null, true);
 			wp_register_script('ionicons', 'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js', array('jquery'), null, true);
-			wp_enqueue_script('nucleus-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery', 'modernizr', 'superfish', 'fancybox', 'headroom.js', 'jquery-headroom.js', 'tendina', 'flickity', 'flickity-fade', 'packery', 'infinite-scroll', 'jquery-smooth-scroll', 'imagesloaded', 'tinycolor', 'ionicons'), null, true);
+			wp_enqueue_script('nucleus-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery', 'modernizr', 'superfish', 'fancybox', 'headroom.js', 'jquery-headroom.js', 'tendina', 'flickity', 'flickity-fade', 'packery', 'infinite-scroll', 'jquery-smooth-scroll', 'jquery-scrollbar', 'imagesloaded', 'tinycolor', 'ionicons'), null, true);
 
 			// Enqueue Other Scripts
 			wp_localize_script( 'nucleus-js-main', 'theme_ajax', array(
@@ -197,6 +198,7 @@
 			wp_enqueue_style('fancybox', NUCLEUS_VENDORS_URI . '/fancybox/jquery.fancybox.min.css');
 			wp_enqueue_style('flickity', NUCLEUS_VENDORS_URI . '/flickity/flickity.min.css');
 			wp_enqueue_style('flickity-fade', NUCLEUS_VENDORS_URI . '/flickity/flickity-fade.css');
+			wp_enqueue_style('jquery-scrollbar', NUCLEUS_VENDORS_URI . '/jquery-scrollbar/jquery.scrollbar.css.css');
 			wp_enqueue_style('nucleus-main', NUCLEUS_CSS_URI . '/main.css');
 			wp_enqueue_style('nucleus-editor', get_template_directory_uri() . '/custom-editor-style.css');
 			

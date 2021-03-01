@@ -120,6 +120,8 @@
 			position: absolute;
 			bottom: 45px;
 			z-index: 50;
+			height: 350px;
+			width: 250px;
 			
 			@include animate-this($translate3d: '0, 15x, 0', $rotate: '0deg', $duration: '200ms');
 
@@ -141,22 +143,14 @@
 				border-right: 12px solid transparent;
 				border-top: 13px solid var(--menu-background);
 			}  
+	
 
 			ul {
 				border-radius: 5px;
-
-				display: grid;
-				grid-auto-flow: column;
-				grid-template-rows: repeat(10, auto);
-
 				list-style: none;
 				margin: 0;
 				padding: 0;
 				padding: 25px;
-
-				background: var(--menu-background) url('../../images/portfolio-icon.svg') no-repeat;
-				background-position: calc(100% + 8px) calc(100% + 13px);
-				background-size: 100px;
 
 				li {
 					font-family: $secondary-font-stack;
@@ -241,3 +235,158 @@
         .next, .prev { display: none; }
     }
 }
+
+
+/** == CUSTOM SCROLLBAR == */
+/** ================================================== */
+
+
+    /*************** SCROLLBAR BASE CSS ***************/
+     
+    .scroll-wrapper {
+        overflow: hidden !important;
+        padding: 0 !important;
+		position: relative;
+		border-radius: 5px;
+
+		background: var(--menu-background) url('../../images/portfolio-icon.svg') no-repeat;
+		background-position: calc(100% + 8px) calc(100% + 13px);
+		background-size: 100px;
+    }
+     
+    .scroll-wrapper > .scroll-content {
+        border: none !important;
+        box-sizing: content-box !important;
+        height: auto;
+        left: 0;
+        margin: 0;
+        max-height: none;
+        max-width: none !important;
+        overflow: scroll !important;
+        padding: 0;
+        position: relative !important;
+        top: 0;
+        width: auto !important;
+    }
+     
+    .scroll-wrapper > .scroll-content::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+    }
+     
+    .scroll-element {
+        display: none;
+    }
+    .scroll-element, .scroll-element div {
+        box-sizing: content-box;
+    }
+     
+    .scroll-element.scroll-x.scroll-scrollx_visible,
+    .scroll-element.scroll-y.scroll-scrolly_visible {
+        display: block;
+    }
+     
+    .scroll-element .scroll-bar,
+    .scroll-element .scroll-arrow {
+        cursor: default;
+    }
+     
+    .scroll-textarea {
+        border: 1px solid #cccccc;
+        border-top-color: #999999;
+    }
+    .scroll-textarea > .scroll-content {
+        overflow: hidden !important;
+    }
+    .scroll-textarea > .scroll-content > textarea {
+        border: none !important;
+        box-sizing: border-box;
+        height: 100% !important;
+        margin: 0;
+        max-height: none !important;
+        max-width: none !important;
+        overflow: scroll !important;
+        outline: none;
+        padding: 2px;
+        position: relative !important;
+        top: 0;
+        width: 100% !important;
+    }
+    .scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+    }
+     
+     
+     
+     
+    /*************** SIMPLE INNER SCROLLBAR ***************/
+     
+    .scroll-wrapper > .scroll-element,
+    .scroll-wrapper > .scroll-element div
+    {
+        border: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        z-index: 10;
+    }
+     
+    .scroll-wrapper > .scroll-element div {
+        display: block;
+        height: 100%;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+     
+    .scroll-wrapper > .scroll-element.scroll-x {
+        bottom: 2px;
+        height: 8px;
+        left: 0;
+        width: 100%;
+    }
+     
+    .scroll-wrapper > .scroll-element.scroll-y {
+        height: 87% !important;
+        right: 12px !important;
+		top: 25px !important;
+        width: 7px !important;
+    }
+     
+    .scroll-wrapper > .scroll-element .scroll-element_outer {
+        overflow: hidden;
+    }
+     
+    .scroll-wrapper > .scroll-element .scroll-element_outer,
+    .scroll-wrapper > .scroll-element .scroll-element_track,
+    .scroll-wrapper > .scroll-element .scroll-bar {
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+	}
+	
+	.scroll-wrapper > .scroll-element .scroll-bar {
+		height: 30px;
+    }
+     
+    .scroll-wrapper > .scroll-element .scroll-element_track,
+    .scroll-wrapper > .scroll-element .scroll-bar {
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+        filter: alpha(opacity=40);
+        opacity: 0.4;
+    }
+     
+    .scroll-wrapper > .scroll-element .scroll-element_track { background-color: #e0e0e0; }
+    .scroll-wrapper > .scroll-element .scroll-bar { background-color: #c2c2c2; }
+    .scroll-wrapper > .scroll-element:hover .scroll-bar { background-color: #919191; }
+    .scroll-wrapper > .scroll-element.scroll-draggable .scroll-bar { background-color: #919191; }
+     
+     
+    /* update scrollbar offset if both scrolls are visible */
+     
+    .scroll-wrapper > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track { left: -12px; }
+    .scroll-wrapper > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track { top: -12px; }
+     
+    .scroll-wrapper > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -12px; }
+    .scroll-wrapper > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -12px; }
