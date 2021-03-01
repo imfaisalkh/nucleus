@@ -21,7 +21,7 @@
     $image_size = '';
     if ( isset($portfolio_style) ) {
         switch ($portfolio_style) {
-            case 'tiles':
+            case 'columns':
                 $image_size = 'nucleus-portfolio-portrait';
                 break;
             case 'horizon':

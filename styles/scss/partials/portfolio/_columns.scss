@@ -1,17 +1,17 @@
 /** == GENERAL == */
 /** ================================================== */
 
-    body.portfolio-tiles {
+    body.portfolio-columns {
         overflow: hidden;
         background-image: url(../../images/corner-pattern.svg);
         background-position: top left;
         background-repeat: no-repeat;
     }
 
-/** == TILES CAROUSEL == */
+/** == COLUMNS CAROUSEL == */
 /** ================================================== */
 
-    #tiles-slider {
+    #columns-slider {
         position: relative;
         display: flex;
         align-items: center;
@@ -45,7 +45,7 @@
                     align-items: center;
                     padding-right: 45px;
 
-                    @include breakpoint($mobile) {  }
+                    @include breakpoint($mobile) { width: 50%; }
 
                     .prefix {
                         position: relative;
@@ -72,6 +72,7 @@
                         line-height: 1;
 
                         @include breakpoint($mobile) { font-size: 48px; }
+                        @include breakpoint($full-hd) { font-size: 66px; }
                     }
                     p {
                         font-size: 18px;
@@ -91,6 +92,8 @@
                 // Slider Column
                 &.slider {
                     width: 70%;
+                    padding-left: 45px;
+                    background: url(../../images/textual-backdrop.svg) left calc(50% + 10px) no-repeat;
 
                     @include breakpoint($mobile) { width: 50%; }
 
@@ -149,7 +152,7 @@
             
             // Viewport
             .flickity-viewport {
-                overflow: visible !important;
+                // overflow: visible !important;
                 height: 100% !important;
 
                 .flickity-slider {

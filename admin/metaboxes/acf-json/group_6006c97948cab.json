@@ -21,8 +21,7 @@
                 "spotlight": "Spotlight",
                 "textual": "Textual",
                 "forza": "Forza",
-                "tiles": "Tiles",
-                "ribbon": "Ribbon"
+                "columns": "Columns"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -95,6 +94,13 @@
                         "field": "field_6006c987a8e4e",
                         "operator": "==",
                         "value": "spotlight"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_6006c987a8e4e",
+                        "operator": "==",
+                        "value": "columns"
                     }
                 ]
             ],
@@ -324,7 +330,7 @@
                     {
                         "field": "field_6006c987a8e4e",
                         "operator": "==",
-                        "value": "tiles"
+                        "value": "columns"
                     }
                 ]
             ],
@@ -351,7 +357,7 @@
                     {
                         "field": "field_6006c987a8e4e",
                         "operator": "==",
-                        "value": "tiles"
+                        "value": "columns"
                     }
                 ]
             ],
@@ -415,7 +421,7 @@
         "discussion",
         "comments"
     ],
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1613039363
+    "modified": 1614607602
 }

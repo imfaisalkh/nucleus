@@ -1,7 +1,7 @@
 <?php
 
 	// Portfolio Style
-	$portfolio_style = 'tiles'; // used for image size allocation
+	$portfolio_style = 'columns'; // used for image size allocation
 
     // Hover Effects
     $portfolio_caption = 'float';
@@ -28,7 +28,7 @@
 
 ?>
 
-<div id="tiles-slider">
+<div id="columns-slider">
     <div class="columns">
         <div class="column text">
             <div class="inner">

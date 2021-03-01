@@ -1,15 +1,14 @@
 // Import Functions
 import { init_progress_bar } from './_util'
 
-
 // Export Functions
 export default jQuery(function($) {
     'use strict';
 
     // Global Variable(s)
-    const tiles_page = $('body').hasClass('portfolio-tiles')
+    const columns_page = $('body').hasClass('portfolio-columns')
     var $carousel_container = $('.portfolio-container')
-    var $carousel = $('#tiles-slider .main-carousel')
+    var $carousel = $('#columns-slider .main-carousel')
 
     // Functions Object
     var portfolio = {
@@ -42,7 +41,7 @@ export default jQuery(function($) {
     }  
 
     // Initialize Functions
-    if (tiles_page) {
+    if (columns_page) {
         portfolio.carousel();
     }
 })
