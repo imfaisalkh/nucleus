@@ -98,16 +98,23 @@ ol{list-style:decimal inside}
 ul ul,ol ol{margin:0 0 0 20px}
 dt{font-weight:bold}
 dd{margin:0 0 20px}
-hr{clear:both;border:0;border-bottom:1px dotted rgba(0,0,0,0.2);height:1px;margin:5rem 0}
-pre{position:relative;background:rgba(0,0,0,0.05);font-family:"Courier 10 Pitch",Courier,monospace;font-size:15px;line-height:1.6;margin-bottom:1.6em;padding:3% 5% 3% 10%;overflow:auto;max-width:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4}
-pre:before{position:absolute;left:0;top:0;height:100%;font-family:"FontAwesome";content:"\f121";background:#bbc3cc;color:#fff;padding:0 3px;font-size:14px;z-index:5}
-code,kbd,tt,var{font:15px Monaco,Consolas,"Andale Mono","DejaVu Sans Mono",monospace}
-address{margin-bottom:2em}
-table{border-bottom:1px solid #ededed;border-collapse:collapse;border-spacing:0;font-size:87.5%;line-height:2;margin:0 0 2em;width:100%}
-caption,th,td{font-weight:normal;text-align:left}
-caption{font-size:16px;margin:20px 0}
-th{font-weight:bold;text-transform:uppercase}
-td{border-top:1px solid #ededed;padding:6px 10px 6px 0}
+dl{padding:.5em}
+dl dt{float:left;clear:left;width:100px;text-align:right;font-weight:bold}
+dl dt:after{content:":"}
+dl dd{margin:0 0 0 120px;padding:0}
+hr{clear:both;border:0;border-bottom:1px dotted var(--border-color);height:1px;margin:5rem 0}
+table{vertical-align:middle;border:medium;border-collapse:collapse;border-spacing:0;overflow:hidden;width:100%;line-height:2;margin:0 0 2em;position:relative;border:1px solid var(--border-color,#ededed)}
+table caption{font-size:16px;color:var(--text-color);font-weight:400;letter-spacing:0;margin-top:20px;padding:10px 0;margin:0;text-align:left}
+table thead tr{font-weight:400;height:60px;color:var(--text-color)}
+table thead tr th{font-family:"Open Sans",sans-serif;font-size:16px;color:var(--text-color);line-height:1.2;font-weight:600;text-transform:uppercase;text-align:left;padding-left:12px;letter-spacing:.7px;border-right:1px solid var(--border-color,#ededed)}
+table tbody tr{height:50px;font-family:"Open Sans",sans-serif;color:var(--text-color);line-height:1.2;font-weight:unset;border-bottom:1px solid var(--border-color,#ededed)}
+table tbody tr:last-child{border:0}
+table tbody tr a{color:#027bfc}
+table tbody tr a:hover{color:#f76020}
+table tbody tr th{font-family:"Open Sans",sans-serif;font-size:16px;color:var(--text-color);line-height:1.2;font-weight:600;text-transform:uppercase;text-align:left;letter-spacing:.7px;border-right:1px solid var(--border-color,#ededed);padding:6px 10px 6px 12px}
+table tbody tr th:last-child{border:0}
+table tbody tr td{text-align:left;border-right:1px solid var(--border-color,#ededed);padding:6px 10px 6px 12px}
+table tbody tr td:last-child{border:0}
 .clear{clear:both;line-height:1px;height:1px}
 .wp-caption{margin-bottom:1.6em;max-width:100%}
 .wp-caption a{border-bottom:0 !important}
@@ -133,6 +140,14 @@ blockquote.aligncenter,.wp-caption.aligncenter,img.aligncenter{clear:both;margin
 #main-content.image-gallery .wp-gallery .image img{margin-bottom:0 !important}
 .wp-block-file .wp-block-file__button{border:0 !important}
 .wp-block-button .wp-block-button__link{border:0 !important;margin-bottom:20px}
+blockquote{display:inline-block;width:100%;vertical-align:top;margin:10px 0;padding:0;position:relative;padding:30px 30px 30px 160px;border:0;font-size:19px;line-height:30px;quotes:none;z-index:1}
+blockquote p{display:inline}
+blockquote:before{content:'"';position:absolute;top:50%;left:-30px;height:120px;font-size:280px;line-height:.85;font-weight:600;color:var(--backdrop-color);-webkit-transform:translateY(-50%);transform:translateY(-50%);z-index:-1}
+blockquote:after{content:''}
+.entry-content a{color:var(--primary-accent)}
+pre{background:var(--backdrop-color);border-radius:5px;font-family:"Courier 10 Pitch",Courier,monospace;font-size:15px;line-height:1.6;margin:0 0 1.75em;max-width:100%;overflow:auto;padding:1.75em;white-space:pre;white-space:pre-wrap;word-wrap:break-word}
+pre h1:first-of-type,pre h2:first-of-type,pre h3:first-of-type,pre h4:first-of-type,pre h5:first-of-type,pre h6:first-of-type{margin-top:0}
+:not(pre)>code{background:var(--backdrop-color);padding:0 3px;font:15px Monaco,Consolas,"Andale Mono","DejaVu Sans Mono",monospace}
 #top-bar{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:var(--top-bar-background-color);color:var(--top-bar-text-color);height:var(--top-bar-size);width:calc(100vw - 10px);margin-left:calc(-50vw + 50%)}
 #top-bar .container{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:14px}
 #top-bar .container.full-width{width:90%;margin:0 auto}
