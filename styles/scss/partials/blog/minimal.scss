@@ -202,8 +202,11 @@ body.light-base-color-scheme {
 
 				.sbi_item {
 					@include breakpoint($mobile) { width: 50%; height: 175px; }
-					@include breakpoint($tablet) { width: 25%; height: 250px; }
+					@include breakpoint($tablet) { width: 25%; height: 162px; }
 
+					@include breakpoint($touch) {
+						&:nth-child(n+5) { display: none; }
+					}
 				}
 			}
 		}

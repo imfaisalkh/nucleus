@@ -73,6 +73,8 @@
             .flickity-prev-next-button {
                 @extend .flickity-prev-next-button;
 
+                @include breakpoint($touch) { display: none; }
+
                 &.flickity-button {
                     &.previous {
                         @include breakpoint($mobile) { left: 10px; }
@@ -87,6 +89,9 @@
             .flickity-viewport {
                 height: 100% !important;
                 overflow: visible !important;
+
+                @include breakpoint($mobile) { transform: translateY(-10%) }
+                @include breakpoint($tablet) { transform: translateY(-5%) }
 
                 .flickity-slider {
                     height: 100% !important;
@@ -103,14 +108,14 @@
                         padding: 0 15%;
                         overflow: hidden;
 
-                        @include breakpoint($mobile) { width: 100%; padding: 0 3%; overflow: visible; }
+                        @include breakpoint($touch) { width: 100%; padding: 0 3%; overflow: visible; }
                         @include breakpoint($full-hd)  { width: 85%; padding: 0 15%; }
 
                         .entry-thumbnail {
                             display: block;
                             width: 100%;
 
-                            @include breakpoint($mobile) { margin: 0; }
+                            @include breakpoint($touch) { margin: 0; }
 
                             img {
                                 border-radius: 5px;
@@ -126,9 +131,17 @@
                             transform: translateY(-50%) translateX(-50%);
                             text-align: left;
 
-                            @include breakpoint($mobile) {
-                                left: 0; top: 0;
+                            @include breakpoint($touch) {
+                                transform: translateY(0) translateX(0) !important;
+                                width: 100%;
+                                left: 0;
+                                right: 0;
+                                top: auto;
+                                bottom: -125px;
+                                text-align: center;
                             }
+
+                            @include breakpoint($mobile) { bottom: -75px; }
 
                             .inner-wrap {
                                 .entry-title {
@@ -136,7 +149,7 @@
                                     font-weight: 400;
                                     margin: 0;
 
-                                    @include breakpoint($mobile) { font-size: 36px; line-height: 1.2; }
+                                    @include breakpoint($mobile) { font-size: 32px; line-height: 1.2; }
                                 }
                                 .entry-meta {
                                     font-size: 14px;
@@ -157,7 +170,7 @@
                                 transform: translate3d(-50%, -56%, 0);
                                 transition-delay: 600ms;
 
-                                @include breakpoint($mobile) { transform: translate3d(13%, -40%, 0); }
+                                @include breakpoint($touch) { transform: translate3d(13%, -40%, 0); }
                             }
                         }
                     }
