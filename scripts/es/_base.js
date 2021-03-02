@@ -182,6 +182,19 @@ export default jQuery(function($) {
 
         },
 
+        /** Header Elements */
+        header_elements: function() {
+
+            // remove positional classes from all elements
+            $('#site-header .left-elements .element').removeClass('first-element')
+            $('#site-header .right-elements .element').removeClass('last-element')
+
+            // add positional classes to visible elements
+            $('#site-header .left-elements .element:visible:first').addClass('first-element')
+            $('#site-header .right-elements .element:visible:last').addClass('last-element')
+
+        },
+
         /** Sticky Header */
         sticky_header: function() {
 
@@ -269,8 +282,13 @@ export default jQuery(function($) {
     base.site_menu();
     base.full_screen_menu();
     base.site_overlay();
+    base.header_elements();
     base.sticky_header();
     base.page_header();
     base.custom_cursor();
     base.lightbox();
+
+    $(window).on('resize', function () {
+        base.header_elements();
+    })
 })

@@ -3,41 +3,27 @@
 ========================================================== */
 
 
-	$susy: (
-		container: 1440px,
-		columns: 12,
-		global-box-sizing: border-box,
-	    debug: (
-	        image: hide,
-	        color: rgba(blue, .05),
-	        output: background,
-	    ),	
-	);
-
-	@include border-box-sizing;
-
-
 /** == SCAFFOLDING == */
 /** ================================================== */
 
 	
 	/** Content Area */
-	#site-container,
-	.secondary-carousel .container,
-	.advertisement-panel .container,
 	#top-bar .boxed,
 	#site-header .boxed,
-	#search-filter .inner-wrap,
-	#responsive-menu .boxed,
+	#site-body,
 	#site-footer .boxed,
+	#search-filter .boxed,
+	#responsive-menu .boxed,
 	#site-notification
 	{
-		@include container();
-		@include breakpoint($mobile)  			{ @include container(90%); }
-		@include breakpoint($tablet)  			{ @include container(650px); }
-		@include breakpoint($laptop)    		{ @include container(1170px); }
-		@include breakpoint($full-hd)    		{ @include container(1440px); }
+		margin: 0 auto;
+		
+		@include breakpoint($mobile) { width: 90%; }
+		@include breakpoint($tablet) { width: 650px; }
+		@include breakpoint($laptop) { width: 1170px; }
+		@include breakpoint($full-hd) { width: 1440px; }
 	}
+
 
 
 /** == PORTFOLIO == */
@@ -80,44 +66,6 @@
 		}		
 
 	}
-
-
-	// FOR OLDER BROWSERS
-	html.no-cssgrid {
-	  
-		$susy-portfolio : (
-			columns: 4, 
-			gutters: 1/8,
-		);
-
-		$cell-unit: 270px;
-		$gutter-unit: 30px;
-
-		.grid {
-			@include layout($susy-portfolio);
-			display: flex; // declare the container as "Flex" container
-			justify-content: flex-start; // alignment along the "Main Axis"
-			align-items: flex-start; // alignment along the "Cross Axis"
-			flex-wrap: wrap; // wrap "Flex Items" to other row(s)
-			margin: calc(#{$gutter-unit} / -2); // define grid "Gutter"
-
-			.grid-item {
-				width: $cell-unit; // define "Grid Item" width
-				height: $cell-unit;
-				margin: calc(#{$gutter-unit} / 2); // define grid "Gutter"
-
-				&.height-2x {
-					height: calc(#{$cell-unit} * 2 + #{$gutter-unit});
-				}
-				&.width-2x {
-					width: calc(#{$cell-unit} * 2 + #{$gutter-unit}); // define "Grid Item" width
-				}
-
-			}
-		}
-
-	}
-
 
 
 
@@ -203,4 +151,3 @@
 	.wp-gallery[data-col="7"] { grid-gap: 17px; }
 	.wp-gallery[data-col="8"] { grid-gap: 13px; }
 	.wp-gallery[data-col="9"] { grid-gap: 10px; }
-

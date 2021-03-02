@@ -30,10 +30,11 @@
 		&:before { content: ''; }
 
 		.container {
-			width: 100%;
 			display: flex;
 			justify-content: space-between; /* Align Childs on Main-Axis */
 			align-items: center; /* Align Childs on Cross-Axis */
+
+			@include breakpoint($mobile) { max-width: 100%; }
 
 			&.full-width {
 				width: 90%;
@@ -64,7 +65,7 @@
 					justify-content: flex-start;
 					margin-right: auto;
 
-					> *:first-child { margin-left: 0 !important; }
+					> .first-element { margin-left: 0 !important; }
 				}
 				&.center-elements {
 					justify-content: center;
@@ -73,7 +74,7 @@
 					justify-content: flex-end;
 					margin-left: auto;
 
-					> *:last-child { margin-right: 0 !important; }
+					> .last-element { margin-right: 0 !important; }
 				}
 
 				@import 'inc/primary_menu';

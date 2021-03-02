@@ -239,11 +239,12 @@
 		}
 
 		.close-link {
-			@include position(fixed, 45px, 85px, auto, auto);
 			color: var(--text-color, #FFF);
 			font-size: 21px;
 
 			@include breakpoint($mobile)  { @include position(fixed, 35px, 35px, auto, auto); }
+			@include breakpoint($tablet)  { @include position(fixed, 35px, 0, auto, auto); }
+			@include breakpoint($no-touch)  { @include position(fixed, 45px, 85px, auto, auto); }
 		}
 
 	}
@@ -253,7 +254,7 @@
 
 		@extend .modal-core;
 
-		.inner-wrap {
+		.boxed {
 			padding-bottom: 60px;
 			@include breakpoint($mobile) { padding-bottom: 90px; }
 		}
@@ -417,7 +418,7 @@
 					visibility: hidden;
 					transition: all 200ms linear;
 
-					@include breakpoint($mobile)  { width: 100%; }
+					@include breakpoint($touch)  { width: 100%; }
 
 					&.active {
 						height: auto;
@@ -504,22 +505,24 @@
 		// Modal Controls
 		.modal-controls {
 			.close-link {
-				@include position(fixed, 45px, 85px, auto, auto);
 				color: var(--text-color, #FFF);
 				font-size: 21px;
 
 				@include breakpoint($mobile)  { @include position(fixed, 35px, 35px, auto, auto); }
+				@include breakpoint($tablet)  { @include position(fixed, 60px, 6.5%, auto, auto); }
+				@include breakpoint($no-touch)  { @include position(fixed, 45px, 85px, auto, auto); }
 			}
 		
 			.go-back {
 				display: none;
-				@include position(fixed, 45px, auto, auto, 85px);
 				font-family: $secondary-font-stack;
 				font-size: 16px;
 				color: var(--text-color, #FFF);
 
 				@include breakpoint($mobile)  { @include position(fixed, 35px, auto, auto, 35px); }
-		
+				@include breakpoint($tablet)  { @include position(fixed, 60px, auto, auto, 6.5%); }
+				@include breakpoint($no-touch)  { @include position(fixed, 45px, auto, auto, 85px); }
+
 				&.active {
 					display: inline-block;
 				}

@@ -73,10 +73,9 @@
 
 					width: 100%; /* full width */
 					height: 640px; /* height of carousel */
+					@include breakpoint($tablet)  { height: 365px; }
 					@include breakpoint($laptop)  { height: 580px; }
 					@include breakpoint($full-hd)  { height: 650px; }
-					// @include breakpoint($laptop)  { height: 658px; } // 658px, 16:9 aspect ratio
-					// @include breakpoint($full-hd)  { height: 810px; } // 810px, 16:9 aspect ratio
 
 					.entry-thumbnail {
 						display: block;

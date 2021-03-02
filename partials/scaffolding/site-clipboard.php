@@ -35,7 +35,7 @@
     <!-- Seacrh Filter -->
     <div id="search-filter">
 
-        <div class="inner-wrap">
+        <div class="boxed">
 
             <a href="#" class="close-link"><i class="fi fi-close" aria-hidden="true"></i></a>
 
