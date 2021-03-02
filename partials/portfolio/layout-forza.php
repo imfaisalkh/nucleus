@@ -44,5 +44,5 @@
 	</div>
 
 <?php } else { ?>
-	<?php get_template_part('content', 'none'); ?>
+	<p><?php echo esc_html__('No featured post defined.', 'nucleus'); ?></p>
 <?php } ?>
