@@ -369,6 +369,8 @@
 			.entry-caption {
 				.inner-wrap {
 					width: auto;
+					display: flex;
+					flex-direction: column;
 
 					.entry-title {
 						color: #000;

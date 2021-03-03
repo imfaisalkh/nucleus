@@ -85,11 +85,9 @@
             }
             &:not(.is-selected) {
                 .entry-caption {
-                    a {
-                        .inner-wrap {
-                            opacity: 0.2;
-                            @include breakpoint($touch) { opacity: 1; }
-                        }
+                    .inner-wrap {
+                        opacity: 0.2;
+                        @include breakpoint($touch) { opacity: 1; }
                     }
                 }
             }
@@ -113,33 +111,31 @@
 
             .entry-caption {
                 text-align: left;
-                
-                a {
-                    .inner-wrap {
-                        display: flex;
-                        align-items: flex-end;
-    
+            
+                .inner-wrap {
+                    display: flex;
+                    align-items: flex-end;
+
+                    .entry-title {
+                        font-size: 48px;
+                        color: var(--text-color, #000);
+                        margin: 0;
+
+                        @include breakpoint($mobile) { font-size: 36px; line-height: 1.2; flex: 1; }
+                    }
+                    &:hover {
                         .entry-title {
-                            font-size: 48px;
-                            color: var(--text-color, #000);
-                            margin: 0;
+                            // color: var(--primary-accent, #000);
+                        }
+                    }
+                    .entry-meta {
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        color: #696969;
+                        padding: 0 0 15px 10px;
 
-                            @include breakpoint($mobile) { font-size: 36px; line-height: 1.2; flex: 1; }
-                        }
-                        &:hover {
-                            .entry-title {
-                                // color: var(--primary-accent, #000);
-                            }
-                        }
-                        .entry-meta {
-                            font-size: 14px;
-                            text-transform: uppercase;
-                            letter-spacing: 1px;
-                            color: #696969;
-                            padding: 0 0 15px 10px;
-
-                            @include breakpoint($mobile) { display: none; }
-                        }
+                        @include breakpoint($mobile) { display: none; }
                     }
                 }
 
