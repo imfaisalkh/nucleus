@@ -22,6 +22,7 @@
 
 <div id="textual-slider" class="portfolio-container no-hover">
 
+
     <div class="main-carousel">
 
         <?php while ( $portfolio_slider_query->have_posts() ) : $portfolio_slider_query->the_post(); ?>
@@ -31,6 +32,8 @@
     </div>
 
     <?php include(locate_template( 'partials/portfolio/includes/carousel-controls.php' )); ?>
+
+	<span class="bg-image"></span>
 
 </div>
 
