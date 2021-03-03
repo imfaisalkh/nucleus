@@ -49,6 +49,8 @@
         padding: 120px 70px;
         transition: right 300ms ease-in-out;
 
+		@include breakpoint($mobile) { width: 100%; padding: 90px 45px; }
+
         &.active {
             display: block;
             right: 0;
@@ -125,6 +127,8 @@
 				width: 520px;
 				height: 90px;
 				padding: 0 5.2%;
+
+				@include breakpoint($mobile) { width: 100%; padding: 0 12%; }
 
 				&:before {
 					opacity: 1;

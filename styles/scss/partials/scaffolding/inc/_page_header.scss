@@ -53,6 +53,8 @@
 					bottom: 0;
 					left: 46%;
 					transform: translateX(-63%);
+
+					@include breakpoint($mobile) { left: 43.5%; }
 				}
 				&:after {
 					content:''; 
@@ -63,6 +65,8 @@
 					bottom: 0;
 					left: 56%;
 					transform: translateX(-70%);
+
+					@include breakpoint($mobile) { left: 60%; }
 				}			
 
 			}

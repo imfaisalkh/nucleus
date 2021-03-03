@@ -1103,6 +1103,8 @@ html.cssgrid .grid .grid-item.width-10x,html.cssgrid .team-grid .grid-item.width
 #site-header .container .elements .menu-icon a .bar{width:28px;margin:3px 0}
 #site-body #main-content #page-header{width:100%;margin:60px auto 20px auto}
 .single #site-body #main-content #page-header{width:100%}
+#site-body #main-content #page-header.compact .inner-wrap:before{left:43.5%}
+#site-body #main-content #page-header.compact .inner-wrap:after{left:60%}
 .single-post #site-body #main-content #page-header{padding-bottom:30px}
 #site-body #main-content #page-header .inner-wrap .title{font-size:36px}
 .single-post #site-body #main-content #page-header .inner-wrap .title{font-size:36px;line-height:1.2}
@@ -1112,6 +1114,10 @@ html.cssgrid .grid .grid-item.width-10x,html.cssgrid .team-grid .grid-item.width
 #site-body #main-content #page-content[data-content-width="compact"]{width:100%}
 #site-body #page-sidebar .widget ul.instagram-pics li,#site-body .elementor-widget-sidebar .widget ul.instagram-pics li{width:83px;margin:0 10px 3px 0}
 #site-footer{width:auto;margin-left:auto}
+#site-footer .container[data-footer-style="v1"]:before{left:43.5%}
+#site-footer .container[data-footer-style="v1"]:after{left:58%}
+#page-sidebar{width:100%;padding:90px 45px}
+#page-sidebar .widget_search #searchform{width:100%;padding:0 12%}
 #social-share{display:none}
 .modal-core .close-link,#search-filter .close-link,#responsive-menu .close-link{position:fixed;top:35px;right:35px;bottom:auto;left:auto}
 #search-filter .boxed{padding-bottom:90px}
@@ -1127,6 +1133,7 @@ html.cssgrid .grid .grid-item.width-10x,html.cssgrid .team-grid .grid-item.width
 #responsive-menu .modal-controls .close-link{position:fixed;top:35px;right:35px;bottom:auto;left:auto}
 #responsive-menu .modal-controls .go-back{position:fixed;top:35px;right:auto;bottom:auto;left:35px}
 .blog-minimal-inner [class^="post"] .entry-title,.blog-minimal-inner [class*=" post"] .entry-title{font-size:22px}
+#instagram-module #sb_instagram #sbi_images:after{height:auto;text-align:center;line-height:1.6;padding:7px 15px}
 #instagram-module #sb_instagram #sbi_images .sbi_item{width:50%;height:175px}
 #blog-slider{margin-bottom:30px}
 #blog-slider .main-carousel .flickity-prev-next-button{display:none}

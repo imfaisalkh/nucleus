@@ -198,6 +198,8 @@ body.light-base-color-scheme {
 					height: 40px;
 					line-height: 40px;
 					padding: 0 15px;
+
+					@include breakpoint($mobile) { height: auto; text-align: center; line-height: 1.6; padding: 7px 15px; }
 				}
 
 				.sbi_item {
