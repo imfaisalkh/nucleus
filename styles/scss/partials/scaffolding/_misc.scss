@@ -15,6 +15,7 @@
 
 		@include animate-this($translate3d: '0, -30px, 0'); // CSS-3 animation is triggered via JS
 
+		@include breakpoint($mobile) { width: 90%; right: 20px; }
 
 		.close {
 			position: absolute;

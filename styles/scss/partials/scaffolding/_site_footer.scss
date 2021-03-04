@@ -25,7 +25,6 @@
 
 		.container {
 			position: relative;
-			width: 100%;
 			display: flex;
 			justify-content: space-between; /* Align Childs on Main-Axis */
 			align-items: center; /* Align Childs on Cross-Axis */
@@ -167,12 +166,19 @@
 					list-style: none;
 					text-align: right;
 
+					@include breakpoint($mobile) { text-align: left; }
+
 					ul {
+						@include breakpoint($mobile) { padding-left: 0; }
+
 						li {
 							display: inline-block;
 							margin-left: 12px;
 
-							margin-left: 12px;
+							@include breakpoint($mobile) {
+								&:first-child { margin-left: 0; }
+							}
+
 							a {
 								color: inherit;
 								font-size: 27px;
