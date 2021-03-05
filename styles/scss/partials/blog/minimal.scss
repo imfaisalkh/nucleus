@@ -162,8 +162,8 @@
 		border: 0 !important;
 	}
 
-	.grid[data-load-trigger="scroll"] ~ &,
-	.blog-minimal[data-load-trigger="scroll"] ~ &
+	.portfolio-container[data-load-trigger="scroll"] ~ &,
+	.blog-container[data-load-trigger="scroll"] ~ &
 	{
 		display: none;
 	}

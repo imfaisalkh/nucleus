@@ -23,6 +23,7 @@
         position: fixed;
         right: 0;
         top: 50%;
+		z-index: 0;
         transform: translateY(-50%) translateX(50%);
         background: var(--sidebar-trigger-color);
         color: var(--text-color);

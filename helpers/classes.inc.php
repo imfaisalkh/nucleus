@@ -44,8 +44,16 @@
 		    $classes[]  = get_theme_mod('nucleus_site_preloader', true) ? '' : ' site-preloader-disabled';
 
 			// Header & Footer Version
-			$classes[]	= get_field('site_header') && get_field('site_header') != 'global' ? 'site-header-'. get_field('site_header') : 'site-header-'. get_theme_mod('nucleus_header_version', 'v1');
-			$classes[]	= get_field('site_footer') && get_field('site_footer') != 'global'  ? 'site-footer-'. get_field('site_footer') : 'site-footer-'. get_theme_mod('nucleus_footer_version', 'v1');
+			if (get_query_var('header')) {
+				$classes[]	= 'site-header-'. get_query_var('header');
+			} else {
+				$classes[]	= get_field('site_header') && get_field('site_header') != 'global' ? 'site-header-'. get_field('site_header') : 'site-header-'. get_theme_mod('nucleus_header_version', 'v1');
+			}
+			if (get_query_var('footer')) {
+				$classes[]	= 'site-footer-'. get_query_var('footer');
+			} else {
+				$classes[]	= get_field('site_footer') && get_field('site_footer') != 'global'  ? 'site-footer-'. get_field('site_footer') : 'site-footer-'. get_theme_mod('nucleus_footer_version', 'v1');
+			}
 
 			// Color Schemes
 			$classes[] 	= (get_query_var('blog') == 'magazine') ? 'light-base-color-scheme ' : (get_field('base_color_scheme', $post_ID) ? get_field('base_color_scheme', $post_ID) . '-base-color-scheme ' : 'dark-base-color-scheme ');

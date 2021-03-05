@@ -105,23 +105,11 @@
 	}
 
 
-	body.is-custom-skin {
-		// position: relative;
-		// background: #FFF;
-
-		// &:before {
-		// 	@include position(absolute, 0, 0, 0, 0);
-		// 	background: #E5E5E3;
-		// 	opacity: 0.8;
-		// }
-	}
-
-
 	.no-content {
 		display: flex;
 		justify-content: center;
 		align-content: center;
-		margin: 60px auto -40px 0;
+		margin: 60px auto;
 		padding: 60px 0;
 		border: 2px dashed #1f1f1f;
 		background: rgba(37, 37, 37, 0.44);
