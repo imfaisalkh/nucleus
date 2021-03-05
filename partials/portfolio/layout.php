@@ -3,15 +3,15 @@
     $portfolio_categories = get_field('portfolio_categories') ? get_field('portfolio_categories') : '';
     
     // Hover Variable(s)
-    $portfolio_caption = get_query_var('caption') ? get_query_var('caption') : (get_field('portfolio_caption_style') ? get_field('portfolio_caption_style') : 'overlay');
-    $portfolio_filter = get_query_var('filter') ? get_query_var('filter') : (get_field('portfolio_image_filters') ? get_field('portfolio_image_filters') : '');
-    $portfolio_effect = get_query_var('effect') ? get_query_var('effect') : (get_field('portfolio_image_effects') ? get_field('portfolio_image_effects') : '');
+    $portfolio_caption = isset($_GET['caption']) ? $_GET['caption'] : (get_field('portfolio_caption_style') ? get_field('portfolio_caption_style') : 'overlay');
+    $portfolio_filter = isset($_GET['filter']) ? $_GET['filter'] : (get_field('portfolio_image_filters') ? get_field('portfolio_image_filters') : '');
+    $portfolio_effect = isset($_GET['effect']) ? $_GET['effect'] : (get_field('portfolio_image_effects') ? get_field('portfolio_image_effects') : '');
     
     // Layout Variable(s)
     $portfolio_columns = get_field('portfolio_columns_count') ? get_field('portfolio_columns_count') : 4;
     $portfolio_gutter = (get_field('portfolio_gutter_size') || get_field('portfolio_gutter_size') == 0) ? get_field('portfolio_gutter_size') : 30;
     $portfolio_count = get_field('portfolio_count') ? get_field('portfolio_count') : 8;
-    $pagination_type = get_query_var('pagination') ? get_query_var('pagination') : (get_field('portfolio_pagination') ? get_field('portfolio_pagination') : 'button'); // scroll, button
+    $pagination_type = isset($_GET['pagination']) ? $_GET['pagination'] : (get_field('portfolio_pagination') ? get_field('portfolio_pagination') : 'button'); // scroll, button
 
     // WP_QUERY Arguments
     $portfolio_args = array(

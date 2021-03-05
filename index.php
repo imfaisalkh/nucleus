@@ -3,7 +3,7 @@
 <?php
 	// Helper Variable(s)
 	$blog_layout = get_query_var('blog') ? get_query_var('blog') : get_theme_mod('nucleus_blog_layout', 'minimal');
-    $pagination_type = get_query_var('pagination') ? get_query_var('pagination') : get_theme_mod('nucleus_blog_pagination', 'button'); // scroll, button
+    $pagination_type = isset($_GET['pagination']) ? $_GET['pagination'] : get_theme_mod('nucleus_blog_pagination', 'button'); // scroll, button
 	$current_page = get_query_var('paged') ? get_query_var('paged') : 1;
 ?>
 
