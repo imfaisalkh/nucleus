@@ -38,6 +38,7 @@
         <?php while ( $portfolio_query->have_posts() ) : $portfolio_query->the_post(); ?>
             <?php include(locate_template( 'partials/portfolio/includes/classic-loop.php' )); ?>
         <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
 
     </section>
 

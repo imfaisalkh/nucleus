@@ -26,7 +26,8 @@
 
 						<?php while ( have_posts() ) : the_post(); ?>
 							<?php get_template_part( 'partials/blog/layout', $blog_layout ); ?>
-						<?php endwhile; ?>	
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
 
 					</section>
 					<!-- END: BLOG LIST -->
