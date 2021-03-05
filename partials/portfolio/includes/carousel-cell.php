@@ -72,7 +72,7 @@
                         <span class="entry-meta"><?php echo esc_html( $folio_terms ); ?></span>
                     <?php } ?>
                     <div class="entry-caption"><?php the_excerpt(); ?></div>
-                    <a href="<?php echo esc_url($folio_permalink); ?>" class="explore"><?php echo esc_html__('Open Case Study', 'nucleus'); ?></a>
+                    <a href="<?php echo esc_url($folio_permalink); ?>" class="explore"><?php echo esc_html__('Open Case Study', '_nucleus'); ?></a>
                 </div>
             <?php } ?>
         </header>

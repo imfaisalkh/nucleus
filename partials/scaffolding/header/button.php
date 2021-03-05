@@ -1,6 +1,6 @@
 <?php
     // Helper Variable(s)
-    $button_text = get_theme_mod('nucleus_header_button_text', esc_html__('Let\'s Talk', 'nucleus'));
+    $button_text = get_theme_mod('nucleus_header_button_text', esc_html__('Let\'s Talk', '_nucleus'));
     $button_link = get_theme_mod('nucleus_header_button_link', '#no-link-defined');
 
 ?>

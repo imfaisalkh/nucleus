@@ -32,8 +32,8 @@
     <div class="columns">
         <div class="column text">
             <div class="inner">
-                <h5 class="prefix"><?php echo esc_html__('Hello', 'nucleus'); ?></h5>
-                <h2 class="title"><?php echo esc_html__('Featured Works', 'nucleus'); ?></h2>
+                <h5 class="prefix"><?php echo esc_html__('Hello', '_nucleus'); ?></h5>
+                <h2 class="title"><?php echo esc_html__('Featured Works', '_nucleus'); ?></h2>
                 <?php if ($portfolio_caption_text) { ?>
                     <p><?php echo esc_html($portfolio_caption_text); ?></p>
                 <?php } ?>
@@ -60,7 +60,7 @@
                 </div>
 
             <?php } else { ?>
-                <p><?php echo esc_html__('No featured post defined.', 'nucleus'); ?></p>
+                <p><?php echo esc_html__('No featured post defined.', '_nucleus'); ?></p>
             <?php } ?>          
         </div>
     </div>

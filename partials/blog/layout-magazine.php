@@ -9,9 +9,9 @@
 	</figure>
 	<div class="inner-wrap">
 		<?php if(isset($is_slider_post) && $is_slider_post) { ?>
-			<span class="featured"><?php echo esc_html__('Editor\'s Choice', 'nucleus'); ?></span>
+			<span class="featured"><?php echo esc_html__('Editor\'s Choice', '_nucleus'); ?></span>
 		<?php } else if(is_sticky()) {?>
-			<span class="featured"><?php echo esc_html__('Featured Post', 'nucleus'); ?></span>
+			<span class="featured"><?php echo esc_html__('Featured Post', '_nucleus'); ?></span>
 		<?php } ?>
 		<h3 class="entry-title">
 			<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
@@ -27,7 +27,7 @@
         </p>
 		<span class="timestamp">
 			<a href="<?php echo esc_url( get_permalink() ); ?>">
-				<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ' . esc_html__( 'ago', 'nucleus' ); ?>	
+				<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ' . esc_html__( 'ago', '_nucleus' ); ?>	
 			</a>
 		</span>
 	</div>

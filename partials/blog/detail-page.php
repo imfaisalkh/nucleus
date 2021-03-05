@@ -22,13 +22,13 @@
 	<div class="entry-footer">
 
 		<div class="author">
-			<span><?php echo esc_html__('Post written by', 'nucleus'); ?></span>
+			<span><?php echo esc_html__('Post written by', '_nucleus'); ?></span>
 			<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>"><?php the_author(); ?></a>
 		</div>
 
 		<?php
 			$defaults = array(
-				'before'           => '<nav class="navigation pagination"><span class="screen-reader-text">' . esc_html__( 'Pages:', 'nucleus' ) . '</span><div class="nav-links">',
+				'before'           => '<nav class="navigation pagination"><span class="screen-reader-text">' . esc_html__( 'Pages:', '_nucleus' ) . '</span><div class="nav-links">',
 				'after'            => '</div></nav>',
 				'link_before'      => '<span class="page-numbers">',
 				'link_after'       => '</span>',
@@ -40,14 +40,14 @@
 
 			<div class="post-tags">
 				<?php if ( has_tag() ) { ?>
-					<h4 class="title"><?php echo esc_html__('Tags', 'nucleus'); ?></h4>
+					<h4 class="title"><?php echo esc_html__('Tags', '_nucleus'); ?></h4>
 					<?php the_tags( '<ul class="tags"><li>', '</li><li>', '</li></ul>' ); ?>
 				<?php } ?>
 			</div>
 
 			<div class="post-categories">
 				<?php if ( has_category() ) { ?>
-					<h4 class="title"><?php echo esc_html__('Categories', 'nucleus'); ?></h4>
+					<h4 class="title"><?php echo esc_html__('Categories', '_nucleus'); ?></h4>
 					<?php the_category(); ?>
 				<?php } ?>
 			</div>

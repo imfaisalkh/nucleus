@@ -3,7 +3,7 @@
 </div>
 
 <div class="all-works">
-    <a class="trigger" href="#"><?php echo esc_html__('All Works', 'nucleus'); ?></a>
+    <a class="trigger" href="#"><?php echo esc_html__('All Works', '_nucleus'); ?></a>
     <div class="content active">
         <?php
             
@@ -33,7 +33,7 @@
                     <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
                 <?php endwhile; ?>
             <?php } else { ?>
-                <li><?php echo esc_html__('No More Projects', 'nucleus'); ?></li>
+                <li><?php echo esc_html__('No More Projects', '_nucleus'); ?></li>
             <?php } ?>
         </ul>
     </div>

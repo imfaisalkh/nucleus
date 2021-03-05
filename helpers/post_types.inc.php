@@ -18,7 +18,7 @@
 		$nextpage = intval($current_page) + 1;
 
 		if ( null === $label )
-			$label = __( 'Next Page &raquo;', 'nucleus' );
+			$label = __( 'Next Page &raquo;', '_nucleus' );
 
 		if ( !is_single() && ( $nextpage <= $max_page ) ) {
 			$attr = apply_filters( 'next_posts_link_attributes', '' );

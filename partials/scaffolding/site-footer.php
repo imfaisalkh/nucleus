@@ -9,12 +9,12 @@
 	}
 
 	// Footer V1
-	$footer_v1_heading = get_theme_mod('nucleus_footer_v1_heading', esc_html__( 'Let\'s Talk', 'nucleus'));
-	$footer_v1_text = get_theme_mod('nucleus_footer_v1_text', wp_kses_post( __('Have a Project or an idea you would like to discuss? <br> Then what are you waiting for?', 'nucleus') ));
+	$footer_v1_heading = get_theme_mod('nucleus_footer_v1_heading', esc_html__( 'Let\'s Talk', '_nucleus'));
+	$footer_v1_text = get_theme_mod('nucleus_footer_v1_text', wp_kses_post( __('Have a Project or an idea you would like to discuss? <br> Then what are you waiting for?', '_nucleus') ));
 
 	// Footer V2
-	$footer_v2_copyright = get_theme_mod('nucleus_footer_v2_copyright', wp_kses_post( __('&copy; 2021 Nucleus Theme <br> Crafted & Designed by Digitalscouts.', 'nucleus') ));
-	$footer_v2_contact = get_theme_mod('nucleus_footer_v2_contact', sprintf( wp_kses_post( __( 'Want to work with us? Let&rsquo;s boogie. <a href="%1$s">hello@example.com</a>.', 'nucleus' ) ), esc_url( 'mailto:hello@example.com' ) ));
+	$footer_v2_copyright = get_theme_mod('nucleus_footer_v2_copyright', wp_kses_post( __('&copy; 2021 Nucleus Theme <br> Crafted & Designed by Black Sailor.', '_nucleus') ));
+	$footer_v2_contact = get_theme_mod('nucleus_footer_v2_contact', sprintf( wp_kses_post( __( 'Want to work with us? Let&rsquo;s boogie. <a href="%1$s">hello@example.com</a>.', '_nucleus' ) ), esc_url( 'mailto:hello@example.com' ) ));
 
 ?>
 

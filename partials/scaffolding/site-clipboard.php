@@ -42,10 +42,10 @@
             <!-- SEARCH WIDGET -->
             <div class="search-widget-wrap widget-wrap">  
                 <form id="search-widget" class="modal-widget" role="search" method="get" action="<?php echo esc_url( home_url() ); ?>/">
-                    <h4 class="widget-title"><?php esc_html_e( 'Type & Hit Enter', 'nucleus' ); ?></h4>
+                    <h4 class="widget-title"><?php esc_html_e( 'Type & Hit Enter', '_nucleus' ); ?></h4>
                     <div class="widget-fields">
-                        <input type="text" name="s" id="s" placeholder="<?php esc_html_e('Search Term', 'nucleus'); ?>">
-                        <input id="searchsubmit" value="<?php esc_html_e('Go', 'nucleus'); ?>" type="submit">
+                        <input type="text" name="s" id="s" placeholder="<?php esc_html_e('Search Term', '_nucleus'); ?>">
+                        <input id="searchsubmit" value="<?php esc_html_e('Go', '_nucleus'); ?>" type="submit">
                     </div>
                 </form> 
             </div>
@@ -55,9 +55,9 @@
                 <!-- PORTFOLIO WIDGET -->
                 <div class="portfolio-widget-wrap widget-wrap">
                     <div id="portfolio-widget" class="modal-widget">
-                        <h4 class="widget-title"><?php esc_html_e( 'Categories', 'nucleus' ); ?></h4>
+                        <h4 class="widget-title"><?php esc_html_e( 'Categories', '_nucleus' ); ?></h4>
                         <ul class="widget-list">
-                            <li><a data-filter="*" class="active"><?php esc_html_e('All', 'nucleus'); ?></a></li>
+                            <li><a data-filter="*" class="active"><?php esc_html_e('All', '_nucleus'); ?></a></li>
                             <?php wp_list_categories(array('child_of' => get_field('portfolio_category'), 'title_li' => '', 'style' => 'none', 'taxonomy' => 'portfolio_category', 'show_option_none'   => '', 'walker' => new Nucleus_Category_Walker())); ?>
                         </ul>              
                     </div>
@@ -68,7 +68,7 @@
                 <!-- BLOG WIDGET -->
                 <div class="blog-widget-wrap widget-wrap">
                     <div id="blog-widget" class="modal-widget">
-                        <h4 class="widget-title"><?php esc_html_e( 'Categories', 'nucleus' ); ?></h4>
+                        <h4 class="widget-title"><?php esc_html_e( 'Categories', '_nucleus' ); ?></h4>
                         <ul class="widget-list">
                             <?php wp_list_categories(array('child_of' => get_field('category'), 'depth' => 1, 'title_li' => '', 'style' => 'none', 'taxonomy' => 'category', 'show_option_none'   => '', 'walker' => new Nucleus_Category_Walker())); ?>
                         </ul>              
@@ -89,7 +89,7 @@
             <a href="#" class="close-link"><i class="fi fi-close" aria-hidden="true"></i></a>
             <a href="#back" class="go-back">
                 <span class="icon"><i class="fi fi-sidebar-arrow" aria-hidden="true"></i></span>
-                <span class="text"><?php echo esc_html__('Go Back', 'nucleus'); ?></span>
+                <span class="text"><?php echo esc_html__('Go Back', '_nucleus'); ?></span>
             </a>
         </div>
 

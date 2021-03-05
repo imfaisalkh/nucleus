@@ -12,7 +12,7 @@
 
 		    <div id="classic-menu-container" class="menu-main-menu-container">
 		        <ul id="primary-menu" class="sf-menu">
-		            <li class="menu-item"><a href="<?php echo esc_url( admin_url('nav-menus.php') ); ?>"><?php esc_html_e( 'Create Menu', 'nucleus' ); ?></a></li>
+		            <li class="menu-item"><a href="<?php echo esc_url( admin_url('nav-menus.php') ); ?>"><?php esc_html_e( 'Create Menu', '_nucleus' ); ?></a></li>
 		        </ul>
 		    </div>
 

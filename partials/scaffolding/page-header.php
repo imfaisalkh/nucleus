@@ -43,28 +43,28 @@
 
 	// Custom Header - - Meta Panel - (General Fallback)
     if( is_search() ) {
-        $header_title = esc_html__( 'Search Results.', 'nucleus' );
-        $header_subtitle = sprintf( esc_html__( 'For the term "%s"', 'nucleus' ), get_search_query() );
+        $header_title = esc_html__( 'Search Results.', '_nucleus' );
+        $header_subtitle = sprintf( esc_html__( 'For the term "%s"', '_nucleus' ), get_search_query() );
     } else if( is_category() ) {
-        $header_title = esc_html__( 'Category.', 'nucleus' );
-        $header_subtitle = sprintf( esc_html__( 'Entries published in "%s" Category', 'nucleus' ), single_cat_title( '', false ) );
+        $header_title = esc_html__( 'Category.', '_nucleus' );
+        $header_subtitle = sprintf( esc_html__( 'Entries published in "%s" Category', '_nucleus' ), single_cat_title( '', false ) );
     } else if( is_tag() ) {
-        $header_title = esc_html__( 'Tag.', 'nucleus' );
-        $header_subtitle = sprintf( esc_html__( 'Entries published in "%s" Tag', 'nucleus' ), single_tag_title( '', false ) );
+        $header_title = esc_html__( 'Tag.', '_nucleus' );
+        $header_subtitle = sprintf( esc_html__( 'Entries published in "%s" Tag', '_nucleus' ), single_tag_title( '', false ) );
     } else if( is_date() ) {
-        $header_title = esc_html__( 'Archive.', 'nucleus' );
+        $header_title = esc_html__( 'Archive.', '_nucleus' );
         if ( is_day() ) {
-            $header_subtitle = sprintf( esc_html__( 'Entries published in "%s"', 'nucleus' ), get_the_date() );
+            $header_subtitle = sprintf( esc_html__( 'Entries published in "%s"', '_nucleus' ), get_the_date() );
         } else if ( is_month() ) {
-            $header_subtitle = sprintf( esc_html__( 'Entries published in "%s"', 'nucleus' ), get_the_date( 'F Y' ) );
+            $header_subtitle = sprintf( esc_html__( 'Entries published in "%s"', '_nucleus' ), get_the_date( 'F Y' ) );
         } else {
-            $header_subtitle = sprintf( esc_html__( 'Entries published in "%s"', 'nucleus' ), get_the_date( 'Y' ) );
+            $header_subtitle = sprintf( esc_html__( 'Entries published in "%s"', '_nucleus' ), get_the_date( 'Y' ) );
         }
     } else if( is_author() ) {
-        $header_title = esc_html__( 'Author.', 'nucleus' );
-        $header_subtitle = sprintf( esc_html__( 'Entries published by "%s"', 'nucleus' ), get_the_author() );
+        $header_title = esc_html__( 'Author.', '_nucleus' );
+        $header_subtitle = sprintf( esc_html__( 'Entries published by "%s"', '_nucleus' ), get_the_author() );
     } else if( is_home() ) {
-        $header_title = esc_html__( 'My Journal.', 'nucleus' );
+        $header_title = esc_html__( 'My Journal.', '_nucleus' );
     }
 
 	// Others
@@ -87,7 +87,7 @@
 					?>
 					<span class="category"><a href="<?php echo esc_url( $link ); ?>"><?php echo esc_html($name); ?></a></span>
 				<?php } else if (is_home()) { ?>
-					<span class="timestamp"><?php echo esc_html__('Since 2015', 'nucleus'); ?></span>
+					<span class="timestamp"><?php echo esc_html__('Since 2015', '_nucleus'); ?></span>
 				<?php } ?>
 				<?php if ($header_icon) { ?>
 					<img src="<?php echo esc_url($header_icon); ?>" />
@@ -96,7 +96,7 @@
 					<span class="backdrop"><?php echo esc_html($header_backdrop); ?></span>
 				<?php } ?>
 				<?php if ((!$header_backdrop && (is_home() || is_archive() || is_search())) || is_singular('post')) { ?>
-					<span class="backdrop"><?php echo esc_html__('Blog', 'nucleus'); ?></span>
+					<span class="backdrop"><?php echo esc_html__('Blog', '_nucleus'); ?></span>
 				<?php } ?>
 				<h3 class="title"><?php echo wp_kses_post($header_title); ?></h3>
 				<?php if (is_home()) { ?>
@@ -117,7 +117,7 @@
 						$post_author_ID = get_post_field( 'post_author', $post_ID );
 					?>
 					<div class="timestamp">
-						<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ' . esc_html__( 'ago', 'nucleus' ); ?>	
+						<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ' . esc_html__( 'ago', '_nucleus' ); ?>	
 					</div>
 				<?php } ?>
 			</div>

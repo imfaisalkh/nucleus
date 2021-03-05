@@ -20,7 +20,7 @@
 	        <?php if ( $comment->comment_type == 'pingback' || $comment->comment_type == 'trackback' ) { ?>
 
 	        	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-	        		<div class="author"><?php esc_html_e('Pingback:', 'nucleus') ?> <?php echo wp_kses_post( get_comment_author_link() ); ?></div>
+	        		<div class="author"><?php esc_html_e('Pingback:', '_nucleus') ?> <?php echo wp_kses_post( get_comment_author_link() ); ?></div>
 
 	        <?php } else { ?>
 
@@ -44,7 +44,7 @@
 				                <div class="author"><?php echo wp_kses_post( get_comment_author_link() ); ?></div>
 				                <div class="time">
 									<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
-										<?php printf( _x( '%s ago', '%s = human-readable time difference', 'nucleus' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ); ?>
+										<?php printf( _x( '%s ago', '%s = human-readable time difference', '_nucleus' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ); ?>
 									</a>
 				                </div>
 				            </div>
@@ -55,14 +55,14 @@
 		                <div class="comment-body">
 
 		                    <?php if ($comment->comment_approved == '0') : ?>
-		                        <em class="moderation"><?php esc_html_e('Your comment is awaiting moderation.', 'nucleus') ?></em><br />
+		                        <em class="moderation"><?php esc_html_e('Your comment is awaiting moderation.', '_nucleus') ?></em><br />
 		                    <?php endif; ?>
 
 		                    <div class="comment-content">
 		                        <?php comment_text() ?>
 		                    </div>
 
-		                  	<span class="comment-reply"><?php comment_reply_link(array_merge( $args, array('reply_text' => esc_html__('Reply', 'nucleus'), 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?></span>
+		                  	<span class="comment-reply"><?php comment_reply_link(array_merge( $args, array('reply_text' => esc_html__('Reply', '_nucleus'), 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?></span>
 
 		                </div>
 
@@ -89,14 +89,14 @@
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 			?>
 			<nav class="navigation comment-navigation" role="navigation">
-				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'nucleus' ); ?></h2>
+				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', '_nucleus' ); ?></h2>
 				<div class="nav-links">
 					<?php
-						if ( $prev_link = get_previous_comments_link( esc_html__( 'Older Comments', 'nucleus' ) ) ) :
+						if ( $prev_link = get_previous_comments_link( esc_html__( 'Older Comments', '_nucleus' ) ) ) :
 							printf( '<div class="nav-previous">%s</div>', $prev_link );
 						endif;
 
-						if ( $next_link = get_next_comments_link( esc_html__( 'Newer Comments', 'nucleus' ) ) ) :
+						if ( $next_link = get_next_comments_link( esc_html__( 'Newer Comments', '_nucleus' ) ) ) :
 							printf( '<div class="nav-next">%s</div>', $next_link );
 						endif;
 					?>

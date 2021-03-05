@@ -31,9 +31,9 @@
 		<!-- Load More - (Button) -->
 		<div id="load-more" class="load-more" data-current-page="<?php echo esc_attr($current_page); ?>" data-total-pages="<?php echo esc_attr($total_pages); ?>" data-post-type="<?php echo get_post_type(); ?>" data-page-id="<?php echo get_queried_object_id(); ?>">
 			<?php if (!$is_posts_page) {
-				next_post_types_link( __('Load More &#8230;', 'nucleus'), $total_pages, $current_page, $portfolio_query );
+				next_post_types_link( __('Load More &#8230;', '_nucleus'), $total_pages, $current_page, $portfolio_query );
 			} else {
-				next_posts_link( __('Load More &#8230;', 'nucleus'), $total_pages );
+				next_posts_link( __('Load More &#8230;', '_nucleus'), $total_pages );
 			} ?>
 		</div>
 
@@ -45,7 +45,7 @@
 <?php if ( $total_pages > 1 ) { ?>
 	<?php if ($pagination_type == 'number') { ?>
 		<div id="numbered-pagination">
-			<span class="label"><?php echo esc_html__('Pages:', 'nucleus'); ?></span>
+			<span class="label"><?php echo esc_html__('Pages:', '_nucleus'); ?></span>
 			<nav class="links">
 				<?php
 					echo paginate_links(array(

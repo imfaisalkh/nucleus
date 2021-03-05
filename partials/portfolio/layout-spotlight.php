@@ -42,5 +42,5 @@
 	</div>
 
 <?php } else { ?>
-	<p><?php echo esc_html__('No featured post defined.', 'nucleus'); ?></p>
+	<p><?php echo esc_html__('No featured post defined.', '_nucleus'); ?></p>
 <?php } ?>

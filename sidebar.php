@@ -4,6 +4,6 @@
 
 <?php } else { ?>
 
-	<p class="no-widget"><?php esc_html_e('You have not defined any widget for this sidebar yet.', 'nucleus'); ?></p>
+	<p class="no-widget"><?php esc_html_e('You have not defined any widget for this sidebar yet.', '_nucleus'); ?></p>
 	
 <?php }  ?>

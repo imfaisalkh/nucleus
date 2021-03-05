@@ -40,9 +40,9 @@
 		if ( !isset($content_width) ) {
 			$content_width = 960;
 		}
-
+		
 		// Load Translation Text Domain
-		load_theme_textdomain( 'nucleus', get_template_directory() . '/languages' );
+		load_theme_textdomain( '_nucleus', get_template_directory() . '/languages' );
 
 		// Support for Feed Links
 		add_theme_support('automatic-feed-links');
@@ -103,12 +103,12 @@
 #-----------------------------------------------------------------#
 
 	function nucleus_register_menu() {
-		register_nav_menu('nucleus-primary-menu', esc_html__('Primary', 'nucleus'));
-		register_nav_menu('nucleus-secondary-menu', esc_html__('Secondary', 'nucleus'));
-		register_nav_menu('nucleus-mobile-menu', esc_html__('Mobile', 'nucleus'));
-		register_nav_menu('nucleus-top-bar-menu', esc_html__('Top Bar', 'nucleus'));
-		register_nav_menu('nucleus-full-screen-menu', esc_html__('Full Screen', 'nucleus'));
-		register_nav_menu('nucleus-footer-menu', esc_html__('Footer', 'nucleus'));
+		register_nav_menu('nucleus-primary-menu', esc_html__('Primary', '_nucleus'));
+		register_nav_menu('nucleus-secondary-menu', esc_html__('Secondary', '_nucleus'));
+		register_nav_menu('nucleus-mobile-menu', esc_html__('Mobile', '_nucleus'));
+		register_nav_menu('nucleus-top-bar-menu', esc_html__('Top Bar', '_nucleus'));
+		register_nav_menu('nucleus-full-screen-menu', esc_html__('Full Screen', '_nucleus'));
+		register_nav_menu('nucleus-footer-menu', esc_html__('Footer', '_nucleus'));
 	}
 	
 
@@ -120,9 +120,9 @@
 
 		// Register Blog Sidebar
 		register_sidebar( array(
-			'name' => esc_html__( 'Blog Sidebar', 'nucleus' ),
+			'name' => esc_html__( 'Blog Sidebar', '_nucleus' ),
 			'id' => 'blog-sidebar',
-			'description'   => esc_html__('This sidebar will be displayed on all blog pages.', 'nucleus'),
+			'description'   => esc_html__('This sidebar will be displayed on all blog pages.', '_nucleus'),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3>',
@@ -131,9 +131,9 @@
 
 		// Register Page Sidebar
 		register_sidebar( array(
-			'name' => esc_html__( 'Page Sidebar', 'nucleus' ),
+			'name' => esc_html__( 'Page Sidebar', '_nucleus' ),
 			'id' => 'page-sidebar',
-			'description'   => esc_html__('This sidebar will be displayed on your site page.', 'nucleus'),
+			'description'   => esc_html__('This sidebar will be displayed on your site page.', '_nucleus'),
 			'before_widget' => '<div id="%1$s" class="widget %2$s column">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3>',
