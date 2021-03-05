@@ -48,7 +48,7 @@ module.exports = {
 	packageName: '_nucleus', // Package name.
 	bugReport: 'imfaisalkh@gmail.com', // Where can users report bugs.
 	lastTranslator: 'Faisal Khurshid <imfaisalkh@gmail.com>', // Last translator Email ID.
-	team: 'wpscouts <wpscouts.hq@gmail.com>', // Team's Email ID.
+	team: 'blacksailor <blacksailor.hq@gmail.com>', // Team's Email ID.
 
 
 	// Browsers you care about for autoprefixing. Browserlist https://github.com/ai/browserslist
