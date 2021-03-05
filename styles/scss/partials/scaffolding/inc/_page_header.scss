@@ -83,7 +83,7 @@
 			@include breakpoint($mobile) { padding-bottom: 30px; }
 		}
 
-		.blog & {
+		.blog &, .archive &, .search & {
 			.timestamp.timestamp {
 				display: inline-block;
 				transform: translateY(7px);

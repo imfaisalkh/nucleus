@@ -3,7 +3,7 @@
 
     <!-- Page Sidebar -->
     <?php if (get_theme_mod('nucleus_blog_sidebar', true)) { ?>
-        <?php if ( is_active_sidebar( 'blog-sidebar' ) && is_home() || is_singular('post') ) { ?>
+        <?php if ( is_active_sidebar( 'blog-sidebar' ) && is_home() || is_archive() || is_search() || is_singular('post') ) { ?>
             <a href="#open-sidebar" class="open-sidebar">
                 <i class="fi fi-sidebar-arrow" aria-hidden="true"></i>
             </a>
