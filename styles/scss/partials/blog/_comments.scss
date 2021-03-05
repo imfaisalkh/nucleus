@@ -116,15 +116,14 @@
 
 		li.comment {
 			position: relative;
-			background: var(--comment-background);
-			padding: 30px;
-			border-radius: 5px;
-			margin-bottom: 40px;
 
 			&:last-child { margin-bottom: 0; }
 
 			.comment-wrap {
-				margin-bottom: 0;
+				background: var(--comment-background);
+				padding: 30px;
+				border-radius: 5px;
+				margin-bottom: 40px;
 
 				/** Comment Header */
 				.comment-header {
@@ -145,6 +144,8 @@
 					.comment-meta {
 						display: flex;
 						margin-left: 100px;
+
+						@include breakpoint($mobile)  { flex-direction: column; }
 
 						.author {
 							font-family: var(--comments-author-font-family, $secondary-font-stack);
@@ -170,6 +171,8 @@
 							opacity: 0.7;
 							margin: 3px 0 0 30px;
 
+							@include breakpoint($mobile)  { margin-left: 0; }
+
 							a { border: 0 !important; color: #989898; }
 						}
 					}
@@ -180,6 +183,8 @@
 					@include clearfix();
 					padding-left: 100px;
 					margin-top: -40px;
+
+					@include breakpoint($mobile)  { margin-top: 0; }
 
 					.comment-content {
 						font-family: var(--comments-text-font-family, $secondary-font-stack);
@@ -204,6 +209,8 @@
 						position: absolute;
 						top: 0;
 						right: 35px;
+
+						@include breakpoint($mobile)  { right: 25px; }
 						a {
 							font-family: var(--comments-text-font-family, $secondary-font-stack);
 							font-weight: var(--comments-text-variant, 400);
@@ -233,9 +240,28 @@
 			}
 
 			/** Child Comments */
-			.children {
+			ol.children {
+				position: relative;
 				list-style: none;
-				@include breakpoint($mobile)  { padding-left: 0; margin-left: 0; }
+				border-left: 1px solid var(--border-color);
+				margin-left: 0;
+				padding-left: 60px;
+
+				li {
+					position: relative;
+
+					&:before {
+						position: absolute;
+						content: '';
+						left: -60px;
+						top: 60px;
+						width: 35px;
+						height: 1px;
+						background: var(--border-color);
+					}
+				}
+
+				@include breakpoint($mobile)  { padding-left: 0; margin-left: 0; border: 0; }
 			}
 
 		}

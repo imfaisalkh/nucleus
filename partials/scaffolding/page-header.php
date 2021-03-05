@@ -95,7 +95,7 @@
 				<?php if ($header_backdrop) { ?>
 					<span class="backdrop"><?php echo esc_html($header_backdrop); ?></span>
 				<?php } ?>
-				<?php if ((!$header_backdrop && is_home()) || is_singular('post')) { ?>
+				<?php if ((!$header_backdrop && (is_home() || is_archive() || is_search())) || is_singular('post')) { ?>
 					<span class="backdrop"><?php echo esc_html__('Blog', 'nucleus'); ?></span>
 				<?php } ?>
 				<h3 class="title"><?php echo wp_kses_post($header_title); ?></h3>

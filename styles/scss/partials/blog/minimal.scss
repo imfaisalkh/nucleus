@@ -92,7 +92,6 @@
 
 			@include breakpoint($mobile)  { font-size: 22px; }
 			@include breakpoint($tablet)  { font-size: 23px; }
-			@include breakpoint($retina)  { font-size: 22px; }
 
 			a {
 				color: #fff;
