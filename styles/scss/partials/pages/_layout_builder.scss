@@ -129,6 +129,8 @@
 		justify-content: center;
 		align-items: center;
 
+		@include breakpoint($mobile) { flex-direction: column; align-items: flex-start; }
+
 		.meta-field {
 			display: flex;
 			justify-content: center;

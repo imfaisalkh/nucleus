@@ -16,17 +16,17 @@
                 "id": ""
             },
             "choices": {
-                "is_standard": "<img src=\"..\/..\/wp-content\/themes\/nucleus\/admin\/metaboxes\/images\/standard-header.png\"><p>Standard Header<\/p>",
-                "is_hero": "<img src=\"..\/..\/wp-content\/themes\/nucleus\/admin\/metaboxes\/images\/hero-header.png\"><p>Hero Header<\/p>",
-                "is_blank": "<img src=\"..\/..\/wp-content\/themes\/nucleus\/admin\/metaboxes\/images\/blank-header.png\"><p>Blank Header<\/p>",
-                "is_disabled": "<img src=\"..\/..\/wp-content\/themes\/nucleus\/admin\/metaboxes\/images\/disable-header.png\"><p>Disable Header<\/p>"
+                "is_standard": "<img src=\"..\/..\/wp-content\/themes\/_nucleus\/admin\/metaboxes\/images\/standard-header.png\"><p>Standard Header<\/p>",
+                "is_hero": "<img src=\"..\/..\/wp-content\/themes\/_nucleus\/admin\/metaboxes\/images\/hero-header.png\"><p>Hero Header<\/p>",
+                "is_blank": "<img src=\"..\/..\/wp-content\/themes\/_nucleus\/admin\/metaboxes\/images\/blank-header.png\"><p>Blank Header<\/p>",
+                "is_disabled": "<img src=\"..\/..\/wp-content\/themes\/_nucleus\/admin\/metaboxes\/images\/disable-header.png\"><p>Disable Header<\/p>"
             },
             "allow_null": 0,
             "other_choice": 0,
-            "save_other_choice": 0,
             "default_value": "is_standard",
             "layout": "horizontal",
-            "return_format": "value"
+            "return_format": "value",
+            "save_other_choice": 0
         },
         {
             "key": "field_6015abdf38b6f",
@@ -279,7 +279,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1613657350
+    "modified": 1615028478
 }

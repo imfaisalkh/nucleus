@@ -62,6 +62,7 @@
 
 		@include breakpoint($mobile)  	  { display: none; }
 		@include breakpoint($tablet)  	  { left: 3%; }
+		@include breakpoint($small-screen) { left: 3.2%; }
 		@include breakpoint($laptop)  	  { bottom: 40px; left: 2.5%; }
 		@include breakpoint($full-hd)     { bottom: 125px; left: 7%; }
 
@@ -133,8 +134,9 @@
 		display: flex;
 		flex-direction: column;
 
-		@include breakpoint($tablet)  { right: 3%; }
+		@include breakpoint($tablet)  { right: 1.8%; }
 		@include breakpoint($laptop)  { right: 1.8%; }
+		@include breakpoint($small-screen) { right: 2%; }
 		@include breakpoint($full-hd) { bottom: 60px; right: 7%; }
 		@include animate-this(); // CSS-3 animation is triggered via JS
 
@@ -244,7 +246,7 @@
 			font-size: 21px;
 
 			@include breakpoint($mobile)  { @include position(fixed, 35px, 35px, auto, auto); }
-			@include breakpoint($tablet)  { @include position(fixed, 35px, 0, auto, auto); }
+			@include breakpoint($tablet)  { @include position(fixed, 60px, 45px, auto, auto); }
 			@include breakpoint($no-touch)  { @include position(fixed, 45px, 85px, auto, auto); }
 		}
 

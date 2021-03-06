@@ -74,8 +74,6 @@
             display: inline-block;
             margin: 0 15px;
 
-            @include breakpoint($touch) { margin: 0; }
-
             &.is-selected {
                 .entry-thumbnail {
                     opacity: 1;

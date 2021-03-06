@@ -198,7 +198,7 @@
 			wp_enqueue_style('fancybox', NUCLEUS_VENDORS_URI . '/fancybox/jquery.fancybox.min.css');
 			wp_enqueue_style('flickity', NUCLEUS_VENDORS_URI . '/flickity/flickity.min.css');
 			wp_enqueue_style('flickity-fade', NUCLEUS_VENDORS_URI . '/flickity/flickity-fade.css');
-			wp_enqueue_style('jquery-scrollbar', NUCLEUS_VENDORS_URI . '/jquery-scrollbar/jquery.scrollbar.css.css');
+			wp_enqueue_style('jquery-scrollbar', NUCLEUS_VENDORS_URI . '/jquery-scrollbar/jquery.scrollbar.css');
 			wp_enqueue_style('nucleus-main', NUCLEUS_CSS_URI . '/main.css');
 			wp_enqueue_style('nucleus-editor', get_template_directory_uri() . '/custom-editor-style.css');
 			

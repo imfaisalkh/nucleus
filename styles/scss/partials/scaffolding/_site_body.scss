@@ -59,7 +59,7 @@
 					width: 75%;
 					margin: 0 auto;
 
-					@include breakpoint($mobile)  { width: 100%; }
+					@include breakpoint($touch)  { width: 100%; }
 				}
 
 				&.with-sidebar {

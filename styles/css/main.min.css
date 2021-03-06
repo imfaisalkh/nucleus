@@ -10,7 +10,7 @@
 .fi-fullscreen:before{content:"\f107"}
 .fi-smallscreen:before{content:"\f108"}
 .fi-sidebar-arrow:before{content:"\f109"}
-#top-bar .boxed,#site-header .boxed,#site-body,#site-footer .boxed,#search-filter .boxed,#responsive-menu .boxed,#site-notification{margin:0 auto}
+#top-bar .boxed,#site-header .boxed,#site-body,#site-footer .boxed,#search-filter .boxed,#responsive-menu .boxed,#site-notification{margin:0 auto;width:88%}
 html.cssgrid .grid[data-col="1"],html.cssgrid .team-grid[data-col="1"]{display:-ms-grid;display:grid;-ms-grid-columns:(1fr)[1];grid-template-columns:repeat(1,1fr);-ms-grid-rows:auto;grid-template-rows:auto;grid-gap:30px}
 html.cssgrid .grid[data-col="2"],html.cssgrid .team-grid[data-col="2"]{display:-ms-grid;display:grid;-ms-grid-columns:(1fr)[2];grid-template-columns:repeat(2,1fr);-ms-grid-rows:auto;grid-template-rows:auto;grid-gap:30px}
 html.cssgrid .grid[data-col="3"],html.cssgrid .team-grid[data-col="3"]{display:-ms-grid;display:grid;-ms-grid-columns:(1fr)[3];grid-template-columns:repeat(3,1fr);-ms-grid-rows:auto;grid-template-rows:auto;grid-gap:30px}
@@ -1116,7 +1116,6 @@ html.cssgrid .grid .grid-item.width-10x,html.cssgrid .team-grid .grid-item.width
 #site-body #main-content #page-header .inner-wrap .subtitle,#site-body #main-content #page-header .inner-wrap .meta-info{font-size:16px;padding:0 15px}
 #site-body #main-content #page-header .inner-wrap .backdrop{font-size:120px}
 #site-body #main-content #page-header.fullscreen .inner-wrap .title{font-size:36px}
-#site-body #main-content #page-content[data-content-width="compact"]{width:100%}
 #site-body #page-sidebar .widget ul.instagram-pics li,#site-body .elementor-widget-sidebar .widget ul.instagram-pics li{width:83px;margin:0 10px 3px 0}
 #site-footer{width:auto;margin-left:auto}
 #site-footer .container[data-footer-style="v1"]:before{left:43.5%}
@@ -1143,7 +1142,7 @@ html.cssgrid .grid .grid-item.width-10x,html.cssgrid .team-grid .grid-item.width
 #responsive-menu .modal-controls .go-back{position:fixed;top:35px;right:auto;bottom:auto;left:35px}
 .blog-minimal-inner [class^="post"] .entry-title,.blog-minimal-inner [class*=" post"] .entry-title{font-size:22px}
 #instagram-module #sb_instagram #sbi_images:after{height:auto;text-align:center;line-height:1.6;padding:7px 15px}
-#instagram-module #sb_instagram #sbi_images .sbi_item{width:50%;height:175px}
+#instagram-module #sb_instagram #sbi_images .sbi_item{width:50%;height:165px}
 #blog-slider{margin-bottom:30px}
 #blog-slider .main-carousel .flickity-prev-next-button{display:none}
 #blog-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-thumbnail{height:175px}
@@ -1157,7 +1156,6 @@ html.cssgrid .grid .grid-item.width-10x,html.cssgrid .team-grid .grid-item.width
 .blog-magazine-inner [class^="post"].sticky:first-of-type .inner-wrap .entry-desc,.blog-magazine-inner [class*=" post"].sticky:first-of-type .inner-wrap .entry-desc{font-size:16px}
 .blog-magazine-inner [class^="post"] .entry-title,.blog-magazine-inner [class*=" post"] .entry-title{font-size:24px}
 .single-post #page-header .inner-wrap .title{font-size:48px}
-.single-post #page-content{width:100%}
 .single-post #page-content>.post .entry-media{width:auto;margin-left:auto}
 .single-post #page-content>.post .entry-content p.lead-text{font-size:18px}
 .single-post #page-content>.post .entry-footer .author a{font-size:36px}
@@ -1195,6 +1193,7 @@ ol.comment-list li.comment ol.children{padding-left:0;margin-left:0;border:0}
 #columns-slider .progress-bar{width:auto;margin-left:auto}
 #ribbon-slider .slider-controls .progress-bar{width:auto;margin-left:auto}
 #ribbon-slider .main-carousel{width:auto;margin-left:auto}
+.meta-fields{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
 .error404 #main-content #page-content .title{font-size:118px}
 .error404 #main-content #page-content .caption{font-size:24px;margin:30px 0}
 }@media(min-width:0) and (max-width:1024px){#top-bar .container .elements .element[data-visibility="mobile"]{display:inline-block}
@@ -1202,6 +1201,7 @@ ol.comment-list li.comment ol.children{padding-left:0;margin-left:0;border:0}
 #site-header .container .elements #site-logo .logo.image{height:var(--header-mobile-logo-size)}
 #site-header .container .elements .search-icon a{font-size:25px}
 #site-header .container .elements .cart-icon a{font-size:27px}
+#site-body #main-content #page-content[data-content-width="compact"]{width:100%}
 #responsive-menu .boxed .root-menu{width:100%}
 #responsive-menu .boxed .child-menus .child-menu-wrap{width:100%}
 .blog-minimal-inner:after{border:0}
@@ -1209,6 +1209,7 @@ ol.comment-list li.comment ol.children{padding-left:0;margin-left:0;border:0}
 #instagram-module #sb_instagram #sbi_images .sbi_item:nth-child(n+5){display:none}
 #blog-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell{width:100%;padding:0 10px}
 #blog-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .inner-wrap{padding:0}
+.single-post #page-content{width:100%}
 .comments-area{width:100%}
 #horizon-slider .main-carousel .flickity-prev-next-button{display:none}
 #horizon-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell{width:100%;padding:0 3%;overflow:visible}
@@ -1226,11 +1227,10 @@ ol.comment-list li.comment ol.children{padding-left:0;margin-left:0;border:0}
 #forza-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell .entry-caption{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1;width:100%}
 #textual-slider .bg-image{display:block;-webkit-mask-size:100%;mask-size:100%;margin-bottom:80px}
 #textual-slider .main-carousel{width:100%}
-#textual-slider .carousel-cell{margin:0}
 #textual-slider .carousel-cell:not(.is-selected) .entry-caption .inner-wrap{opacity:1}
 #textual-slider .carousel-cell .entry-thumbnail{display:none}
 #columns-slider .main-carousel .flickity-viewport .flickity-slider .carousel-cell{height:85%;width:100%}
-}@media(min-width:641px) and (max-width:1024px){#top-bar .boxed,#site-header .boxed,#site-body,#site-footer .boxed,#search-filter .boxed,#responsive-menu .boxed,#site-notification{width:90%}
+}@media(min-width:641px) and (max-width:1024px){#top-bar .boxed,#site-header .boxed,#site-body,#site-footer .boxed,#search-filter .boxed,#responsive-menu .boxed,#site-notification{width:88%}
 html.cssgrid .grid[data-col="1"],html.cssgrid .team-grid[data-col="1"]{-ms-grid-columns:(1fr)[2];grid-template-columns:repeat(2,1fr)}
 html.cssgrid .grid[data-col="2"],html.cssgrid .team-grid[data-col="2"]{-ms-grid-columns:(1fr)[2];grid-template-columns:repeat(2,1fr)}
 html.cssgrid .grid[data-col="3"],html.cssgrid .team-grid[data-col="3"]{-ms-grid-columns:(1fr)[2];grid-template-columns:repeat(2,1fr)}
@@ -1253,8 +1253,8 @@ html.cssgrid .grid[data-col="10"],html.cssgrid .team-grid[data-col="10"]{-ms-gri
 .wp-gallery[data-col="10"]{-ms-grid-columns:(1fr)[2];grid-template-columns:repeat(2,1fr)}
 #site-body #main-content #page-header.fullscreen .inner-wrap .title{font-size:42px}
 #social-share{left:3%}
-#page-controls{right:3%}
-.modal-core .close-link,#search-filter .close-link,#responsive-menu .close-link{position:fixed;top:35px;right:0;bottom:auto;left:auto}
+#page-controls{right:1.8%}
+.modal-core .close-link,#search-filter .close-link,#responsive-menu .close-link{position:fixed;top:60px;right:45px;bottom:auto;left:auto}
 #responsive-menu ul li a{font-size:36px}
 #responsive-menu .modal-controls .close-link{position:fixed;top:60px;right:6.5%;bottom:auto;left:auto}
 #responsive-menu .modal-controls .go-back{position:fixed;top:60px;right:auto;bottom:auto;left:6.5%}
@@ -1272,7 +1272,9 @@ html.cssgrid .grid[data-col="10"],html.cssgrid .team-grid[data-col="10"]{-ms-gri
 #columns-slider .columns .column.slider{width:40%}
 .error404 #main-content #page-content .title{font-size:200px}
 .error404 #main-content #page-content .caption{font-size:30px}
-}@media(min-width:1025px) and (max-width:1200px){#top-bar .boxed,#site-header .boxed,#site-body,#site-footer .boxed,#search-filter .boxed,#responsive-menu .boxed,#site-notification{width:90%}
+}@media(min-width:1025px) and (max-width:1200px){#top-bar .boxed,#site-header .boxed,#site-body,#site-footer .boxed,#search-filter .boxed,#responsive-menu .boxed,#site-notification{width:88%}
+#social-share{left:3.2%}
+#page-controls{right:2%}
 }@media(min-width:1025px){#top-bar .container .elements .element[data-visibility="desktop"]{display:inline-block}
 #site-header .container .elements .element[data-visibility="desktop"]{display:inline-block}
 #site-header .container .elements #site-logo .logo.image{height:var(--header-desktop-logo-size)}
