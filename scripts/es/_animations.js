@@ -63,8 +63,8 @@ export default jQuery(function($) {
                 processLocalLinks: function(){
 
                     /** identify all local links */
-                    $('a:not([href*=#])').filter(function() {
-                    return this.hostname && this.hostname === location.hostname;
+                    $('a:not([href*=\\#])').filter(function() {
+                        return this.hostname && this.hostname === location.hostname;
                     }).addClass('local-link');
 
                     /** identify all native link */

@@ -41,6 +41,22 @@
 
         Kirki::add_field( 'nucleus_config', [
             'type'     => 'text',
+            'settings' => 'nucleus_blog_featured_cats',
+            'label'    => esc_html__( 'Featured Categories', '_nucleus' ),
+            'section'  => 'nucleus_blog_settings',
+            'description'   => esc_html__('A comma sperated list of category IDs. These category links will be shown below page title.', '_nucleus'),
+            'priority' => 10,
+            'active_callback'  => [
+                [
+                    'setting'  => 'nucleus_blog_layout',
+                    'operator' => '==',
+                    'value'    => 'minimal',
+                ],
+            ]
+        ] );
+
+        Kirki::add_field( 'nucleus_config', [
+            'type'     => 'text',
             'settings' => 'nucleus_blog_slider',
             'label'    => esc_html__( 'Slider Posts', '_nucleus' ),
             'section'  => 'nucleus_blog_settings',

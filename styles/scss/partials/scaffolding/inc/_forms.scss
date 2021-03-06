@@ -75,7 +75,7 @@
 	
 	.button,
 	input[type="submit"],
-	button:not(.flickity-prev-next-button):not(.elementor-alert-dismiss),
+	button:not(.flickity-prev-next-button):not(.elementor-alert-dismiss):not([aria-controls="mep_0"]),
 	input[type="button"] {
 		font-family: var(--form-button-font-family, $secondary-font-stack);
 		font-weight: var(--form-button-variant, 600);
@@ -114,7 +114,7 @@
 	}
 	.button:hover,
 	input[type="submit"]:hover,
-	button:not(.flickity-prev-next-button):not(.elementor-alert-dismiss):hover,
+	button:not(.flickity-prev-next-button):not(.elementor-alert-dismiss):hover:not([aria-controls="mep_0"]):hover,
 	input[type="button"]:hover {
 		cursor: pointer;
 

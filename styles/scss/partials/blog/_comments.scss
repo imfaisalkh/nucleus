@@ -184,7 +184,7 @@
 					padding-left: 100px;
 					margin-top: -40px;
 
-					@include breakpoint($mobile)  { margin-top: 0; }
+					@include breakpoint($mobile)  { margin-top: 20px; padding-left: 0; }
 
 					.comment-content {
 						font-family: var(--comments-text-font-family, $secondary-font-stack);

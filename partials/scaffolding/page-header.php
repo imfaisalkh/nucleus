@@ -87,7 +87,12 @@
 					?>
 					<span class="category"><a href="<?php echo esc_url( $link ); ?>"><?php echo esc_html($name); ?></a></span>
 				<?php } else if (is_home()) { ?>
-					<span class="timestamp"><?php echo esc_html__('Since 2015', '_nucleus'); ?></span>
+					<?php
+					    global $post;
+						$loop = get_posts( 'numberposts=1&order=ASC' );
+						$oldest_post_ID = $loop[0]->ID; 
+					?>
+					<span class="timestamp"><?php echo esc_html__('Since', '_nucleus'); ?> <?php echo get_the_date('Y', $oldest_post_ID); ?></span>
 				<?php } ?>
 				<?php if ($header_icon) { ?>
 					<img src="<?php echo esc_url($header_icon); ?>" />
@@ -99,10 +104,13 @@
 					<span class="backdrop"><?php echo esc_html__('Blog', '_nucleus'); ?></span>
 				<?php } ?>
 				<h3 class="title"><?php echo wp_kses_post($header_title); ?></h3>
-				<?php if (is_home()) { ?>
+				<?php if (is_home() && get_theme_mod('nucleus_blog_featured_cats')) { ?>
 					<ul class="categories">
 						<li class="active"><a href="<?php echo esc_url( home_url('/') ); ?>">All</a></li>
-						<?php wp_list_categories('title_li='); ?>
+						<?php wp_list_categories( array(
+							'include'  => explode(',', get_theme_mod('nucleus_blog_featured_cats')),
+							'title_li' => ''
+						)); ?> 
 					</ul>
 				<?php } ?>
 				<?php if ( $header_subtitle ) { ?>

@@ -266,26 +266,28 @@
 	/** == MENU TAGS == */
 	/** ================================================== */
 	ul.sf-menu {
-		li.is-gallery, li.is-experimental {
+		li.is-gallery, li.is-experimental, li.is-columns {
 			> a {
 				position: relative;
 				&:after {
-					height: 14px;
+					height: 15px;
 					display: inline-flex;
 					justify-content: center; align-items: center;
 					background: var(--menu-text);
 					border-radius: 2px;
-					font-size: 9px;
+					font-size: 10px;
 					color: var(--menu-background);
 					text-transform: uppercase;
 					padding: 1px 3px;
 					margin-left: 6px;
+					letter-spacing: 0.5px;
 				}
 			}
 		}
 
 		li.is-gallery > a:after { content: 'gallery'; }
 		li.is-experimental > a:after { content: 'experimental'; }
+		li.is-columns > a:after { content: '2-6 columns'; }
 	}
 
 
@@ -316,6 +318,44 @@
 			}
 		}
 	}
+
+
+	/** == CHILD MENU INDICATOR == */
+	/** ================================================== */
+	ul.sf-menu.sf-arrows,
+	ul.sub-menu
+	{
+		> li:not(.search) {
+		  > a.sf-with-ul {
+				// padding-right: 22px;
+
+				&:after {
+					// background: url('../../images/arrow-down-menu.svg') no-repeat center center;
+					content: '';
+					width: 11px;
+					height: 6px;
+					position: absolute;
+					top: 46%;
+					right: 0;
+				}
+		  }
+		}
+	}
+	
+	// Sub Menus
+	ul.sub-menu {
+		> li {
+			a.sf-with-ul {
+				&:after {
+					background: url('../../images/arrow-right-menu.svg') no-repeat center center !important;
+					height: 11px !important;
+					top: 62% !important;
+					right: 5px !important;
+				}
+			}
+		}
+	}
+
 
 
 /** == MEGA MENU == */
