@@ -22,9 +22,9 @@
 	<a class="entry-link" href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title(); ?>" >
 		
 		<figure class="entry-thumbnail">
-			<img class="primary" src="<?php the_post_thumbnail_url('nucleus-portfolio-grid'); ?>">
+			<img class="primary" src="<?php the_post_thumbnail_url('nucleus-portfolio-grid'); ?>" alt="<?php the_title(); ?>">
 			<?php if ($secondary_img) { ?>
-				<img class="secondary" src="<?php echo esc_url($secondary_img); ?>">
+				<img class="secondary" src="<?php echo esc_url($secondary_img); ?>" alt="<?php the_title(); ?>">
 			<?php } ?>
 		</figure>
 

@@ -49,8 +49,19 @@
 	?>
 
 	:root {
+		<?php if ($background_image) { ?>
 		--background-image: <?php echo 'url(' . wp_get_attachment_image_url($background_image, 'nucleus-background-image') . ')'; ?>;
+		<?php } ?>
+		
+		<?php if ($background_video) { ?>
 		--background-video: <?php echo 'url(' . $background_video . ')'; ?>;
+		<?php } ?>
+
+		<?php if ($background_fit) { ?>
 		--background-fit: <?php echo esc_html($background_fit); ?>;
+		<?php } ?>
+
+		<?php if ($background_opacity) { ?>
 		--background-opacity-scroll: <?php echo esc_html($background_opacity); ?>;
+		<?php } ?>
 	}

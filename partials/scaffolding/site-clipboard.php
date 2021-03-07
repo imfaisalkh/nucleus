@@ -1,7 +1,7 @@
 <!-- BEGIN: SITE CONTROLS -->
 <div id="site-clipboard">
 
-    <!-- Page Sidebar -->
+    <!-- Blog Sidebar -->
     <?php if (get_theme_mod('nucleus_blog_sidebar', true)) { ?>
         <?php if ( is_active_sidebar( 'blog-sidebar' ) && is_home() || is_archive() || is_search() || is_singular('post') ) { ?>
             <a href="#open-sidebar" class="open-sidebar">
@@ -11,9 +11,22 @@
                 <a href="#close-sidebar" class="close-sidebar">
                     <i class="fi fi-close" aria-hidden="true"></i>
                 </a>
-                <?php get_sidebar(); ?> 
+                <?php get_sidebar('blog'); ?> 
             </aside>
         <?php } ?>
+    <?php } ?>
+
+    <!-- Page Sidebar -->
+    <?php if ( is_active_sidebar( 'page-sidebar' ) && !is_home() && !is_archive() && !is_search() && is_singular() ) { ?>
+        <a href="#open-sidebar" class="open-sidebar">
+            <i class="fi fi-sidebar-arrow" aria-hidden="true"></i>
+        </a>
+        <aside id="page-sidebar">
+            <a href="#close-sidebar" class="close-sidebar">
+                <i class="fi fi-close" aria-hidden="true"></i>
+            </a>
+            <?php get_sidebar(); ?> 
+        </aside>
     <?php } ?>
 
     <?php $page_actions_group = get_theme_mod('nucleus_page_actions_group', array('audio', 'info', 'top')); ?>
@@ -35,9 +48,11 @@
     <!-- Seacrh Filter -->
     <div id="search-filter">
 
-        <div class="boxed">
-
+        <div class="modal-controls">
             <a href="#" class="close-link"><i class="fi fi-close" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="boxed">
 
             <!-- SEARCH WIDGET -->
             <div class="search-widget-wrap widget-wrap">  
@@ -63,14 +78,20 @@
                     </div>
                 </div>
 
-            <?php } else { ?>
+            <?php } else if (get_theme_mod('nucleus_blog_featured_cats')) { ?>
 
                 <!-- BLOG WIDGET -->
                 <div class="blog-widget-wrap widget-wrap">
                     <div id="blog-widget" class="modal-widget">
                         <h4 class="widget-title"><?php esc_html_e( 'Categories', '_nucleus' ); ?></h4>
                         <ul class="widget-list">
-                            <?php wp_list_categories(array('child_of' => get_field('category'), 'depth' => 1, 'title_li' => '', 'style' => 'none', 'taxonomy' => 'category', 'show_option_none'   => '', 'walker' => new Nucleus_Category_Walker())); ?>
+                            <?php wp_list_categories( array(
+                                'include'  => explode(',', get_theme_mod('nucleus_blog_featured_cats')),
+                                'title_li' => '',
+                                'depth' => 1,
+                                'style' => 'none',
+                                'walker' => new Nucleus_Category_Walker()
+                            )); ?>
                         </ul>              
                     </div>
                 </div>

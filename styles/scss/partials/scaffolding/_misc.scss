@@ -69,7 +69,7 @@
 		.label {
 			margin-right: 5px;
 			font-size: 15px;
-			opacity: .2;
+			opacity: .4;
 		}
 
 		.share-link {
@@ -241,17 +241,18 @@
 			padding-bottom: 120px;
 		}
 
-		.close-link {
-			color: var(--text-color, #FFF);
-			font-size: 21px;
+		.modal-controls {
+			.close-link {
+				color: var(--text-color, #FFF);
+				font-size: 21px;
 
-			@include breakpoint($mobile)  { @include position(fixed, 35px, 35px, auto, auto); }
-			@include breakpoint($tablet)  { @include position(fixed, 60px, 45px, auto, auto); }
-			@include breakpoint($no-touch)  { @include position(fixed, 45px, 85px, auto, auto); }
+				@include breakpoint($mobile)  { @include position(fixed, 60px, 35px, auto, auto); }
+				@include breakpoint($tablet)  { @include position(fixed, 60px, 6.5%, auto, auto); }
+				@include breakpoint($no-touch)  { @include position(fixed, 45px, 85px, auto, auto); }
+			}
 		}
 
 	}
-
 
 	#search-filter {
 
@@ -352,6 +353,8 @@
 
 	html.noscroll-only {
 		position: relative;
+		margin: 0 !important;
+
 		body {
 			overflow: hidden;
 		}
@@ -511,16 +514,7 @@
 		}
 	
 		// Modal Controls
-		.modal-controls {
-			.close-link {
-				color: var(--text-color, #FFF);
-				font-size: 21px;
-
-				@include breakpoint($mobile)  { @include position(fixed, 35px, 35px, auto, auto); }
-				@include breakpoint($tablet)  { @include position(fixed, 60px, 6.5%, auto, auto); }
-				@include breakpoint($no-touch)  { @include position(fixed, 45px, 85px, auto, auto); }
-			}
-		
+		.modal-controls 
 			.go-back {
 				display: none;
 				font-family: $secondary-font-stack;
@@ -549,7 +543,6 @@
 			}
 		}
 
-	}		
 
 
 /** == PRELOADER == */

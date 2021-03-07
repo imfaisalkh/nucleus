@@ -110,7 +110,7 @@
 						<?php wp_list_categories( array(
 							'include'  => explode(',', get_theme_mod('nucleus_blog_featured_cats')),
 							'title_li' => ''
-						)); ?> 
+						)); ?>
 					</ul>
 				<?php } ?>
 				<?php if ( $header_subtitle ) { ?>

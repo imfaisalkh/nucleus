@@ -47,10 +47,10 @@
     $folio_carousel_image = get_field('slider_image') ? get_field('slider_image') : get_the_post_thumbnail_url(get_the_ID(), $image_size);
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class("carousel-cell"); ?> data-primary-accent-color="<?php echo esc_attr($primary_accent); ?>" data-secondary-accent-color="<?php echo esc_attr($secondary_accent); ?>" data-bg-color="<?php echo esc_attr($background_color); ?>" data-text-color="<?php echo esc_attr($text_color); ?>">
+<article id="carousel-post-<?php the_ID(); ?>" <?php post_class("carousel-cell"); ?> data-primary-accent-color="<?php echo esc_attr($primary_accent); ?>" data-secondary-accent-color="<?php echo esc_attr($secondary_accent); ?>" data-bg-color="<?php echo esc_attr($background_color); ?>" data-text-color="<?php echo esc_attr($text_color); ?>">
     
     <figure class="entry-thumbnail" data-size="<?php echo esc_attr($image_size); ?>">
-        <img class="primary" src="<?php echo esc_url($folio_carousel_image); ?>">
+        <img class="primary" src="<?php echo esc_url($folio_carousel_image); ?>" alt="<?php the_title(); ?>">
     </figure>
 
     <a href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title(); ?>" >

@@ -44,15 +44,8 @@
             'settings' => 'nucleus_blog_featured_cats',
             'label'    => esc_html__( 'Featured Categories', '_nucleus' ),
             'section'  => 'nucleus_blog_settings',
-            'description'   => esc_html__('A comma sperated list of category IDs. These category links will be shown below page title.', '_nucleus'),
+            'description'   => esc_html__('A comma sperated list of category IDs. These category links will be shown at different places (e.g. search popup).', '_nucleus'),
             'priority' => 10,
-            'active_callback'  => [
-                [
-                    'setting'  => 'nucleus_blog_layout',
-                    'operator' => '==',
-                    'value'    => 'minimal',
-                ],
-            ]
         ] );
 
         Kirki::add_field( 'nucleus_config', [
@@ -69,6 +62,19 @@
                     'value'    => 'magazine',
                 ],
             ]
+        ] );
+
+        Kirki::add_field( 'nucleus_config', [
+            'type'        => 'select',
+            'settings'    => 'nucleus_blog_date_format',
+            'label'       => esc_html__( 'Date Format', '_nucleus' ),
+            'section'     => 'nucleus_blog_settings',
+            'default'     => 'standard',
+            'priority'    => 10,
+            'choices'     => [
+                'standard' => esc_html__( 'Standard', '_nucleus' ),
+                'human' => esc_html__( 'Time Ago', '_nucleus' ),
+            ],
         ] );
 
         Kirki::add_field( 'nucleus_config', [

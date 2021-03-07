@@ -27,7 +27,11 @@
         </p>
 		<span class="timestamp">
 			<a href="<?php echo esc_url( get_permalink() ); ?>">
-				<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ' . esc_html__( 'ago', '_nucleus' ); ?>	
+				<?php if ($date_format == 'human') { ?>
+					<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ' . esc_html__( 'ago', '_nucleus' ); ?>	
+				<?php } else { ?>
+					<?php echo get_the_date(); ?>	
+				<?php } ?>
 			</a>
 		</span>
 	</div>

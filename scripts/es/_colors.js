@@ -247,7 +247,7 @@ export default jQuery(function($) {
                     let menu_seperator = tinycolor(menu_bg).lighten(15).toString()
                     document.body.style.setProperty('--menu-seperator', menu_seperator);
 
-                    let menu_caption = tinycolor(menu_text).darken(60).toString()
+                    let menu_caption = tinycolor(menu_text).darken(50).toString()
                     document.body.style.setProperty('--menu-caption', menu_caption);
 
                 }
@@ -269,7 +269,7 @@ export default jQuery(function($) {
                     let menu_seperator = tinycolor(menu_bg).darken(15).toString()
                     document.body.style.setProperty('--menu-seperator', menu_seperator);
 
-                    let menu_caption = tinycolor(menu_text).lighten(60).toString()
+                    let menu_caption = tinycolor(menu_text).lighten(50).toString()
                     document.body.style.setProperty('--menu-caption', menu_caption);
                 }
 

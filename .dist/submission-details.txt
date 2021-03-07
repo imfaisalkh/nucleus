@@ -5,7 +5,7 @@ Nucleus: Portfolio for Freelancers & Agencies
 
 DEMO URL:
 
-http://demo.wpscouts.net/nucleus/
+https://portfolio.blacksailor.co.uk/
 
 DOCS URL:
 
@@ -19,13 +19,37 @@ agency, artist, blog, freelance, masonry, minimal, modern, one page, parallax, p
 
 MESSAGE TO REVIEWER:
 
-Hey, I hope you are fine. I've tested the theme with the themecheck plugin, there is only one "REQUIRED" notice, which is because I've included some premium plugin ZIP files in the theme via TGM framework. I guess it should not be an issue. Regards.
+Hello,
 
+I've added 6 portfolio layouts, and 7 project layouts. Portfolio now supports various styling with respect to it's caption and image. In addition to that, I've added 2 blog layouts (minimal + magazine). Portfolio and Blog, both supports 3 type of pagination(numbered, button, and infinite scroll).
+
+In addition to that I've added 3 ready-made templates for the contact page and 2 templates for the about us page.
+
+The theme now supports background audio and video, in addition to background image.
+
+Furthermore, the theme now has a built-in header builder as well as 5 pre-made layouts for the header and 2 layouts for the site footer.
+
+The theme now also supports typography control of each theme element from the customizer and I've also improved control of page colors which includes ability of the user to define a custom color pallete for each page.
+
+Regards
 
 ----------------------
 
 
+Thanks for looking into it. I'll address each of your raised issue in the same order:
+
+1: I've improved the contrast ratio. The text is dim because I want to keep the emphasis on the main text (i.e. links).
+2: The error, "theme appears to be in wrong directory" is because I've added an underscore to the theme directory. It is needed to avoid wrong theme update notification which updates this theme to a theme with same name in WordPress official repository. So, the directory is named "_nucleus" instead of "nucleus" to avoid this issue. More on this issue: 
+3: Fixed. I've improved the contrast.
+4: Fixed the padding issues.
+6: I've improved the UX issue. Now clicking outside the sidebar also closes it.
+7: The underscore is actually required to tell wordpress that it is not the same theme as this one: (https://wordpress.org/themes/nucleus/) More detail can be found in point # 2.
+8: Fixed. The search form was going out of screen because tons of categories. I've now configured it to show only hand-picked categories.
+9: I've added option to display date in both formats (i.e. standard and "time ago" format). The default is standard format.
+10: I've developed the theme with WP_DEBUG enabled. I cannot reproduce any PHP error or warning on my installation. Is there any specific scenerio I should look into?
+11: I've removed the unnecessary dropcap styling. I've also fixed the admin bar overlapping issue.
+12: Fixed. Now the blog as well as page should display sidebar (on clicking the arrow at right side).
 
 SUBMISSION DATE:
 
-29 June, 2017 (7:10 AM)
+07 March, 2021 (1:45 AM)

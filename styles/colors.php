@@ -19,13 +19,13 @@
 
 	// 0: BASE COLOR SCHEME
 	$base_color_scheme 	= get_field('base_color_scheme', $post_ID);
-	$base_colors   = get_field('base_colors', $post_ID);
+	$base_custom_colors   = get_field('base_colors', $post_ID);
 
 	// Base Colors
-	$primary_accent   	= $base_colors ? $base_colors['primary_accent'] : '';
-	$secondary_accent   = $base_colors ? $base_colors['secondary_accent'] : '';
-	$background_color   = $base_colors ? $base_colors['background_color'] : '';
-	$text_color   		= $base_colors ? $base_colors['text_color'] : '';
+	$primary_accent   	= $base_custom_colors ? $base_custom_colors['primary_accent'] : '';
+	$secondary_accent   = $base_custom_colors ? $base_custom_colors['secondary_accent'] : '';
+	$background_color   = $base_custom_colors ? $base_custom_colors['background_color'] : '';
+	$text_color   		= $base_custom_colors ? $base_custom_colors['text_color'] : '';
 	
 
 	// 1: FORM COLOR SCHEME
@@ -97,6 +97,7 @@
 		--text-color: #000;
 	}
 
+	<?php if ($base_color_scheme == 'custom') { ?>
 	/** Base Color Scheme */
 	body.custom-base-color-scheme {
 		--primary-accent : <?php echo esc_html($primary_accent); ?>;
@@ -104,7 +105,9 @@
 		--background-color : <?php echo esc_html($background_color); ?>;
 		--text-color : <?php echo esc_html($text_color); ?>;
 	}
+	<?php } ?>
 
+	<?php if ($form_color_scheme == 'custom') { ?>
 	/** Form - Text Colors */
 	body.custom-form-color-scheme {
 		--form-text-label-color: <?php echo esc_html($form_label_color); ?>;
@@ -132,7 +135,10 @@
 		--form-button-border-color-hover: <?php echo esc_html($form_button_border_hover); ?>;
 		--form-button-text-color-hover: <?php echo esc_html($form_button_text_hover); ?>;
 	}
+	<?php } ?>
 
+
+	<?php if ($menu_color_scheme == 'custom') { ?>
 	/** Menu Colors */
 	body.custom-menu-color-scheme {
 		--menu-background: <?php echo esc_html($menu_background); ?>;
@@ -141,6 +147,7 @@
 		--menu-background-hover: <?php echo esc_html($menu_background_hover); ?>;
 		--menu-text-hover: <?php echo esc_html($menu_text_hover); ?>;
 	}
+	<?php } ?>
 
 	/** Site Notification */
 	:root {

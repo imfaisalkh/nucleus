@@ -131,11 +131,12 @@ export default jQuery(function($) {
             var init = {
 
                 openModal: function(type){
+                    $('html').addClass('noscroll-only');
+                    
                     if ( type == 'search' ) {
                         $('#search-filter, #search-filter .widget-wrap, #site-clipboard .close-link').addClass('animate-in');
                     } else if ( type == 'menu' ) {
                         $('#responsive-menu, #full-screen-menu, .menu-caption, #site-clipboard .close-link').addClass('animate-in');
-                        $('html').addClass('noscroll-only');
                     }
                 },
 

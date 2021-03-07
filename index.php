@@ -3,7 +3,8 @@
 <?php
 	// Helper Variable(s)
 	$blog_layout = get_query_var('blog') ? get_query_var('blog') : get_theme_mod('nucleus_blog_layout', 'minimal');
-    $pagination_type = isset($_GET['pagination']) ? $_GET['pagination'] : get_theme_mod('nucleus_blog_pagination', 'button'); // scroll, button
+    $date_format = get_theme_mod('nucleus_blog_date_format', 'standard');
+	$pagination_type = isset($_GET['pagination']) ? $_GET['pagination'] : get_theme_mod('nucleus_blog_pagination', 'button'); // scroll, button
 	$current_page = get_query_var('paged') ? get_query_var('paged') : 1;
 ?>
 
@@ -25,7 +26,7 @@
 					<section class="blog-container blog-<?php echo esc_attr($blog_layout); ?>-inner" data-load-trigger="<?php echo esc_attr($pagination_type); ?>" data-hover="reveal">
 
 						<?php while ( have_posts() ) : the_post(); ?>
-							<?php get_template_part( 'partials/blog/layout', $blog_layout ); ?>
+							<?php include(locate_template( 'partials/blog/layout-'. $blog_layout .'.php' )); ?>
 						<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
 

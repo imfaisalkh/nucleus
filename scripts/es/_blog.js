@@ -144,37 +144,33 @@ export default jQuery(function($) {
 
                 // start progress bar
                 self._configure_progress_bar(80)
-      
-                // parallax image
-                // var $imgs = $carousel.find('.carousel-cell img');
-                // var docStyle = document.documentElement.style; // get transform property
-                // var transformProp = typeof docStyle.transform == 'string' ? 'transform' : 'WebkitTransform';
-
-                // var flkty = $carousel.data('flickity'); // get Flickity instance
-                // $carousel.on( 'scroll.flickity', function() {
-                //     flkty.slides.forEach( function( slide, i ) {
-                //       var img = $imgs[i];
-                //       var x = ( slide.target + flkty.x ) * -1/3;
-                //       img.style[ transformProp ] = 'translateX(' + x  + 'px)';
-                //     });
-                // });
-
             }
 
         },
 
         /** Sidebar */
         sidebar: function() {
+            // open sidebar
             $('.open-sidebar').on('click', function (e) {
                 e.preventDefault()
                 $('html').addClass('noscroll')
                 $('#page-sidebar').addClass('active')
             })
+
+            // close sidebar (on click close icon)
             $('.close-sidebar').on('click', function (e) {
                 e.preventDefault()
                 $('html').removeClass('noscroll')
                 $('#page-sidebar').removeClass('active')
             })
+
+            // close sidebar (on click outside sidebar)
+            $(document).on('click', function (e) {
+                if ($(e.target).closest('#page-sidebar, .open-sidebar').length === 0) {
+                    $('html').removeClass('noscroll')
+                    $('#page-sidebar').removeClass('active')
+                }
+            });
         },
 
         /** Image Reveal */
