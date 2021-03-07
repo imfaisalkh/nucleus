@@ -63,20 +63,22 @@
                         <?php } ?>
                     </div>
             <?php } ?>
-
-            <?php if ( $portfolio_style == 'forza' ) { ?>
-                <div class="inner-wrap">
-                    <span class="backdrop"><?php echo sprintf("%02d", $counter); ?></span>
-                    <h3 class="entry-title"><?php the_title(); ?></h3>
-                    <?php if ( $folio_terms ) { ?>
-                        <span class="entry-meta"><?php echo esc_html( $folio_terms ); ?></span>
-                    <?php } ?>
-                    <div class="entry-caption"><?php the_excerpt(); ?></div>
-                    <a href="<?php echo esc_url($folio_permalink); ?>" class="explore"><?php echo esc_html__('Open Case Study', '_nucleus'); ?></a>
-                </div>
-            <?php } ?>
         </header>
-    </a>
+     </a>
+
+    <?php if ( $portfolio_style == 'forza' ) { ?>
+        <header class="entry-caption">
+            <div class="inner-wrap">
+                <span class="backdrop"><?php echo sprintf("%02d", $counter); ?></span>
+                <h3 class="entry-title"><?php the_title(); ?></h3>
+                <?php if ( $folio_terms ) { ?>
+                    <span class="entry-meta"><?php echo esc_html( $folio_terms ); ?></span>
+                <?php } ?>
+                <div class="entry-caption"><?php the_excerpt(); ?></div>
+                <a href="<?php echo esc_url($folio_permalink); ?>" class="explore"><?php echo esc_html__('Open Case Study', '_nucleus'); ?></a>
+            </div>
+        </header>
+    <?php } ?>
 
 
 </article>

@@ -63,6 +63,9 @@
 			'default-color'        => '#000',
 		) );
 
+		// Support for HTML5 Tags
+		add_theme_support( 'html5', [ 'script', 'style' ] );
+
 		// Custom Image Sizes
 		add_image_size( 'nucleus-site-logo', 200, 200 );
 		add_image_size( 'nucleus-background-image', 1920);

@@ -154,34 +154,31 @@ export default jQuery(function($) {
             $('.open-sidebar').on('click', function (e) {
                 e.preventDefault()
                 $('html').addClass('noscroll')
-                $('#page-sidebar').addClass('active')
+                $('.main-sidebar').addClass('active')
             })
 
             // close sidebar (on click close icon)
             $('.close-sidebar').on('click', function (e) {
                 e.preventDefault()
                 $('html').removeClass('noscroll')
-                $('#page-sidebar').removeClass('active')
+                $('.main-sidebar').removeClass('active')
             })
 
             // close sidebar (on click outside sidebar)
             $(document).on('click', function (e) {
-                if ($(e.target).closest('#page-sidebar, .open-sidebar').length === 0) {
+                if ($(e.target).closest('.main-sidebar, .open-sidebar').length === 0) {
                     $('html').removeClass('noscroll')
-                    $('#page-sidebar').removeClass('active')
+                    $('.main-sidebar').removeClass('active')
                 }
             });
         },
 
         /** Image Reveal */
         image_reveal: function() {
-            let img_data
-
             $('.blog-minimal-inner[data-hover="reveal"] .post .entry-title a').each(function(el){
                 $(this).on('mouseover', function(e) {
-                    img_data = $(this).data('image')
                     $(this).css('z-index', -10)
-                    $(this).parent().siblings('.entry-thumb').attr('src', img_data).addClass('animate-in')
+                    $(this).parent().siblings('.entry-thumb').addClass('animate-in')
                 })
                 $(this).on('mousemove', function(e) {
                     $(this).parent().siblings('.entry-thumb').css('top', e.offsetY + 10 + 'px')
@@ -189,7 +186,7 @@ export default jQuery(function($) {
                 })
                 $(this).on('mouseleave', function(e) {
                     $(this).css('z-index', 1)
-                    $(this).parent().siblings('.entry-thumb').attr('src', '').removeClass('animate-in')
+                    $(this).parent().siblings('.entry-thumb').removeClass('animate-in')
                 })
             });
            

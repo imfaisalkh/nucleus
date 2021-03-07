@@ -4,9 +4,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<figure class="entry-thumbnail" data-size="<?php echo esc_attr($image_size); ?>">
-		<img src="<?php the_post_thumbnail_url($image_size); ?>">
-	</figure>
+	<?php if (has_post_thumbnail()) { ?>
+		<figure class="entry-thumbnail" data-size="<?php echo esc_attr($image_size); ?>">
+			<img src="<?php the_post_thumbnail_url($image_size); ?>" alt="<?php the_title(); ?>">
+		</figure>
+	<?php } ?>
 	<div class="inner-wrap">
 		<?php if(isset($is_slider_post) && $is_slider_post) { ?>
 			<span class="featured"><?php echo esc_html__('Editor\'s Choice', '_nucleus'); ?></span>

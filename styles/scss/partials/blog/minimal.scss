@@ -94,7 +94,6 @@
 			@include breakpoint($tablet)  { font-size: 23px; }
 
 			a {
-				display: inline-block;
 				color: #fff;
 				
 				background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
@@ -127,7 +126,7 @@
 			.entry-title {
 
 				a {
-					margin-right: 10px;
+					padding-right: 10px;
 				}
 
 				span.featured {

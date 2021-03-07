@@ -1,8 +1,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="inner-wrap">
-		<img class="entry-thumb" src="">
+		<?php if (has_post_thumbnail()) { ?>
+			<img class="entry-thumb" src="<?php the_post_thumbnail_url('nucleus-blog-minimal'); ?>" alt="<?php the_title(); ?>">
+		<?php } ?>
 		<h3 class="entry-title">
-			<a href="<?php echo esc_url( get_permalink() ); ?>" data-image="<?php the_post_thumbnail_url('nucleus-blog-minimal'); ?>"><?php the_title(); ?></a>
+			<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
 			<?php if(is_sticky()) { ?>
 				<span class="featured"><?php echo esc_html__('Featured', '_nucleus'); ?></span>
 			<?php } ?>

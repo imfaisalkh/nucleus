@@ -6,7 +6,7 @@
 /** == PAGE & BLOG SIDEBAR == */
 /** ================================================== */
 
-	#page-sidebar {
+	.main-sidebar {
 		width: 30%;
 		margin-top: 105px;
 		body.single-post & {
@@ -17,7 +17,7 @@
 
 
 
-	#page-sidebar,
+	.main-sidebar,
 	.elementor-widget-sidebar
 	{
 

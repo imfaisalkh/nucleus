@@ -95,7 +95,7 @@
 					<span class="timestamp"><?php echo esc_html__('Since', '_nucleus'); ?> <?php echo get_the_date('Y', $oldest_post_ID); ?></span>
 				<?php } ?>
 				<?php if ($header_icon) { ?>
-					<img src="<?php echo esc_url($header_icon); ?>" />
+					<img src="<?php echo esc_url($header_icon); ?>" alt="<?php echo wp_kses_post($header_title); ?>" />
 				<?php } ?>
 				<?php if ($header_backdrop) { ?>
 					<span class="backdrop"><?php echo esc_html($header_backdrop); ?></span>

@@ -3,7 +3,7 @@
 		<h4 class="widget-title"><?php esc_html_e( 'Type & Hit Enter', '_nucleus' ); ?></h4>
 		<div class="form-fields">
 			<input type="text" name="s" id="s" placeholder="<?php esc_html_e('Search Term', '_nucleus'); ?>">
-			<input id="searchsubmit" value="<?php esc_html_e('Go', '_nucleus'); ?>" type="submit">
+			<input id="widget-search" value="<?php esc_html_e('Go', '_nucleus'); ?>" type="submit">
 		</div>
 	</form>	
 </div>

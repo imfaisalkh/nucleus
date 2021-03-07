@@ -7,7 +7,7 @@
             <a href="#open-sidebar" class="open-sidebar">
                 <i class="fi fi-sidebar-arrow" aria-hidden="true"></i>
             </a>
-            <aside id="page-sidebar">
+            <aside id="blog-sidebar" class="main-sidebar">
                 <a href="#close-sidebar" class="close-sidebar">
                     <i class="fi fi-close" aria-hidden="true"></i>
                 </a>
@@ -21,7 +21,7 @@
         <a href="#open-sidebar" class="open-sidebar">
             <i class="fi fi-sidebar-arrow" aria-hidden="true"></i>
         </a>
-        <aside id="page-sidebar">
+        <aside id="page-sidebar" class="main-sidebar">
             <a href="#close-sidebar" class="close-sidebar">
                 <i class="fi fi-close" aria-hidden="true"></i>
             </a>
@@ -60,7 +60,7 @@
                     <h4 class="widget-title"><?php esc_html_e( 'Type & Hit Enter', '_nucleus' ); ?></h4>
                     <div class="widget-fields">
                         <input type="text" name="s" id="s" placeholder="<?php esc_html_e('Search Term', '_nucleus'); ?>">
-                        <input id="searchsubmit" value="<?php esc_html_e('Go', '_nucleus'); ?>" type="submit">
+                        <input id="modal-search" value="<?php esc_html_e('Go', '_nucleus'); ?>" type="submit">
                     </div>
                 </form> 
             </div>
