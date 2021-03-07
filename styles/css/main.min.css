@@ -1057,7 +1057,7 @@ body.error404{background-image:url(../../images/switch-bg.svg);background-positi
 .team-grid .grid-item .member-details ul.social-profiles li a:hover{color:#000}
 .testimonials-carousel{background:#efe6dd;border-radius:5px;padding:35px 50px;margin-bottom:30px}
 .testimonials-carousel .testimonial{width:100%;color:#040404}
-.testimonials-carousel .testimonial .review{margin:0;font-family:"Open Sans",sans-serif;font-size:18px;font-weight:300;font-style:normal;letter-spacing:0;margin-bottom:15px;padding:15px 0}
+.testimonials-carousel .testimonial .review{margin:0;font-family:"Open Sans",sans-serif;font-size:18px;font-weight:300;font-style:normal;letter-spacing:0;margin-bottom:15px;padding:7px 0 15px 0}
 .testimonials-carousel .testimonial .review::before{display:none}
 .testimonials-carousel .testimonial .author{font-family:"Open Sans",sans-serif;font-style:normal}
 .testimonials-carousel .testimonial .author .name{display:block;font-style:16px;font-weight:500}
