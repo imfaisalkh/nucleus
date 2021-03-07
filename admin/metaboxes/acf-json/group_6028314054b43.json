@@ -25,6 +25,25 @@
             "layout": "horizontal",
             "return_format": "value",
             "save_other_choice": 0
+        },
+        {
+            "key": "field_60452cea3ce75",
+            "label": "Disable Sidebar",
+            "name": "page_disable_sidebar",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Disable Page Sidebar",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -51,5 +70,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1613935460
+    "modified": 1615146325
 }

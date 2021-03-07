@@ -17,7 +17,7 @@
     <?php } ?>
 
     <!-- Page Sidebar -->
-    <?php if ( is_active_sidebar( 'page-sidebar' ) && !is_home() && !is_archive() && !is_search() && is_singular() ) { ?>
+    <?php if ( is_active_sidebar( 'page-sidebar' ) && is_page() && !get_field('page_disable_sidebar') && !is_page_template('template-portfolio.php') && !is_singular('portfolio') ) { ?>
         <a href="#open-sidebar" class="open-sidebar">
             <i class="fi fi-sidebar-arrow" aria-hidden="true"></i>
         </a>
@@ -59,8 +59,8 @@
                 <form id="search-widget" class="modal-widget" role="search" method="get" action="<?php echo esc_url( home_url() ); ?>/">
                     <h4 class="widget-title"><?php esc_html_e( 'Type & Hit Enter', '_nucleus' ); ?></h4>
                     <div class="widget-fields">
-                        <input type="text" name="s" id="s" placeholder="<?php esc_html_e('Search Term', '_nucleus'); ?>">
-                        <input id="modal-search" value="<?php esc_html_e('Go', '_nucleus'); ?>" type="submit">
+                        <input type="text" name="s" id="modal-search" placeholder="<?php esc_html_e('Search Term', '_nucleus'); ?>">
+                        <input value="<?php esc_html_e('Go', '_nucleus'); ?>" type="submit">
                     </div>
                 </form> 
             </div>

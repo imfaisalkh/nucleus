@@ -39,16 +39,17 @@ Regards
 Thanks for looking into it. I'll address each of your raised issue in the same order:
 
 1: I've improved the contrast ratio. The text is dim because I want to keep the emphasis on the main text (i.e. links).
-2: The error, "theme appears to be in wrong directory" is because I've added an underscore to the theme directory. It is needed to avoid wrong theme update notification which updates this theme to a theme with same name in WordPress official repository. So, the directory is named "_nucleus" instead of "nucleus" to avoid this issue. More on this issue: 
+2: The error, "theme appears to be in wrong directory" is because I've added an underscore to the theme directory. It is needed to avoid wrong theme update notification which updates this theme to a theme with same name in WordPress official repository. So, the directory is named "_nucleus" instead of "nucleus" to avoid this issue. More on this issue: https://core.trac.wordpress.org/ticket/14179
 3: Fixed. I've improved the contrast.
 4: Fixed the padding issues.
+5: Fixed. I've run the whole site through this validator and have fixed all the errors and most of the warnings.
 6: I've improved the UX issue. Now clicking outside the sidebar also closes it.
-7: The underscore is actually required to tell wordpress that it is not the same theme as this one: (https://wordpress.org/themes/nucleus/) More detail can be found in point # 2.
-8: Fixed. The search form was going out of screen because tons of categories. I've now configured it to show only hand-picked categories.
+7: The underscore is actually required to tell wordpress that it is not the same theme as this one: (https://wordpress.org/themes/nucleus/). More detail can be found in point # 2.
+8: Fixed. The search form was going out of screen because tons of categor links. I've now configured it to show only hand-picked categories.
 9: I've added option to display date in both formats (i.e. standard and "time ago" format). The default is standard format.
-10: I've developed the theme with WP_DEBUG enabled. I cannot reproduce any PHP error or warning on my installation. Is there any specific scenerio I should look into?
+10: I've developed the theme with WP_DEBUG enabled. I cannot reproduce any PHP error or warning on my installation. Is there any specific scenerio or error I should look into?
 11: I've removed the unnecessary dropcap styling. I've also fixed the admin bar overlapping issue.
-12: Fixed. Now the blog as well as page should display sidebar (on clicking the arrow at right side).
+12: Fixed. Now the blog as well as page should display sidebar (on clicking the arrow at right side of the page).
 
 SUBMISSION DATE:
 
