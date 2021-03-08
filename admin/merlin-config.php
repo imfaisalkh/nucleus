@@ -129,11 +129,11 @@ $wizard = new Merlin(
 	function nucleus_merlin_after_import() {
 	
 		// Assign menus to their locations.
-		$site_menu_desktop = get_term_by( 'name', 'Site Menu - Desktop', 'nav_menu' );
-		$site_menu_mobile = get_term_by( 'name', 'Site Menu - Mobile', 'nav_menu' );
+		$site_menu_desktop = get_term_by( 'name', 'Main Menu', 'nav_menu' );
+		$site_menu_mobile = get_term_by( 'name', 'Main Menu', 'nav_menu' );
 		$menus = array(
-			'nucleus-desktop-navigation' => $site_menu_desktop->term_id,
-			'nucleus-mobile-navigation' => $site_menu_mobile->term_id,
+			'nucleus-primary-menu' => $site_menu_desktop->term_id,
+			'nucleus-full-screen-menu' => $site_menu_mobile->term_id,
 		);
 		set_theme_mod( 'nav_menu_locations', $menus );
 	}

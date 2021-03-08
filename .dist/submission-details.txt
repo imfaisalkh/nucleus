@@ -14,8 +14,7 @@ https://imfaisalkh.gitbooks.io/nucleus/
 
 TAGS:
 
-agency, artist, blog, freelance, masonry, minimal, modern, one page, parallax, photography, portfolio, responsive, seo, showcase, white
-
+agency, artist, blog, freelancer, masonry, minimal, modern, parallax, photography, portfolio, responsive, seo, showcase, dark, elementor
 
 MESSAGE TO REVIEWER:
 
