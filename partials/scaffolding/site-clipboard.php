@@ -17,16 +17,18 @@
     <?php } ?>
 
     <!-- Page Sidebar -->
-    <?php if ( is_active_sidebar( 'page-sidebar' ) && is_page() && !get_field('page_disable_sidebar') && !is_page_template('template-portfolio.php') && !is_singular('portfolio') ) { ?>
-        <a href="#open-sidebar" class="open-sidebar">
-            <i class="fi fi-sidebar-arrow" aria-hidden="true"></i>
-        </a>
-        <aside id="page-sidebar" class="main-sidebar">
-            <a href="#close-sidebar" class="close-sidebar">
-                <i class="fi fi-close" aria-hidden="true"></i>
+    <?php if (!get_field('page_disable_sidebar') ) { ?>
+        <?php if ( is_active_sidebar( 'page-sidebar' ) && (is_page() && !is_page_template('template-portfolio.php') && !is_singular('portfolio')) ) { ?>
+            <a href="#open-sidebar" class="open-sidebar">
+                <i class="fi fi-sidebar-arrow" aria-hidden="true"></i>
             </a>
-            <?php get_sidebar(); ?> 
-        </aside>
+            <aside id="page-sidebar" class="main-sidebar">
+                <a href="#close-sidebar" class="close-sidebar">
+                    <i class="fi fi-close" aria-hidden="true"></i>
+                </a>
+                <?php get_sidebar(); ?> 
+            </aside>
+        <?php } ?>
     <?php } ?>
 
     <?php $page_actions_group = get_theme_mod('nucleus_page_actions_group', array('audio', 'info', 'top')); ?>

@@ -41,5 +41,5 @@ node_modules
 
 # DIST #
 ##########
-.dist/main-files/theme/nucleus
-.dist/main-files/theme/nucleus.zip
+.dist/main-files/theme/_nucleus
+.dist/main-files/theme/_nucleus.zip
