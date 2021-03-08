@@ -6,7 +6,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if (has_post_thumbnail()) { ?>
 		<figure class="entry-thumbnail" data-size="<?php echo esc_attr($image_size); ?>">
-			<img src="<?php the_post_thumbnail_url($image_size); ?>" alt="<?php the_title(); ?>">
+			<img src="<?php the_post_thumbnail_url($image_size); ?>" alt="<?php the_title_attribute(); ?>">
 		</figure>
 	<?php } ?>
 	<div class="inner-wrap">

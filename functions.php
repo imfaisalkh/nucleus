@@ -60,7 +60,7 @@
 
 		// Suport for Custom Background
 		add_theme_support( 'custom-background', array(
-			'default-color'        => '#000',
+			'default-color' => '#000',
 		) );
 
 		// Support for HTML5 Tags
@@ -77,7 +77,7 @@
 
 		add_image_size( 'nucleus-portfolio-grid-slider', 1440, 650, true );
 		add_image_size( 'nucleus-portfolio-grid', 800);
-		add_image_size( 'nucleus-portfolio-carousel', 585, 335, true );
+		add_image_size( 'nucleus-portfolio-carousel', 800, 460, true );
 		add_image_size( 'nucleus-portfolio-portrait', 245, 590, true );
 
 	    // Register WP3.0+ Menus
@@ -108,10 +108,8 @@
 	function nucleus_register_menu() {
 		register_nav_menu('nucleus-primary-menu', esc_html__('Primary', '_nucleus'));
 		register_nav_menu('nucleus-secondary-menu', esc_html__('Secondary', '_nucleus'));
-		register_nav_menu('nucleus-mobile-menu', esc_html__('Mobile', '_nucleus'));
 		register_nav_menu('nucleus-top-bar-menu', esc_html__('Top Bar', '_nucleus'));
-		register_nav_menu('nucleus-full-screen-menu', esc_html__('Full Screen', '_nucleus'));
-		register_nav_menu('nucleus-footer-menu', esc_html__('Footer', '_nucleus'));
+		register_nav_menu('nucleus-full-screen-menu', esc_html__('Full Screen (e.g. Mobile)', '_nucleus'));
 	}
 	
 
@@ -159,8 +157,8 @@
 			wp_register_script('modernizr', NUCLEUS_VENDORS_URI . '/modernizr/modernizr-custom.js', array('jquery'), null, true);
 			wp_register_script('superfish', NUCLEUS_VENDORS_URI . '/superfish/superfish.js', array('jquery'), null, true);
 			wp_register_script('fancybox', NUCLEUS_VENDORS_URI . '/fancybox/jquery.fancybox.min.js', array('jquery'), null, true);
-			wp_register_script('headroom.js', NUCLEUS_VENDORS_URI . '/headroom.js/headroom.js', array('jquery'), null, true);
-			wp_register_script('jquery-headroom.js', NUCLEUS_VENDORS_URI . '/headroom.js/jquery.headroom.js', array('jquery'), null, true);
+			wp_register_script('headroom', NUCLEUS_VENDORS_URI . '/headroom.js/headroom.js', array('jquery'), null, true);
+			wp_register_script('jquery-headroom', NUCLEUS_VENDORS_URI . '/headroom.js/jquery.headroom.js', array('jquery'), null, true);
 			wp_register_script('tendina', NUCLEUS_VENDORS_URI .'/tendina/tendina.min.js', array('jquery'), null, true);
 			wp_register_script('flickity', NUCLEUS_VENDORS_URI . '/flickity/flickity.pkgd.min.js', array('jquery'), null, true);
 			wp_register_script('flickity-fade', NUCLEUS_VENDORS_URI . '/flickity/flickity-fade.js', array('jquery'), null, true);
@@ -171,7 +169,7 @@
 			wp_register_script('imagesloaded', NUCLEUS_VENDORS_URI . '/imagesloaded/imagesloaded.pkgd.min.js', array('jquery'), null, true);
 			wp_register_script('tinycolor', NUCLEUS_VENDORS_URI . '/tinycolor/tinycolor.min.js', array('jquery'), null, true);
 			wp_register_script('ionicons', 'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js', array('jquery'), null, true);
-			wp_enqueue_script('nucleus-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery', 'modernizr', 'superfish', 'fancybox', 'headroom.js', 'jquery-headroom.js', 'tendina', 'flickity', 'flickity-fade', 'packery', 'infinite-scroll', 'jquery-smooth-scroll', 'jquery-scrollbar', 'imagesloaded', 'tinycolor', 'ionicons'), null, true);
+			wp_enqueue_script('nucleus-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery', 'modernizr', 'superfish', 'fancybox', 'headroom', 'jquery-headroom', 'tendina', 'flickity', 'flickity-fade', 'packery', 'infinite-scroll', 'jquery-smooth-scroll', 'jquery-scrollbar', 'imagesloaded', 'tinycolor', 'ionicons'), null, true);
 
 			// Enqueue Other Scripts
 			wp_localize_script( 'nucleus-js-main', 'theme_ajax', array(
@@ -195,14 +193,14 @@
 		if ( !is_admin() ) {
 
 			// Plugin Styles
-			wp_enqueue_style('normalize.css', NUCLEUS_VENDORS_URI . '/normalize.css/normalize.css');
-			wp_enqueue_style('balloon.css', NUCLEUS_VENDORS_URI . '/balloon.css/balloon.min.css');
+			wp_enqueue_style('normalize', NUCLEUS_VENDORS_URI . '/normalize.css/normalize.css');
+			wp_enqueue_style('balloon', NUCLEUS_VENDORS_URI . '/balloon.css/balloon.min.css');
 			wp_enqueue_style('font-awesome', NUCLEUS_VENDORS_URI . '/font-awesome/css/all.min.css');
 			wp_enqueue_style('fancybox', NUCLEUS_VENDORS_URI . '/fancybox/jquery.fancybox.min.css');
 			wp_enqueue_style('flickity', NUCLEUS_VENDORS_URI . '/flickity/flickity.min.css');
 			wp_enqueue_style('flickity-fade', NUCLEUS_VENDORS_URI . '/flickity/flickity-fade.css');
 			wp_enqueue_style('jquery-scrollbar', NUCLEUS_VENDORS_URI . '/jquery-scrollbar/jquery.scrollbar.css');
-			wp_enqueue_style('nucleus-main', NUCLEUS_CSS_URI . '/main.css');
+			wp_enqueue_style('nucleus-main', NUCLEUS_CSS_URI . '/main.min.css');
 			wp_enqueue_style('nucleus-editor', get_template_directory_uri() . '/custom-editor-style.css');
 			
 			// Google Fonts

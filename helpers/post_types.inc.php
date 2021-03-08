@@ -36,7 +36,7 @@
 	    $output = esc_url( get_next_post_types_page_link( $max_page, $current_page ) );
 	 
 	    if ( $echo )
-	        echo wp_kses_post($output);
+	        echo wp_kses($output, 'general');
 	    else
 	        return $output;
 	}

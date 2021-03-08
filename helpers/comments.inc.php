@@ -20,7 +20,7 @@
 	        <?php if ( $comment->comment_type == 'pingback' || $comment->comment_type == 'trackback' ) { ?>
 
 	        	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-	        		<div class="author"><?php esc_html_e('Pingback:', '_nucleus') ?> <?php echo wp_kses_post( get_comment_author_link() ); ?></div>
+	        		<div class="author"><?php esc_html_e('Pingback:', '_nucleus') ?> <?php echo wp_kses( get_comment_author_link(), 'general' ); ?></div>
 
 	        <?php } else { ?>
 
@@ -41,7 +41,7 @@
 
 				            <!-- Meta -->
 				            <div class="comment-meta">
-				                <div class="author"><?php echo wp_kses_post( get_comment_author_link() ); ?></div>
+				                <div class="author"><?php echo wp_kses( get_comment_author_link(), 'general' ); ?></div>
 				                <div class="time">
 									<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
 										<?php printf( _x( '%s ago', '%s = human-readable time difference', '_nucleus' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ); ?>

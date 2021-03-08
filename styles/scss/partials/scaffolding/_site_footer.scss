@@ -48,6 +48,7 @@
 					transform: translateX(-54%);
 
 					@include breakpoint($mobile) { left: 43.5%; }
+					@include breakpoint($tablet) { left: 46%; }
 				}
 				&:after {
 					content:''; 
@@ -61,6 +62,7 @@
 					transform: translateX(-58%);
 
 					@include breakpoint($mobile) { left: 58%; }
+					@include breakpoint($tablet) { left: 54.5%; }
 				}
 				span.dot {
 					content:''; 

@@ -90,7 +90,8 @@ export default jQuery(function($) {
             });
             
             // Click Handling on Root Menu
-            $('#full-screen-menu li.menu-item-has-children a').on('click', function() {
+            $('#full-screen-menu li.menu-item-has-children a').on('click', function(e) {
+                e.preventDefault() // disable the link because we want to expand child items instead
                 $('#full-screen-menu').addClass('hide') // hide the root menu
                 let child_menu_id = $(this).parent().attr('class').split(' ').pop() // grab child menu ID
                 $(".child-menus .child-menu-wrap").removeClass('active') // hide any child menu if visible
@@ -99,7 +100,9 @@ export default jQuery(function($) {
             });
 
             // Click Handling on Child Items
-            $('.child-menus li.menu-item-has-children a').on('click', function() {
+            $('.child-menus li.menu-item-has-children a').on('click', function(e) {
+                e.preventDefault() // disable the link because we want to expand child items instead
+
                 let child_menu_id = $(this).parent().attr('class').split(' ').pop() // grab child menu ID
                 $(".child-menus .child-menu-wrap").removeClass('active') // hide any child menu if visible
                 $(".child-menus .child-menu-wrap[data-id='" + child_menu_id +"']").addClass('active')  // show only required child menu

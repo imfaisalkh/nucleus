@@ -167,13 +167,15 @@
 							letter-spacing: var(--comments-text-letter-spacing, 0);
 							text-transform: var(--comments-text-text-transform, none);
 
-							color: var(--text-color, #FFF);
-							opacity: 0.7;
 							margin: 3px 0 0 30px;
 
 							@include breakpoint($mobile)  { margin-left: 0; }
 
-							a { border: 0 !important; color: #989898; }
+							a {
+								border: 0 !important;
+								color: var(--text-color);
+								opacity: 0.6;
+							}
 						}
 					}
 				}
@@ -221,12 +223,12 @@
 
 							display: inline-block;
 							margin-top: 30px;
-							color: #3B5998;
+							color: var(--blog-accent);
 							border: 0 !important;
 							transition: all 300ms ease-in-out;
 
 							&:hover {
-								color: #3B5998;
+								color: var(--blog-accent);
 							}
 
 						}

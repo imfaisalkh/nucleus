@@ -79,6 +79,7 @@
 		--secondary-accent : #43f3b7;
 		--background-color: #FFF;
 		--text-color: #000;
+		--blog-accent: var(--primary-accent);
 	}
 
 	/** Dark Color Scheme */
@@ -87,6 +88,7 @@
 		--secondary-accent : #43f3b7;
 		--background-color: #000;
 		--text-color: #FFF;
+		--blog-accent: #e6aa4c;
 	}
 
 	/** Error Page */

@@ -52,7 +52,7 @@
             'label'    => esc_html__( 'Text Block', '_nucleus' ),
             'section'  => 'nucleus_footer_layout',
             'description'   => esc_html__('You can use <br> tag or other HTML tags here.', '_nucleus'),
-            'default'  => wp_kses_post( __('Have a Project or an idea you would like to discuss? <br> Then what are you waiting for?', '_nucleus') ),
+            'default'  => wp_kses( __('Have a Project or an idea you would like to discuss? <br> Then what are you waiting for?', '_nucleus'), 'general' ),
             'priority' => 10,
             'active_callback'  => [
                 [
@@ -68,7 +68,7 @@
             'settings' => 'nucleus_footer_v2_copyright',
             'label'    => esc_html__( 'Copyright Text', '_nucleus' ),
             'section'  => 'nucleus_footer_layout',
-            'default' => wp_kses_post( __('2021 Nucleus Theme <br> Crafted & Designed by Black Sailor.', '_nucleus') ),
+            'default' => wp_kses( __('2021 Nucleus Theme <br> Crafted & Designed by Black Sailor.', '_nucleus'), 'general' ),
             'priority' => 10,
             'active_callback'  => [
                 [
@@ -85,7 +85,7 @@
             'label'    => esc_html__( 'Contact Text', '_nucleus' ),
             'section'  => 'nucleus_footer_layout',
             'priority' => 10,
-            'default' => sprintf( wp_kses_post( __( 'Want to work with us? Lets boogie. <a href="%1$s">hello@example.com</a>.', '_nucleus' ) ), esc_url( 'mailto:hello@example.com' ) ),
+            'default' => sprintf( wp_kses( __( 'Want to work with us? Lets boogie. <a href="%1$s">hello@example.com</a>.', '_nucleus' ), 'general' ), esc_url( 'mailto:hello@example.com' ) ),
             'active_callback'  => [
                 [
                     'setting'  => 'nucleus_footer_version',

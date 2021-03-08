@@ -20,8 +20,8 @@
 						text-transform: var(--blog-detail-tag-text-transform, uppercase);
 		
 						display: inline-block;
-						color: #E6AA4C;
-						border: 1px solid #E6AA4C;
+						color: var(--blog-accent);
+						border: 1px solid var(--blog-accent);
 						border-radius: 5px;
 						padding: 3px 11px;
 						margin-bottom: 5px;

@@ -2,19 +2,6 @@
 
 
 #-------------------------------------------------------------------------------#
-#  Adds Custom Styles to WordPress Visual Editor.
-#-------------------------------------------------------------------------------#
-
-
-	function wpb_mce_buttons_2($buttons) {
-		array_unshift($buttons, 'styleselect');
-		return $buttons;
-	}
-
-	// add_filter('mce_buttons_2', 'wpb_mce_buttons_2');
-
-
-#-------------------------------------------------------------------------------#
 #  Callback function to filter the MCE settings.
 #-------------------------------------------------------------------------------#
 

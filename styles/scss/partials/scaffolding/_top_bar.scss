@@ -106,9 +106,11 @@
 				align-self: center;
 
 				ul {
+					display: flex;
 					margin: 0;
 					padding: 0;
 					list-style: none;
+
 					li {
 						font-family: var(--top-bar-menu-font-family, $secondary-font-stack);
 						font-weight: var(--top-bar-menu-variant, 400);
@@ -117,7 +119,7 @@
 						letter-spacing: var(--top-bar-menu-letter-spacing, 0);
 						text-transform: var(--top-bar-menu-text-transform, none);
 
-						margin: 10px;
+						margin: 0 10px;
 
 						a {
 							color: inherit;

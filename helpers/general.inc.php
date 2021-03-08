@@ -14,12 +14,9 @@
 
 	}
 
-
-
 #-----------------------------------------------------------------#
 # CPT Custom Functions
 #-----------------------------------------------------------------#
-
 
 	// Get array of term attr(s) of any taxonomy   
 	if ( !function_exists('nucleus_get_term_fields') ) {
@@ -43,42 +40,22 @@
 	}
 
 
-#-------------------------------------------------------------------------------#
-#  Convert Hex code to RGB code
-#-------------------------------------------------------------------------------#
+#-----------------------------------------------------------------#
+# WP KSES Allowed Tags
+#-----------------------------------------------------------------#
 
-	function nucleus_disable_wp_updates( $r, $url ) {
-	    if ( 0 !== strpos( $url, 'http://api.wordpress.org/themes/update-check' ) )
-	        return $r; // Not a theme update request. Bail immediately.
-	    $themes = unserialize( $r['body']['themes'] );
-	    unset( $themes['theme-slug'] );
-	    unset( $themes[ get_option( 'stylesheet' ) ] );
-	    $r['body']['themes'] = serialize( $themes );
-	    return $r;
-	}
-
-	add_filter( 'http_request_args', 'nucleus_disable_wp_updates', 5, 2 );
-
-
-
-#-------------------------------------------------------------------------------#
-#  Convert Hex code to RGB code
-#-------------------------------------------------------------------------------#
-
-
-	function hex2rgb($hex) {
-		$hex = str_replace("#", "", $hex);
-
-		if(strlen($hex) == 3) {
-			$r = hexdec(substr($hex,0,1).substr($hex,0,1));
-			$g = hexdec(substr($hex,1,1).substr($hex,1,1));
-			$b = hexdec(substr($hex,2,1).substr($hex,2,1));
-		} else {
-			$r = hexdec(substr($hex,0,2));
-			$g = hexdec(substr($hex,2,2));
-			$b = hexdec(substr($hex,4,2));
+	function nucleus_kses_allowed_html($tags, $context) {
+		switch($context) {
+			case 'general': 
+				$tags = array( 
+					'a' => array('href' => array()),
+					'b' => array(),
+					'br' => array()
+				);
+				return $tags;
+			default: 
+				return $tags;
 		}
-		$rgb = array($r, $g, $b);
-
-		return $rgb; // returns an array with the rgb values
 	}
+	
+	add_filter( 'wp_kses_allowed_html', 'nucleus_kses_allowed_html', 10, 2);

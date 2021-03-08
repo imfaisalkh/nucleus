@@ -4,7 +4,7 @@
 Project:		 Nucleus - Portfolio for Freelancers & Agencies.
 Version:		 1.0
 Author: 		 Faisal Khurshid
-Author URI:      http://wpscouts.net/
+Author URI:      http://blacksailor.co.uk/
 -------------------------------------------------------------------*/
 
 // Import Modules

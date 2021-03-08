@@ -95,7 +95,7 @@
 					<span class="timestamp"><?php echo esc_html__('Since', '_nucleus'); ?> <?php echo get_the_date('Y', $oldest_post_ID); ?></span>
 				<?php } ?>
 				<?php if ($header_icon) { ?>
-					<img src="<?php echo esc_url($header_icon); ?>" alt="<?php echo wp_kses_post($header_title); ?>" />
+					<img src="<?php echo esc_url($header_icon); ?>" alt="<?php echo wp_kses($header_title, 'general'); ?>" />
 				<?php } ?>
 				<?php if ($header_backdrop) { ?>
 					<span class="backdrop"><?php echo esc_html($header_backdrop); ?></span>
@@ -103,7 +103,7 @@
 				<?php if ((!$header_backdrop && (is_home() || is_archive() || is_search())) || is_singular('post')) { ?>
 					<span class="backdrop"><?php echo esc_html__('Blog', '_nucleus'); ?></span>
 				<?php } ?>
-				<h3 class="title"><?php echo wp_kses_post($header_title); ?></h3>
+				<h3 class="title"><?php echo wp_kses($header_title, 'general'); ?></h3>
 				<?php if (is_home() && get_theme_mod('nucleus_blog_featured_cats')) { ?>
 					<ul class="categories">
 						<li class="active"><a href="<?php echo esc_url( home_url('/') ); ?>">All</a></li>

@@ -406,7 +406,7 @@
 						visibility: hidden;
 					}
 					li {
-						margin: 0 15px;
+						margin: 0 30px;
 
 						@include breakpoint($mobile)  { margin: 4px 0; }
 					}

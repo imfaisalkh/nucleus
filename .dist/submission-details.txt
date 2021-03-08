@@ -1,6 +1,6 @@
 NAME:
 
-Nucleus: Portfolio for Freelancers & Agencies
+Nucleus: Portfolio WordPress Theme
 
 
 DEMO URL:
@@ -35,7 +35,6 @@ Regards
 
 ----------------------
 
-
 Thanks for looking into it. I'll address each of your raised issue in the same order:
 
 1: I've improved the contrast ratio. The text is dim because I want to keep the emphasis on the main text (i.e. links).
@@ -51,6 +50,24 @@ Thanks for looking into it. I'll address each of your raised issue in the same o
 11: I've removed the unnecessary dropcap styling. I've also fixed the admin bar overlapping issue.
 12: Fixed. Now the blog as well as page should display sidebar (on clicking the arrow at right side of the page).
 
+----------------------
+
+Following is the summary of my changes. Please re-read specially point no # 4.
+
+1: Fixed.
+3: Further improved the contrast by dimming down the background. Now (https://ibb.co/HVfGTzc), Before (https://ibb.co/cxLfhdy). Also for the comments, Before (https://ibb.co/Lv2ktrM) and After (https://ibb.co/n3TBWmv).
+4: AGAIN: The extra _ in folder name is not a design choice but a compulsion to avoid a bug in WordPress core. If I don't add this _ in theme folder name, the WordPress assumes that it is this theme (https://wordpress.org/themes/nucleus/), which obviously it is not. After assuming so WordPress display a theme update notification, and if a user clicks on it, it will overwrite my theme with the one in official theme repository. You can see more info on this bug here: (https://core.trac.wordpress.org/ticket/14179)
+5: I've added another section to this page and have updated the text to be more relevant. I want to keep this page elements to minimal since it's for freelancers.
+6: Fixed.
+7: Fixed. Some menu locations were redundantly registered. I've removed them. All menu locations works now. Please note that "Secondary" and "Top Bar" menu location will only work if relevent menu item is enabled via theme customizer.
+8: Fixed.
+9: Fixed. The CSS is auto-generated from SCSS files. I've configured it to format it in more readable style.
+10: Fixed.
+11: Fixed.
+12: Fixed.
+13: AGAIN: I'm unable to reproduce the issue on my installation. Since, the sdiebar and widgets are displaying. Watch this loom video: https://www.loom.com/share/f6953e699e53456f8c41377fdada8a12
+
 SUBMISSION DATE:
 
 07 March, 2021 (1:45 AM)
+08 March, 2021 ()

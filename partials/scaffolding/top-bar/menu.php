@@ -2,8 +2,9 @@
     <?php 
     $args = array(
         'theme_location'  => 'nucleus-top-bar-menu',
-        'menu_id'         => 'top-bar-menu',
-        'menu_class'      => 'sf-menu',
+        'menu_id'         => '',
+        'menu_class'      => '',
+        'depth'           => 1,
         'fallback_cb'     => 'nucleus_default_menu'
     );
 

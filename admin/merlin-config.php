@@ -94,8 +94,8 @@ $wizard = new Merlin(
 		'ready%s'                  => esc_html__( 'Your theme has been all set up. Enjoy your new theme by %s.', '_nucleus' ),
 		'ready-action-link'        => esc_html__( 'Extras', '_nucleus' ),
 		'ready-big-button'         => esc_html__( 'View your website', '_nucleus' ),
-		'ready-link-1'             => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'mailto:support@wpscouts.net', esc_html__( 'Get Theme Support', '_nucleus' ) ),
-		'ready-link-2'             => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'mailto:inquiry@wpscouts.net', esc_html__( 'Get Customization Quote', '_nucleus' ) ),
+		'ready-link-1'             => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'mailto:support@blacksailor.co.uk', esc_html__( 'Get Theme Support', '_nucleus' ) ),
+		'ready-link-2'             => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'mailto:inquiry@blacksailor.co.uk', esc_html__( 'Get Customization Quote', '_nucleus' ) ),
 	)
 );
 
@@ -114,9 +114,9 @@ $wizard = new Merlin(
 				'local_import_file'            => get_parent_theme_file_path( '/demo/content.xml' ),
 				'local_import_widget_file'     => get_parent_theme_file_path( '/demo/widgets.wie' ),
 				'local_import_customizer_file' => get_parent_theme_file_path( '/demo/customizer.dat' ),
-				'import_preview_image_url'     => 'https://demo.wpscouts.net/nucleus/wp-content/themes/nucleus/screenshot.png',
+				'import_preview_image_url'     => 'https://portfolio.blacksailor.co.uk/wp-content/themes/_nucleus/screenshot.png',
 				'import_notice'                => __( 'A special note for this import.', '_nucleus' ),
-				'preview_url'                  => 'https://demo.wpscouts.net/nucleus/',
+				'preview_url'                  => 'https://portfolio.blacksailor.co.uk/',
 			),
 		);
 	}

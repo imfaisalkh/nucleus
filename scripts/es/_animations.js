@@ -61,9 +61,11 @@ export default jQuery(function($) {
 
                 /** animate-in whole container */
                 processLocalLinks: function(){
+                    // comma seperate list of links to exclude
+                    let exclude_links = 'li.menu-item-has-children a, a.native-link'
 
                     /** identify all local links */
-                    $('a:not([href*=\\#])').filter(function() {
+                    $('a:not([href*=\\#])').not(exclude_links).filter(function() {
                         return this.hostname && this.hostname === location.hostname;
                     }).addClass('local-link');
 
@@ -73,7 +75,7 @@ export default jQuery(function($) {
                     });
 
                     /** animate-out when a local-link is clicked */
-                    $('a.local-link').not('a.native-link').on( 'click' , function() {
+                    $('a.local-link').on( 'click' , function() {
                         $('#site-container').removeClass('animate-in');
                         $('.preloader').fadeIn();
                     });

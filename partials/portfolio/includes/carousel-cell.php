@@ -50,10 +50,10 @@
 <article id="carousel-post-<?php the_ID(); ?>" <?php post_class("carousel-cell"); ?> data-primary-accent-color="<?php echo esc_attr($primary_accent); ?>" data-secondary-accent-color="<?php echo esc_attr($secondary_accent); ?>" data-bg-color="<?php echo esc_attr($background_color); ?>" data-text-color="<?php echo esc_attr($text_color); ?>">
     
     <figure class="entry-thumbnail" data-size="<?php echo esc_attr($image_size); ?>">
-        <img class="primary" src="<?php echo esc_url($folio_carousel_image); ?>" alt="<?php the_title(); ?>">
+        <img class="primary" src="<?php echo esc_url($folio_carousel_image); ?>" alt="<?php the_title_attribute(); ?>">
     </figure>
 
-    <a href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title(); ?>" >
+    <a href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title_attribute(); ?>" >
         <header class="entry-caption">
             <?php if ( $portfolio_style != 'forza' ) { ?>
                     <div class="inner-wrap">

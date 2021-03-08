@@ -4,7 +4,7 @@
     $is_custom_header = get_theme_mod('nucleus_header_version', 'v1') == 'custom';
     
     if (!get_query_var('header')) {
-        $header_style = get_field('site_header') != 'global' ? get_field('site_header') : get_theme_mod('nucleus_header_version', 'v1');
+        $header_style = (get_field('site_header') && get_field('site_header') != 'global') ? get_field('site_header') : get_theme_mod('nucleus_header_version', 'v1');
     } else {
         $header_style = get_query_var('header');
     }
@@ -13,7 +13,6 @@
     $header_left_elements = [];
     $header_center_elements = [];
     $header_right_elements = [];
-
 
     if (!$is_custom_header) {
         switch ($header_style) {

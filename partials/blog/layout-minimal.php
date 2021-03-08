@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="inner-wrap">
 		<?php if (has_post_thumbnail()) { ?>
-			<img class="entry-thumb" src="<?php the_post_thumbnail_url('nucleus-blog-minimal'); ?>" alt="<?php the_title(); ?>">
+			<img class="entry-thumb" src="<?php the_post_thumbnail_url('nucleus-blog-minimal'); ?>" alt="<?php the_title_attribute(); ?>">
 		<?php } ?>
 		<h3 class="entry-title">
 			<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
