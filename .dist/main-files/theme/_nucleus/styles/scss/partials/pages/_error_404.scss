@@ -1,0 +1,55 @@
+/*========================================================
+  0.  ERROR 404 
+========================================================== */
+	
+	body.error404 {
+		background-image: url(../../images/switch-bg.svg);
+		background-position: 90% calc(100% + 100px);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+
+		@include breakpoint($full-hd) { background-position: 80% bottom; }
+	}
+
+
+	.error404 {
+		position: relative;
+
+		#main-content {
+			text-align: center;
+
+			#page-content {
+				padding-top: 90px;
+
+				.title {
+					font-family: $tertiary-font-stack;
+					line-height: 0.8;
+					font-weight: 600;
+					margin: 0;
+
+					@include breakpoint($mobile) { font-size: 118px; }
+					@include breakpoint($tablet) { font-size: 200px; }
+					@include breakpoint($no-touch) { font-size: 250px; }
+				}
+				.caption {
+					font-weight: 300;
+					line-height: 1.2;
+					margin: 60px 0;
+					opacity: 0.7;
+
+					@include breakpoint($mobile) { font-size: 24px; margin: 30px 0; }
+					@include breakpoint($tablet) { font-size: 30px; }
+					@include breakpoint($no-touch) {font-size: 28px; }
+				}
+				.button {
+					margin: 0;
+					color: #FFF;
+
+					&:hover {
+						background: #000;
+						border-color: #000;
+					}
+				}
+			}
+		}
+	}

@@ -1,0 +1,284 @@
+/*========================================================
+  6.  SINGLE
+========================================================== */
+
+/*---------------------------------------------------------
+ General (_blog.scss)
+-------------------------------------------------------- */
+
+	.single-post {
+
+		#page-header {
+			.inner-wrap {
+				.category {
+					a {
+						font-family: var(--blog-detail-tag-font-family, $secondary-font-stack);
+						font-weight: var(--blog-detail-tag-variant, 400);
+						font-size: var(--blog-detail-tag-font-size, 14px);
+						line-height: var(--blog-detail-tag-line-height, 1.5);
+						letter-spacing: var(--blog-detail-tag-letter-spacing, 1px);
+						text-transform: var(--blog-detail-tag-text-transform, uppercase);
+		
+						display: inline-block;
+						color: var(--blog-accent);
+						border: 1px solid var(--blog-accent);
+						border-radius: 5px;
+						padding: 3px 11px;
+						margin-bottom: 5px;
+					}
+				}
+				.title {
+					@include breakpoint($mobile) { font-size: 48px; }
+				}
+				.date {
+
+				}
+			}
+		}
+
+		#page-content {
+			width: 75%;
+			margin: 0 auto;
+
+			@include breakpoint($touch) { width: 100%; }
+
+			> .post {
+				margin-bottom: 30px;
+				padding-top: 10px;
+				margin: 0 auto;
+
+				.entry-media {
+					margin: 0 0 2em 0;
+					width: 112%;
+					margin-left: -6%;
+			
+					@include breakpoint($mobile)  { width: auto; margin-left: auto;  }
+
+					img { width: 100%; height: auto; }
+
+				}
+
+				/** Entry Content */
+				.entry-content {
+					font-family: var(--blog-detail-body-font-family, $secondary-font-stack);
+					font-weight: var(--blog-detail-body-variant, 400);
+					font-size: var(--blog-detail-body-font-size, 18px);
+					line-height: var(--blog-detail-body-line-height, 1.65);
+					letter-spacing: var(--blog-detail-body-letter-spacing, 0);
+					text-transform: var(--blog-detail-body-text-transform, none);
+
+					color: var(--text-color);
+					line-height: 1.65;
+
+					p.drop-cap {
+						&::first-letter {
+							font-family: var(--primary-font-stack, $primary-font-stack);
+							font-size: 110px;
+							color: #515151;
+							color: var(--text-color);
+							opacity: 0.3;
+							float: left;
+							line-height: 0.65;
+							margin: 0.1em 0.1em 0.2em 0;
+						}
+					}
+					
+					p:first-of-type { clear: both; }
+
+					a {
+						color: #fff;
+						border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+				    	transition: all 300ms linear;
+
+						&:hover {
+							border-bottom: 1px solid #ffea36;
+						}
+					}
+
+
+					img {
+						max-width: 100%;
+						height: auto;
+					}
+
+					p.lead-text {
+						color: var(--primary-accent);
+						font-size: 24px;
+						font-weight: 300;
+						margin-bottom: 36px;
+						
+						@include breakpoint($mobile)  { font-size: 18px;}
+					}
+				}
+
+				// Entry Footer
+				.entry-footer {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-end;
+					flex-wrap: wrap;
+					clear: both;
+					margin-top: 60px;
+
+					.author {
+						display: flex;
+						flex-direction: column;
+						span {
+							font-family: var(--blog-detail-body-font-family, $secondary-font-stack);
+							font-weight: var(--blog-detail-body-variant, 400);
+							// font-size: var(--blog-detail-body-font-size, 18px);
+							line-height: var(--blog-detail-body-line-height, 1.65);
+							letter-spacing: var(--blog-detail-body-letter-spacing, 0);
+							text-transform: var(--blog-detail-body-text-transform, none);
+
+							font-size: 20px;
+							position: relative;
+							color: #696969;
+
+							&:after {
+								content: '';
+								display: inline-block;
+								position: absolute;
+								top: 50%;
+								width: 80px;
+								height: 1px;
+								background: #696969;
+								margin-left: 15px;
+							}
+						}
+						a {
+							font-family: var(--blog-detail-title-font-family, $primary-font-stack);
+							font-weight: var(--blog-detail-title-variant, 400);
+							// font-size: var(--blog-detail-title-font-size, 43px);
+							line-height: var(--blog-detail-title-line-height, 1.65);
+							letter-spacing: var(--blog-detail-title-letter-spacing, 0);
+							text-transform: var(--blog-detail-title-text-transform, none);
+
+							display: inline-block;
+							font-size: 43px;
+							color: var(--text-color);
+
+							@include breakpoint($mobile)  { font-size: 36px; }
+						}
+					}
+
+					.pagination {
+						display: flex;
+						justify-content: center;
+						margin-top: 60px;
+					
+						.screen-reader-text {
+							display: inline-block;
+							line-height: 30px;
+							margin-right: 15px;
+							color: var(--text-color);
+							opacity: 0.5;
+						}
+					
+						.nav-links {
+							.post-page-numbers {
+								.page-numbers {
+									display: inline-block;
+									width: 30px;
+									height: 30px;
+									line-height: 30px;
+									border-radius: 7px;
+									text-align: center;
+									color: var(--text-color);
+								}
+					
+								&.current {
+									.page-numbers {
+										color: var(--menu-text);
+										background: var(--menu-background);
+									}
+								}
+							}
+							.next, .prev { display: none; }
+						}
+					}
+
+					.meta {
+						width: 100%;
+						display: flex;
+						justify-content: space-between;
+						border-top: 2px solid var(--border-color); // #363636
+						margin-top: 30px;
+						padding-top: 20px;
+
+						.title {
+							font-family: $secondary-font-stack;
+							font-size: 16px;
+							text-transform: uppercase;
+							color: #696969;
+							letter-spacing: 1px;
+						}
+
+						ul {
+							display: flex;
+							flex-wrap: wrap;
+							list-style: none;
+							margin: -12px 0 0 0; padding: 0;
+
+							li {
+								background: var(--tag-background);
+								border-radius: 5px;
+								padding: 2px 15px;
+								margin: 12px 12px 0 0;
+								text-align: center;
+
+								&:last-child { margin-right: 0; }
+
+								a {
+									color: var(--text-color);
+								}
+							}
+						}
+
+						.post-tags {
+							flex: 1;
+						}
+						.post-categories {
+							flex: 1;
+							text-align: right;
+							
+							ul {
+								flex-direction: row-reverse;
+
+								li {
+									margin: 12px 0 0 12px;
+								}
+							}
+						}
+					}
+				}
+
+			}
+
+		}
+
+		.load-more {
+			margin: 0 auto;
+			width: 900px;
+		}
+
+
+	}
+
+/** == POST PASSWORD FORM == */
+/** ================================================== */
+
+	.post-password-form {
+		clear: both;
+		> p {
+			position: relative;
+
+			input[type="password"] { margin-top: 15px; }
+
+			input[type="submit"] {
+				position: absolute;
+				bottom: 1px; right: 0;
+				border-radius: 0 5px 5px 0 !important;
+			}
+		}
+	}

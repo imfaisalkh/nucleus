@@ -1,0 +1,107 @@
+
+/** == SECONDARY CAROUSEL == */
+/** ================================================== */
+
+  .blog-module[data-layout="carousel-regular"] {
+    position: relative;
+
+    /* Module Title */
+    .title {
+      font-family: var(--secondary-font-stack);
+      font-size: 17px;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 2px;
+      transform-origin: 0;
+      margin-bottom: 60px;
+    }
+
+    /* Posts Loop */
+    .posts-loop {
+
+      [class^="post"], [class*=" post"] {
+        margin-bottom: 45px;
+        margin-right: 35px;
+
+        @include breakpoint($laptop) { width: 450px; }
+        @include breakpoint($full-hd) { width: 450px; }
+
+        // &:nth-of-type(odd) { width: 510px; }
+        // &:nth-of-type(even) { width: 235px; }
+
+        .entry-thumbnail {
+          margin: 0 0 15px 0;
+          img { max-width: 100%; }
+        }
+        .entry-content {
+
+          .entry-meta {
+            display: flex;
+            align-items: center;
+
+            .category, .date {
+              font-family: var(--secondary-font-stack);
+              font-size: 14px;
+              color: #929292;
+              color: var(--primary-accent);
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+            }
+            .date { display: none; }
+          }
+
+          .entry-title {
+            font-family: var(--tertiary-font-stack);
+            font-size: 22.5px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-top: 5px; margin-bottom: 10px;
+
+            a {
+              color: inherit;
+              border-bottom: 1px solid transparent !important;
+              transition: all 300ms linear;
+
+              &:hover {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25) !important;
+              }
+            }
+          }
+          .entry-excerpt { display: none; }
+          .read-more {
+            display: flex;
+            align-items: center;
+            font-family: var(--secondary-font-stack);
+            font-size: 15.5px;
+            color: #161616;
+
+            &:before {
+              display: block;
+              content: "";
+              border-top: 1px solid;
+              width: 1em;
+              margin-right: .5em;
+            }         
+          }
+        }
+      }
+
+    }
+
+    /* Arrows Nav */
+    .flickity-prev-next-button {
+      top: 30%;
+      background: transparent;
+      font-size: 30px;
+      opacity: 0;
+      @include breakpoint($full-hd) { opacity: 1; }
+      &.previous {
+        @include breakpoint($full-hd) { left: -60px; }
+      }
+      &.next {
+        @include breakpoint($full-hd) { right: -60px; }
+        transform: rotate(180deg);
+      }
+    }
+
+  }

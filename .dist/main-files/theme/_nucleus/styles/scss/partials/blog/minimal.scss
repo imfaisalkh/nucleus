@@ -1,0 +1,235 @@
+/*========================================================
+  0.  BLOG 
+========================================================== */
+
+
+
+/** == LOOP == */
+/** ================================================== */
+
+.blog-minimal-inner {
+	position: relative;
+	margin: 60px auto;
+	// width: 1140px;
+	// @include breakpoint($touch)   { width: 100%; }
+	// @include breakpoint($laptop)  { width: 1000px; }
+	// @include breakpoint($retina)  { width: 1000px; }
+
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	counter-reset: my-badass-counter;
+
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		border-left: 1px solid rgba(255, 255, 255, 0.15);
+		transform: translate(-50%);
+		@include breakpoint($touch)  { border: 0; }
+	}
+
+
+	[class^="post"], [class*=" post"] {
+		position: relative;
+		width: 44%;
+		display: flex;
+		margin-bottom: 45px;
+
+		@include breakpoint($touch) { width: 100%; }
+
+		// @include animate-this(); // CSS-3 animation is triggered via JS
+
+		&:nth-last-child(-n+2) {
+			@include breakpoint($no-touch)  { margin-bottom: 0; }
+		}
+
+		&:before {
+			font-family: var(--blog-minimal-counter-font-family, $primary-font-stack);
+			font-weight: var(--blog-minimal-counter-variant, 800);
+			font-size: var(--blog-minimal-counter-font-size, 26px);
+			line-height: var(--blog-minimal-counter-line-height, 1);
+			letter-spacing: var(--blog-minimal-counter-letter-spacing, 0);
+			text-transform: var(--blog-minimal-counter-text-transform, none);
+
+			color: #E6AA4C;
+			content: counter(my-badass-counter)".";
+			counter-increment: my-badass-counter;
+			margin-right: 25px;
+		}
+
+		.inner-wrap { max-width: calc(100% - 50px); }
+
+		.entry-thumb {
+			position: absolute;
+			width: 50%;
+			object-fit: contain;
+			transform: translateX(-50%) translateY(-50%);
+			top: 50%;
+			left: 50%;
+			z-index: 10;
+			opacity: 0;
+			visibility: hidden;
+			
+			@include animate-this(); // CSS-3 animation is triggered via JS
+		}
+
+		.entry-title {
+			font-family: var(--blog-minimal-title-font-family, $primary-font-stack);
+			font-weight: var(--blog-minimal-title-variant, 400);
+			font-size: var(--blog-minimal-title-font-size, 26px);
+			line-height: var(--blog-minimal-title-line-height, 1.3);
+			letter-spacing: var(--blog-minimal-title-letter-spacing, 0);
+			text-transform: var(--blog-minimal-title-text-transform, none);
+	
+			-ms-word-wrap: break-word;
+			word-wrap: break-word;
+			margin: 0;
+
+			@include breakpoint($mobile)  { font-size: 22px; }
+			@include breakpoint($tablet)  { font-size: 23px; }
+
+			a {
+				color: #fff;
+				
+				background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
+				background-size: 0% 1px;
+				background-position: 0 calc(100% + 0px);
+				background-repeat: no-repeat;
+				transition: all 200ms linear;
+
+				&:hover {
+					background-size: 100% 1px;
+				}
+			}
+
+		}
+
+		.timestamp {
+			font-family: var(--blog-minimal-meta-font-family, $secondary-font-stack);
+			font-weight: var(--blog-minimal-meta-variant, 600);
+			font-size: var(--blog-minimal-meta-font-size, 14px);
+			line-height: var(--blog-minimal-meta-line-height, 1.3);
+			letter-spacing: var(--blog-minimal-meta-letter-spacing, 0);
+			text-transform: var(--blog-minimal-meta-text-transform, uppercase);
+
+			color: #737373;
+			a { color: inherit; }
+			@include breakpoint($retina)  { font-size: 13px; }
+		}
+
+		&.sticky {
+			.entry-title {
+
+				a {
+					margin-right: 10px;
+				}
+
+				span.featured {
+					display: inline-block;
+					background: var(--backdrop-color);
+					border-radius: 5px;
+					color: var(--text-color);
+					padding: 3px 12px;
+					font-family: $secondary-font-stack;
+					font-size: 16px;
+					font-weight: 400;
+				}
+			}
+		}
+
+	}
+}
+
+
+/** == LOAD MORE == */
+/** ================================================== */
+
+
+.load-more {
+	width: 100%;
+	margin: 60px 0 0 0;
+	text-align: center;
+	background: #2D2D2D url('../../images/load-more-bg.png') repeat-x center center;
+	border-radius: 3px;
+	height: 60px;
+	line-height: 60px;
+
+	font-family: $secondary-font-stack;
+	font-size: 16px;
+	color: #95989A;
+
+	// @include breakpoint($laptop)  	  { margin: 60px 0 0 0; }
+	
+	a { border: 0 !important; }
+
+	a:hover {
+		border: 0 !important;
+	}
+
+	.portfolio-container[data-load-trigger="scroll"] ~ &,
+	.blog-container[data-load-trigger="scroll"] ~ &
+	{
+		display: none;
+	}
+
+	a {
+		display: block;
+		font-family: inherit;
+		font-size: inherit;
+		color: inherit;
+	}
+}
+
+body.light-base-color-scheme {
+	.load-more {
+		background: #b7b7b7;
+		color: #fff;
+	}
+}
+
+
+/** == INSTAGRAM MODULE == */
+/** ================================================== */
+
+	#instagram-module {
+		#sb_instagram {
+			#sbi_images {
+				position: relative;
+				display: flex;
+				flex-wrap: wrap;
+
+				&:after {
+					display: inline-block;
+					position: absolute;
+					left: 50%; top: 50%;
+					transform: translateX(-50%) translateY(-50%);
+					background: #FFF;
+					color: #000;
+					content: 'Instagram Photostream';
+					border-radius: 5px;
+					font-size: 15.5px;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					height: 40px;
+					line-height: 40px;
+					padding: 0 15px;
+
+					@include breakpoint($mobile) { height: auto; text-align: center; line-height: 1.6; padding: 7px 15px; }
+				}
+
+				.sbi_item {
+					@include breakpoint($mobile) { width: 50%; height: 165px; }
+					@include breakpoint($tablet) { width: 25%; height: 162px; }
+
+					@include breakpoint($touch) {
+						&:nth-child(n+5) { display: none; }
+					}
+				}
+			}
+		}
+	}

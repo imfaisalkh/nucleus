@@ -1,0 +1,590 @@
+{
+    "key": "group_592ced5df197b",
+    "title": "Page Style",
+    "fields": [
+        {
+            "key": "field_60082a96cb9c5",
+            "label": "Custom Logo",
+            "name": "custom_logo",
+            "type": "image",
+            "instructions": "Upload a page specific version of logo.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5a401df03c05d",
+            "label": "Base Color Scheme",
+            "name": "base_color_scheme",
+            "type": "radio",
+            "instructions": "Choose a base color scheme for the page.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "dark": "Dark",
+                "light": "Light",
+                "custom": "Custom"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "dark",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5977b056496e0",
+            "label": "Base Colors",
+            "name": "base_colors",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a401df03c05d",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6008272f3cbd3",
+                    "label": "Primary Accent",
+                    "name": "primary_accent",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#ffea36"
+                },
+                {
+                    "key": "field_600827433cbd4",
+                    "label": "Secondary Accent",
+                    "name": "secondary_accent",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#43f3b7"
+                },
+                {
+                    "key": "field_6008299fb17dd",
+                    "label": "Background Color",
+                    "name": "background_color",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#000"
+                },
+                {
+                    "key": "field_600829a7b17de",
+                    "label": "Text Color",
+                    "name": "text_color",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#FFF"
+                }
+            ]
+        },
+        {
+            "key": "field_6029474f527f4",
+            "label": "Form Color Scheme",
+            "name": "form_color_scheme",
+            "type": "radio",
+            "instructions": "If you choose dynamic, the color scheme will be auto-generated based on base colors.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "dynamic": "Dynamic",
+                "custom": "Custom"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "dark",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_60293b6244264",
+            "label": "Form - Text Colors",
+            "name": "form_text_colors",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6029474f527f4",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_60293b6244265",
+                    "label": "Label Color",
+                    "name": "label",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#ffea36"
+                },
+                {
+                    "key": "field_60293b6244266",
+                    "label": "Req. Symbol Color",
+                    "name": "required",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#43f3b7"
+                }
+            ]
+        },
+        {
+            "key": "field_602938de1c41b",
+            "label": "Form - Field Colors",
+            "name": "form_field_colors",
+            "type": "group",
+            "instructions": "This applies to following to all input type fields, except button.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6029474f527f4",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_602938de1c41c",
+                    "label": "Background Color",
+                    "name": "background",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#ffea36"
+                },
+                {
+                    "key": "field_602938de1c41d",
+                    "label": "Border Color",
+                    "name": "border",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#43f3b7"
+                },
+                {
+                    "key": "field_602938de1c41f",
+                    "label": "Text Color",
+                    "name": "text",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#FFF"
+                },
+                {
+                    "key": "field_602939551c420",
+                    "label": "Background Color <small>(Focus)<\/small>",
+                    "name": "background_focus",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#ffea36"
+                },
+                {
+                    "key": "field_602939861c421",
+                    "label": "Border Color <small>(Focus)<\/small>",
+                    "name": "border_focus",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#43f3b7"
+                },
+                {
+                    "key": "field_6029398d1c422",
+                    "label": "Text Color <small>(Focus)<\/small>",
+                    "name": "text_focus",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#FFF"
+                }
+            ]
+        },
+        {
+            "key": "field_60293a6d49f9b",
+            "label": "Form - Button Colors",
+            "name": "form_button_colors",
+            "type": "group",
+            "instructions": "This applies to the button.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6029474f527f4",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_60293a6d49f9c",
+                    "label": "Background Color",
+                    "name": "background",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#ffea36"
+                },
+                {
+                    "key": "field_60293a6d49f9d",
+                    "label": "Border Color",
+                    "name": "border",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#43f3b7"
+                },
+                {
+                    "key": "field_60293a6d49f9e",
+                    "label": "Text Color",
+                    "name": "text",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#FFF"
+                },
+                {
+                    "key": "field_60293a6d49f9f",
+                    "label": "Background Color <small>(Hover)<\/small>",
+                    "name": "background_hover",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#ffea36"
+                },
+                {
+                    "key": "field_60293a6d49fa0",
+                    "label": "Border Color <small>(Hover)<\/small>",
+                    "name": "border_hover",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#43f3b7"
+                },
+                {
+                    "key": "field_60293a6d49fa1",
+                    "label": "Text Color <small>(Hover)<\/small>",
+                    "name": "text_hover",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#FFF"
+                }
+            ]
+        },
+        {
+            "key": "field_602947cf527f5",
+            "label": "Menu Color Scheme",
+            "name": "menu_color_scheme",
+            "type": "radio",
+            "instructions": "If you choose dynamic, the color scheme will be auto-generated based on base colors.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "dynamic": "Dynamic",
+                "custom": "Custom"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "dark",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_60293e31bfe73",
+            "label": "Menu Colors",
+            "name": "menu_colors",
+            "type": "group",
+            "instructions": "This applies to the button.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602947cf527f5",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_60293e31bfe74",
+                    "label": "Background Color",
+                    "name": "background",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#ffea36"
+                },
+                {
+                    "key": "field_60293e31bfe76",
+                    "label": "Text Color",
+                    "name": "text",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#FFF"
+                },
+                {
+                    "key": "field_60293e31bfe77",
+                    "label": "Background Color <small>(Hover)<\/small>",
+                    "name": "background_hover",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#ffea36"
+                },
+                {
+                    "key": "field_60293e31bfe79",
+                    "label": "Text Color <small>(Hover)<\/small>",
+                    "name": "text_hover",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#FFF"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "portfolio"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1613318285
+}

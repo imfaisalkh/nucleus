@@ -1,0 +1,180 @@
+/** == GENERAL == */
+/** ================================================== */
+
+    body.portfolio-horizon,
+    body.portfolio-spotlight,
+    body.portfolio-forza,
+    body.portfolio-textual,
+    body.portfolio-columns
+    {
+        overflow: hidden;
+
+        #site-body {
+            position: absolute;
+            left: 0; top: 0; right: 0; bottom: 0;
+
+            #main-content {
+                margin: 0;
+                height: calc(100% - 100px);
+                transform: translateY(100px);
+            }
+
+            #page-content, .portfolio-container {
+                margin: 0;
+                height: 100%;
+            }
+            .portfolio-container  {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+/** == HORIZON CAROUSEL == */
+/** ================================================== */
+
+    #horizon-slider {
+        position: relative;
+        display: flex;
+        align-items: center;
+        z-index: 10; // make it beneath menu
+        
+        // Progress Bar
+        .progress-bar {
+            @extend .slider-progress-bar;
+            @include make-full-width();
+        }
+
+        // All Works
+        .all-works {
+            @extend .all-works;
+        }
+
+        // Counter
+        .counter {
+            @extend .counter;
+        }
+        
+        // Main Carousel
+        .main-carousel {
+            width: 100%;
+            height: 100%;
+            
+            // Dots
+            .flickity-page-dots {
+                @extend .slider-page-dots;
+                text-align: center;
+                bottom: 30px;
+                padding: 0;
+            }
+
+            // Arrows 
+            .flickity-prev-next-button {
+                @extend .flickity-prev-next-button;
+
+                @include breakpoint($touch) { display: none; }
+
+                &.flickity-button {
+                    &.previous {
+                        @include breakpoint($mobile) { left: 10px; }
+                    }
+                    &.next {
+                        @include breakpoint($mobile) { right: 25px; }
+                    }
+                }
+            }
+            
+            // Viewport
+            .flickity-viewport {
+                height: 100% !important;
+                overflow: visible !important;
+
+                @include breakpoint($mobile) { transform: translateY(-10%) }
+                @include breakpoint($tablet) { transform: translateY(-5%) }
+
+                .flickity-slider {
+                    height: 100% !important;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+
+                    .carousel-cell {
+                        position: relative;
+                        text-align: center;
+                        width: 80%;
+                        height: auto; /* height of carousel */
+                        padding: 0 15%;
+                        overflow: hidden;
+
+                        @include breakpoint($touch) { width: 100%; padding: 0 3%; overflow: visible; }
+                        @include breakpoint($full-hd)  { width: 85%; padding: 0 15%; }
+
+                        .entry-thumbnail {
+                            display: block;
+                            width: 100%;
+
+                            @include breakpoint($touch) { margin: 0; }
+
+                            img {
+                                border-radius: 5px;
+                                width: 100%;
+                            }
+                        }
+
+                        .entry-caption {
+                            @include animate-this(); // CSS-3 animation is triggered via addition of '.is-selected' class
+                            position: absolute;
+                            left: 19%;
+                            top: 50%;
+                            transform: translateY(-50%) translateX(-50%);
+                            text-align: left;
+
+                            @include breakpoint($touch) {
+                                transform: translateY(0) translateX(0) !important;
+                                width: 100%;
+                                left: 0;
+                                right: 0;
+                                top: auto;
+                                bottom: -125px;
+                                text-align: center;
+                            }
+
+                            @include breakpoint($mobile) { bottom: -75px; }
+
+                            .inner-wrap {
+                                .entry-title {
+                                    font-size: 48px;
+                                    font-weight: 400;
+                                    margin: 0;
+
+                                    @include breakpoint($mobile) { font-size: 32px; line-height: 1.2; }
+                                }
+                                .entry-meta {
+                                    font-size: 14px;
+                                    text-transform: uppercase;
+                                    letter-spacing: 1px;
+                                    color: #696969;
+                                }
+                            }
+                        }
+
+                        /* animate-in carousel description when selected */
+                        &.is-selected {
+                            // @include breakpoint($mobile) { margin: 0 15px; }
+
+                            .entry-caption {
+                                opacity: 1;
+                                visibility: visible;
+                                transform: translate3d(-50%, -56%, 0);
+                                transition-delay: 600ms;
+
+                                @include breakpoint($touch) { transform: translate3d(13%, -40%, 0); }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

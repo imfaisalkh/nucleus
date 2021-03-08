@@ -1,0 +1,97 @@
+/*========================================================
+  0.  TEAM
+========================================================== */
+
+    .team-grid {
+        .grid-item {
+            .member-photo {}
+            .member-details {
+                .title {
+                    font-size: 28px;
+                    margin: 0;
+                }
+                .position {
+                    font-family: $secondary-font-stack;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    color: #6F6F6F;
+                }
+                p {
+                    font-size: 17px;
+                    color: #6A6666;
+                    margin-bottom: 10px;
+                }
+                ul.social-profiles {
+                    list-style: none;
+                    display: flex;
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+                        font-size: 22px;
+                        margin-right: 10px;
+                        a {
+                            color: #848484;
+
+                            &:hover {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+/*========================================================
+  0.  TESTIMONIALS
+========================================================== */
+
+    .testimonials-carousel {
+        background: #EFE6DD;
+        border-radius: 5px;
+        padding: 35px 50px;
+        margin-bottom: 30px;
+
+        // Testimonial
+        .testimonial {
+            width: 100%;
+            color: #040404;
+
+            .review {
+                margin: 0;
+                font-family: $secondary-font-stack;
+                font-size: 18px;
+                font-weight: 300;
+                font-style: normal;
+                letter-spacing: 0;
+                margin-bottom: 15px;
+                padding: 3px 0 15px 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+            .author {
+                font-family: $secondary-font-stack;
+                font-style: normal;
+                .name {
+                    display: block;
+                    font-style: 16px;
+                    font-weight: 500;
+                }
+                .position {
+                    display: block;
+                    font-style: 14px;
+                    color: #646464;
+                }
+            }
+        }
+
+        // Page Dots
+        .flickity-page-dots {
+            @extend .slider-page-dots;
+            bottom: -40px;
+            padding: 0;
+        }
+    }

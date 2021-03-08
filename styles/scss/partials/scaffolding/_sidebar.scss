@@ -46,7 +46,7 @@
         width: 530px;
         height: 100%;
         background: var(--background-color);
-        z-index: 20;
+        z-index: 90;
         padding: 120px 70px;
         transition: right 300ms ease-in-out;
 
@@ -154,7 +154,7 @@
 					-webkit-appearance: none;
 					border-radius: 0;
 					z-index: 100;
-					color: #FFF;
+					color: var(--text-color);
 				}
 
 				input[type="submit"] {
@@ -162,7 +162,7 @@
 				}
 
 				::placeholder {
-					color: #E6AA4C;
+					color: var(--blog-accent);
 					opacity: 1;
 				}
 			}
@@ -205,7 +205,7 @@
 					color: var(--text-color);
 					padding: 0;
 					text-decoration: none;
-					background-image: linear-gradient(var(--primary-accent), var(--secondary-accent));
+					background-image: linear-gradient(var(--primary-accent), var(--primary-accent));
 					background-size: 0% 1px;
 					background-position: 0 calc(100% + 0px);
 					background-repeat: no-repeat;
@@ -260,7 +260,7 @@
 						letter-spacing: var(--blog-minimal-counter-letter-spacing, 0);
 						text-transform: var(--blog-minimal-counter-text-transform, none);
 			
-						color: #E6AA4C;
+						color: var(--blog-accent);
 						content: counter(my-badass-counter)".";
 						counter-increment: my-badass-counter;
 						margin-right: 15px;
@@ -323,7 +323,7 @@
 						letter-spacing: var(--blog-minimal-counter-letter-spacing, 0);
 						text-transform: var(--blog-minimal-counter-text-transform, none);
 			
-						color: #E6AA4C;
+						color: var(--blog-accent);
 						content: counter(my-badass-counter)".";
 						counter-increment: my-badass-counter;
 						margin-right: 15px;
@@ -504,7 +504,7 @@
 						letter-spacing: var(--blog-minimal-counter-letter-spacing, 0);
 						text-transform: var(--blog-minimal-counter-text-transform, none);
 			
-						color: #E6AA4C;
+						color: var(--blog-accent);
 						content: counter(my-badass-counter)".";
 						counter-increment: my-badass-counter;
 						margin-right: 15px;

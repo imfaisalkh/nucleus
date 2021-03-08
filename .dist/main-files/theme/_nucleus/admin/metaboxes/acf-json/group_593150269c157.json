@@ -1,0 +1,160 @@
+{
+    "key": "group_593150269c157",
+    "title": "Folio Details",
+    "fields": [
+        {
+            "key": "field_59315035bdbd6",
+            "label": "Portfolio Page",
+            "name": "portfolio_page",
+            "type": "page_link",
+            "instructions": "Choose the master page for this folio. If you are not using multiple portfolios and don't want to set this page for each folio, you can set this page globally from 'Appearance > Customize > Portfolio'.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 1,
+            "allow_archives": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_5931508ebdbd7",
+            "label": "Custom URL",
+            "name": "custom_url",
+            "type": "url",
+            "instructions": "This URL will be used instead of default folio detail page. You can even enter an image or video (youtube, vimeo etc) URL here and the theme will open it in the lightbox.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_597e8607bcc78",
+            "label": "Slider Image",
+            "name": "slider_image",
+            "type": "image",
+            "instructions": "This image will be displayed as slider image if this entry is featured. Any entry can be featured through master portfolio page edit screen.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5977b7d4dc24b",
+            "label": "Thumbnail Dimension",
+            "name": "thumbnail_dimension",
+            "type": "group",
+            "instructions": "These dimentsions applies to classic grid layout.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6008332037310",
+                    "label": "Width",
+                    "name": "width",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "width-1x": "1x Width",
+                        "width-2x": "2x Width",
+                        "width-3x": "3x Width",
+                        "width-4x": "4x Width",
+                        "width-5x": "5x Width",
+                        "width-6x": "6x Width"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6008338037311",
+                    "label": "Height",
+                    "name": "height",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "height-1x": "1x Height",
+                        "height-2x": "2x Height",
+                        "height-3x": "3x Height",
+                        "height-4x": "4x Height",
+                        "height-5x": "5x Height",
+                        "height-6x": "6x Height"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "portfolio"
+            }
+        ]
+    ],
+    "menu_order": 30,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1611150523
+}

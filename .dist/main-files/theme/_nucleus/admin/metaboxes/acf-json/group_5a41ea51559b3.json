@@ -1,0 +1,121 @@
+{
+    "key": "group_5a41ea51559b3",
+    "title": "Page Background",
+    "fields": [
+        {
+            "key": "field_5a41ea516e801",
+            "label": "Background Image",
+            "name": "background_image",
+            "type": "image",
+            "instructions": "Set a background image for this page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_60170414907c2",
+            "label": "Background Video",
+            "name": "background_video",
+            "type": "file",
+            "instructions": "If present, it will be used instead of the image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "mp4"
+        },
+        {
+            "key": "field_601714a915914",
+            "label": "Background Audio",
+            "name": "background_audio",
+            "type": "file",
+            "instructions": "This will play in addition to any video provided.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "mp3"
+        },
+        {
+            "key": "field_600851c3f87fe",
+            "label": "Background Opacity",
+            "name": "background_opacity",
+            "type": "number",
+            "instructions": "Fade out the background media (image, video) on scroll.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "0.5",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 0,
+            "max": 1,
+            "step": "0.05"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "portfolio"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1612125475
+}
