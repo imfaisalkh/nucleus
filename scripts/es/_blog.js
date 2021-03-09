@@ -18,9 +18,15 @@ export default jQuery(function($) {
 
 			// defining some data (for 'infiniteScroll')
             var $container 	 = is_blog ? $('.blog-container') : $('.grid');
-            var item 		 = is_blog ? '.blog-container .type-post' : '.grid-item';
+            var item 		 = is_blog ? '.type-post' : '.grid-item';
             var load_more 	 = '#load-more';
             var load_trigger = $container.data('load-trigger');
+
+            var max_page_count = parseInt( $(load_more).attr('data-total-pages') );
+			var post_type = $(load_more).attr('data-post-type');
+			var term_IDs = $(load_more).attr('data-term-ids');
+            var posts_per_page = $(load_more).attr('data-posts-per-page');
+            var loop_style = $(load_more).attr('data-loop-style');
             
             // let's start the engines
 			var startEngine = {
@@ -29,7 +35,24 @@ export default jQuery(function($) {
 
 					$container.infiniteScroll({
 						append: item,
-						path: '#load-more a',
+						// path: '#load-more a',
+                        path: function() {
+                            // return `url` only if the page exists
+                            if( max_page_count >=  this.pageIndex ) {
+                                var base_url = theme_ajax.ajaxurl;
+                                var params = {
+                                    action: 'nucleus_ajax_load_more',
+                                    type: post_type,
+                                    term_ids: term_IDs,
+                                    posts_per_page: posts_per_page,
+                                    loop_style: loop_style,
+                                    page: (this.pageIndex + 1),
+                                }
+                                var url = base_url + '?' + $.param( params );
+                                // alert(url)
+                                return url;
+                            }
+                        },
 						loadOnScroll: (load_trigger == 'button') ? false : true,
 						button: load_more,
 						status: '.page-load-status',
@@ -49,9 +72,16 @@ export default jQuery(function($) {
 
 					// 2: triggers when next page loaded but not appended
 					$container.on( 'load.infiniteScroll', function( event, response, path ) {
-						if (load_trigger == 'button') {
-							$(load_more).fadeIn(200); // add spinning animation while loading 
-						}
+                        let current_page = infScroll.pageIndex
+
+                        // fadeIn load-more button only if there is any page to load
+                        if( max_page_count >  current_page ) {
+                            if (load_trigger == 'button') {
+                                $(load_more).fadeIn(200); // add spinning animation while loading 
+                            }
+                        } else {
+                            $('.page-load-status').addClass('end-of-line').html('No More Content');
+                        }
 					});
 
 					// 3: triggers after items have been appended to the container

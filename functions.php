@@ -172,7 +172,7 @@
 			wp_enqueue_script('nucleus-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery', 'modernizr', 'superfish', 'fancybox', 'headroom', 'jquery-headroom', 'tendina', 'flickity', 'flickity-fade', 'packery', 'infinite-scroll', 'jquery-smooth-scroll', 'jquery-scrollbar', 'imagesloaded', 'tinycolor', 'ionicons'), null, true);
 
 			// Enqueue Other Scripts
-			wp_localize_script( 'nucleus-js-main', 'theme_ajax', array(
+			wp_localize_script( 'nucleus-main', 'theme_ajax', array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 				'query_vars' => json_encode( $wp_query->query )
 			));

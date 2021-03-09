@@ -16,15 +16,20 @@
     // WP_QUERY Arguments
     $portfolio_args = array(
         'post_type' 		=> 'portfolio',
+        'post_status'       => 'publish',
         'posts_per_page'    => $portfolio_count,
-        'tax_query' => array(
+        'paged' 		    => is_front_page() ? get_query_var( 'page' ) : get_query_var( 'paged' )
+    );
+
+    // Append 'tax_query' args if is defined
+    if ($portfolio_categories) {
+        $portfolio_args['tax_query'] = array(
             array(
                 'taxonomy' => 'portfolio_category',
                 'terms' => $portfolio_categories
             )
-        ),
-        'paged' 		    => is_front_page() ? get_query_var( 'page' ) : get_query_var( 'paged' )
-    );
+        );
+    }
 
     $portfolio_query = new WP_Query($portfolio_args);
 ?>

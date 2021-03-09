@@ -2,10 +2,22 @@
 
 	global $wp_query;
 
+	// Identity Variable(s)
 	$is_posts_page = is_home() || is_archive() || is_search();
+	$post_type = (get_post_type() == 'post') ? 'post' : 'portfolio';
 
-	$total_pages = $is_posts_page ? $wp_query->max_num_pages : $portfolio_query->max_num_pages;
+	// Source Variable(s)
+	$portfolio_categories = get_field('portfolio_categories') ? get_field('portfolio_categories') : '';
 	
+	// Style Variable(s)
+	$blog_layout = get_query_var('blog') ? get_query_var('blog') : get_theme_mod('nucleus_blog_layout', 'minimal');
+	$loop_style = get_field('portfolio_style') ? get_field('portfolio_style') : $blog_layout;
+
+	// Other Variable(s)
+	$total_pages = $is_posts_page ? $wp_query->max_num_pages : $portfolio_query->max_num_pages;
+	$posts_count = ($post_type == 'portfolio') ? $portfolio_count : get_option('posts_per_page');
+	$term_IDs = ($post_type == 'portfolio' && is_array($portfolio_categories)) ? implode(',', $portfolio_categories) : '';
+ 
 	if ($pagination_type == 'number' && !is_front_page()) {
 		$current_page = get_query_var('paged') ? get_query_var('paged') : 1;
 	} else {
@@ -29,7 +41,7 @@
 		</div>
 
 		<!-- Load More - (Button) -->
-		<div id="load-more" class="load-more" data-current-page="<?php echo esc_attr($current_page); ?>" data-total-pages="<?php echo esc_attr($total_pages); ?>" data-post-type="<?php echo get_post_type(); ?>" data-page-id="<?php echo get_queried_object_id(); ?>">
+		<div id="load-more" class="load-more" data-current-page="<?php echo esc_attr($current_page); ?>" data-total-pages="<?php echo esc_attr($total_pages); ?>" data-post-type="<?php echo esc_attr($post_type); ?>" data-page-id="<?php echo get_queried_object_id(); ?>" data-posts-per-page="<?php echo esc_attr($posts_count); ?>" data-term-ids="<?php echo esc_attr($term_IDs); ?>" data-loop-style="<?php echo esc_attr($loop_style); ?>">
 			<?php if (!$is_posts_page) {
 				next_post_types_link( __('Load More &#8230;', '_nucleus'), $total_pages, $current_page, $portfolio_query );
 			} else {
