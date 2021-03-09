@@ -9,7 +9,7 @@
 	);
 
     // append 'tax_query' args if is defined
-    if ($portfolio_categories) {
+    if ($_GET['term_ids']) {
         $portfolio_args['tax_query'] = array(
             array(
                 'taxonomy' => 'portfolio_category',
