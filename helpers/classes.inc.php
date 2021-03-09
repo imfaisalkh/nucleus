@@ -56,9 +56,21 @@
 			}
 
 			// Color Schemes
-			$classes[] 	= (get_query_var('blog') == 'magazine') ? 'light-base-color-scheme ' : (get_field('base_color_scheme', $post_ID) ? get_field('base_color_scheme', $post_ID) . '-base-color-scheme ' : 'dark-base-color-scheme ');
-			$classes[] 	= get_field('form_color_scheme') ? get_field('form_color_scheme') . '-form-color-scheme ' : 'dynamic-form-color-scheme ';
-			$classes[] 	= get_field('menu_color_scheme') ? get_field('menu_color_scheme') . '-menu-color-scheme ' : 'dynamic-menu-color-scheme ';
+			if (get_query_var('skin')) {
+				$classes[]	= get_query_var('skin') . '-base-color-scheme ';
+			} else {
+				$classes[] 	= get_field('base_color_scheme', $post_ID) ? get_field('base_color_scheme', $post_ID) . '-base-color-scheme ' : 'dark-base-color-scheme ';
+			}
+			if (get_query_var('skin_form')) {
+				$classes[]	= get_query_var('skin_form') . '-form-color-scheme ';
+			} else {
+				$classes[] 	= get_field('form_color_scheme', $post_ID) ? get_field('form_color_scheme', $post_ID) . '-form-color-scheme ' : 'dynamic-form-color-scheme ';
+			}
+			if (get_query_var('skin_menu')) {
+				$classes[]	= get_query_var('skin_menu') . '-menu-color-scheme ';
+			} else {
+				$classes[] 	= get_field('menu_color_scheme', $post_ID) ? get_field('menu_color_scheme', $post_ID) . '-menu-color-scheme ' : 'dynamic-menu-color-scheme ';
+			}
 			
 			// Portfolio & Blog Layout
 			$classes[]   = get_field('portfolio_style') ? 'portfolio-'. get_field('portfolio_style') : '';

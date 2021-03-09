@@ -93,6 +93,12 @@ export default jQuery(function($) {
                 let tag_bg = tinycolor(this.get_base_color('background')).darken(8).setAlpha(.7).toString()
                 document.body.style.setProperty('--tag-background', tag_bg);
 
+                let blog_date = tinycolor(this.get_base_color('text')).lighten(50).toString()
+                document.body.style.setProperty('--blog-date', blog_date);
+
+                let blog_categories = tinycolor(this.get_base_color('text')).lighten(30).toString()
+                document.body.style.setProperty('--blog-categories', blog_categories);
+
                 let comment_bg = tinycolor(this.get_base_color('background')).darken(6.5).setAlpha(.7).toString()
                 document.body.style.setProperty('--comment-background', comment_bg);
             }
@@ -116,6 +122,12 @@ export default jQuery(function($) {
 
                 let tag_bg = tinycolor(this.get_base_color('background')).lighten(30).setAlpha(.8).toString()
                 document.body.style.setProperty('--tag-background', tag_bg);
+
+                let blog_date = tinycolor(this.get_base_color('text')).darken(50).toString()
+                document.body.style.setProperty('--blog-date', blog_date);
+
+                let blog_categories = tinycolor(this.get_base_color('text')).darken(30).toString()
+                document.body.style.setProperty('--blog-categories', blog_categories);
 
                 let comment_bg = tinycolor(this.get_base_color('background')).lighten(6.5).setAlpha(.7).toString()
                 document.body.style.setProperty('--comment-background', comment_bg);

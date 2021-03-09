@@ -10,10 +10,6 @@
 .blog-minimal-inner {
 	position: relative;
 	margin: 60px auto;
-	// width: 1140px;
-	// @include breakpoint($touch)   { width: 100%; }
-	// @include breakpoint($laptop)  { width: 1000px; }
-	// @include breakpoint($retina)  { width: 1000px; }
 
 	display: flex;
 	justify-content: space-between;
@@ -28,7 +24,7 @@
 		top: 0;
 		bottom: 0;
 		left: 50%;
-		border-left: 1px solid rgba(255, 255, 255, 0.15);
+		border-left: 1px solid var(--border-color);
 		transform: translate(-50%);
 		@include breakpoint($touch)  { border: 0; }
 	}
@@ -56,7 +52,7 @@
 			letter-spacing: var(--blog-minimal-counter-letter-spacing, 0);
 			text-transform: var(--blog-minimal-counter-text-transform, none);
 
-			color: #E6AA4C;
+			color: var(--blog-accent);
 			content: counter(my-badass-counter)".";
 			counter-increment: my-badass-counter;
 			margin-right: 25px;
@@ -94,9 +90,9 @@
 			@include breakpoint($tablet)  { font-size: 23px; }
 
 			a {
-				color: #fff;
+				color: var(--text-color);
 				
-				background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
+				background-image: linear-gradient(var(--border-color), var(--border-color));
 				background-size: 0% 1px;
 				background-position: 0 calc(100% + 0px);
 				background-repeat: no-repeat;
@@ -117,7 +113,7 @@
 			letter-spacing: var(--blog-minimal-meta-letter-spacing, 0);
 			text-transform: var(--blog-minimal-meta-text-transform, uppercase);
 
-			color: #737373;
+			color: var(--blog-date); //#737373
 			a { color: inherit; }
 			@include breakpoint($retina)  { font-size: 13px; }
 		}

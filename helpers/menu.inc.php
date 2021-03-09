@@ -76,7 +76,22 @@ function nucleus_nav_menu_start_el($item_output, $item, $depth, $args) {
 		if ($item->xfn) {
 			$xfn_data = explode('-', $item->xfn);
 			if ($xfn_data[0] == 'query') {
-				return $item_output = '<a href="'. esc_url($item->url) .'?'. $xfn_data[1].'='. $xfn_data[2] .'">'. esc_html($item->post_title) . '</a>' . $title_attr;
+				array_shift($xfn_data); // remove first array element (i.e. 'query') from the array
+				if (is_array($xfn_data)) {
+					// convery $xfn_data to two arrays $keys and $values
+					$keys = $values = array();
+					foreach( $xfn_data as $k => $v )  $k % 2  ?  $values[] = $v  :  $keys[] = $v;
+
+					// combine $keys and $values arrays
+					$query_params = array_combine ($keys, $values);
+
+					// build final url by adding query params
+					$final_url = add_query_arg($query_params, $item->url);
+				} else  {
+					$final_url = $item->url;
+				}
+
+				return $item_output = '<a href="'. esc_url($final_url) .'">'. esc_html($item->post_title) . '</a>' . $title_attr;
 			} else {
 				return $item_output . $title_attr; // Unmodified output for this link
 			}
@@ -85,3 +100,4 @@ function nucleus_nav_menu_start_el($item_output, $item, $depth, $args) {
 		}
 	}
 }
+

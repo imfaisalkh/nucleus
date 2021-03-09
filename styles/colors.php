@@ -81,6 +81,9 @@
 		--text-color: #000;
 		--blog-accent: var(--primary-accent);
 	}
+	body.blog-minimal.light-base-color-scheme	{
+		--background-color: #F5F5F5;
+	}
 
 	/** Dark Color Scheme */
 	body.dark-base-color-scheme {

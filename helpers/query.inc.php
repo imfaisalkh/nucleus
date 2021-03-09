@@ -7,6 +7,8 @@
 function nucleus_custom_query_vars( $vars ) {
     $vars[] = "blog";
     $vars[] = "skin";
+    $vars[] = "skin_form";
+    $vars[] = "skin_menu";
     $vars[] = "header";
     $vars[] = "footer";
 

@@ -14,7 +14,6 @@
 
 		.main-carousel {
 			width: 100%;
-			// margin-top: 100px;
 
 			// Arrows 
 			.flickity-prev-next-button {
@@ -143,7 +142,7 @@
 							letter-spacing: var(--blog-magazine-featured-meta-letter-spacing, 0);
 							text-transform: var(--blog-magazine-featured-meta-text-transform, none);
 
-							color: #949494;
+							color: var(--blog-date); // #949494;
 							a { color: inherit; }
 						}
 
@@ -351,7 +350,7 @@
 			letter-spacing: var(--blog-magazine-standard-meta-letter-spacing, 0);
 			text-transform: var(--blog-magazine-standard-meta-text-transform, none);
 			
-			color: #949494;
+			color: var(--blog-date); // #949494;
 			a { color: inherit; }
 		}
 
