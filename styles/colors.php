@@ -81,7 +81,8 @@
 		--text-color: #000;
 		--blog-accent: var(--primary-accent);
 	}
-	body.blog-minimal.light-base-color-scheme	{
+	body.blog.blog-minimal.light-base-color-scheme,
+	body.single-post.light-base-color-scheme {
 		--background-color: #F5F5F5;
 	}
 
