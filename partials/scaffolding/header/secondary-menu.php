@@ -4,7 +4,7 @@
         'theme_location'  => 'nucleus-secondary-menu',
         'menu_id'         => 'secondary-menu',
         'menu_class'      => 'sf-menu',
-        'fallback_cb'     => 'nucleus_default_menu'
+        'fallback_cb'     => ''
     );
 
     wp_nav_menu($args);

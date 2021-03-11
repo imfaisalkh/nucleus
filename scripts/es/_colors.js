@@ -261,7 +261,6 @@ export default jQuery(function($) {
 
                     let menu_caption = tinycolor(menu_text).darken(50).toString()
                     document.body.style.setProperty('--menu-caption', menu_caption);
-
                 }
 
                 // Set color scheme if DARK base scheme is active

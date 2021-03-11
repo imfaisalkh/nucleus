@@ -28,7 +28,8 @@
 		width: calc(100vw - 10px);
 		margin-left: calc(-50vw + 50%);
 
-		@include breakpoint($mobile)  { width: auto; margin-left: auto;  }
+		@include breakpoint($mobile)  { margin-left: auto;  }
+		@include breakpoint($touch)  { width: calc(100vw)  }
 	}
 
 

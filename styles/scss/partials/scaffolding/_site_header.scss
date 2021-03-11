@@ -43,7 +43,7 @@
 
 			.elements {
 				display: flex;
-				flex-shrink: 0; flex-grow: 0; // flexible-width flex child
+				flex-wrap: wrap;
 
 				// Visibility
 				.element {
@@ -64,7 +64,8 @@
 				&.left-elements {
 					justify-content: flex-start;
 					margin-right: auto;
-
+					@include breakpoint($no-touch) { min-width: 225px; }
+					
 					> .first-element { margin-left: 0 !important; }
 				}
 				&.center-elements {
@@ -73,6 +74,7 @@
 				&.right-elements {
 					justify-content: flex-end;
 					margin-left: auto;
+					@include breakpoint($no-touch) { min-width: 225px; }
 
 					> .last-element { margin-right: 0 !important; }
 				}

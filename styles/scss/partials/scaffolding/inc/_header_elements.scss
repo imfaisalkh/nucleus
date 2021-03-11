@@ -43,7 +43,7 @@
 /** ================================================== */
 
 	.primary-menu, .secondary-menu {
-		margin: 0 15px;
+		margin: 7px 15px;
 		align-self: center;
 
 		@include breakpoint($mobile)  { display: none; }

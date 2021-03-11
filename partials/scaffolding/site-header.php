@@ -39,7 +39,7 @@
             default:
                 $header_left_elements = [['element'  => 'logo', 'visibility' => 'both']];
                 $header_center_elements = '';
-                $header_right_elements = [['element'  => 'primary-menu', 'visibility' => 'desktop'], ['element'  => 'full-screen-icon', 'visibility' => 'desktop'], ['element'  => 'search-icon', 'visibility' => 'both'], ['element'  => 'hamburger-icon', 'visibility' => 'mobile']];
+                $header_right_elements = [['element'  => 'primary-menu', 'visibility' => 'desktop'], ['element'  => 'secondary-menu', 'visibility' => 'desktop'], ['element'  => 'full-screen-icon', 'visibility' => 'desktop'], ['element'  => 'search-icon', 'visibility' => 'both'], ['element'  => 'hamburger-icon', 'visibility' => 'mobile']];
         }
     } else {
         $header_left_elements = get_theme_mod('nucleus_header_left', $header_left_elements);

@@ -14,9 +14,13 @@
 
         background: var(--top-bar-background-color);
         color: var(--top-bar-text-color);
-		height: var(--top-bar-size);
+		min-height: var(--top-bar-size);
+
+		padding: 10px 0;
 
 		@include make-full-width;
+
+		@include breakpoint($mobile)  { height: auto; }
 
         .container {
 			width: 100%;
@@ -31,7 +35,7 @@
             
             .elements {
 				display: flex;
-				flex-shrink: 0; flex-grow: 0; // flexible-width flex child
+				flex-wrap: wrap;
 
 				// Visibility
 				.element {
@@ -107,6 +111,7 @@
 
 				ul {
 					display: flex;
+					flex-wrap: wrap;
 					margin: 0;
 					padding: 0;
 					list-style: none;
@@ -119,7 +124,9 @@
 						letter-spacing: var(--top-bar-menu-letter-spacing, 0);
 						text-transform: var(--top-bar-menu-text-transform, none);
 
-						margin: 0 10px;
+						margin: 0 20px 0 0;
+
+						&:last-child { margin-right: 0; }
 
 						a {
 							color: inherit;

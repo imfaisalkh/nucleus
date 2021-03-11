@@ -72,7 +72,7 @@
             'settings'    => 'nucleus_header_top_bar_visibility',
             'label'       => esc_html__( 'Show top bar?', '_nucleus' ),
             'section'     => 'nucleus_header_top_bar',
-            'default'     => '0',
+            'default'     => '1',
             'priority'    => 10,
         ] );        
 

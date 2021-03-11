@@ -48,6 +48,7 @@ var postcssPresetEnv    = require('postcss-preset-env');
 
 
 // JS related plugins.
+var beautify     = require('gulp-beautify');
 var uglify       = require('gulp-uglify'); // Minifies JS files
 
 // Image realted plugins.
@@ -148,6 +149,7 @@ const reload = done => {
       .pipe( autoprefixer( config.BROWSERS_LIST ) )
       .pipe( sourcemaps.write( './' ) )
       .pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
+      .pipe( beautify.css({ indent_size: 2 }) )
       .pipe( gulp.dest( config.styleDestination ) )
       .pipe( filter( '**/*.css' ) ) // Filtering stream to only css files.
       .pipe( mmq({ log: true }) ) // Merge Media Queries only for .min.css version.
@@ -182,6 +184,13 @@ const reload = done => {
             .bundle()
             .pipe( source(entry) )
             .pipe( buffer() )
+            .pipe( beautify.js({ indent_size: 2 }) )
+            .pipe( rename(function (path) {
+              var temp = path.dirname.slice(0, -2);
+              path.dirname = temp + "js";
+              path.extname = ".js";
+            }) )
+            .pipe( gulp.dest('.') )
             .pipe( rename(function (path) {
               var temp = path.dirname.slice(0, -2);
               path.dirname = temp + "js";
