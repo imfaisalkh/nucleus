@@ -50,6 +50,7 @@ export default jQuery(function($) {
                         $(filterLink).removeClass('active');
                         $(this).addClass('active');
                         $('#search-filter, #search-filter .widget-wrap').removeClass('animate-in');
+                        $('html').removeClass('noscroll-only')
                     })
 
                 },
