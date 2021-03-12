@@ -65,11 +65,13 @@ Following is the summary of my changes. Please re-read specially point no # 4.
 10: Fixed.
 11: Fixed.
 12: Fixed.
-13: AGAIN: I'm unable to reproduce the issue on my installation. Since, the sdiebar and widgets are displaying. Watch this loom video: https://www.loom.com/share/f6953e699e53456f8c41377fdada8a12
+13: AGAIN: I'm unable to reproduce the issue on my installation. Since, the sidebar and widgets are displaying. Watch this loom video: https://www.loom.com/share/f6953e699e53456f8c41377fdada8a12
 
 ----------------------
 
-Following is the summary of my changes.
+Please note that I'm addressing each of the raised issue with my explanation. If you think my explanations or solution is flawed please elaborate it. I'm NOT ignoring any issue.
+
+Following is the summary of my changes. 
 
 1: Fixed. I've further improved sharpness of portfolio and about page images. For example, Before (https://ibb.co/y41dtTk) - After (https://ibb.co/n1G0Bty). Also, Before (https://ibb.co/XbfmwPW) - After (https://ibb.co/tPhDsRm). There are also other examples.
 2: Fixed. Now all menu locations are visible by DEFAULT.
@@ -77,10 +79,15 @@ Following is the summary of my changes.
 4: Fixed. I've further improved the color contrast. Before (https://ibb.co/jkqKdmV), After (https://ibb.co/KmSt4Zc).
 5: Fixed. I've made sure that all widgets with nested links are displaying correctly. Before (https://envato.d.pr/ZRaTIY), After (https://ibb.co/2YPFrrp)
 
+----------------------
+
+I've now used a different approach to enhance the images. It is much better now. Before (https://portfolio.blacksailor.co.uk/wp-content/uploads/2021/02/portfolio-slide-01.webp) - After (https://portfolio.blacksailor.co.uk/wp-content/uploads/2021/02/portfolio-slide-01-1.webp)
+
 SUBMISSION DATE:
 
 07 March, 2021 (1:45 AM)
 08 March, 2021 ()
 09 March, 2021 (1:45 AM)
 12 March, 2021 (3:00 AM)
+13 March, 2021 (12:30 AM)
 

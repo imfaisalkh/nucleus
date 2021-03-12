@@ -83,7 +83,7 @@
             /** animate-in whole container */
             processLocalLinks: function processLocalLinks() {
               // comma seperate list of links to exclude
-              var exclude_links = 'li.menu-item-has-children a, #load-more a';
+              var exclude_links = 'li.menu-item-has-children a, #load-more a, #portfolio-widget ul.widget-list li a';
               /** identify all local links */
 
               $('a:not([href*=\\#])').not(exclude_links).filter(function() {

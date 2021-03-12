@@ -62,7 +62,7 @@ export default jQuery(function($) {
                 /** animate-in whole container */
                 processLocalLinks: function(){
                     // comma seperate list of links to exclude
-                    let exclude_links = 'li.menu-item-has-children a, #load-more a'
+                    let exclude_links = 'li.menu-item-has-children a, #load-more a, #portfolio-widget ul.widget-list li a'
 
                     /** identify all local links */
                     $('a:not([href*=\\#])').not(exclude_links).filter(function() {
