@@ -64,7 +64,7 @@
 				&.left-elements {
 					justify-content: flex-start;
 					margin-right: auto;
-					@include breakpoint($no-touch) { min-width: 225px; }
+					@include breakpoint($no-touch) { min-width: 160px; }
 					
 					> .first-element { margin-left: 0 !important; }
 				}
@@ -74,7 +74,7 @@
 				&.right-elements {
 					justify-content: flex-end;
 					margin-left: auto;
-					@include breakpoint($no-touch) { min-width: 225px; }
+					@include breakpoint($no-touch) { min-width: 160px; }
 
 					> .last-element { margin-right: 0 !important; }
 				}

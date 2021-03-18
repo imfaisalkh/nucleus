@@ -83,6 +83,13 @@ Following is the summary of my changes.
 
 I've now used a different approach to enhance the images. It is much better now. Before (https://portfolio.blacksailor.co.uk/wp-content/uploads/2021/02/portfolio-slide-01.webp) - After (https://portfolio.blacksailor.co.uk/wp-content/uploads/2021/02/portfolio-slide-01-1.webp)
 
+----------------------
+
+1: Fixed. The menu should not wrap now.
+2: Fixed. Changed the Date Format.
+3: Fixed. Improved contrast issue in certain areas.
+4: Fixed. Improved mobile styling in certain areas.
+
 SUBMISSION DATE:
 
 07 March, 2021 (1:45 AM)
@@ -90,4 +97,4 @@ SUBMISSION DATE:
 09 March, 2021 (1:45 AM)
 12 March, 2021 (3:00 AM)
 13 March, 2021 (12:30 AM)
-
+19 March, 2021 (2:00 AM)

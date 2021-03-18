@@ -275,6 +275,11 @@ export default jQuery(function($) {
 
         },
 
+        /** Responsive Videos */
+        responsive_videos: function() {
+            $('body').fitVids({ customSelector: "iframe[src^='https://video.wordpress.com']" });
+        },
+
 
     }  
 
@@ -291,6 +296,7 @@ export default jQuery(function($) {
     base.page_header();
     base.custom_cursor();
     base.lightbox();
+    base.responsive_videos();
 
     $(window).on('resize', function () {
         base.header_elements();

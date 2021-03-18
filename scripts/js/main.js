@@ -380,6 +380,13 @@
               }
             });
           }
+        },
+
+        /** Responsive Videos */
+        responsive_videos: function responsive_videos() {
+          $('body').fitVids({
+            customSelector: "iframe[src^='https://video.wordpress.com']"
+          });
         }
       }; // Initialize Functions
 
@@ -395,6 +402,7 @@
       base.page_header();
       base.custom_cursor();
       base.lightbox();
+      base.responsive_videos();
       $(window).on('resize', function() {
         base.header_elements();
       });

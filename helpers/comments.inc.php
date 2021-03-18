@@ -43,8 +43,16 @@
 				            <div class="comment-meta">
 				                <div class="author"><?php echo wp_kses( get_comment_author_link(), 'general' ); ?></div>
 				                <div class="time">
+									<?php
+										// Helper Variable(s)
+										$date_format = get_theme_mod('nucleus_blog_date_format', 'standard');
+									?>
 									<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
-										<?php printf( _x( '%s ago', '%s = human-readable time difference', '_nucleus' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ); ?>
+										<?php if ($date_format == 'human') { ?>
+											<?php printf( _x( '%s ago', '%s = human-readable time difference', '_nucleus' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ); ?>
+										<?php } else { ?>
+											<?php echo get_comment_date(); ?>	
+										<?php } ?>
 									</a>
 				                </div>
 				            </div>

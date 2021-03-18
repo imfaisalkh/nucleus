@@ -16,7 +16,7 @@
 			display: inline-block;
 			color: var(--text-color, #FFF);
 
-			@include breakpoint($mobile)	  { font-size: 2.8rem; }
+			@include breakpoint($mobile) { font-size: 2.8rem; }
 
 
 			&:active, &:focus { outline: 0; border: none; } 
@@ -183,19 +183,19 @@
 /** == BUTTON == */
 /** ================================================== */
 
-.button {
-	font-family: $secondary-font-stack;
-	background: var(--menu-background);
-	color: var(--menu-text);
-	border-radius: 5px;
-	font-weight: 600;
-	padding: 7px 27px;
-	line-height: 1.8;
-	margin: 0 10px;
+	.button {
+		font-family: $secondary-font-stack;
+		background: var(--menu-background);
+		color: var(--menu-text);
+		border-radius: 5px;
+		font-weight: 600;
+		padding: 7px 27px;
+		line-height: 1.8;
+		margin: 0 10px;
 
-	ion-icon {
-		font-size: 18px;
-		transform: translateY(2px);
-		margin-left: 3px;
+		ion-icon {
+			font-size: 18px;
+			transform: translateY(2px);
+			margin-left: 3px;
+		}
 	}
-}

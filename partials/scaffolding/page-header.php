@@ -123,9 +123,14 @@
 					<?php
 						// Helper Variable(s)
 						$post_author_ID = get_post_field( 'post_author', $post_ID );
+						$date_format = get_theme_mod('nucleus_blog_date_format', 'standard');
 					?>
 					<div class="timestamp">
-						<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ' . esc_html__( 'ago', '_nucleus' ); ?>	
+						<?php if ($date_format == 'human') { ?>
+							<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ' . esc_html__( 'ago', '_nucleus' ); ?>	
+						<?php } else { ?>
+							<?php echo get_the_date(); ?>	
+						<?php } ?>
 					</div>
 				<?php } ?>
 			</div>
