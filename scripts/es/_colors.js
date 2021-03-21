@@ -101,6 +101,9 @@ export default jQuery(function($) {
 
                 let comment_bg = tinycolor(this.get_base_color('background')).darken(6.5).setAlpha(.7).toString()
                 document.body.style.setProperty('--comment-background', comment_bg);
+
+                let search_field_bg = tinycolor(this.get_base_color('--modal-background')).darken(8).setAlpha(.7).toString()
+                document.body.style.setProperty('--search-field-background', search_field_bg);
             }
 
             // Set color scheme if DARK base scheme is active
@@ -131,6 +134,9 @@ export default jQuery(function($) {
 
                 let comment_bg = tinycolor(this.get_base_color('background')).lighten(6.5).setAlpha(.7).toString()
                 document.body.style.setProperty('--comment-background', comment_bg);
+
+                let search_field_bg = tinycolor(this.get_base_color('--modal-background')).lighten(25).setAlpha(.5).toString()
+                document.body.style.setProperty('--search-field-background', search_field_bg);
             }
 
         },

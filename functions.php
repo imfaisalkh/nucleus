@@ -168,9 +168,10 @@
 			wp_register_script('jquery-scrollbar', NUCLEUS_VENDORS_URI . '/jquery-scrollbar/jquery.scrollbar.min.js', array('jquery'), null, true);
 			wp_register_script('imagesloaded', NUCLEUS_VENDORS_URI . '/imagesloaded/imagesloaded.pkgd.min.js', array('jquery'), null, true);
 			wp_register_script('tinycolor', NUCLEUS_VENDORS_URI . '/tinycolor/tinycolor.min.js', array('jquery'), null, true);
+			wp_register_script('gsap', NUCLEUS_VENDORS_URI . '/gsap/gsap.min.js', array('jquery'), null, true);
 			wp_register_script('fitvids', NUCLEUS_VENDORS_URI . '/fitvids/jquery.fitvids.js', array('jquery'), null, true);
 			wp_register_script('ionicons', 'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js', array('jquery'), null, true);
-			wp_enqueue_script('nucleus-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery', 'modernizr', 'superfish', 'fancybox', 'headroom', 'jquery-headroom', 'tendina', 'flickity', 'flickity-fade', 'packery', 'infinite-scroll', 'jquery-smooth-scroll', 'jquery-scrollbar', 'imagesloaded', 'tinycolor', 'fitvids', 'ionicons'), null, true);
+			wp_enqueue_script('nucleus-main', NUCLEUS_JS_URI . '/main.min.js', array('jquery', 'modernizr', 'superfish', 'fancybox', 'headroom', 'jquery-headroom', 'tendina', 'flickity', 'flickity-fade', 'packery', 'infinite-scroll', 'jquery-smooth-scroll', 'jquery-scrollbar', 'imagesloaded', 'tinycolor', 'gsap', 'fitvids', 'ionicons'), null, true);
 
 			// Enqueue Other Scripts
 			wp_localize_script( 'nucleus-main', 'theme_ajax', array(

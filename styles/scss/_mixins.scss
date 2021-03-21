@@ -106,10 +106,11 @@
 		transition: transform unquote($duration) cubic-bezier(0.39, 0.575, 0.565, 1), opacity unquote($duration) cubic-bezier(0.39, 0.575, 0.565, 1), visibility unquote($duration) linear;
 	}
 
-	@mixin animate-in() {
-		opacity: 1;
-		visibility: visible;
-		transform: translate3d(0, 0, 0);
+	@mixin animate-in($name: 'fade-in', $delay: '0s', $index: '500') {
+		opacity: 0;
+		animation: unquote($name) ease 0.4s forwards;
+		animation-delay: unquote($delay);
+		z-index: unquote($index);
 	}
 
 

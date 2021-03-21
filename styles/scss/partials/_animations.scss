@@ -1,0 +1,143 @@
+/*========================================================
+  36.  ANIMATIONS 
+========================================================== */
+
+/** == Z-INDEX GUIDE == */
+/** ================================================== */
+
+    // 1000 - Site Menu (because it needs to be on top)
+    // 500 - Body Elements (all on same level)
+    // 800 - Full Screen Popup (above body but beneath menu)
+    // 700 - White Shade (jsutbeneath full screen popup)
+
+
+/** == PRELOADER == */
+/** ================================================== */
+
+    // 1 # Add .preload class in body.
+    // 2 # Remove .preload class when preloader animation ends
+    // Source: https://css-tricks.com/transitions-only-after-page-load/
+    .preload *:not(.preloader-dot) {
+        transition: none !important;
+        animation: none !important;
+    }
+
+/*---------------------------------------------------------
+ List Items (_animations.scss)
+-------------------------------------------------------- */
+
+    ul#full-screen-menu.animate-in
+    {
+        li {
+            @include animate-in('fade-in-bottom', '0', 'auto');
+
+            // Set delay per List Item
+            @for $i from 1 through 100 {
+                &:nth-child(#{$i}) {
+                    animation-delay: .1s * $i;
+                }
+            }
+        }
+    }
+
+
+/*---------------------------------------------------------
+ Keyframes (_animations.scss)
+-------------------------------------------------------- */
+    
+
+    @keyframes fade-in-top {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fade-in-bottom {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fade-in-right {
+        from {
+            opacity: 0;
+            transform: translateX(15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes fade-in-left {
+        from {
+            opacity: 0;
+            transform: translateX(-15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes fade-in-opaque {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 0.9;
+        }
+    }
+    
+    @keyframes fade-out {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes grow-right {
+        from {
+          transform: scaleX(0);
+        }
+        to {
+          transform: scaleX(1);
+        }
+    }
+
+    @keyframes scale-down {
+        from {
+          transform: scaleY(0);
+        }
+        to {
+            opacity: 1;
+          transform: scaleY(1);
+        }
+    }
+
+    @keyframes shrink-right {
+        from {
+            transform: scaleX(1);
+        }
+        to {
+            transform: scaleX(0);
+        }
+    }
