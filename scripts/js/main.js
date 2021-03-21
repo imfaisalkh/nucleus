@@ -387,38 +387,6 @@
           $('body').fitVids({
             customSelector: "iframe[src^='https://video.wordpress.com']"
           });
-        },
-
-        /** Circular Cursor */
-        circular_cursor: function circular_cursor() {
-          var circleSvg = document.querySelector('svg');
-          var btn = document.querySelector('button');
-          var mouseX = 0;
-          var mouseY = 0; //let intv = 0
-
-          window.addEventListener('mousemove', function(event) {
-            // circleSvg.style.top = event.clientY - 45;
-            // circleSvg.style.left = event.clientX - 45;
-            mouseY = event.clientY / 16 - 10 / 16 + 'rem';
-            mouseX = event.clientX / 16 - 10 / 16 + 'rem';
-          });
-
-          var mouseMove = function mouseMove() {
-            //intv += 1
-            circleSvg.style.top = mouseY;
-            circleSvg.style.left = mouseX; //circleSvg.style.opacity = 1 + Math.sin(intv * .04)
-            //console.log(Math.sin(intv * .04))
-
-            window.requestAnimationFrame(mouseMove);
-          };
-
-          mouseMove(); // var tl = gsap.timeline({defaults: {ease: "power2.inOut"}})
-          // tl.to(circleSvg, {width: 0, opacity: 0})
-          // tl.to('body, button', {background: 'white'})
-          // tl.pause()
-          // btn.addEventListener('click', () => {
-          //     tl.play()
-          // })
         }
       }; // Initialize Functions
 
@@ -434,8 +402,7 @@
       base.page_header();
       base.custom_cursor();
       base.lightbox();
-      base.responsive_videos(); // base.circular_cursor();
-
+      base.responsive_videos();
       $(window).on('resize', function() {
         base.header_elements();
       });
@@ -760,7 +727,7 @@
             document.body.style.setProperty('--blog-categories', blog_categories);
             var comment_bg = tinycolor(this.get_base_color('background')).darken(6.5).setAlpha(.7).toString();
             document.body.style.setProperty('--comment-background', comment_bg);
-            var search_field_bg = tinycolor(this.get_base_color('--modal-background')).darken(8).setAlpha(.7).toString();
+            var search_field_bg = tinycolor(this.get_base_color('--modal-background')).darken(8).toString();
             document.body.style.setProperty('--search-field-background', search_field_bg);
           } // Set color scheme if DARK base scheme is active
 
@@ -802,7 +769,7 @@
 
             document.body.style.setProperty('--comment-background', _comment_bg);
 
-            var _search_field_bg = tinycolor(this.get_base_color('--modal-background')).lighten(25).setAlpha(.5).toString();
+            var _search_field_bg = tinycolor(this.get_base_color('--modal-background')).lighten(20).toString();
 
             document.body.style.setProperty('--search-field-background', _search_field_bg);
           }

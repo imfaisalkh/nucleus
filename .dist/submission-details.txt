@@ -93,9 +93,9 @@ I've now used a different approach to enhance the images. It is much better now.
 ----------------------
 
 1: I've added multiple details to this menu. a) animations on menu item when the menu is opened. b) hover arrow animation on menu items.
-2: I've added background color and button to the search field.
+2: I've added background color and button to the search field. Before (https://envato.d.pr/gth1o1), After (https://ibb.co/h72RYjk).
 3: The reason why some pages are dark and some have light skin is to show customizability of the theme. Each page in the theme can have a unique color scheme which can be set via a meta panel (see here: https://ibb.co/RyhLGn2). It means the customer has the option to have all site pages in dark skin or light skin or a mix of both.
-4: 
+4: I've made some supplementary adjustements.
 
 
 SUBMISSION DATE:
