@@ -132,7 +132,7 @@ class WXRImporter extends \WP_Importer {
 		}
 
 		if ( ! $status ) {
-			return new WP_Error( 'wxr_importer.cannot_parse', __( 'Could not open the file for parsing', 'wordpress-importer' ) );
+			return new WP_Error( 'wxr_importer.cannot_parse', esc_html__( 'Could not open the file for parsing', 'wordpress-importer' ) );
 		}
 
 		return $reader;
@@ -511,7 +511,7 @@ class WXRImporter extends \WP_Importer {
 	 */
 	protected function import_start( $file ) {
 		if ( ! is_file( $file ) ) {
-			return new WP_Error( 'wxr_importer.file_missing', __( 'The file does not exist, please try again.', 'wordpress-importer' ) );
+			return new WP_Error( 'wxr_importer.file_missing', esc_html__( 'The file does not exist, please try again.', 'wordpress-importer' ) );
 		}
 
 		// Suspend bunches of stuff in WP core
@@ -574,7 +574,7 @@ class WXRImporter extends \WP_Importer {
 	public function set_user_mapping( $mapping ) {
 		foreach ( $mapping as $map ) {
 			if ( empty( $map['old_slug'] ) || empty( $map['old_id'] ) || empty( $map['new_id'] ) ) {
-				$this->logger->warning( __( 'Invalid author mapping', 'wordpress-importer' ) );
+				$this->logger->warning( esc_html__( 'Invalid author mapping', 'wordpress-importer' ) );
 				$this->logger->debug( var_export( $map, true ) );
 				continue;
 			}
@@ -1091,7 +1091,7 @@ class WXRImporter extends \WP_Importer {
 
 		$info = wp_check_filetype( $upload['file'] );
 		if ( ! $info ) {
-			return new WP_Error( 'attachment_processing_error', __( 'Invalid file type', 'wordpress-importer' ) );
+			return new WP_Error( 'attachment_processing_error', esc_html__( 'Invalid file type', 'wordpress-importer' ) );
 		}
 
 		$post['post_mime_type'] = $info['type'];
@@ -1961,18 +1961,18 @@ class WXRImporter extends \WP_Importer {
 		//
 		// if ( isset( $headers['content-length'] ) && $filesize !== (int) $headers['content-length'] ) {
 		// 	unlink( $upload['file'] );
-		// 	return new WP_Error( 'import_file_error', __( 'Remote file is incorrect size', 'wordpress-importer' ) );
+		// 	return new WP_Error( 'import_file_error', esc_html__( 'Remote file is incorrect size', 'wordpress-importer' ) );
 		// }
 
 		if ( 0 === $filesize ) {
 			unlink( $upload['file'] );
-			return new WP_Error( 'import_file_error', __( 'Zero size file downloaded', 'wordpress-importer' ) );
+			return new WP_Error( 'import_file_error', esc_html__( 'Zero size file downloaded', 'wordpress-importer' ) );
 		}
 
 		$max_size = (int) $this->max_attachment_size();
 		if ( ! empty( $max_size ) && $filesize > $max_size ) {
 			unlink( $upload['file'] );
-			$message = sprintf( __( 'Remote file is too large, limit is %s', 'wordpress-importer' ), size_format( $max_size ) );
+			$message = sprintf( esc_html__( 'Remote file is too large, limit is %s', 'wordpress-importer' ), size_format( $max_size ) );
 			return new WP_Error( 'import_file_error', $message );
 		}
 

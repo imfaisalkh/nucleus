@@ -43,9 +43,9 @@
 		<!-- Load More - (Button) -->
 		<div id="load-more" class="load-more" data-current-page="<?php echo esc_attr($current_page); ?>" data-total-pages="<?php echo esc_attr($total_pages); ?>" data-post-type="<?php echo esc_attr($post_type); ?>" data-page-id="<?php echo get_queried_object_id(); ?>" data-posts-per-page="<?php echo esc_attr($posts_count); ?>" data-term-ids="<?php echo esc_attr($term_IDs); ?>" data-loop-style="<?php echo esc_attr($loop_style); ?>">
 			<?php if (!$is_posts_page) {
-				next_post_types_link( __('Load More &#8230;', '_nucleus'), $total_pages, $current_page, $portfolio_query );
+				next_post_types_link( esc_html__('Load More &#8230;', '_nucleus'), $total_pages, $current_page, $portfolio_query );
 			} else {
-				next_posts_link( __('Load More &#8230;', '_nucleus'), $total_pages );
+				next_posts_link( esc_html__('Load More &#8230;', '_nucleus'), $total_pages );
 			} ?>
 		</div>
 

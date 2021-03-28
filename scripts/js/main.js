@@ -35,90 +35,82 @@
       'use strict'; // Functions Object
 
       var animations = {
-        /** Site Transitions */
-        site_transitions: function site_transitions() {
-          var $grid = $('.grid');
-          var init = {
-            /** animate-in whole container */
-            animateInContainer: function animateInContainer() {
-              $('#site-container').addClass('animate-in');
-              $('#page-header .scroll-indicator').addClass('animate-in');
-            },
+        /** animate-in whole container */
+        animate_in_container: function animate_in_container() {
+          $('#site-container').addClass('animate-in');
+          $('#page-header .scroll-indicator').addClass('animate-in');
+        },
 
-            /** animate-in individual items with interval in-between */
-            animateInItems: function animateInItems(items) {
-              $(items).each(function() {
-                setTimeout(function() {
-                  $(this).addClass('animate-in');
-                }.bind(this), $(this).index() * 50 + 100);
-              }); // $(items).each(function(i) {
-              // 	$(this).addClass('animate-in').delay((i++) * 200).fadeIn();
-              // });
-            },
-
-            /** animate on scroll */
-            animateOnScroll: function animateOnScroll() {
-              $(window).on('scroll', function() {
-                if ($(window).scrollTop() >= 300) {
-                  $('#social-share, #page-controls').addClass('animate-in');
-                } else {
-                  $('#social-share, #page-controls').removeClass('animate-in');
-                }
-              });
-            },
-
-            /** make BG passive on scroll */
-            makeBgPassive: function makeBgPassive() {
-              $(window).on('scroll', function() {
-                if ($(window).scrollTop() >= 100) {
-                  $('.hero-header .media').addClass('passive');
-                  $('#page-header .scroll-indicator').removeClass('animate-in');
-                } else {
-                  $('.hero-header .media').removeClass('passive');
-                  $('#page-header .scroll-indicator').addClass('animate-in');
-                }
-              });
-            },
-
-            /** animate-in whole container */
-            processLocalLinks: function processLocalLinks() {
-              // comma seperate list of links to exclude
-              var exclude_links = 'li.menu-item-has-children a, #load-more a, #portfolio-widget ul.widget-list li a';
-              /** identify all local links */
-
-              $('a:not([href*=\\#])').not(exclude_links).filter(function() {
-                return this.hostname && this.hostname === location.hostname;
-              }).addClass('local-link');
-              /** identify all native link */
-
-              $('#load-more a, ul.widget-list li a').filter(function() {
-                $(this).addClass('native-link');
-              });
-              /** animate-out when a local-link is clicked */
-
-              $('a.local-link').on('click', function() {
-                $('#site-container').removeClass('animate-in');
-                $('.preloader').fadeIn();
-              });
-            }
-          }; // execute on DOM ready
-
-          init.animateInContainer();
-          init.animateInItems('.grid .grid-item'); // init.animateInItems('.blog-minimal .post, .grid .grid-item');
-
-          init.animateOnScroll();
-          init.makeBgPassive();
-          init.processLocalLinks(); // re-execute on 'afterInfiniteScroll' triggger
-
-          $('body').on('afterInfiniteScroll', function(event, items) {
+        /** animate-in individual items with interval in-between */
+        animate_in_items: function animate_in_items(items) {
+          $(items).each(function() {
             setTimeout(function() {
-              init.animateInItems(items);
-            }, 400);
+              $(this).addClass('animate-in');
+            }.bind(this), $(this).index() * 50 + 100);
+          }); // $(items).each(function(i) {
+          // 	$(this).addClass('animate-in').delay((i++) * 200).fadeIn();
+          // });
+        },
+
+        /** animate-in whole container */
+        local_links: function local_links() {
+          // comma seperate list of links to exclude
+          var exclude_links = 'li.menu-item-has-children a, #load-more a, a[rel="lightbox"], #portfolio-widget ul.widget-list li a';
+          /** identify all local links */
+
+          $('a:not([href*=\\#])').not(exclude_links).filter(function() {
+            return this.hostname && this.hostname === location.hostname;
+          }).addClass('local-link');
+          /** identify all native link */
+
+          $('#load-more a, ul.widget-list li a').filter(function() {
+            $(this).addClass('native-link');
+          });
+          /** animate-out when a local-link is clicked */
+
+          $('a.local-link').on('click', function() {
+            $('#site-container').removeClass('animate-in');
+            $('.preloader').fadeIn();
+          });
+        },
+
+        /** make BG passive on scroll */
+        make_bg_passive: function make_bg_passive() {
+          $(window).on('scroll', function() {
+            if ($(window).scrollTop() >= 100) {
+              $('.hero-header .media').addClass('passive');
+              $('#page-header .scroll-indicator').removeClass('animate-in');
+            } else {
+              $('.hero-header .media').removeClass('passive');
+              $('#page-header .scroll-indicator').addClass('animate-in');
+            }
+          });
+        },
+
+        /** animate on scroll */
+        animate_on_scroll: function animate_on_scroll() {
+          $(window).on('scroll', function() {
+            if ($(window).scrollTop() >= 300) {
+              $('#social-share, #page-controls').addClass('animate-in');
+            } else {
+              $('#social-share, #page-controls').removeClass('animate-in');
+            }
           });
         }
       }; // Initialize Functions
 
-      animations.site_transitions();
+      animations.animate_in_container();
+      animations.animate_in_items('.grid .grid-item'); // animations.animate_in_items('.blog-minimal .post, .grid .grid-item');
+
+      animations.local_links();
+      animations.make_bg_passive();
+      animations.animate_on_scroll(); // re-execute on 'afterInfiniteScroll' triggger
+
+      $('body').on('afterInfiniteScroll', function(event, items) {
+        setTimeout(function() {
+          animations.animate_in_items(items);
+        }, 400);
+      });
     });
 
     exports["default"] = _default;
@@ -359,27 +351,23 @@
 
         /** Lightbox */
         lightbox: function lightbox() {
-          var is_fancybox = $('body').hasClass('is-fancybox-enabled');
-
-          if (false) {
-            var gallery_links = $('.wp-gallery a[rel="lightbox"], .portfolio-grid .portfolio > a[rel="lightbox"], .elementor-image a');
-            gallery_links.fancybox({
-              padding: 0,
-              helpers: {
-                title: {
-                  type: 'inside'
-                },
-                thumbs: {
-                  width: 65,
-                  height: 65
-                },
-                media: {}
+          var gallery_links = $('.wp-gallery a[rel="lightbox"], .portfolio-container .portfolio > a[rel="lightbox"], .elementor-image a');
+          gallery_links.fancybox({
+            padding: 0,
+            helpers: {
+              title: {
+                type: 'inside'
               },
-              beforeLoad: function beforeLoad() {
-                this.title = $(this.element).data('caption');
-              }
-            });
-          }
+              thumbs: {
+                width: 65,
+                height: 65
+              },
+              media: {}
+            },
+            beforeLoad: function beforeLoad() {
+              this.title = $(this.element).data('caption');
+            }
+          });
         },
 
         /** Responsive Videos */

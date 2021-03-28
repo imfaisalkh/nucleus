@@ -8,7 +8,9 @@
 	$thumbnail_width 		= $thumbnail_dimension['width'];
 
 	// entry url
-	$folio_permalink 		= get_post_meta(get_the_ID(), 'custom_url', true) != false ? esc_url( get_post_meta(get_the_ID(), 'custom_url', true) ) : esc_url( get_permalink() );
+	$folio_permalink 		= get_field('custom_url') ? get_field('custom_url') : get_permalink();
+	$lightbox_attr 			= get_field('custom_url') && get_field('open_in_lightbox') ? 'rel=lightbox' : '';
+
 
 	// secondary image
 	$secondary_img = get_field('secondary_image');
@@ -19,7 +21,7 @@
 <!-- PORTFOLIO ENTRY -->
 <article id="post-<?php the_ID(); ?>" <?php post_class("grid-item $thumbnail_height $thumbnail_width $secondary_img_class"); ?>>
 
-	<a class="entry-link" href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title_attribute(); ?>" >
+	<a class="entry-link" href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title_attribute(); ?>" <?php echo esc_attr($lightbox_attr); ?>>
 		
 		<figure class="entry-thumbnail">
 			<img class="primary" src="<?php the_post_thumbnail_url('nucleus-portfolio-grid'); ?>" alt="<?php the_title_attribute(); ?>">

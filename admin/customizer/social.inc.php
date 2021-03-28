@@ -25,7 +25,7 @@
         Kirki::add_field( 'nucleus_config', [
             'type'        => 'toggle',
             'settings'    => 'nucleus_enable_social_sharing',
-            'label'       => __( 'Enable Social Sharing', '_nucleus' ),
+            'label'       => esc_html__( 'Enable Social Sharing', '_nucleus' ),
             'description' => esc_html__( 'Do you want to enable social sharing links at the left hand side of the site?', '_nucleus' ),
             'section'     => 'nucleus_social_sharing',
             'default'     => '0',
@@ -35,7 +35,7 @@
         Kirki::add_field( 'nucleus_config', array(
 			'type'        => 'sortable',
 			'settings'    => 'nucleus_social_sharing_group',
-			'label'       => __( 'Sharing Links', '_nucleus' ),
+			'label'       => esc_html__( 'Sharing Links', '_nucleus' ),
 			'description'    => esc_html__( 'Change the order and visibility of social sharing links.', '_nucleus' ),
 			'section'     => 'nucleus_social_sharing',
 			'default'     => ['twitter', 'facebook', 'pinterest'],

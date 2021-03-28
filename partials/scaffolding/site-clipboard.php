@@ -61,8 +61,8 @@
                 <form id="search-widget" class="modal-widget" role="search" method="get" action="<?php echo esc_url( home_url() ); ?>/">
                     <h4 class="widget-title"><?php esc_html_e( 'Type & Hit Enter', '_nucleus' ); ?></h4>
                     <div class="widget-fields">
-                        <input type="text" name="s" id="modal-search" placeholder="<?php esc_html_e('Search Term', '_nucleus'); ?>">
-                        <input value="<?php esc_html_e('Go', '_nucleus'); ?>" type="submit">
+                        <input type="text" name="s" id="modal-search" placeholder="<?php esc_attr_e('Search Term', '_nucleus'); ?>">
+                        <input value="<?php esc_attr_e('Go', '_nucleus'); ?>" type="submit">
                     </div>
                 </form> 
             </div>

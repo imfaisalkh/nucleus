@@ -17,15 +17,15 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: 404.php:8
+#: 404.php:7
 msgid "404"
 msgstr ""
 
-#: 404.php:9
+#: 404.php:8
 msgid "The page you are looking for is not available."
 msgstr ""
 
-#: 404.php:10
+#: 404.php:9
 msgid "Go Back Home"
 msgstr ""
 
@@ -90,26 +90,46 @@ msgid "Magazine"
 msgstr ""
 
 #: admin/customizer/blog.inc.php:45
-msgid "Slider Posts"
+msgid "Featured Categories"
 msgstr ""
 
 #: admin/customizer/blog.inc.php:47
+msgid "A comma sperated list of category IDs. These category links will be shown at different places (e.g. search popup)."
+msgstr ""
+
+#: admin/customizer/blog.inc.php:54
+msgid "Slider Posts"
+msgstr ""
+
+#: admin/customizer/blog.inc.php:56
 msgid "A comma sperated list of post IDs."
 msgstr ""
 
-#: admin/customizer/blog.inc.php:61
+#: admin/customizer/blog.inc.php:70
+msgid "Date Format"
+msgstr ""
+
+#: admin/customizer/blog.inc.php:75
+msgid "Standard"
+msgstr ""
+
+#: admin/customizer/blog.inc.php:76
+msgid "Time Ago"
+msgstr ""
+
+#: admin/customizer/blog.inc.php:83
 msgid "Pagination Type"
 msgstr ""
 
-#: admin/customizer/blog.inc.php:66
+#: admin/customizer/blog.inc.php:88
 msgid "Load More"
 msgstr ""
 
-#: admin/customizer/blog.inc.php:67
+#: admin/customizer/blog.inc.php:89
 msgid "Infinite Scroll"
 msgstr ""
 
-#: admin/customizer/blog.inc.php:68
+#: admin/customizer/blog.inc.php:90
 msgid "Numbered"
 msgstr ""
 
@@ -249,7 +269,7 @@ msgstr ""
 msgid "This section configure settings for the site header."
 msgstr ""
 
-#: admin/customizer/header.inc.php:65, admin/customizer/typography.inc.php:27, functions.php:109
+#: admin/customizer/header.inc.php:65, admin/customizer/typography.inc.php:27, functions.php:111
 msgid "Top Bar"
 msgstr ""
 
@@ -653,7 +673,7 @@ msgstr ""
 msgid "Field Text"
 msgstr ""
 
-#: admin/customizer/typography.inc.php:416, partials/scaffolding/page-header.php:99
+#: admin/customizer/typography.inc.php:416, partials/scaffolding/page-header.php:104
 msgid "Blog"
 msgstr ""
 
@@ -1380,39 +1400,31 @@ msgstr ""
 msgid "It seems we cannot find what you are looking for. Perhaps searching can help."
 msgstr ""
 
-#: functions.php:106
+#: functions.php:109
 msgid "Primary"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:110
 msgid "Secondary"
 msgstr ""
 
-#: functions.php:108
-msgid "Mobile"
+#: functions.php:112
+msgid "Full Screen (e.g. Mobile)"
 msgstr ""
 
-#: functions.php:110
-msgid "Full Screen"
-msgstr ""
-
-#: functions.php:111
-msgid "Footer"
-msgstr ""
-
-#: functions.php:123
+#: functions.php:124
 msgid "Blog Sidebar"
 msgstr ""
 
-#: functions.php:125
+#: functions.php:126
 msgid "This sidebar will be displayed on all blog pages."
 msgstr ""
 
-#: functions.php:134
+#: functions.php:135
 msgid "Page Sidebar"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:137
 msgid "This sidebar will be displayed on your site page."
 msgstr ""
 
@@ -1428,28 +1440,28 @@ msgstr ""
 msgid "Pingback:"
 msgstr ""
 
-#: helpers/comments.inc.php:47
+#: helpers/comments.inc.php:52
 msgctxt "%s = human-readable time difference"
 msgid "%s ago"
 msgstr ""
 
-#: helpers/comments.inc.php:58
+#: helpers/comments.inc.php:66
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: helpers/comments.inc.php:65
+#: helpers/comments.inc.php:73
 msgid "Reply"
 msgstr ""
 
-#: helpers/comments.inc.php:92
+#: helpers/comments.inc.php:100
 msgid "Comment navigation"
 msgstr ""
 
-#: helpers/comments.inc.php:95
+#: helpers/comments.inc.php:103
 msgid "Older Comments"
 msgstr ""
 
-#: helpers/comments.inc.php:99
+#: helpers/comments.inc.php:107
 msgid "Newer Comments"
 msgstr ""
 
@@ -1465,7 +1477,7 @@ msgstr ""
 msgid "Post written by"
 msgstr ""
 
-#: partials/blog/detail-page.php:31, partials/scaffolding/load-more.php:48
+#: partials/blog/detail-page.php:31, partials/scaffolding/load-more.php:60
 msgid "Pages:"
 msgstr ""
 
@@ -1473,27 +1485,27 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: partials/blog/detail-page.php:50, partials/scaffolding/site-clipboard.php:58, partials/scaffolding/site-clipboard.php:71
+#: partials/blog/detail-page.php:50, partials/scaffolding/site-clipboard.php:75, partials/scaffolding/site-clipboard.php:88
 msgid "Categories"
 msgstr ""
 
-#: partials/blog/layout-magazine.php:12
+#: partials/blog/layout-magazine.php:14
 msgid "Editor's Choice"
 msgstr ""
 
-#: partials/blog/layout-magazine.php:14
+#: partials/blog/layout-magazine.php:16
 msgid "Featured Post"
 msgstr ""
 
-#: partials/blog/layout-magazine.php:30, partials/blog/layout-minimal.php:12, partials/scaffolding/page-header.php:120
+#: partials/blog/layout-magazine.php:33, partials/blog/layout-minimal.php:15, partials/scaffolding/page-header.php:130
 msgid "ago"
 msgstr ""
 
-#: partials/blog/layout-minimal.php:7
+#: partials/blog/layout-minimal.php:9
 msgid "Featured"
 msgstr ""
 
-#: partials/portfolio/includes/carousel-cell.php:75
+#: partials/portfolio/includes/carousel-cell.php:78
 msgid "Open Case Study"
 msgstr ""
 
@@ -1521,7 +1533,7 @@ msgstr ""
 msgid "Selected Works"
 msgstr ""
 
-#: partials/scaffolding/load-more.php:34, partials/scaffolding/load-more.php:36
+#: partials/scaffolding/load-more.php:46, partials/scaffolding/load-more.php:48
 msgid "Load More &#8230;"
 msgstr ""
 
@@ -1569,32 +1581,32 @@ msgstr ""
 msgid "My Journal."
 msgstr ""
 
-#: partials/scaffolding/page-header.php:90
-msgid "Since 2015"
+#: partials/scaffolding/page-header.php:95
+msgid "Since"
 msgstr ""
 
-#: partials/scaffolding/site-clipboard.php:45, searchform.php:3
+#: partials/scaffolding/site-clipboard.php:62, searchform.php:3
 msgid "Type & Hit Enter"
 msgstr ""
 
-#: partials/scaffolding/site-clipboard.php:47, searchform.php:5
+#: partials/scaffolding/site-clipboard.php:64, searchform.php:5
 msgid "Search Term"
 msgstr ""
 
-#: partials/scaffolding/site-clipboard.php:48, searchform.php:6
+#: partials/scaffolding/site-clipboard.php:65, searchform.php:6
 msgid "Go"
 msgstr ""
 
-#: partials/scaffolding/site-clipboard.php:60
+#: partials/scaffolding/site-clipboard.php:77
 msgid "All"
 msgstr ""
 
-#: partials/scaffolding/site-clipboard.php:92
+#: partials/scaffolding/site-clipboard.php:115
 msgid "Go Back"
 msgstr ""
 
 #: partials/scaffolding/site-controls.php:21
-msgid "Share"
+msgid "Share:"
 msgstr ""
 
 #: partials/scaffolding/site-controls.php:26
@@ -1629,7 +1641,7 @@ msgstr ""
 msgid "Want to work with us? Let&rsquo;s boogie. <a href=\"%1$s\">hello@example.com</a>."
 msgstr ""
 
-#: sidebar.php:7
+#: sidebar-blog.php:7, sidebar.php:7
 msgid "You have not defined any widget for this sidebar yet."
 msgstr ""
 

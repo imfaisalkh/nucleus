@@ -249,29 +249,24 @@ export default jQuery(function($) {
         /** Lightbox */
         lightbox: function() {
 
-            var is_fancybox = $('body').hasClass('is-fancybox-enabled');
+            let gallery_links = $('.wp-gallery a[rel="lightbox"], .portfolio-container .portfolio > a[rel="lightbox"], .elementor-image a')
 
-            if (false) {
-
-                let gallery_links = $('.wp-gallery a[rel="lightbox"], .portfolio-grid .portfolio > a[rel="lightbox"], .elementor-image a')
-
-                gallery_links.fancybox({
-                    padding : 0,
-                    helpers : {
-                        title   : {
-                            type: 'inside'
-                        },
-                        thumbs  : {
-                            width   : 65,
-                            height  : 65
-                        },
-                        media : {}
+            gallery_links.fancybox({
+                padding : 0,
+                helpers : {
+                    title   : {
+                        type: 'inside'
                     },
-                    beforeLoad: function() {
-                        this.title = $(this.element).data('caption');
-                    }
-                });
-            }
+                    thumbs  : {
+                        width   : 65,
+                        height  : 65
+                    },
+                    media : {}
+                },
+                beforeLoad: function() {
+                    this.title = $(this.element).data('caption');
+                }
+            });
 
         },
 

@@ -109,7 +109,14 @@
 			margin-bottom: 10px;
 			color: #e4eef5;
 
-			a { color: var(--text-color); opacity: 0.7; }
+			a {
+				color: var(--text-color);
+				border-bottom: 1px solid rgba(255,255,255,0.25);
+
+				&:hover {
+					border-bottom: 1px solid #ffea36;
+				}
+			}
 			&.last-pingback { margin-bottom: 0; }
 		}
 

@@ -14,7 +14,7 @@
 	      $cat_slug = apply_filters( 'list_cats', $cat_slug, $category );
 	      $cat_url  = get_term_link( $category->slug , $category->taxonomy );
 
-	      $link = '<li><a href="'. $cat_url .'" data-filter=".'. strtolower(preg_replace('/\s+/', '-', $cat_slug)) .'">';
+	      $link = '<li><a href="'. esc_url($cat_url) .'" data-filter=".'. strtolower(preg_replace('/\s+/', '-', $cat_slug)) .'">';
 		  
 		  $cat_name = esc_attr( $category->name );
 	      $cat_name = apply_filters( 'list_cats', $cat_name, $category );

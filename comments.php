@@ -63,19 +63,19 @@ if ( post_password_required() ) {
 		$fields =  array(
 
 		  'author' =>
-		    '<div class="row"><div class="column" data-span="3"><p class="comment-form-author"><label for="author">' . __( 'Name', '_nucleus' ) . '</label> ' .
+		    '<div class="row"><div class="column" data-span="3"><p class="comment-form-author"><label for="author">' . esc_html__( 'Name', '_nucleus' ) . '</label> ' .
 		    ( $req ? '<span class="required">*</span>' : '' ) .
 		    '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 		    '" size="30"' . $aria_req . ' /></p></div>',
 
 		  'email' =>
-		    '<div class="column" data-span="3"><p class="comment-form-email"><label for="email">' . __( 'Email', '_nucleus' ) . '</label> ' .
+		    '<div class="column" data-span="3"><p class="comment-form-email"><label for="email">' . esc_html__( 'Email', '_nucleus' ) . '</label> ' .
 		    ( $req ? '<span class="required">*</span>' : '' ) .
 		    '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 		    '" size="30"' . $aria_req . ' /></p></div></div>',
 
 		  'url' =>
-		    '<p class="comment-form-url"><label for="url">' . __( 'Website', '_nucleus' ) . '</label>' .
+		    '<p class="comment-form-url"><label for="url">' . esc_html__( 'Website', '_nucleus' ) . '</label>' .
 		    '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
 		    '" size="30" /></p>',
 		);

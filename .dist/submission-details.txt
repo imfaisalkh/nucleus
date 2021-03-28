@@ -97,6 +97,19 @@ I've now used a different approach to enhance the images. It is much better now.
 3: The reason why some pages are dark and some have light skin is to show customizability of the theme. Each page in the theme can have a unique color scheme which can be set via a meta panel (see here: https://ibb.co/RyhLGn2). It means the customer has the option to have all site pages in dark skin or light skin or a mix of both.
 4: I've made some supplementary adjustements.
 
+----------------------
+
+1: Lightbox is now enabled on all applicable links. User has the option to disable it however. Also all portfolio links have been fixed.
+2: I've adjusted the contrast ratio for the "Load More" button. As for the portfolio example, the other items are out of focus (thus the opacity effect). In this style of portfolio, we can only have one focused portfolio item.
+3: I've made some improvements. If you still see an issue a screenshot would be helpful.
+4: I've made some improvements. If you still see an issue a screenshot would be helpful.
+5: Fixed.
+6: All widgets are styled correctly in the sidebar, including the screenshot mentioned. It is supposed to appear like this.
+7: I've made some improvements. If you still see an issue a screenshot would be helpful.
+8: Fixed.
+9: Fixed. All translated strings are escaped now.
+10: POT file is updated.
+11: Fixed. Attribures are now using esc_attr__() instead of esc_html__().
 
 SUBMISSION DATE:
 

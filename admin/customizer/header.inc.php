@@ -199,7 +199,7 @@
         Kirki::add_field( 'nucleus_config', [
             'type'        => 'color',
             'settings'    => 'nucleus_header_top_bar_text_color',
-            'label'       => __( 'Text Color', '_nucleus' ),
+            'label'       => esc_html__( 'Text Color', '_nucleus' ),
             'section'     => 'nucleus_header_top_bar',
             'default'     => '#FFF',
             'active_callback'  => [
@@ -214,7 +214,7 @@
         Kirki::add_field( 'nucleus_config', [
             'type'        => 'color',
             'settings'    => 'nucleus_header_top_bar_bg_color',
-            'label'       => __( 'Background Color', '_nucleus' ),
+            'label'       => esc_html__( 'Background Color', '_nucleus' ),
             'section'     => 'nucleus_header_top_bar',
             'default'     => '#CCC',
             'active_callback'  => [

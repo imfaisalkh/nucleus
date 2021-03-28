@@ -52,7 +52,7 @@ class Importer extends WXRImporter {
 		}
 
 		if ( ! class_exists( 'XMLReader' ) ) {
-			$this->logger->critical( __( 'The XMLReader class is missing! Please install the XMLReader PHP extension on your server', 'wordpress-importer' ) );
+			$this->logger->critical( esc_html__( 'The XMLReader class is missing! Please install the XMLReader PHP extension on your server', 'wordpress-importer' ) );
 
 			return false;
 		}
@@ -65,7 +65,7 @@ class Importer extends WXRImporter {
 		}
 
 		if ( ! $status ) {
-			$this->logger->error( __( 'Could not open the XML file for parsing!', 'wordpress-importer' ) );
+			$this->logger->error( esc_html__( 'Could not open the XML file for parsing!', 'wordpress-importer' ) );
 
 			return false;
 		}
@@ -245,7 +245,7 @@ class Importer extends WXRImporter {
 		$result = $this->import_start( $file );
 
 		if ( is_wp_error( $result ) ) {
-			$this->logger->error( __( 'Content import start error: ', 'wordpress-importer' ) . $result->get_error_message() );
+			$this->logger->error( esc_html__( 'Content import start error: ', 'wordpress-importer' ) . $result->get_error_message() );
 
 			return false;
 		}
@@ -501,7 +501,7 @@ class Importer extends WXRImporter {
 			) );
 
 			// Add message to log file.
-			$this->logger->info( __( 'New AJAX call!', 'wordpress-importer' ) );
+			$this->logger->info( esc_html__( 'New AJAX call!', 'wordpress-importer' ) );
 
 			// Set the current importer state, so it can be continued on the next AJAX call.
 			$this->set_current_importer_data();

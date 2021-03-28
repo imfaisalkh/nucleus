@@ -28,7 +28,7 @@
             "label": "Custom URL",
             "name": "custom_url",
             "type": "url",
-            "instructions": "This URL will be used instead of default folio detail page. You can even enter an image or video (youtube, vimeo etc) URL here and the theme will open it in the lightbox.",
+            "instructions": "This URL will be used instead of the default folio detail page. You can optionally choose to open the custom image or video URL in the lightbox.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -38,6 +38,32 @@
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_605f13a16e131",
+            "label": "Open in Lightbox?",
+            "name": "open_in_lightbox",
+            "type": "true_false",
+            "instructions": "It is only valid for certain image types and video links.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5931508ebdbd7",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Open the custom URL in lightbox",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_597e8607bcc78",
@@ -99,7 +125,7 @@
                         "width-5x": "5x Width",
                         "width-6x": "6x Width"
                     },
-                    "default_value": [],
+                    "default_value": false,
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -128,7 +154,7 @@
                         "height-5x": "5x Height",
                         "height-6x": "6x Height"
                     },
-                    "default_value": [],
+                    "default_value": false,
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -154,7 +180,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1611150523
+    "modified": 1616844150
 }

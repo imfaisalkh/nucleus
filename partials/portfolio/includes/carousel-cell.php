@@ -43,8 +43,12 @@
 
     // Others
     $folio_terms = implode(', ', nucleus_get_term_fields('portfolio_category', 'name'));
-    $folio_permalink = get_post_meta(get_the_ID(), 'custom_url', true) != false ? esc_url( get_post_meta(get_the_ID(), 'custom_url', true) ) : esc_url( get_permalink() );
     $folio_carousel_image = get_field('slider_image') ? get_field('slider_image') : get_the_post_thumbnail_url(get_the_ID(), $image_size);
+
+	// entry url
+	$folio_permalink 		= get_field('custom_url') ? get_field('custom_url') : get_permalink();
+	$lightbox_attr 			= get_field('custom_url') && get_field('open_in_lightbox') ? 'rel=lightbox' : '';
+
 ?>
 
 <article id="carousel-post-<?php the_ID(); ?>" <?php post_class("carousel-cell"); ?> data-primary-accent-color="<?php echo esc_attr($primary_accent); ?>" data-secondary-accent-color="<?php echo esc_attr($secondary_accent); ?>" data-bg-color="<?php echo esc_attr($background_color); ?>" data-text-color="<?php echo esc_attr($text_color); ?>">
@@ -53,7 +57,7 @@
         <img class="primary" src="<?php echo esc_url($folio_carousel_image); ?>" alt="<?php the_title_attribute(); ?>">
     </figure>
 
-    <a href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title_attribute(); ?>" >
+    <a href="<?php echo esc_url($folio_permalink); ?>" title="<?php the_title_attribute(); ?>" <?php echo esc_attr($lightbox_attr); ?>>
         <header class="entry-caption">
             <?php if ( $portfolio_style != 'forza' ) { ?>
                     <div class="inner-wrap">

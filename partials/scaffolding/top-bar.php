@@ -6,14 +6,14 @@
     // Top Bar Elements - Defaults
     $bar_left_elements = [['element'  => 'menu', 'visibility' => 'both']];
     $bar_center_elements = [];
-    $bar_right_elements = [['element'  => 'social-icons', 'visibility' => 'both']];
+    $bar_right_elements = [];
 
     $bar_left_elements = get_theme_mod('nucleus_header_top_bar_left', $bar_left_elements);
     $bar_center_elements = get_theme_mod('nucleus_header_top_bar_center', $bar_center_elements);
     $bar_right_elements = get_theme_mod('nucleus_header_top_bar_right', $bar_right_elements);
 ?>
 
-<?php if ($is_top_bar && ($bar_left_elements || $bar_center_elements || $bar_right_elements)) { ?>
+<?php if ($is_top_bar && (($bar_left_elements && has_nav_menu('nucleus-top-bar-menu')) || $bar_center_elements || $bar_right_elements)) { ?>
     <div id="top-bar">
         <div class="container <?php echo esc_attr($container_class); ?>">
         

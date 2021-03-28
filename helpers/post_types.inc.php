@@ -18,12 +18,12 @@
 		$nextpage = intval($current_page) + 1;
 
 		if ( null === $label )
-			$label = __( 'Next Page &raquo;', '_nucleus' );
+			$label = esc_html__( 'Next Page &raquo;', '_nucleus' );
 
 		if ( !is_single() && ( $nextpage <= $max_page ) ) {
 			$attr = apply_filters( 'next_posts_link_attributes', '' );
 
-			return '<a href="' . next_post_types( $max_page, $current_page, false ) . "\" $attr>" . preg_replace('/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label) . '</a>';
+			return '<a href="' . esc_url(next_post_types( $max_page, $current_page, false )) . "\" $attr>" . preg_replace('/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label) . '</a>';
 		}
 	}
 

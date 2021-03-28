@@ -115,7 +115,7 @@ $wizard = new Merlin(
 				'local_import_widget_file'     => get_parent_theme_file_path( '/demo/widgets.wie' ),
 				'local_import_customizer_file' => get_parent_theme_file_path( '/demo/customizer.dat' ),
 				'import_preview_image_url'     => 'https://portfolio.blacksailor.co.uk/wp-content/themes/_nucleus/screenshot.png',
-				'import_notice'                => __( 'A special note for this import.', '_nucleus' ),
+				'import_notice'                => esc_html__( 'A special note for this import.', '_nucleus' ),
 				'preview_url'                  => 'https://portfolio.blacksailor.co.uk/',
 			),
 		);

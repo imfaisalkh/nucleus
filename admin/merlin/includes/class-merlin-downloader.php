@@ -46,7 +46,7 @@ class Merlin_Downloader {
 			return $this->download_directory_path . $filename;
 		}
 
-		Merlin_Logger::get_instance()->error( __( 'The file was not able to save to disk, while trying to download it', 'merlin-wp' ), array( 'url' => $url, 'filename' => $filename ) );
+		Merlin_Logger::get_instance()->error( esc_html__( 'The file was not able to save to disk, while trying to download it', 'merlin-wp' ), array( 'url' => $url, 'filename' => $filename ) );
 
 		return false;
 	}

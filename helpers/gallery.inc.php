@@ -24,8 +24,8 @@
 					$attachment_meta = wp_prepare_attachment_for_js($image_id);
 
 					$return .= '<div class="image '. $attachment_meta['alt'] .'">';
-					$return .= '<a href="'. $attachment_meta['url'] .'" title="'. esc_attr( $attachment_meta['title'] ) .'" data-caption="'. esc_attr( $attachment_meta['caption'] ) .'" rel="lightbox">';
-					$return .= '<img src="'. $attachment_meta['url'] .'" alt="'. esc_attr( $attachment_meta['alt'] ) .'" />';
+					$return .= '<a href="'. esc_url( $attachment_meta['url'] ) .'" title="'. esc_attr( $attachment_meta['title'] ) .'" data-caption="'. esc_attr( $attachment_meta['caption'] ) .'" rel="lightbox">';
+					$return .= '<img src="'. esc_url( $attachment_meta['url'] ) .'" alt="'. esc_attr( $attachment_meta['alt'] ) .'" />';
 					$return .= !empty($attachment_meta['caption']) ? '<span class="wp-caption">'. esc_attr( $attachment_meta['caption'] ) .'</span>' : '';
 					$return .= '</a>';
 					$return .= '</div>';

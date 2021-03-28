@@ -32,6 +32,14 @@
 		@include breakpoint($touch)  { width: calc(100vw)  }
 	}
 
+	// https://stackoverflow.com/questions/31391459/how-can-i-expand-a-child-div-to-100-screen-width-if-the-container-div-is-smalle
+	@mixin make-wide-width {
+		width: 112%;
+		margin-left: -6%;
+
+		@include breakpoint($mobile)  { width: 100%; margin-left: auto;  }
+	}
+
 
 /*========================================================
   1.  CLEARFIX MIXIN 

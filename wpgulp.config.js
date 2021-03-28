@@ -11,7 +11,7 @@ module.exports = {
 
     // Project options.
     project: '_nucleus', // Project Name.
-	projectURL: 'http://localhost:7000/', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:3000 depending upon your local WordPress setup.
+	projectURL: 'http://localhost/', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:3000 depending upon your local WordPress setup.
 	productURL: './', // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 	browserAutoOpen: false,
 	injectChanges: true,
@@ -43,7 +43,7 @@ module.exports = {
 
 	// Translation options.
 	textDomain: '_nucleus', // Your textdomain here.
-	translationFile: 'nucleus.pot', // Name of the translation file.
+	translationFile: '_nucleus.pot', // Name of the translation file.
 	translationDestination: './languages', // Where to save the translation files.
 	packageName: '_nucleus', // Package name.
 	bugReport: 'imfaisalkh@gmail.com', // Where can users report bugs.

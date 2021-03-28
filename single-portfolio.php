@@ -31,7 +31,7 @@
 			<nav class="navigation">
 				<?php if (!empty( $next_entry )) { ?>
 					<span class="caption"><?php echo esc_html__('Next Project', '_nucleus'); ?></span>
-					<a class="next-folio" href="<?php echo get_permalink( get_adjacent_post(false,'',true) ); ?> ">
+					<a class="next-folio" href="<?php echo esc_url(get_permalink( get_adjacent_post(false,'',true) )); ?> ">
 						<?php echo get_the_title($next_entry); ?>
 					</a>
 				<?php } else { ?>

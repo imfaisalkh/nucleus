@@ -27,7 +27,7 @@ class Merlin_Customizer_Importer {
 			return false;
 		}
 
-		Merlin_Logger::get_instance()->info( __( 'The customizer import has finished successfully', 'merlin-wp' ) );
+		Merlin_Logger::get_instance()->info( esc_html__( 'The customizer import has finished successfully', 'merlin-wp' ) );
 		return true;
 	}
 

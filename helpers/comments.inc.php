@@ -47,7 +47,7 @@
 										// Helper Variable(s)
 										$date_format = get_theme_mod('nucleus_blog_date_format', 'standard');
 									?>
-									<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
+									<a href="<?php echo htmlspecialchars( esc_url(get_comment_link( $comment->comment_ID )) ); ?>">
 										<?php if ($date_format == 'human') { ?>
 											<?php printf( _x( '%s ago', '%s = human-readable time difference', '_nucleus' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ); ?>
 										<?php } else { ?>
