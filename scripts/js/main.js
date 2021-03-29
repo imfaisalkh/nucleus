@@ -334,21 +334,6 @@
           $('#page-header.fullscreen').height(page_header_h);
         },
 
-        /** Custom Cursor */
-        custom_cursor: function custom_cursor() {
-          var cursor = $('.cursor');
-          $(document).on("mousemove", function(e) {
-            cursor.css('top', e.pageY - 10 + "px");
-            cursor.css('left', e.pageX - 10 + "px");
-          });
-          $("a").on("mouseover", function() {
-            cursor.addClass('hover');
-          });
-          $("a").on("mouseout", function() {
-            cursor.removeClass('hover');
-          });
-        },
-
         /** Lightbox */
         lightbox: function lightbox() {
           var gallery_links = $('.wp-gallery a[rel="lightbox"], .portfolio-container .portfolio > a[rel="lightbox"], .elementor-image a');
@@ -388,7 +373,6 @@
       base.header_elements();
       base.sticky_header();
       base.page_header();
-      base.custom_cursor();
       base.lightbox();
       base.responsive_videos();
       $(window).on('resize', function() {

@@ -29,7 +29,7 @@
     ul#full-screen-menu.animate-in
     {
         li {
-            @include animate-in('fade-in-bottom', '0', 'auto');
+            @include animate('fade-in-bottom', '0', 'auto');
 
             // Set delay per List Item
             @for $i from 1 through 100 {

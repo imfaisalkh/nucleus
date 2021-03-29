@@ -227,25 +227,6 @@ export default jQuery(function($) {
 
         },
 
-        /** Custom Cursor */
-        custom_cursor: function() {
-
-            const cursor = $('.cursor');
-
-            $(document).on("mousemove", function (e) {
-                cursor.css('top',  e.pageY - 10 + "px");
-                cursor.css('left',  e.pageX - 10 + "px");
-            });
-
-            $("a").on("mouseover", function () {
-                cursor.addClass('hover')
-            });
-            $("a").on("mouseout", function () {
-                cursor.removeClass('hover')
-            });
-
-        },
-
         /** Lightbox */
         lightbox: function() {
 
@@ -288,7 +269,6 @@ export default jQuery(function($) {
     base.header_elements();
     base.sticky_header();
     base.page_header();
-    base.custom_cursor();
     base.lightbox();
     base.responsive_videos();
 
