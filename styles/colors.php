@@ -80,6 +80,7 @@
 		--background-color: #FFF;
 		--text-color: #000;
 		--blog-accent: var(--primary-accent);
+		--comments-notes: #777777;
 	}
 	body.blog.blog-minimal.light-base-color-scheme,
 	body.single-post.light-base-color-scheme {
@@ -93,6 +94,8 @@
 		--background-color: #000;
 		--text-color: #FFF;
 		--blog-accent: #e6aa4c;
+		--comments-notes: #95989a;
+
 	}
 
 	/** Error Page */

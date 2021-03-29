@@ -131,7 +131,7 @@
 
 							font-size: 20px;
 							position: relative;
-							color: #696969;
+							color: var(--comments-notes);
 
 							&:after {
 								content: '';
@@ -140,7 +140,7 @@
 								top: 50%;
 								width: 80px;
 								height: 1px;
-								background: #696969;
+								background: var(--comments-notes);
 								margin-left: 15px;
 							}
 						}
@@ -208,7 +208,7 @@
 							font-family: $secondary-font-stack;
 							font-size: 16px;
 							text-transform: uppercase;
-							color: #696969;
+							color: var(--comments-notes);
 							letter-spacing: 1px;
 						}
 

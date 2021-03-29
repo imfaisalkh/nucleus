@@ -689,7 +689,7 @@
 
 	.entry-content {
 
-		a {
+		a:not(.elementor-button-link) {
 			color: var(--primary-accent);
 		}
 	}
