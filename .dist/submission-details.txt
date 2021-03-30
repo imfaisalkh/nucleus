@@ -111,6 +111,10 @@ I've now used a different approach to enhance the images. It is much better now.
 10: POT file is updated.
 11: Fixed. Attribures are now using esc_attr__() instead of esc_html__().
 
+----------------------
+
+I've fixed the usablitiy issue with the comments form. Now clicking the reply link opens an inline reply form.
+
 SUBMISSION DATE:
 
 07 March, 2021 (1:45 AM)
