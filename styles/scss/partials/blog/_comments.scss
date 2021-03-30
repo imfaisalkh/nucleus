@@ -61,17 +61,17 @@ Comment Header (_comments.scss)
             margin-top: 30px;
             padding: 4px 16px;
             border-radius: 12px;
-            background-color: #2D2D2D;
+            background-color: var(--tag-background);
             font-size: 1.3rem;
             letter-spacing: 1px;
             text-transform: uppercase;	
-            color: var(--comments-notes);
+            color: var(--text-color);
             border: 0 !important;
             transition: all 300ms ease-in-out;
 
             &:hover {
-                background-color: #272B2F;
-                color: #fff;							
+                background-color: var(--tag-background);
+                color: var(--text-color);							
             }
 		}
 	}

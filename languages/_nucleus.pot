@@ -1364,19 +1364,19 @@ msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:53
+#: comments.php:52
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:66
+#: comments.php:65
 msgid "Name"
 msgstr ""
 
-#: comments.php:72
+#: comments.php:71
 msgid "Email"
 msgstr ""
 
-#: comments.php:78
+#: comments.php:77
 msgid "Website"
 msgstr ""
 
@@ -1436,32 +1436,15 @@ msgstr ""
 msgid "Your browser does not support HTML audio."
 msgstr ""
 
-#: helpers/comments.inc.php:23
-msgid "Pingback:"
-msgstr ""
-
-#: helpers/comments.inc.php:52
-msgctxt "%s = human-readable time difference"
-msgid "%s ago"
-msgstr ""
-
-#: helpers/comments.inc.php:66
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: helpers/comments.inc.php:73
-msgid "Reply"
-msgstr ""
-
-#: helpers/comments.inc.php:100
+#: helpers/comments.inc.php:14
 msgid "Comment navigation"
 msgstr ""
 
-#: helpers/comments.inc.php:103
+#: helpers/comments.inc.php:17
 msgid "Older Comments"
 msgstr ""
 
-#: helpers/comments.inc.php:107
+#: helpers/comments.inc.php:21
 msgid "Newer Comments"
 msgstr ""
 
@@ -1505,7 +1488,7 @@ msgstr ""
 msgid "Featured"
 msgstr ""
 
-#: partials/portfolio/includes/carousel-cell.php:78
+#: partials/portfolio/includes/carousel-cell.php:82
 msgid "Open Case Study"
 msgstr ""
 
