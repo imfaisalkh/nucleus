@@ -114,6 +114,7 @@
 		--background-color : <?php echo esc_html($background_color); ?>;
 		--text-color : <?php echo esc_html($text_color); ?>;
 		--blog-accent: var(--primary-accent);
+		--comments-notes: #777777;
 	}
 	<?php } ?>
 

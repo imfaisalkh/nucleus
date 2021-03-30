@@ -64,7 +64,7 @@
 		) );
 
 		// Support for HTML5 Tags
-		add_theme_support( 'html5', [ 'script', 'style' ] );
+		add_theme_support( 'html5', [ 'script', 'style', 'comment-form', 'comment-list' ] );
 
 		// Custom Image Sizes
 		add_image_size( 'nucleus-site-logo', 200, 200 );
@@ -178,7 +178,8 @@
 				'query_vars' => json_encode( $wp_query->query )
 			));
 
-			if ( is_singular( 'post' ) ) {
+			// Enqueue (conditional)
+			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 				wp_enqueue_script( 'comment-reply' );
 			}
 
